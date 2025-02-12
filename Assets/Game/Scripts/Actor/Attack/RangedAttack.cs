@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class RangedAttack : AttackHandler
 {
-    public override void Attack(Transform enemy)
+    [SerializeField] private GameObject projectilePrefab;
+
+    public void Init(Transform actorTrf, float aRange, float aSpeed, GameObject proPrefab)
+    {
+        base.Init(actorTrf,aRange,aSpeed);
+        projectilePrefab = proPrefab;
+    }
+    protected override void Attack(HealthHandler enemy)
     {
         base.Attack(enemy);
-        Debug.Log("Do rangedAttack");
+        PoolingManager.Spawn(projectilePrefab, actor.position, default, transform);
     }
 }

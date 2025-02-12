@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class HealthHandler : MonoBehaviour
 {
+    public Transform Actor { get; set; }
     [SerializeField] private float maxHealth;
     [SerializeField] private float curHealth;
-
-    public void Init(float hp)
+    public bool IsDead;
+    public void Init(Transform actorTrf, float hp)
     {
         maxHealth = hp;
         curHealth = hp;
+        Actor = actorTrf;
+        IsDead = false;
     }
 
     public void TakeDamage(float damage)
@@ -18,7 +21,7 @@ public class HealthHandler : MonoBehaviour
         curHealth -= damage;
         if (curHealth <= 0)
         {
-            Debug.Log("I'm dead");
+            IsDead = true;
         }
     }
 }
