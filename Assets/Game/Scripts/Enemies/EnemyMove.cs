@@ -23,14 +23,10 @@ public class EnemyMove : MonoBehaviour
     private void Move()
     {
         Vector3 direction = (targetPosition - enemyCtrl.transform.position).normalized;
-        enemyCtrl.transform.Translate(direction * moveSpeed * Time.deltaTime);
+        enemyCtrl.transform.Translate(direction * (moveSpeed * Time.deltaTime));
         if (Vector3.Distance(enemyCtrl.transform.position, targetPosition) <= 0.4f)
         {
-            if (currentPathIndex == pathList.Count - 1)
-            {
-                enemyCtrl.enemyDead.OnDead();
-                return;
-            }
+            if (currentPathIndex == pathList.Count - 1) enemyCtrl.enemyDead.OnDead();
             else SetNextPosition();
         }
     }
