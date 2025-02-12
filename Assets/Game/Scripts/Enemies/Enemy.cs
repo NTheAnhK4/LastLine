@@ -17,6 +17,7 @@ public class Enemy : ComponentBehavior
         enemyMove.Init(this,2f);
         enemyHealth.Init(5);
         enemyDead.Init(transform);
+        enemyAttack.Init(transform,2);
     }
 
     
