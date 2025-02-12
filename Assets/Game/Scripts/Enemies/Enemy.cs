@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 public class Enemy : ComponentBehavior
@@ -14,12 +15,19 @@ public class Enemy : ComponentBehavior
         if (enemyHealth == null) enemyHealth = transform.GetComponentInChildren<HealthHandler>();
         if (enemyAttack == null) enemyAttack = transform.GetComponentInChildren<AttackHandler>();
         if (enemyDead == null) enemyDead = transform.GetComponentInChildren<DeadHandler>();
+        InitData();
+    }
+
+    private void OnEnable()
+    {
+        InitData();
+    }
+
+    private void InitData()
+    {
         enemyMove.Init(this,2f);
         enemyHealth.Init(5);
         enemyDead.Init(transform);
         enemyAttack.Init(transform,2);
     }
-
-    
-    
 }
