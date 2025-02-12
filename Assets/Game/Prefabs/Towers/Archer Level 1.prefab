@@ -101,9 +101,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02277fea7a630df4ea7472bc99c6397d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedEnemies: []
   actor: {fileID: 1986967365732100580}
   collid: {fileID: 0}
   attackRange: 0
+  attackSpeed: 0
+  coolDown: 0
+  projectilePrefab: {fileID: 0}
 --- !u!58 &4948782025317067607
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -346,6 +350,7 @@ MonoBehaviour:
   TowerUIPrefab: {fileID: 0}
   towerUI: {fileID: 0}
   archerAttack: {fileID: 2610984385145488768}
+  projectilePrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
 --- !u!1 &8881655169308822015
 GameObject:
   m_ObjectHideFlags: 0
