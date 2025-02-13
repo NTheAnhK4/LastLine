@@ -1,27 +1,25 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class ProjectileMove : MonoBehaviour
 {
     [SerializeField] private Transform actor;
+    [SerializeField] private Transform enemyTarget;
+   
     [SerializeField] private float bulletSpeed;
-
-    public void Init(Transform actorTrf, float speed)
+    
+    public void Init(Transform actorTrf, Transform enemyTrf, float speed)
     {
         actor = actorTrf;
         bulletSpeed = speed;
+        enemyTarget = enemyTrf;
     }
 
-    private void Awake()
-    {
-        Init(transform.parent,5);
-    }
-
+   
     private void Move()
     {
-        actor.Translate(Vector2.right * bulletSpeed * Time.deltaTime);
+        Vector3 direction = (enemyTarget.position - actor.position).normalized;
+        actor.Translate(direction * (bulletSpeed * Time.deltaTime), Space.World);
     }
 
     private void Update()

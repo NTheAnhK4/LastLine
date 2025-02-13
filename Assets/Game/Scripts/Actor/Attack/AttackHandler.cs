@@ -38,21 +38,18 @@ public class AttackHandler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.transform.tag.Equals("Radar")) return;
-        if (IsEnemy(other.transform))
-        {
-            HealthHandler healthHandler = other.transform.GetComponentInChildren<HealthHandler>();
-            if(healthHandler != null) detectedEnemies.Add(healthHandler);
-        }
+        HealthHandler healthHandler = other.transform.GetComponentInChildren<HealthHandler>();
+        if(healthHandler == null) return;
+        if (IsEnemy(other.transform)) detectedEnemies.Add(healthHandler);
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if(other.transform.tag.Equals("Radar")) return;
-        if (IsEnemy(other.transform))
-        {
-            HealthHandler healthHandler = other.transform.GetComponentInChildren<HealthHandler>();
-            if(healthHandler != null) detectedEnemies.Remove(healthHandler);
-        }
+        HealthHandler healthHandler = other.transform.GetComponentInChildren<HealthHandler>();
+        if(healthHandler == null) return;
+        if (IsEnemy(other.transform)) detectedEnemies.Remove(healthHandler);
     }
 
     private HealthHandler GetPriorityTarget()

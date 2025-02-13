@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMove : MonoBehaviour
+public class EnemyMove : MoveHandler
 {
     public List<Vector3> pathList;
     [SerializeField] private Enemy enemyCtrl;
