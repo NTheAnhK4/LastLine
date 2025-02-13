@@ -1,20 +1,25 @@
-using System;
+
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DeadHandler : ComponentBehavior
+public class DeadHandler : ActionHandler
 {
-    [SerializeField] protected Transform actor;
+   
 
-    public void Init(Transform actorTrf)
+    public virtual void OnDead(bool hasAnim)
     {
-        actor = actorTrf;
+        if (hasAnim) StartCoroutine(DoAnim());
+        else PoolingManager.Despawn(actor.gameObject);
     }
-    public virtual void OnDead()
+
+    IEnumerator DoAnim()
     {
+        animHandler.SetAnim("Dead");
+        yield return new WaitForSeconds(1.5f);
         PoolingManager.Despawn(actor.gameObject);
     }
+    
 
     protected virtual bool CanDespawn()
     {
@@ -28,6 +33,6 @@ public class DeadHandler : ComponentBehavior
     private void Update()
     {
         UpdateLogic();
-        if(CanDespawn()) OnDead();
+        if(CanDespawn()) OnDead(true);
     }
 }

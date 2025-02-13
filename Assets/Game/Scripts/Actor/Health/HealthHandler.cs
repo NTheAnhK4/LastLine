@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-public class HealthHandler : MonoBehaviour
+public class HealthHandler : ComponentBehavior
 {
     public Transform Actor { get; set; }
     [SerializeField] private DeadHandler deadHandler;
@@ -22,19 +22,21 @@ public class HealthHandler : MonoBehaviour
             }
         }
     }
+
+    protected override void LoadComponent()
+    {
+        base.LoadComponent();
+        if (deadHandler == null) deadHandler = transform.parent.parent.GetComponentInChildren<DeadHandler>();
+        if(healthUI == null) healthUI = transform.parent.parent.GetComponentInChildren<HealthUI>();
+        Actor = transform.parent.parent;
+    }
+
     public bool IsDead;
-    public void Init(Transform actorTrf, float hp)
+    public void Init(float hp)
     {
         maxHealth = hp;
         CurHealth = hp;
-        Actor = actorTrf;
         IsDead = false;
-        if (Actor != null)
-        {
-            if(deadHandler == null) deadHandler = Actor.GetComponentInChildren<DeadHandler>();
-            if (healthUI == null) healthUI = Actor.GetComponentInChildren<HealthUI>();
-        }
-        
     }
 
     public void TakeDamage(float damage)
@@ -43,7 +45,7 @@ public class HealthHandler : MonoBehaviour
         if (curHealth <= 0)
         {
             IsDead = true;
-            deadHandler.OnDead();
+            deadHandler.OnDead(true);
         }
     }
 }

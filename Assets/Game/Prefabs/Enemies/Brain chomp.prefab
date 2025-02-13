@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7772987554451998375}
   - component: {fileID: 8970854276586267347}
+  - component: {fileID: 9027337571415197453}
+  - component: {fileID: 2869554366905855773}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -84,6 +86,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &9027337571415197453
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843228641811242828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7631d0770ec3d4e4189374dc744d48fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2869554366905855773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843228641811242828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfcb3d53b7c53345a83688d6c3e4f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 9027337571415197453}
 --- !u!1 &992721154726582921
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b319efe7b6f4fd46aca29e44cb439d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor: {fileID: 0}
+  actor: {fileID: 7758480801160409643}
+  animHandler: {fileID: 2869554366905855773}
 --- !u!1 &3326672342507333073
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3201001435346126135}
   healthHolder: {fileID: 2434099194064299451}
-  timeHire: 7
+  timeHide: 7
   timer: 0
 --- !u!1 &5002771380340530660
 GameObject:
@@ -402,6 +439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa4f09fa38c45947b7dd2086750cb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actor: {fileID: 7758480801160409643}
+  animHandler: {fileID: 2869554366905855773}
   pathList:
   - {x: -12.5, y: 1, z: 0}
   - {x: -12.5, y: 0, z: 0}
@@ -413,10 +452,10 @@ MonoBehaviour:
   - {x: 9.5, y: 0.5, z: 0}
   - {x: 9.5, y: 5.5, z: 0}
   - {x: 25, y: 5.5, z: 0}
-  enemyCtrl: {fileID: 0}
-  targetPosition: {x: 0, y: 5, z: 0}
+  enemyCtrl: {fileID: 5961182228672644000}
+  targetPosition: {x: 0, y: 0, z: 0}
   currentPathIndex: 0
-  moveSpeed: 2
+  moveSpeed: 0
 --- !u!1 &5306239784823888461
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,8 +671,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMove: {fileID: 4908070921715745317}
-  enemyHealth: {fileID: 0}
-  enemyAttack: {fileID: 0}
+  enemyHealth: {fileID: 3450249322710370551}
+  enemyAttack: {fileID: 9101586200648995553}
 --- !u!61 &8202942509366759802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -725,9 +764,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9733a3d5a49cb24cabdd1b5c7982e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actor: {fileID: 7758480801160409643}
+  animHandler: {fileID: 2869554366905855773}
   detectedEnemies: []
-  actor: {fileID: 0}
-  collid: {fileID: 0}
+  collid: {fileID: 6496643008179098866}
   attackRange: 0
   attackSpeed: 0
   coolDown: 0
@@ -837,8 +877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28520ebb35340f4b8a8ff83a420f881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadHandler: {fileID: 0}
-  healthUI: {fileID: 0}
+  deadHandler: {fileID: 5522963161957886946}
+  healthUI: {fileID: 9053670086950378472}
   maxHealth: 0
   curHealth: 0
   IsDead: 0
