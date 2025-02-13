@@ -7,7 +7,7 @@ public class Enemy : ComponentBehavior
     [SerializeField] private EnemyMove enemyMove;
     [SerializeField] private HealthHandler enemyHealth;
     [SerializeField] private AttackHandler enemyAttack;
-    [SerializeField] public DeadHandler enemyDead { get; private set; }
+    public DeadHandler enemyDead { get; private set; }
     protected override void LoadComponent()
     {
         base.LoadComponent();

@@ -22,7 +22,6 @@ public class ProjectileImpact : ComponentBehavior
     private bool IsEnemy(Transform enemy)
     {
         if (enemy == null) return false;
-        Debug.Log(enemy.tag + " " + enemyTarget.tag);
         return enemy.tag.Equals(enemyTarget.tag);
     }
     private void OnTriggerEnter2D(Collider2D other)
