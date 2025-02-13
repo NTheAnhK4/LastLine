@@ -183,7 +183,7 @@ MonoBehaviour:
   - {x: 7.5, y: -4, z: 0}
   - {x: 9.5, y: 0.5, z: 0}
   - {x: 9.5, y: 5.5, z: 0}
-  - {x: 20, y: 5.5, z: 0}
+  - {x: 25, y: 5.5, z: 0}
   enemyCtrl: {fileID: 0}
   targetPosition: {x: 0, y: 5, z: 0}
   currentPathIndex: 0
@@ -332,9 +332,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9733a3d5a49cb24cabdd1b5c7982e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectedEnemies: []
   actor: {fileID: 0}
   collid: {fileID: 0}
   attackRange: 0
+  attackSpeed: 0
+  coolDown: 0
 --- !u!58 &6496643008179098866
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -443,3 +446,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   curHealth: 0
+  IsDead: 0
