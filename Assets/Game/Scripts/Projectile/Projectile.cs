@@ -19,8 +19,8 @@ public class Projectile : ComponentBehavior
     public void Init(Transform enemyTrf)
     {
         enemyTarget = enemyTrf;
-        projectileMove.Init(transform,enemyTarget,5f);
-        projectileDespawn.Init(transform);
+        projectileMove.Init(enemyTarget,5f);
+       
         projectileImpact.Init(enemyTarget,1);
     }
 }

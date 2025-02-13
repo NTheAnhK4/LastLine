@@ -1,5 +1,4 @@
 
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -18,12 +17,14 @@ public class Tower : ComponentBehavior
 
     public void ShowUI()
     {
+        if(TowerUIPrefab == null) return;
         towerUI = PoolingManager.Spawn(TowerUIPrefab.gameObject,transform.position).GetComponent<TowerUI>();
         towerUI.tower = this;
     }
 
     public void HideUI()
     {
+        if(towerUI == null) return;
         PoolingManager.Despawn(towerUI.gameObject);
     }
 

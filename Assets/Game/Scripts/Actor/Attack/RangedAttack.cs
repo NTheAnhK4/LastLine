@@ -5,9 +5,9 @@ public class RangedAttack : AttackHandler
 {
     [SerializeField] private GameObject projectilePrefab;
 
-    public void Init(Transform actorTrf, float aRange, float aSpeed, GameObject proPrefab)
+    public void Init(float aRange, float aSpeed, GameObject proPrefab)
     {
-        base.Init(actorTrf,aRange,aSpeed);
+        base.Init(aRange,aSpeed);
         projectilePrefab = proPrefab;
     }
     protected override void Attack(HealthHandler enemy)

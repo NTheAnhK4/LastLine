@@ -1,9 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class MoveHandler : MonoBehaviour
+public class MoveHandler : ActionHandler
 {
    
+
+   protected virtual void Move()
+   {
+      
+   }
+   protected void Update()
+   {
+      if(animHandler.currentState != AnimHandler.State.Move) return;
+      Move();
+   }
 }

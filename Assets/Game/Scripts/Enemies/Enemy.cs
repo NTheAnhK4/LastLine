@@ -25,9 +25,9 @@ public class Enemy : ComponentBehavior
 
     private void InitData()
     {
-        enemyMove.Init(this,2f);
-        enemyHealth.Init(transform,5);
-        enemyDead.Init(transform);
-        enemyAttack.Init(transform,2,3);
+        enemyMove.Init(2f);
+        enemyHealth.Init(5);
+        
+        enemyAttack.Init(2,3);
     }
 }

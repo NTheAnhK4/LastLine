@@ -32,7 +32,7 @@ public class ProjectileImpact : ComponentBehavior
         if (IsEnemy(other.transform))
         {
             healthHandler.TakeDamage(damage);
-            projectile.projectileDespawn.OnDead();
+            projectile.projectileDespawn.OnDead(false);
         }
     }
 }

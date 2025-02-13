@@ -10,6 +10,6 @@ public class ArcherTower : Tower
         base.LoadComponent();
         if (archerAttack == null) archerAttack = transform.GetComponentInChildren<RangedAttack>();
         
-        archerAttack.Init(transform,3,0.4f,projectilePrefab);
+        archerAttack.Init(3,0.4f,projectilePrefab);
     }
 }

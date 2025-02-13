@@ -1,16 +1,21 @@
 
 using UnityEngine;
 
-public class ProjectileMove : MonoBehaviour
+public class ProjectileMove : ComponentBehavior
 {
     [SerializeField] private Transform actor;
     [SerializeField] private Transform enemyTarget;
     [SerializeField] private Vector3 currentDirection;
     [SerializeField] private float bulletSpeed;
-    
-    public void Init(Transform actorTrf, Transform enemyTrf, float speed)
+    protected override void LoadComponent()
     {
-        actor = actorTrf;
+        base.LoadComponent();
+        actor = transform.parent.parent;
+    }
+
+    public void Init( Transform enemyTrf, float speed)
+    {
+       
         bulletSpeed = speed;
         enemyTarget = enemyTrf;
     }

@@ -9,36 +9,37 @@ public class EnemyMove : MoveHandler
     [SerializeField] private Vector3 targetPosition;
     [SerializeField] private int currentPathIndex;
     [SerializeField] private float moveSpeed;
-
-    public void Init(Enemy enemy, float eMoveSpeed)
+    protected override void LoadComponent()
     {
-        enemyCtrl = enemy;
+        base.LoadComponent();
+        if (enemyCtrl == null) enemyCtrl = transform.GetComponentInParent<Enemy>();
+    }
+
+    public void Init(float eMoveSpeed)
+    {
         moveSpeed = eMoveSpeed;
-        
+        if(animHandler != null) animHandler.SetAnim("Move");
         currentPathIndex = 0;
         targetPosition = pathList[currentPathIndex];
     }
 
-   
-    private void Move()
+
+    protected override void Move()
     {
         Vector3 direction = (targetPosition - enemyCtrl.transform.position).normalized;
         enemyCtrl.transform.Translate(direction * (moveSpeed * Time.deltaTime));
         if (Vector3.Distance(enemyCtrl.transform.position, targetPosition) <= 0.4f)
         {
-            if (currentPathIndex == pathList.Count - 1) enemyCtrl.enemyDead.OnDead();
+            if (currentPathIndex == pathList.Count - 1) enemyCtrl.enemyDead.OnDead(false);
             else SetNextPosition();
         }
     }
+    
 
     private void SetNextPosition()
     {
         currentPathIndex++;
         targetPosition = pathList[currentPathIndex];
     }
-
-    private void Update()
-    {
-        Move();
-    }
+    
 }

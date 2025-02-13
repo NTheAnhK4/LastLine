@@ -1,27 +1,27 @@
 
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class AttackHandler : MonoBehaviour
+public class AttackHandler : ActionHandler
 {
     [SerializeField] protected List<HealthHandler> detectedEnemies;
-    protected HashSet<HealthHandler> priorityTargets = new HashSet<HealthHandler>();
-    
-    [SerializeField] protected Transform actor;
+    protected readonly HashSet<HealthHandler> priorityTargets = new HashSet<HealthHandler>();
     [SerializeField] private CircleCollider2D collid;
     
     [SerializeField] private float attackRange;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float coolDown;
-    
 
-    public void Init(Transform actorTrf, float aRange, float aSpeed)
+    protected override void LoadComponent()
     {
-        actor = actorTrf;
+        base.LoadComponent();
         if (collid == null) collid = transform.GetComponentInChildren<CircleCollider2D>();
+    }
+
+    public void Init(float aRange, float aSpeed)
+    {
+       
         attackRange = aRange;
         collid.radius = attackRange;
         attackSpeed = aSpeed;
