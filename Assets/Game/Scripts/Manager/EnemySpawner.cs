@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     //changelate
-    public GameObject enemyPrefab;
+    public MeleeEnemyData Data;
     public Vector3 spawnPos;
 
     public IEnumerator SpawnEnemyFromId(int wayId)
@@ -36,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        PoolingManager.Spawn(enemyPrefab, spawnPos,default,transform);
+        int enemyIndex = Random.Range(0, Data.meleeEnemyList.Count);
+        PoolingManager.Spawn(Data.meleeEnemyList[enemyIndex].EnemyPrefab, spawnPos,default,transform);
     }
 }
