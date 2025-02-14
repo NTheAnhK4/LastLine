@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a40e91856f6f04593234fa00fb5000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 7647574835406034084, guid: 482e80c310d670941bd3540c8a4473cf, type: 3}
+  Data: {fileID: 11400000, guid: 4a05f3d1a88dc7b4db23a1d4a929ffff, type: 2}
   spawnPos: {x: -18, y: 0, z: 0}
 --- !u!4 &2018987660
 Transform:

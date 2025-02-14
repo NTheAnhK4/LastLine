@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimHandler : ComponentBehavior
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private string preAnimName;
+   
 
     public enum State
     {
@@ -26,11 +26,7 @@ public class AnimHandler : ComponentBehavior
         if (anim == null) anim = transform.GetComponent<Animator>();
     }
 
-    public void Init(string animName)
-    {
-        preAnimName = animName;
-        if(preAnimName != string.Empty) SetAnim(animName);
-    }
+    
 
     public void SetAnim(string animName)
     {
@@ -56,8 +52,5 @@ public class AnimHandler : ComponentBehavior
         anim.SetInteger(animName,value);
     }
 
-    public void SetPreAnim()
-    {
-        SetAnim(preAnimName);
-    }
+    
 }
