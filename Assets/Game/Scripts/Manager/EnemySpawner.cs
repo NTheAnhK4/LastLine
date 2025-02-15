@@ -1,48 +1,47 @@
 using System.Collections;
-
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    
     public MeleeEnemyData Data;
     public LevelData LevelData;
 
     public IEnumerator SpawnEnemyFromId(int wayId)
     {
-        for (int i = wayId; i < LevelData.Levels[GameManager.Instance.Level].Ways.Count; ++i)
+        var level = LevelData.Levels[GameManager.Instance.Level];
+        for (int i = wayId; i < level.Ways.Count; i++)
         {
-           
-            SpawnWay(LevelData.Levels[GameManager.Instance.Level].Ways[i]);
+            SpawnWay(level.Ways[i]);
             yield return new WaitForSeconds(10);
         }
     }
 
     private void SpawnWay(WayParam wayParam)
     {
-        for (int i = 0; i < wayParam.MiniWays.Count; ++i) StartCoroutine(SpawnMiniWay(wayParam.MiniWays[i]));
+        foreach (var miniWay in wayParam.MiniWays)
+        {
+            StartCoroutine(SpawnMiniWay(miniWay));
+        }
     }
 
-    IEnumerator SpawnMiniWay(MiniWayParam miniWayParam)
+    private IEnumerator SpawnMiniWay(MiniWayParam miniWayParam)
     {
-        
-        for (int i = 0; i < miniWayParam.EnemyInfors.Count; ++i)
+        foreach (var enemyInfor in miniWayParam.EnemyInfors)
         {
-            SpawnEnemy(miniWayParam.PathId, miniWayParam.EnemyInfors[i]);
+            SpawnEnemy(miniWayParam.PathId, enemyInfor);
             yield return new WaitForSeconds(2);
         }
     }
 
     private void SpawnEnemy(int pathId, EnemyInfor enemyInfor)
     {
-        GameObject enemyPrefab = null;
-        switch (enemyInfor.EnemyType)
-        {
-            case EnemyType.MeleeAttack:
-                enemyPrefab = Data.MeleeEnemys[enemyInfor.EnemyId].EnemyPrefab;
-                break;
-        }
-        if(enemyPrefab == null) return;
-        PoolingManager.Spawn(enemyPrefab, LevelData.Levels[GameManager.Instance.Level].Paths[pathId].Positions[0],default,transform);
+        if (enemyInfor.EnemyType != EnemyType.MeleeAttack) return;
+        if (enemyInfor.EnemyId < 0 || enemyInfor.EnemyId >= Data.MeleeEnemys.Count) return;
+
+        var enemyPrefab = Data.MeleeEnemys[enemyInfor.EnemyId].EnemyPrefab;
+        if (enemyPrefab == null) return;
+
+        var spawnPosition = LevelData.Levels[GameManager.Instance.Level].Paths[pathId].Positions[0];
+        PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform);
     }
 }

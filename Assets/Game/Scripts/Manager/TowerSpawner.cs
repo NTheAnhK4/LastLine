@@ -8,9 +8,11 @@ public class TowerSpawner : ComponentBehavior
     public TowerData TowerData;
     public void SpawnTower()
     {
-        for (int i = 0; i < LevelData.Levels[GameManager.Instance.Level].TowerPositions.Count; ++i)
+        
+        List<Vector3> towerParams = LevelData.Levels[GameManager.Instance.Level].TowerPositions;
+        for (int i = 0; i < towerParams.Count; ++i)
         {
-            Vector3 position = LevelData.Levels[GameManager.Instance.Level].TowerPositions[i];
+            Vector3 position = towerParams[i];
             PoolingManager.Spawn(TowerData.Towers[0].TowerPrefab,position,default,transform);
         }
     }
