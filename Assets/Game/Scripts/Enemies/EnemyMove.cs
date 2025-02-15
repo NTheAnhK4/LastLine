@@ -19,7 +19,7 @@ public class EnemyMove : MoveHandler
     {
         moveSpeed = eMoveSpeed;
         if(animHandler != null) animHandler.SetAnim("Move");
-        currentPathIndex = 0;
+        currentPathIndex = 1;
         targetPosition = pathList[currentPathIndex];
     }
 

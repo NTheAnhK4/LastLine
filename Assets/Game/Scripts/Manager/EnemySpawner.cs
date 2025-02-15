@@ -4,39 +4,45 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    //changelate
+    
     public MeleeEnemyData Data;
-    public Vector3 spawnPos;
+    public LevelData LevelData;
 
     public IEnumerator SpawnEnemyFromId(int wayId)
     {
-        int numberOfWay = 5;
-        for (int i = wayId; i < numberOfWay; ++i)
+        for (int i = wayId; i < LevelData.Levels[GameManager.Instance.Level].Ways.Count; ++i)
         {
-            SpawnWay(i);
+           
+            SpawnWay(LevelData.Levels[GameManager.Instance.Level].Ways[i]);
             yield return new WaitForSeconds(10);
         }
     }
 
-    private void SpawnWay(int wayId)
+    private void SpawnWay(WayParam wayParam)
     {
-        int numberOfMiniWay = 1;
-        for (int i = 0; i < numberOfMiniWay; ++i) StartCoroutine(SpawnMiniWay(i));
+        for (int i = 0; i < wayParam.MiniWays.Count; ++i) StartCoroutine(SpawnMiniWay(wayParam.MiniWays[i]));
     }
 
-    IEnumerator SpawnMiniWay(int miniWayId)
+    IEnumerator SpawnMiniWay(MiniWayParam miniWayParam)
     {
-        int miniWayNumber = 3;
-        for (int i = 0; i < miniWayNumber; ++i)
+        
+        for (int i = 0; i < miniWayParam.EnemyInfors.Count; ++i)
         {
-            SpawnEnemy();
+            SpawnEnemy(miniWayParam.PathId, miniWayParam.EnemyInfors[i]);
             yield return new WaitForSeconds(2);
         }
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(int pathId, EnemyInfor enemyInfor)
     {
-        int enemyIndex = Random.Range(0, Data.MeleeEnemyList.Count);
-        PoolingManager.Spawn(Data.MeleeEnemyList[enemyIndex].EnemyPrefab, spawnPos,default,transform);
+        GameObject enemyPrefab = null;
+        switch (enemyInfor.EnemyType)
+        {
+            case EnemyType.MeleeAttack:
+                enemyPrefab = Data.MeleeEnemys[enemyInfor.EnemyId].EnemyPrefab;
+                break;
+        }
+        if(enemyPrefab == null) return;
+        PoolingManager.Spawn(enemyPrefab, LevelData.Levels[GameManager.Instance.Level].Paths[pathId].Positions[0],default,transform);
     }
 }

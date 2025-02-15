@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e12e25764d61e64a85144ca82d924f5, type: 3}
   m_Name: Tower Data
   m_EditorClassIdentifier: 
-  TowerList:
-  - TowerName: TowerSlot
+  Towers:
+  - TowerName: Tower slot
     AttackRange: 0
     AttackSpeed: 0
     UnitPrefab: {fileID: 0}
@@ -22,9 +22,9 @@ MonoBehaviour:
     TowerUpgradeList:
     - Cost: 75
       TowerId: 1
-  - TowerName: Archer Level 1
-    AttackRange: 5
-    AttackSpeed: 0.4
+  - TowerName: Archer level 1
+    AttackRange: 4
+    AttackSpeed: 0.6
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 6503917657427825518, guid: f06f53ea328d7c24892d73538e3bed5b, type: 3}
     TowerUIPrefab: {fileID: 0}

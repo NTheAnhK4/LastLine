@@ -8,11 +8,12 @@ public class ArcherTower : Tower
     {
         base.LoadComponent();
         if (archerAttack == null) archerAttack = transform.GetComponentInChildren<RangedAttack>();
+        ApplyData();
     }
 
-    public override void Init(TowerParam data)
+    protected override void ApplyData()
     {
-        base.Init(data);
-        archerAttack.Init(data.AttackRange,data.AttackSpeed,data.UnitPrefab);
+        base.ApplyData();
+        archerAttack.Init(Data.Towers[towerId].AttackRange, Data.Towers[towerId].AttackSpeed, Data.Towers[towerId].UnitPrefab);
     }
 }
