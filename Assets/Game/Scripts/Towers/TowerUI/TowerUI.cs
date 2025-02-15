@@ -11,8 +11,6 @@ public class TowerUI : ComponentBehavior
     {
         public Button btn;
         public TextMeshProUGUI cost;
-        public GameObject towerUpdate;
-        public string animUpdateName;
     }
 
     public Tower tower { get; set; }
@@ -24,9 +22,9 @@ public class TowerUI : ComponentBehavior
         if(optionsHolder == null) optionsHolder = transform.Find("Canvas").Find("UIImg");
     }
 
-    protected void UpdateTower(GameObject newTower,string updateAnimName, float timerBuild = 1)
+    protected void UpdateTower(int towerUpgradeId, float timerBuild = 1)
     {
-        tower.UpdateTower(newTower,updateAnimName,timerBuild);
+        tower.UpdateTower(towerUpgradeId,timerBuild);
         PoolingManager.Despawn(gameObject);
     }
     

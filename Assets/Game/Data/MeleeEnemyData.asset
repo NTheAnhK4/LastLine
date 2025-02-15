@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c564e8ece48d5c245877ea4e6a0afc25, type: 3}
   m_Name: MeleeEnemyData
   m_EditorClassIdentifier: 
-  meleeEnemyList:
+  MeleeEnemyList:
   - Name: Brain chomp
     HealthPoint: 5
     MoveSpeed: 2
     Damage: 1
-    AttackRange: 4
-    AttackSpeed: 0.5
+    AttackRange: 2
+    AttackSpeed: 0.4
     EnemyPrefab: {fileID: 7647574835406034084, guid: 482e80c310d670941bd3540c8a4473cf, type: 3}
   - Name: Rotten Driller
     HealthPoint: 6
     MoveSpeed: 1
-    Damage: 3
-    AttackRange: 3
-    AttackSpeed: 0.7
+    Damage: 2
+    AttackRange: 2
+    AttackSpeed: 1
     EnemyPrefab: {fileID: 461616533364891258, guid: 8e78ecd3410c0f24f83b44f53bf69ed7, type: 3}

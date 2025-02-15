@@ -4,12 +4,15 @@ using UnityEngine;
 public class ArcherTower : Tower
 {
     [SerializeField] private RangedAttack archerAttack;
-    [SerializeField] private GameObject projectilePrefab;
     protected override void LoadComponent()
     {
         base.LoadComponent();
         if (archerAttack == null) archerAttack = transform.GetComponentInChildren<RangedAttack>();
-        
-        archerAttack.Init(3,0.4f,projectilePrefab);
+    }
+
+    public override void Init(TowerParam data)
+    {
+        base.Init(data);
+        archerAttack.Init(data.AttackRange,data.AttackSpeed,data.UnitPrefab);
     }
 }

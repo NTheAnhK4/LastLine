@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8892940252367417540}
   - component: {fileID: 3700246114428189591}
   - component: {fileID: 977733563858799526}
+  - component: {fileID: 6010090730023999296}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -106,6 +107,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6010090730023999296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619426417916839743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfcb3d53b7c53345a83688d6c3e4f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 977733563858799526}
+  currentState: 0
 --- !u!1 &1848356552161296775
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a9008534b2aa243ad3b4fecb43f725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 977733563858799526}
+  Data: {fileID: 11400000, guid: 7eacf0dcf2602ee47b8bb1f615dbff2f, type: 2}
+  towerId: 0
+  animHandler: {fileID: 6010090730023999296}
   TowerUIPrefab: {fileID: 1641854626290993541, guid: 7e7ae87b9d53fb64496e55750e4f99c2, type: 3}
   towerUI: {fileID: 0}
