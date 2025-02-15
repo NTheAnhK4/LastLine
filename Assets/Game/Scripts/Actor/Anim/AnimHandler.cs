@@ -12,14 +12,16 @@ public class AnimHandler : ComponentBehavior
         Move,
         Idle,
         Dead,
-        Attack
+        Attack,
+        Upgrade
     }
 
     public State currentState;
     private static readonly int IsMove = Animator.StringToHash("isMove");
     private static readonly int OnDead = Animator.StringToHash("onDead");
-    private static readonly int OnAttack = Animator.StringToHash("onAttack");   
-    
+    private static readonly int OnAttack = Animator.StringToHash("onAttack");
+    private static readonly int OnUpgrade = Animator.StringToHash("onUpgrade");
+
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -43,6 +45,10 @@ public class AnimHandler : ComponentBehavior
             case "Attack":
                 anim.SetTrigger(OnAttack);
                 currentState = State.Attack;
+                break;
+            case "Upgrade":
+                anim.SetTrigger(OnUpgrade);
+                currentState = State.Upgrade;
                 break;
         }
     }

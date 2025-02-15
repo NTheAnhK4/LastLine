@@ -1,10 +1,12 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 [CreateAssetMenu(menuName = "Data/Melee enemy",fileName = "MeleeEnemyData")]
 public class MeleeEnemyData : ScriptableObject
 {
-    public List<MeleeEnemyParam> meleeEnemyList;
+    public List<MeleeEnemyParam> MeleeEnemyList;
 }
 [System.Serializable]
 public class MeleeEnemyParam

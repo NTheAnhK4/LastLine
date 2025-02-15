@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        int enemyIndex = Random.Range(0, Data.meleeEnemyList.Count);
-        PoolingManager.Spawn(Data.meleeEnemyList[enemyIndex].EnemyPrefab, spawnPos,default,transform);
+        int enemyIndex = Random.Range(0, Data.MeleeEnemyList.Count);
+        PoolingManager.Spawn(Data.MeleeEnemyList[enemyIndex].EnemyPrefab, spawnPos,default,transform);
     }
 }

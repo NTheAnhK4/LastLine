@@ -69,7 +69,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2133620640892939580}
-  preAnimName: 
   currentState: 0
 --- !u!1 &2435524733013629353
 GameObject:
@@ -150,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actor: {fileID: 1986967365732100580}
-  animHandler: {fileID: 0}
+  animHandler: {fileID: 1789544318296176523}
   detectedEnemies: []
   collid: {fileID: 4948782025317067607}
   attackRange: 0
@@ -395,7 +394,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00d4f20127406c40bd345361e7f41bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 2133620640892939580}
+  Data: {fileID: 11400000, guid: 7eacf0dcf2602ee47b8bb1f615dbff2f, type: 2}
+  towerId: 1
+  animHandler: {fileID: 1789544318296176523}
   TowerUIPrefab: {fileID: 0}
   towerUI: {fileID: 0}
   archerAttack: {fileID: 2610984385145488768}

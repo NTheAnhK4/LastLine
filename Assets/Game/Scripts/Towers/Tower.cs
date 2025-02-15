@@ -5,20 +5,22 @@ using UnityEngine;
 
 public class Tower : ComponentBehavior
 {
-    [SerializeField] private Animator anim;
+    public TowerData Data;
+    public int towerId;
+
+    [SerializeField] protected AnimHandler animHandler;
     
-    public TowerUI TowerUIPrefab;
     [SerializeField] private TowerUI towerUI;
     protected override void LoadComponent()
     {
         base.LoadComponent();
-        if (anim == null) anim = transform.GetComponentInChildren<Animator>();
+        if (animHandler == null) animHandler = transform.GetComponentInChildren<AnimHandler>();
     }
 
     public void ShowUI()
     {
-        if(TowerUIPrefab == null) return;
-        towerUI = PoolingManager.Spawn(TowerUIPrefab.gameObject,transform.position).GetComponent<TowerUI>();
+        if(Data.TowerList[towerId].TowerUIPrefab == null) return;
+        towerUI = PoolingManager.Spawn(Data.TowerList[towerId].TowerUIPrefab,transform.position).GetComponent<TowerUI>();
         towerUI.tower = this;
     }
 
@@ -29,16 +31,23 @@ public class Tower : ComponentBehavior
     }
 
     
-    public void UpdateTower(GameObject tower, string updateAnimName, float timerBuild = 1)
+    public void UpdateTower(int upgradeId, float timerBuild = 1)
     {
-        anim.SetTrigger(updateAnimName);
-        StartCoroutine(BuildNewTower(tower, timerBuild));
+        animHandler.SetInt("upgradeId",upgradeId);
+        animHandler.SetAnim("Upgrade");
+        int towerUpgradeId = Data.TowerList[towerId].TowerUpgradeList[upgradeId].TowerId;
+        StartCoroutine(BuildNewTower(towerUpgradeId, timerBuild));
     }
 
-    IEnumerator BuildNewTower(GameObject tower, float timeBuild = 1)
+    public virtual void Init(TowerParam data)
+    {
+        
+    }
+    IEnumerator BuildNewTower(int towerUpgradeId, float timeBuild = 1)
     {
         yield return new WaitForSeconds(timeBuild);
-        PoolingManager.Spawn(tower,transform.position);
+        Tower tower = PoolingManager.Spawn(Data.TowerList[towerUpgradeId].TowerPrefab,transform.position).GetComponent<Tower>();
+        tower.Init(Data.TowerList[towerUpgradeId]);
         PoolingManager.Despawn(this.gameObject);
         
     }

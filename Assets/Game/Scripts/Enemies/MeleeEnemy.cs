@@ -14,11 +14,11 @@ public class MeleeEnemy : Enemy
 
     protected override void InitData()
     {
-        enemyMove.Init(Data.meleeEnemyList[enemyId].MoveSpeed);
-        enemyHealth.Init(Data.meleeEnemyList[enemyId].HealthPoint);
-        enemyAttack.Init(Data.meleeEnemyList[enemyId].AttackRange,
-            Data.meleeEnemyList[enemyId].AttackSpeed,
-            Data.meleeEnemyList[enemyId].Damage);
+        enemyMove.Init(Data.MeleeEnemyList[enemyId].MoveSpeed);
+        enemyHealth.Init(Data.MeleeEnemyList[enemyId].HealthPoint);
+        enemyAttack.Init(Data.MeleeEnemyList[enemyId].AttackRange,
+            Data.MeleeEnemyList[enemyId].AttackSpeed,
+            Data.MeleeEnemyList[enemyId].Damage);
         
     }
 }

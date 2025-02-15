@@ -22,7 +22,7 @@ public class TowerSlotUI : TowerUI
         archer.btn.onClick.AddListener(() =>
         {
            
-            UpdateTower(archer.towerUpdate,archer.animUpdateName,1);
+            UpdateTower(0,1);
         });
     }
 }
