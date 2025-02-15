@@ -1,10 +1,12 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 [CreateAssetMenu(menuName = "Data/TowerData", fileName = "Tower Data")]
 public class TowerData : ScriptableObject
 {
-    public List<TowerParam> TowerList;
+    public List<TowerParam> Towers;
 }
 
 [System.Serializable]

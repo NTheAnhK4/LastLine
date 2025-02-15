@@ -21,10 +21,10 @@ public class Enemy : ComponentBehavior
 
     private void OnEnable()
     {
-        InitData();
+        ApplyData();
     }
 
-    protected virtual void InitData()
+    protected virtual void ApplyData()
     {
         
     }

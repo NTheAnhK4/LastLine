@@ -9,16 +9,16 @@ public class MeleeEnemy : Enemy
     {
         base.LoadComponent();
         if (enemyAttack == null) enemyAttack = transform.GetComponentInChildren<MeleeAttack>();
-        InitData();
+        ApplyData();
     }
 
-    protected override void InitData()
+    protected override void ApplyData()
     {
-        enemyMove.Init(Data.MeleeEnemyList[enemyId].MoveSpeed);
-        enemyHealth.Init(Data.MeleeEnemyList[enemyId].HealthPoint);
-        enemyAttack.Init(Data.MeleeEnemyList[enemyId].AttackRange,
-            Data.MeleeEnemyList[enemyId].AttackSpeed,
-            Data.MeleeEnemyList[enemyId].Damage);
+        enemyMove.Init(Data.MeleeEnemys[enemyId].MoveSpeed);
+        enemyHealth.Init(Data.MeleeEnemys[enemyId].HealthPoint);
+        enemyAttack.Init(Data.MeleeEnemys[enemyId].AttackRange,
+            Data.MeleeEnemys[enemyId].AttackSpeed,
+            Data.MeleeEnemys[enemyId].Damage);
         
     }
 }

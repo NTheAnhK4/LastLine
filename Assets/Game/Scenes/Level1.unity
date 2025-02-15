@@ -428,8 +428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a40e91856f6f04593234fa00fb5000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
   Data: {fileID: 11400000, guid: 4a05f3d1a88dc7b4db23a1d4a929ffff, type: 2}
-  spawnPos: {x: -18, y: 0, z: 0}
+  LevelData: {fileID: 11400000, guid: f697f635866dc124bb71228a3098b788, type: 2}
 --- !u!4 &2018987660
 Transform:
   m_ObjectHideFlags: 0
