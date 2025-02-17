@@ -31,7 +31,7 @@ public static class PoolingManager
 
         if (par != null)
         {
-            gameObject.transform.parent = par;
+            gameObject.transform.SetParent(par,true);
         }
 
         return gameObject;

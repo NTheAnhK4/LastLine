@@ -19,5 +19,7 @@ public class MeleeEnemyParam
     public float Damage;
     public float AttackRange;
     public float AttackSpeed;
+
+    public int RewardGold;
     public GameObject EnemyPrefab;
 }

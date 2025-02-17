@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,6 +44,8 @@ public static class ObserverManager
 
 public enum EventId
 {
-    Lose,
-    NewGame
+    SpawnWay,
+    RewardGold,
+    AttackCastle,
+    Lose
 }

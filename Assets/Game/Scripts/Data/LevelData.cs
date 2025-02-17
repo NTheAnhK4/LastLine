@@ -18,6 +18,8 @@ public class LevelParam
 [System.Serializable]
 public class PathParam
 {
+    public Vector3 SignalPosition;
+    public float SignalAngle;
     public List<Vector3> Positions;
 }
 
@@ -25,6 +27,7 @@ public class PathParam
 public class MiniWayParam
 {
     public int PathId;
+   
     public List<EnemyInfor> EnemyInfors;
 }
 

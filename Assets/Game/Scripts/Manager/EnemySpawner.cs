@@ -6,11 +6,16 @@ public class EnemySpawner : MonoBehaviour
     public MeleeEnemyData Data;
     public LevelData LevelData;
 
-    public IEnumerator SpawnEnemyFromId(int wayId)
+    public void SpawnWays()
+    {
+        StartCoroutine(SpawnEnemyFromId(0));
+    }
+    IEnumerator SpawnEnemyFromId(int wayId)
     {
         var level = LevelData.Levels[GameManager.Instance.Level];
         for (int i = wayId; i < level.Ways.Count; i++)
         {
+            ObserverManager.Notify(EventId.SpawnWay,i + 1);
             SpawnWay(level.Ways[i]);
             yield return new WaitForSeconds(10);
         }

@@ -19,6 +19,7 @@ MonoBehaviour:
     Damage: 1
     AttackRange: 0.4
     AttackSpeed: 0.6
+    RewardGold: 1
     EnemyPrefab: {fileID: 7647574835406034084, guid: 482e80c310d670941bd3540c8a4473cf, type: 3}
   - Name: Rotten Driller
     HealthPoint: 6
@@ -26,4 +27,5 @@ MonoBehaviour:
     Damage: 3
     AttackRange: 0.3
     AttackSpeed: 0.8
+    RewardGold: 1
     EnemyPrefab: {fileID: 461616533364891258, guid: 8e78ecd3410c0f24f83b44f53bf69ed7, type: 3}

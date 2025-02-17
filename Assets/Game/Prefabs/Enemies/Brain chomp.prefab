@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2639461607320022474}
-  preAnimName: 
   currentState: 0
 --- !u!95 &2639461607320022474
 Animator:
@@ -166,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2497685453392155073}
-  - component: {fileID: 5522963161957886946}
+  - component: {fileID: 8295222050877133040}
   m_Layer: 0
   m_Name: Dead
   m_TagString: Untagged
@@ -189,7 +188,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 581625610383719335}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5522963161957886946
+--- !u!114 &8295222050877133040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2243392963453471542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b319efe7b6f4fd46aca29e44cb439d8, type: 3}
+  m_Script: {fileID: 11500000, guid: c14fcf491399f1543a93c227fbbb5ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actor: {fileID: 7758480801160409643}
@@ -882,7 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28520ebb35340f4b8a8ff83a420f881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadHandler: {fileID: 5522963161957886946}
+  deadHandler: {fileID: 0}
   healthUI: {fileID: 9053670086950378472}
   maxHealth: 0
   curHealth: 0
