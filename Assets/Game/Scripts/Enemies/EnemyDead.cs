@@ -18,12 +18,13 @@ public class EnemyDead : DeadHandler
     private void DeadByDamage()
     {
         StartCoroutine(DoAnim());
-        ObserverManager.Notify(EventId.RewardGold,m_RewardGold);
+        GameManager.Instance.Gold += m_RewardGold;
     }
 
     private void ReachPlayerBase()
     {
         PoolingManager.Despawn(actor.gameObject);
-        ObserverManager.Notify(EventId.AttackCastle,m_Damage);
+        GameManager.Instance.HealthPoint -= m_Damage;
+        
     }
 }

@@ -21,8 +21,14 @@ public class TowerSlotUI : TowerUI
     {
         archer.btn.onClick.AddListener(() =>
         {
+            int archerCost = int.Parse(archer.cost.text);
+            if (archerCost <= GameManager.Instance.Gold)
+            {
+                GameManager.Instance.Gold -= archerCost;
+                UpdateTower(0,1);
+            }
+            else PoolingManager.Despawn(gameObject);
            
-            UpdateTower(0,1);
         });
     }
 }

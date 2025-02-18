@@ -6,31 +6,43 @@ public class GameManager : Singleton<GameManager>
     public EnemySpawner enemySpawner;
     public TowerSpawner towerSpawner;
     public int Level = 0;
-    
-    public float HealthPoint = 20;
-    public int Gold = 0;
-    public int WayNum => LevelData.Levels[Level].Ways.Count;
-    private void OnEnable()
+    private float healthPoint = 20;
+    private int gold;
+
+    public int Gold
     {
-        ObserverManager.Attach(EventId.RewardGold, param=>UpdateGold((int)param));
-        ObserverManager.Attach(EventId.AttackCastle, param=>UpdateHealth((float)param));
+        get => gold;
+        set
+        {
+            if (gold != value)
+            {
+                gold = value;
+                ObserverManager.Notify(EventId.UpdateGold, gold);
+            }
+        }
     }
 
-    private void OnDisable()
+    public float HealthPoint
     {
-        ObserverManager.Detach(EventId.RewardGold, param=>UpdateGold((int)param));
-        ObserverManager.Detach(EventId.AttackCastle, param=>UpdateHealth((float)param));
+        get => healthPoint;
+        set
+        {
+            if (healthPoint != value)
+            {
+                healthPoint = value;
+                ObserverManager.Notify(EventId.AttackCastle, healthPoint);
+            }
+            
+        }
     }
+
+    public int WayNum => LevelData.Levels[Level].Ways.Count;
+   
     private void Start()
     {
         HealthPoint = 20;
-        Gold = 0;
-        //enemySpawner.SpawnWays();
+        Gold = LevelData.Levels[Level].InitialGold;
         towerSpawner.SpawnTower();
-    }
-    private void UpdateGold(int goldNum)
-    {
-        Gold += goldNum;
     }
 
     private void UpdateHealth(float damage)

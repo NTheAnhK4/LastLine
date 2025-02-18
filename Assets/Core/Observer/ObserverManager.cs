@@ -45,9 +45,9 @@ public static class ObserverManager
 public enum EventId
 {
     SpawnWay,
-    RewardGold,
     AttackCastle,
     Lose,
     SpawnNextWay,
-    SpawnedEnemies
+    SpawnedEnemies,
+    UpdateGold
 }

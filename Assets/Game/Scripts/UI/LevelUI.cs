@@ -38,17 +38,19 @@ public class LevelUI : ComponentBehavior
     private void OnEnable()
     {
         ObserverManager.Attach(EventId.SpawnWay, param => UpdateWayUI((int)param));
-        ObserverManager.Attach(EventId.AttackCastle, _ =>UpdateHealthUI());
-        ObserverManager.Attach(EventId.RewardGold, _=>UpdateGoldUI());
+        ObserverManager.Attach(EventId.AttackCastle, param  =>UpdateHealthUI((float)param));
+        ObserverManager.Attach(EventId.UpdateGold, param=>UpdateGoldUI((int)param));
         ObserverManager.Attach(EventId.SpawnedEnemies,param=>SpawnSignalWay((int)param));
+        
     }
 
     private void OnDisable()
     {
         ObserverManager.Detach(EventId.SpawnWay, param => UpdateWayUI((int)param));
-        ObserverManager.Detach(EventId.AttackCastle, _=>UpdateHealthUI());
-        ObserverManager.Detach(EventId.RewardGold, _=>UpdateGoldUI());
+        ObserverManager.Detach(EventId.AttackCastle, param =>UpdateHealthUI((float)param));
+        ObserverManager.Detach(EventId.UpdateGold, param=>UpdateGoldUI((int)param));
         ObserverManager.Detach(EventId.SpawnedEnemies,param =>SpawnSignalWay((int)param));
+        
     }
     
     private void UpdateWayUI(int wayId)
@@ -56,18 +58,19 @@ public class LevelUI : ComponentBehavior
         wayNumTxt.text = wayId.ToString() + "/" + GameManager.Instance.WayNum.ToString();
     }
 
-    private void UpdateHealthUI()
+    private void UpdateHealthUI(float healthPoint)
     {
-        healthTxt.text = GameManager.Instance.HealthPoint.ToString();
+        healthTxt.text = healthPoint.ToString();
     }
 
-    private void UpdateGoldUI()
+    private void UpdateGoldUI(int gold)
     {
-        goldTxt.text = GameManager.Instance.Gold.ToString();
+        goldTxt.text = gold.ToString();
     }
 
     private void Start()
     {
+        goldTxt.text = LevelData.Levels[GameManager.Instance.Level].InitialGold.ToString();
         SpawnSignalWay(-1,false);
         
     }

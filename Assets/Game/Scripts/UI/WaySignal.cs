@@ -42,8 +42,8 @@ public class WaySignal : ComponentBehavior
         {
             if (IsRoundActive)
             {
-                int goldNum = Mathf.RoundToInt(m_TimeFill - m_Timer) * 10;
-                ObserverManager.Notify(EventId.RewardGold,goldNum);
+                int goldNum = Mathf.RoundToInt(m_TimeFill - m_Timer);
+                GameManager.Instance.Gold += goldNum;
             }
             ObserverManager.Notify(EventId.SpawnNextWay);
         });

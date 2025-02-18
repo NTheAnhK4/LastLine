@@ -10,6 +10,7 @@ public class LevelData : ScriptableObject
 [System.Serializable]
 public class LevelParam
 {
+    public int InitialGold;
     public List<WayParam> Ways;
     public List<PathParam> Paths;
     public List<Vector3> TowerPositions;
