@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: LevelData
   m_EditorClassIdentifier: 
   Levels:
-  - Ways:
+  - InitialGold: 125
+    Ways:
     - MiniWays:
       - PathId: 0
         EnemyInfors:
