@@ -13,7 +13,7 @@ public class DeadHandler : ActionHandler
         else PoolingManager.Despawn(actor.gameObject);
     }
 
-    IEnumerator DoAnim()
+    protected IEnumerator DoAnim()
     {
         animHandler.SetAnim("Dead");
         yield return new WaitForSeconds(1.5f);

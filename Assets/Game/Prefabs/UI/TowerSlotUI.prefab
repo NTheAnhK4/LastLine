@@ -48,8 +48,6 @@ MonoBehaviour:
   archer:
     btn: {fileID: 4361236235944776828}
     cost: {fileID: 8047033287314851644}
-    towerUpdate: {fileID: 6503917657427825518, guid: f06f53ea328d7c24892d73538e3bed5b, type: 3}
-    animUpdateName: UpdateToArcher
 --- !u!1 &5013005590190686137
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +235,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '75
+  m_text: '20
 
 '
   m_isRightToLeft: 0
