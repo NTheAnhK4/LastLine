@@ -1,8 +1,9 @@
 
 
-using System;
+
 using TMPro;
 using UnityEngine;
+
 
 public class LevelUI : ComponentBehavior
 {
@@ -11,6 +12,9 @@ public class LevelUI : ComponentBehavior
     [SerializeField] private TextMeshProUGUI healthTxt;
     [SerializeField] private TextMeshProUGUI wayNumTxt;
     [SerializeField] private TextMeshProUGUI goldTxt;
+
+    
+    
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -33,6 +37,8 @@ public class LevelUI : ComponentBehavior
                     goldTxt = hpAndCoin.Find("Gold")?.Find("GoldTxt")?.GetComponent<TextMeshProUGUI>();
             }
         }
+        
+        
     }
 
     private void OnEnable()
@@ -68,11 +74,16 @@ public class LevelUI : ComponentBehavior
         goldTxt.text = gold.ToString();
     }
 
-    private void Start()
+   
+
+    public void Init(int preWay)
     {
+        if(preWay == -1) SpawnSignalWay(-1,false);
+        else SpawnSignalWay(preWay,true);
         goldTxt.text = LevelData.Levels[GameManager.Instance.Level].InitialGold.ToString();
-        SpawnSignalWay(-1,false);
-        
+        int wayNum = LevelData.Levels[GameManager.Instance.Level].Ways.Count;
+        wayNumTxt.text = "0/" + wayNum.ToString();
+
     }
 
     private void SpawnSignalWay(int wayId, bool isActive = true)

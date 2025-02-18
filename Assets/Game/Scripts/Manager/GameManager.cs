@@ -1,13 +1,33 @@
 
+using System;
+using UnityEngine;
+
 public class GameManager : Singleton<GameManager>
 {
     public LevelData LevelData;
     
     public EnemySpawner enemySpawner;
     public TowerSpawner towerSpawner;
+    public LevelUI levelUI;
     public int Level = 0;
     private float healthPoint = 20;
     private int gold;
+    private float gameSpeed = 1f;
+
+    public float GameSpeed
+    {
+        get => gameSpeed;
+        set
+        {
+            if (Math.Abs(gameSpeed - value) > 0.01)
+            {
+                gameSpeed = value;
+                Time.timeScale = value;
+            }
+            
+        }
+    }
+
 
     public int Gold
     {
@@ -27,10 +47,11 @@ public class GameManager : Singleton<GameManager>
         get => healthPoint;
         set
         {
-            if (healthPoint != value)
+            if (Math.Abs(healthPoint - value) > 0.01)
             {
                 healthPoint = value;
-                ObserverManager.Notify(EventId.AttackCastle, healthPoint);
+                if(HealthPoint <= 0) ObserverManager.Notify(EventId.Lose);
+                else ObserverManager.Notify(EventId.AttackCastle, healthPoint);
             }
             
         }
@@ -43,11 +64,8 @@ public class GameManager : Singleton<GameManager>
         HealthPoint = 20;
         Gold = LevelData.Levels[Level].InitialGold;
         towerSpawner.SpawnTower();
+        levelUI.Init(-1);
     }
 
-    private void UpdateHealth(float damage)
-    {
-        HealthPoint -= damage;
-        if(HealthPoint <= 0) ObserverManager.Notify(EventId.Lose);
-    }
+    
 }

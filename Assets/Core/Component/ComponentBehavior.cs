@@ -15,7 +15,7 @@ public class ComponentBehavior : MonoBehaviour
         LoadComponent();
     }
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         LoadComponent();
     }
