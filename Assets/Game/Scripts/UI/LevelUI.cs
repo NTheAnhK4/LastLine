@@ -40,6 +40,7 @@ public class LevelUI : ComponentBehavior
         ObserverManager.Attach(EventId.SpawnWay, param => UpdateWayUI((int)param));
         ObserverManager.Attach(EventId.AttackCastle, _ =>UpdateHealthUI());
         ObserverManager.Attach(EventId.RewardGold, _=>UpdateGoldUI());
+        ObserverManager.Attach(EventId.SpawnedEnemies,param=>SpawnSignalWay((int)param));
     }
 
     private void OnDisable()
@@ -47,8 +48,9 @@ public class LevelUI : ComponentBehavior
         ObserverManager.Detach(EventId.SpawnWay, param => UpdateWayUI((int)param));
         ObserverManager.Detach(EventId.AttackCastle, _=>UpdateHealthUI());
         ObserverManager.Detach(EventId.RewardGold, _=>UpdateGoldUI());
+        ObserverManager.Detach(EventId.SpawnedEnemies,param =>SpawnSignalWay((int)param));
     }
-
+    
     private void UpdateWayUI(int wayId)
     {
         wayNumTxt.text = wayId.ToString() + "/" + GameManager.Instance.WayNum.ToString();
@@ -66,19 +68,24 @@ public class LevelUI : ComponentBehavior
 
     private void Start()
     {
+        SpawnSignalWay(-1,false);
+        
+    }
+
+    private void SpawnSignalWay(int wayId, bool isActive = true)
+    {
         var paths = LevelData.Levels[GameManager.Instance.Level].Paths;
-        foreach (MiniWayParam miniWay in LevelData.Levels[GameManager.Instance.Level].Ways[0].MiniWays)
+        
+        foreach (MiniWayParam miniWay in LevelData.Levels[GameManager.Instance.Level].Ways[wayId + 1].MiniWays)
         {
             int pathId = miniWay.PathId;
             Transform signalWayTrf = PoolingManager.Spawn(SignalWayPrefab, paths[pathId].SignalPosition, default, transform).transform;
 
             RectTransform border = signalWayTrf.Find("SignalWay").Find("Boder 2").GetComponent<RectTransform>();
-            border.rotation = Quaternion.Euler(new Vector3(0,0,paths[pathId].SignalAngle));
+            border.rotation = Quaternion.Euler(new Vector3(0, 0, paths[pathId].SignalAngle));
             WaySignal waySignal = signalWayTrf.GetComponentInChildren<WaySignal>();
-            waySignal.Init(10,false);
-
+            waySignal.Init(10, isActive);
 
         }
-        
     }
 }

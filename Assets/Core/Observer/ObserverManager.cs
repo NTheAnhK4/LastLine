@@ -47,5 +47,7 @@ public enum EventId
     SpawnWay,
     RewardGold,
     AttackCastle,
-    Lose
+    Lose,
+    SpawnNextWay,
+    SpawnedEnemies
 }
