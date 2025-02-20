@@ -6,9 +6,13 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public MeleeEnemyData Data;
-    public LevelData LevelData;
+    private LevelParam m_LevelParam;
     public int currentWay = -1;
-    
+
+    public void Init(LevelParam levelParam)
+    {
+        m_LevelParam = levelParam;
+    }
     private void OnEnable()
     {
         ObserverManager.Attach(EventId.SpawnNextWay, _ => SpawnWay());
@@ -23,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnWay()
     {
-        var ways = LevelData.Levels[GameManager.Instance.Level].Ways;
+        var ways = m_LevelParam.Ways;
         currentWay++;
         if (currentWay == ways.Count) return;
         
@@ -49,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         // When all MiniWays have spawned, send an event
-        if (currentWay + 1 < LevelData.Levels[GameManager.Instance.Level].Ways.Count)
+        if (currentWay + 1 < m_LevelParam.Ways.Count)
             ObserverManager.Notify(EventId.SpawnedEnemies, currentWay);
     }
 
@@ -70,8 +74,10 @@ public class EnemySpawner : MonoBehaviour
         var enemyPrefab = Data.MeleeEnemys[enemyInfor.EnemyId].EnemyPrefab;
         if (enemyPrefab == null) return;
        
-        var spawnPosition = LevelData.Levels[GameManager.Instance.Level].Paths[pathId].Positions[0];
-        PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform);
+        var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
+        MeleeEnemy meleeEnemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<MeleeEnemy>();
+        
+        meleeEnemy.Init(Data.MeleeEnemys[enemyInfor.EnemyId],m_LevelParam.Paths[pathId].Positions);
     }
 
    

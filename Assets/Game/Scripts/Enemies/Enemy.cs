@@ -8,7 +8,7 @@ public class Enemy : ComponentBehavior
     [SerializeField] protected HealthHandler enemyHealth;
     
     public EnemyDead enemyDead { get; private set; }
-    public int enemyId;
+  
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -18,14 +18,6 @@ public class Enemy : ComponentBehavior
         if (enemyDead == null) enemyDead = transform.GetComponentInChildren<EnemyDead>();
        
     }
-
-    private void OnEnable()
-    {
-        ApplyData();
-    }
-
-    protected virtual void ApplyData()
-    {
-        
-    }
+    
+    
 }
