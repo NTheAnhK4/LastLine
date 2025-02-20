@@ -49,5 +49,6 @@ public enum EventId
     Lose,
     SpawnNextWay,
     SpawnedEnemies,
-    UpdateGold
+    UpdateGold,
+    Win
 }

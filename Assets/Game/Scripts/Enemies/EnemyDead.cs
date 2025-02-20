@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public class EnemyDead : DeadHandler
 {
     private int m_RewardGold;
@@ -19,6 +21,7 @@ public class EnemyDead : DeadHandler
     {
         StartCoroutine(DoAnim());
         GameManager.Instance.Gold += m_RewardGold;
+        GameManager.Instance.EnemyCount--;
     }
 
     private void ReachPlayerBase()

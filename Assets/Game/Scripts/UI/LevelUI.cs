@@ -12,7 +12,9 @@ public class LevelUI : ComponentBehavior
     [SerializeField] private TextMeshProUGUI healthTxt;
     [SerializeField] private TextMeshProUGUI wayNumTxt;
     [SerializeField] private TextMeshProUGUI goldTxt;
-
+    [SerializeField] private Transform winUI;
+    [SerializeField] private Transform loseUI;
+    [SerializeField] private Transform panel;
     
     
     protected override void LoadComponent()
@@ -37,8 +39,11 @@ public class LevelUI : ComponentBehavior
                     goldTxt = hpAndCoin.Find("Gold")?.Find("GoldTxt")?.GetComponent<TextMeshProUGUI>();
             }
         }
-        
-        
+
+        Transform center = transform.Find("Center");
+        if (winUI == null) winUI = center.Find("WinUI");
+        if (loseUI == null) loseUI = center.Find("LoseUI");
+        if (panel == null) panel = center.Find("Panel");
     }
 
     private void OnEnable()
@@ -47,6 +52,8 @@ public class LevelUI : ComponentBehavior
         ObserverManager.Attach(EventId.AttackCastle, param  =>UpdateHealthUI((float)param));
         ObserverManager.Attach(EventId.UpdateGold, param=>UpdateGoldUI((int)param));
         ObserverManager.Attach(EventId.SpawnedEnemies,param=>SpawnSignalWay((int)param));
+        ObserverManager.Attach(EventId.Win, _=>SetUICenterActive(winUI));
+        ObserverManager.Attach(EventId.Lose, _=>SetUICenterActive(loseUI));
         
     }
 
@@ -56,7 +63,8 @@ public class LevelUI : ComponentBehavior
         ObserverManager.Detach(EventId.AttackCastle, param =>UpdateHealthUI((float)param));
         ObserverManager.Detach(EventId.UpdateGold, param=>UpdateGoldUI((int)param));
         ObserverManager.Detach(EventId.SpawnedEnemies,param =>SpawnSignalWay((int)param));
-        
+        ObserverManager.Detach(EventId.Win, _=>SetUICenterActive(winUI));
+        ObserverManager.Detach(EventId.Lose, _=>SetUICenterActive(loseUI));
     }
     
     private void UpdateWayUI(int wayId)
@@ -81,6 +89,7 @@ public class LevelUI : ComponentBehavior
         if(preWay == -1) SpawnSignalWay(-1,false);
         else SpawnSignalWay(preWay,true);
         goldTxt.text = LevelData.Levels[GameManager.Instance.Level].InitialGold.ToString();
+        healthTxt.text = GameManager.Instance.HealthPoint.ToString();
         int wayNum = LevelData.Levels[GameManager.Instance.Level].Ways.Count;
         wayNumTxt.text = "0/" + wayNum.ToString();
 
@@ -102,4 +111,12 @@ public class LevelUI : ComponentBehavior
 
         }
     }
+
+    private void SetUICenterActive(Transform centerUI)
+    {
+        centerUI.gameObject.SetActive(true);
+        panel.gameObject.SetActive(true);
+        GameManager.Instance.GameSpeed = 0;
+    }
+    
 }

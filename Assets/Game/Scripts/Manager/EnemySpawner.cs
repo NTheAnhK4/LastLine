@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public MeleeEnemyData Data;
     public LevelData LevelData;
     public int currentWay = -1;
-
+    
     private void OnEnable()
     {
         ObserverManager.Attach(EventId.SpawnNextWay, _ => SpawnWay());
@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     private void OnDisable()
     {
         ObserverManager.Detach(EventId.SpawnNextWay, _ => SpawnWay());
+        
     }
 
 
@@ -25,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
         var ways = LevelData.Levels[GameManager.Instance.Level].Ways;
         currentWay++;
         if (currentWay == ways.Count) return;
-
+        
         ObserverManager.Notify(EventId.SpawnWay, currentWay + 1);
 
         StartCoroutine(SpawnAllMiniWays(ways[currentWay].MiniWays));
@@ -66,11 +67,12 @@ public class EnemySpawner : MonoBehaviour
     {
         if (enemyInfor.EnemyType != EnemyType.MeleeAttack) return;
         if (enemyInfor.EnemyId < 0 || enemyInfor.EnemyId >= Data.MeleeEnemys.Count) return;
-
         var enemyPrefab = Data.MeleeEnemys[enemyInfor.EnemyId].EnemyPrefab;
         if (enemyPrefab == null) return;
-
+       
         var spawnPosition = LevelData.Levels[GameManager.Instance.Level].Paths[pathId].Positions[0];
         PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform);
     }
+
+   
 }

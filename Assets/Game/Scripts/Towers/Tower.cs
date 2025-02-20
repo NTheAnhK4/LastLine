@@ -11,15 +11,18 @@ public class Tower : ComponentBehavior
     [SerializeField] protected AnimHandler animHandler;
     
     [SerializeField] private TowerUI towerUI;
+    private bool isUpgrade;
     protected override void LoadComponent()
     {
         base.LoadComponent();
         if (animHandler == null) animHandler = transform.GetComponentInChildren<AnimHandler>();
+        isUpgrade = false;
     }
 
     public void ShowUI()
     {
-        if(Data.Towers[towerId].TowerUIPrefab == null) return;
+       
+        if(Data.Towers[towerId].TowerUIPrefab == null || isUpgrade) return;
         towerUI = PoolingManager.Spawn(Data.Towers[towerId].TowerUIPrefab,transform.position).GetComponent<TowerUI>();
         towerUI.tower = this;
     }
@@ -41,6 +44,7 @@ public class Tower : ComponentBehavior
 
     protected void OnEnable()
     {
+        isUpgrade = false;
         ApplyData();
     }
 
@@ -50,6 +54,7 @@ public class Tower : ComponentBehavior
     }
     IEnumerator BuildNewTower(int towerUpgradeId, float timeBuild = 1)
     {
+        isUpgrade = true;
         yield return new WaitForSeconds(timeBuild);
         PoolingManager.Spawn(Data.Towers[towerUpgradeId].TowerPrefab,transform.position);
         
