@@ -9,11 +9,12 @@ public class GameManager : Singleton<GameManager>
     public EnemySpawner enemySpawner;
     public TowerSpawner towerSpawner;
     public LevelUI levelUI;
-    public int Level = 0;
+   
     private float healthPoint = 20;
     private int gold;
     private float gameSpeed = 1f;
     private bool isGameOver;
+    private int currentLevel;
     [SerializeField] private int m_EnemyCount;
     public float GameSpeed
     {
@@ -63,7 +64,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public int WayNum => LevelData.Levels[Level].Ways.Count;
+   
 
     public int EnemyCount
     {
@@ -80,9 +81,16 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        PlayLevel(0);
+    }
+
+    private void PlayLevel(int level)
+    {
+        GameSpeed = 1;
+        currentLevel = level;
         isGameOver = false;
         m_EnemyCount = 0;
-        foreach (WayParam wayParam in LevelData.Levels[Level].Ways)
+        foreach (WayParam wayParam in LevelData.Levels[level].Ways)
         {
             foreach (MiniWayParam miniWayParam in wayParam.MiniWays)
             {
@@ -90,9 +98,16 @@ public class GameManager : Singleton<GameManager>
             }
         }
         HealthPoint = 20;
-        Gold = LevelData.Levels[Level].InitialGold;
+        Gold = LevelData.Levels[level].InitialGold;
+        
+        enemySpawner.Init(LevelData.Levels[level]);
+        towerSpawner.Init(LevelData.Levels[level]);
         towerSpawner.SpawnTower();
-        levelUI.Init(-1);
-       
+        levelUI.Init(LevelData.Levels[level],-1);
+    }
+
+    public void ReplayGame()
+    {
+        PlayLevel(currentLevel);
     }
 }

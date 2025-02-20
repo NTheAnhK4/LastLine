@@ -122,10 +122,10 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &244979204 stripped
+--- !u!114 &116033094 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3546333095404775895, guid: b6495e085fe5c8144b4ae909be936a2f, type: 3}
-  m_PrefabInstance: {fileID: 1943738122}
+  m_PrefabInstance: {fileID: 1756024013}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -412,8 +412,8 @@ MonoBehaviour:
   LevelData: {fileID: 11400000, guid: f697f635866dc124bb71228a3098b788, type: 2}
   enemySpawner: {fileID: 2018987659}
   towerSpawner: {fileID: 1727073450}
-  levelUI: {fileID: 244979204}
-  Level: 0
+  levelUI: {fileID: 116033094}
+  m_EnemyCount: 0
 --- !u!1 &1727073449
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213c196fb43e1dd4a8177870fd423b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 11400000, guid: f697f635866dc124bb71228a3098b788, type: 2}
   TowerData: {fileID: 11400000, guid: 7eacf0dcf2602ee47b8bb1f615dbff2f, type: 2}
 --- !u!4 &1727073451
 Transform:
@@ -460,7 +459,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1943738122
+--- !u!1001 &1756024013
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -596,6 +595,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 707295684510123979, guid: b6495e085fe5c8144b4ae909be936a2f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1552022586727523419, guid: b6495e085fe5c8144b4ae909be936a2f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -620,6 +623,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2027749358199539363, guid: b6495e085fe5c8144b4ae909be936a2f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1403482125}
     - target: {fileID: 2226103321222992867, guid: b6495e085fe5c8144b4ae909be936a2f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -700,6 +707,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4804891172959177226, guid: b6495e085fe5c8144b4ae909be936a2f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1403482125}
+    - target: {fileID: 5770342013272890750, guid: b6495e085fe5c8144b4ae909be936a2f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1403482125}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -735,7 +750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 4a05f3d1a88dc7b4db23a1d4a929ffff, type: 2}
-  LevelData: {fileID: 11400000, guid: f697f635866dc124bb71228a3098b788, type: 2}
   currentWay: -1
 --- !u!4 &2018987660
 Transform:
@@ -762,4 +776,4 @@ SceneRoots:
   - {fileID: 2018987660}
   - {fileID: 1727073451}
   - {fileID: 550847849}
-  - {fileID: 1943738122}
+  - {fileID: 1756024013}

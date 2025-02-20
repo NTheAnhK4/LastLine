@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class LevelUI : ComponentBehavior
 {
-    public LevelData LevelData;
+    
     public GameObject SignalWayPrefab;
     [SerializeField] private TextMeshProUGUI healthTxt;
     [SerializeField] private TextMeshProUGUI wayNumTxt;
@@ -15,8 +15,8 @@ public class LevelUI : ComponentBehavior
     [SerializeField] private Transform winUI;
     [SerializeField] private Transform loseUI;
     [SerializeField] private Transform panel;
-    
-    
+
+    private LevelParam m_LevelParam;
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -69,7 +69,7 @@ public class LevelUI : ComponentBehavior
     
     private void UpdateWayUI(int wayId)
     {
-        wayNumTxt.text = wayId.ToString() + "/" + GameManager.Instance.WayNum.ToString();
+        wayNumTxt.text = wayId.ToString() + "/" + m_LevelParam.Ways.Count.ToString();
     }
 
     private void UpdateHealthUI(float healthPoint)
@@ -84,22 +84,23 @@ public class LevelUI : ComponentBehavior
 
    
 
-    public void Init(int preWay)
+    public void Init(LevelParam levelParam, int preWay)
     {
+        m_LevelParam = levelParam;
         if(preWay == -1) SpawnSignalWay(-1,false);
-        else SpawnSignalWay(preWay,true);
-        goldTxt.text = LevelData.Levels[GameManager.Instance.Level].InitialGold.ToString();
+        else SpawnSignalWay(preWay);
+        goldTxt.text = m_LevelParam.InitialGold.ToString();
         healthTxt.text = GameManager.Instance.HealthPoint.ToString();
-        int wayNum = LevelData.Levels[GameManager.Instance.Level].Ways.Count;
+        int wayNum = m_LevelParam.Ways.Count;
         wayNumTxt.text = "0/" + wayNum.ToString();
 
     }
 
     private void SpawnSignalWay(int wayId, bool isActive = true)
     {
-        var paths = LevelData.Levels[GameManager.Instance.Level].Paths;
+        var paths = m_LevelParam.Paths;
         
-        foreach (MiniWayParam miniWay in LevelData.Levels[GameManager.Instance.Level].Ways[wayId + 1].MiniWays)
+        foreach (MiniWayParam miniWay in m_LevelParam.Ways[wayId + 1].MiniWays)
         {
             int pathId = miniWay.PathId;
             Transform signalWayTrf = PoolingManager.Spawn(SignalWayPrefab, paths[pathId].SignalPosition, default, transform).transform;

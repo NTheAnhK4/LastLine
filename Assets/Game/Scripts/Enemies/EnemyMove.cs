@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMove : MoveHandler
 {
-    public List<Vector3> pathList;
+    private List<Vector3> m_PathList;
     [SerializeField] private Enemy enemyCtrl;
     [SerializeField] private Vector3 targetPosition;
     [SerializeField] private int currentPathIndex;
@@ -15,12 +15,13 @@ public class EnemyMove : MoveHandler
         if (enemyCtrl == null) enemyCtrl = transform.GetComponentInParent<Enemy>();
     }
 
-    public void Init(float eMoveSpeed)
+    public void Init(List<Vector3> pathList, float eMoveSpeed)
     {
+        m_PathList = pathList;
         moveSpeed = eMoveSpeed;
         if(animHandler != null) animHandler.SetAnim("Move");
         currentPathIndex = 1;
-        targetPosition = pathList[currentPathIndex];
+        targetPosition = m_PathList[currentPathIndex];
     }
 
 
@@ -30,7 +31,7 @@ public class EnemyMove : MoveHandler
         enemyCtrl.transform.Translate(direction * (moveSpeed * Time.deltaTime));
         if (Vector3.Distance(enemyCtrl.transform.position, targetPosition) <= 0.4f)
         {
-            if (currentPathIndex == pathList.Count - 1) enemyCtrl.enemyDead.OnDead(false);
+            if (currentPathIndex == m_PathList.Count - 1) enemyCtrl.enemyDead.OnDead(false);
             else SetNextPosition();
         }
     }
@@ -39,7 +40,7 @@ public class EnemyMove : MoveHandler
     private void SetNextPosition()
     {
         currentPathIndex++;
-        targetPosition = pathList[currentPathIndex];
+        targetPosition = m_PathList[currentPathIndex];
     }
     
 }
