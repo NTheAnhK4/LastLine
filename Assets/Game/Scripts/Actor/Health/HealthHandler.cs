@@ -41,6 +41,7 @@ public class HealthHandler : ComponentBehavior
 
     public void TakeDamage(float damage)
     {
+        if(IsDead) return;
         CurHealth = Mathf.Max(curHealth - damage, 0);
         if (curHealth <= 0)
         {
