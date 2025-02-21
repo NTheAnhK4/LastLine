@@ -1,21 +1,14 @@
-
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public LevelData LevelData;
-    
-    public EnemySpawner enemySpawner;
-    public TowerSpawner towerSpawner;
-    public LevelUI levelUI;
-   
-    private float healthPoint = 20;
-    private int gold;
+    public int SelectedLevel;
     private float gameSpeed = 1f;
-    private bool isGameOver;
-    private int currentLevel;
-    [SerializeField] private int m_EnemyCount;
+    private float preSpeed = -1;
     public float GameSpeed
     {
         get => gameSpeed;
@@ -23,91 +16,29 @@ public class GameManager : Singleton<GameManager>
         {
             if (Math.Abs(gameSpeed - value) > 0.01)
             {
+                preSpeed = gameSpeed;
                 gameSpeed = value;
                 Time.timeScale = value;
             }
             
         }
     }
-
-
-    public int Gold
+    protected override void Awake()
     {
-        get => gold;
-        set
-        {
-            if (gold != value)
-            {
-                gold = value;
-                ObserverManager.Notify(EventId.UpdateGold, gold);
-            }
-        }
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
     }
 
-    public float HealthPoint
+    public void SelectLevel(int level)
     {
-        get => healthPoint;
-        set
-        {
-            if (Math.Abs(healthPoint - value) > 0.01)
-            {
-                healthPoint = value;
-                if(isGameOver) return;
-                if (HealthPoint <= 0)
-                {
-                    isGameOver = true;
-                    ObserverManager.Notify(EventId.Lose);
-                }
-                else ObserverManager.Notify(EventId.AttackCastle, healthPoint);
-            }
-            
-        }
+        SelectedLevel = level;
+        SceneManager.LoadScene("InGame");
     }
 
-   
-
-    public int EnemyCount
+    public void SetPreSpeedGame()
     {
-        get => m_EnemyCount;
-        set
-        {
-            if (m_EnemyCount != value)
-            {
-                m_EnemyCount = value;
-                if(m_EnemyCount == 0) ObserverManager.Notify(EventId.Win);
-            }
-        }
+        if (Math.Abs(preSpeed - (-1)) < 0.01) GameSpeed = 1;
+        else GameSpeed = preSpeed;
     }
-
-    private void Start()
-    {
-        PlayLevel(0);
-    }
-
-    private void PlayLevel(int level)
-    {
-        GameSpeed = 1;
-        currentLevel = level;
-        isGameOver = false;
-        m_EnemyCount = 0;
-        foreach (WayParam wayParam in LevelData.Levels[level].Ways)
-        {
-            foreach (MiniWayParam miniWayParam in wayParam.MiniWays)
-            {
-                m_EnemyCount += miniWayParam.EnemyInfors.Count;
-            }
-        }
-        HealthPoint = 20;
-        Gold = LevelData.Levels[level].InitialGold;
-        
-        enemySpawner.Init(LevelData.Levels[level]);
-        towerSpawner.Init(LevelData.Levels[level]);
-        towerSpawner.SpawnTower();
-        levelUI.Init(LevelData.Levels[level],-1);
-    }
-
-    public void ReplayGame()
-    {
-        PlayLevel(currentLevel);
-    }
+    
 }

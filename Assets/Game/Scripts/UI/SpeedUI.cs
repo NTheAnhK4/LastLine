@@ -33,4 +33,9 @@ public class SpeedUI : ComponentBehavior
             }
         });
     }
+
+    private void OnDisable()
+    {
+        speedBtn.onClick.RemoveAllListeners();
+    }
 }

@@ -1,4 +1,5 @@
 
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,18 +18,20 @@ public class TowerSlotUI : TowerUI
         };
     }
 
-    private void Start()
+    protected  void Start()
     {
         archer.btn.onClick.AddListener(() =>
         {
             int archerCost = int.Parse(archer.cost.text);
-            if (archerCost <= GameManager.Instance.Gold)
+            if (archerCost <= LevelManager.Instance.Gold)
             {
-                GameManager.Instance.Gold -= archerCost;
+                LevelManager.Instance.Gold -= archerCost;
                 UpdateTower(0,1);
             }
             else PoolingManager.Despawn(gameObject);
            
         });
     }
+
+    
 }

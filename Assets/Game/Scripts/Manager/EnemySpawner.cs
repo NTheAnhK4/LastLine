@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,25 +9,27 @@ public class EnemySpawner : MonoBehaviour
     public MeleeEnemyData Data;
     private LevelParam m_LevelParam;
     public int currentWay = -1;
-
+    private System.Action<object> onSpawnWay;
     public void Init(LevelParam levelParam)
     {
         m_LevelParam = levelParam;
     }
     private void OnEnable()
     {
-        ObserverManager.Attach(EventId.SpawnNextWay, _ => SpawnWay());
+        onSpawnWay = _ => SpawnWay();
+        ObserverManager.Attach(EventId.SpawnNextWay, onSpawnWay);
     }
 
     private void OnDisable()
     {
-        ObserverManager.Detach(EventId.SpawnNextWay, _ => SpawnWay());
+        ObserverManager.Detach(EventId.SpawnNextWay, onSpawnWay);
         
     }
 
 
     private void SpawnWay()
     {
+        if(this == null) return;
         var ways = m_LevelParam.Ways;
         currentWay++;
         if (currentWay == ways.Count) return;
@@ -63,6 +66,7 @@ public class EnemySpawner : MonoBehaviour
         {
             SpawnEnemy(miniWayParam.PathId, enemyInfor);
             yield return new WaitForSeconds(2);
+            if(this == null) yield break;
         }
     }
 
@@ -80,5 +84,8 @@ public class EnemySpawner : MonoBehaviour
         meleeEnemy.Init(Data.MeleeEnemys[enemyInfor.EnemyId],m_LevelParam.Paths[pathId].Positions);
     }
 
-   
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
 }

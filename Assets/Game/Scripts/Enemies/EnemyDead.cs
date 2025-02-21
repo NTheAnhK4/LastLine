@@ -20,14 +20,14 @@ public class EnemyDead : DeadHandler
     private void DeadByDamage()
     {
         StartCoroutine(DoAnim());
-        GameManager.Instance.Gold += m_RewardGold;
-        GameManager.Instance.EnemyCount--;
+        LevelManager.Instance.Gold += m_RewardGold;
+        LevelManager.Instance.EnemyCount--;
     }
 
     private void ReachPlayerBase()
     {
         PoolingManager.Despawn(actor.gameObject);
-        GameManager.Instance.HealthPoint -= m_Damage;
+        LevelManager.Instance.HealthPoint -= m_Damage;
         
     }
 }

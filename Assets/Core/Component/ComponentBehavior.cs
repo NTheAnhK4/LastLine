@@ -19,4 +19,6 @@ public class ComponentBehavior : MonoBehaviour
     {
         LoadComponent();
     }
+
+   
 }
