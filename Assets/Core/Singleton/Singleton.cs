@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
@@ -10,12 +8,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if (instance != null)
-        {
-            Debug.Log("Only one " + typeof(T) + " allows to exist");
-        }
+        if (instance == null) instance = (T)(MonoBehaviour)this;
+        else Destroy(gameObject);
 
         
-        instance = (T)(MonoBehaviour)this;
+        
     }
 }

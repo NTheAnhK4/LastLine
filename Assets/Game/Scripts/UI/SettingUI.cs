@@ -1,46 +1,35 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SettingUI : ComponentBehavior
+public class SettingUI : CenterUI
 {
     [SerializeField] private Button replayBtn;
-    [SerializeField] private Vector3 originalScale;
-    
+    [SerializeField] private Button quitBtn;
+   
     protected override void LoadComponent()
     {
         base.LoadComponent();
-        if (replayBtn == null) replayBtn = transform.Find("Button").Find("Replay").GetComponent<Button>();
-        if (originalScale == Vector3.zero)
-        {
-            var transform1 = transform;
-            originalScale = transform1.localScale;
-            transform1.localScale = Vector3.zero;
-            gameObject.SetActive(false);
-        }
+        Transform buttonHolder = transform.Find("Button");
+        if (replayBtn == null) replayBtn = buttonHolder.Find("Replay").GetComponent<Button>();
+        if (quitBtn == null) quitBtn = buttonHolder.Find("Quit").GetComponent<Button>();
+        
         
     }
 
-    public void ShowUI()
+    private void OnEnable()
     {
-        gameObject.SetActive(true);
-        transform.localScale = Vector3.zero;
-        transform.DOScale(originalScale, 0.5f).SetEase(Ease.OutBack).OnComplete(() =>
+        quitBtn.onClick.AddListener(() =>
         {
-            GameManager.Instance.GameSpeed = 0;
-            
+            GameManager.Instance.GameSpeed = 1;
+            SceneManager.LoadScene("WorldMap");
         });
-        
     }
 
-    public void HideUI()
+    private void OnDisable()
     {
-        GameManager.Instance.GameSpeed = 1;
-        transform.DOScale(0, 0.3f).SetEase(Ease.InBack).OnComplete(() =>
-        {
-            gameObject.SetActive(false);
-        });
-        
+        quitBtn.onClick.RemoveAllListeners();
     }
-    
 }

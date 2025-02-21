@@ -14,6 +14,7 @@ public class WaySignal : ComponentBehavior
     [SerializeField] private float m_TimeFill = 5f;
     [SerializeField] private float m_Timer = 0;
     private bool isRoundActive = true;
+    private System.Action<object> onSpawnWayHandler;
 
     public bool IsRoundActive
     {
@@ -28,7 +29,7 @@ public class WaySignal : ComponentBehavior
             
         }
     }
-
+    
     public void Init(float timeFill, bool isActive)
     {
         m_TimeFill = timeFill;
@@ -43,20 +44,24 @@ public class WaySignal : ComponentBehavior
             if (IsRoundActive)
             {
                 int goldNum = Mathf.RoundToInt(m_TimeFill - m_Timer);
-                GameManager.Instance.Gold += goldNum;
+                LevelManager.Instance.Gold += goldNum;
             }
             ObserverManager.Notify(EventId.SpawnNextWay);
+            Disapperance();
         });
-        ObserverManager.Attach(EventId.SpawnWay, _ => Disapperance());
+        onSpawnWayHandler = _ => Disapperance();
+        ObserverManager.Attach(EventId.SpawnWay, onSpawnWayHandler);
     }
 
     private void OnDisable()
     {
-        ObserverManager.Detach(EventId.SpawnWay, _ => Disapperance());
+        signalBtn.onClick.RemoveAllListeners();
+        ObserverManager.Detach(EventId.SpawnWay, onSpawnWayHandler);
     }
 
     private void Disapperance()
     {
+        if (this == null || gameObject == null || transform.parent == null) return;
         transform.parent.gameObject.SetActive(false);
     }
 

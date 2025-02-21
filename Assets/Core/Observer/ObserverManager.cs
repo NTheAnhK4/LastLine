@@ -33,6 +33,7 @@ public static class ObserverManager
 
     public static void Notify(EventId eventId, object param = null)
     {
+        
         if (!evenManager.ContainsKey(eventId))
         {
             Debug.LogWarning("Doesn't contain key " + eventId.ToString() + " in the observer");
