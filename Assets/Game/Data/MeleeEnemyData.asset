@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c564e8ece48d5c245877ea4e6a0afc25, type: 3}
+  m_Name: MeleeEnemyData
+  m_EditorClassIdentifier: 
+  MeleeEnemys:
+  - Name: Brain chomp
+    HealthPoint: 5
+    MoveSpeed: 2
+    Damage: 1
+    AttackRange: 0.4
+    AttackSpeed: 0.6
+    RewardGold: 1
+    EnemyPrefab: {fileID: 7647574835406034084, guid: 482e80c310d670941bd3540c8a4473cf, type: 3}
+  - Name: Rotten Driller
+    HealthPoint: 6
+    MoveSpeed: 1
+    Damage: 3
+    AttackRange: 0.3
+    AttackSpeed: 0.8
+    RewardGold: 1
+    EnemyPrefab: {fileID: 461616533364891258, guid: 8e78ecd3410c0f24f83b44f53bf69ed7, type: 3}
