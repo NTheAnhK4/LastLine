@@ -31,8 +31,14 @@ public class ProjectileImpact : ComponentBehavior
         if(healthHandler == null) return;
         if (IsEnemy(other.transform))
         {
+            PlaySound();
             healthHandler.TakeDamage(damage);
             projectile.projectileDespawn.OnDead(false);
         }
+    }
+
+    protected virtual void PlaySound()
+    {
+        SoundManager.PlaySFX(SoundType.Arrow,0.3f);
     }
 }
