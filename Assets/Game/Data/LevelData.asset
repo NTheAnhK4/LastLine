@@ -57,8 +57,12 @@ MonoBehaviour:
       - {x: 9.5, y: 0.5, z: 0}
       - {x: 9.5, y: 5.5, z: 0}
       - {x: 25, y: 5.5, z: 0}
-    TowerPositions:
-    - {x: -1.5, y: -1.5, z: 0}
-    - {x: 12.5, y: 0, z: 0}
-    - {x: -0.5, y: -7.5, z: 0}
-    - {x: -10, y: -5.5, z: 0}
+    TowerInfors:
+    - Towerposition: {x: -1, y: -1.5, z: 0}
+      flagPosition: {x: -1, y: -4.5, z: 0}
+    - Towerposition: {x: -9, y: -5.5, z: 0}
+      flagPosition: {x: -9, y: -2.5, z: 0}
+    - Towerposition: {x: 0, y: -7.5, z: 0}
+      flagPosition: {x: 0, y: -4.5, z: 0}
+    - Towerposition: {x: 13, y: 1.5, z: 0}
+      flagPosition: {x: 9.5, y: 1.5, z: 0}

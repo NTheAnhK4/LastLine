@@ -8,7 +8,7 @@ public class EnemyMove : MoveHandler
     [SerializeField] private Enemy enemyCtrl;
     [SerializeField] private Vector3 targetPosition;
     [SerializeField] private int currentPathIndex;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] protected float moveSpeed;
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -19,13 +19,13 @@ public class EnemyMove : MoveHandler
     {
         m_PathList = pathList;
         moveSpeed = eMoveSpeed;
-        if(animHandler != null) animHandler.SetAnim("Move");
+        if(animHandler != null) animHandler.SetAnim(AnimHandler.State.Move);
         currentPathIndex = 1;
         targetPosition = m_PathList[currentPathIndex];
     }
 
 
-    protected override void Move()
+    protected void MoveByPath()
     {
         Vector3 direction = (targetPosition - enemyCtrl.transform.position).normalized;
         enemyCtrl.transform.Translate(direction * (moveSpeed * Time.deltaTime));
@@ -42,5 +42,9 @@ public class EnemyMove : MoveHandler
         currentPathIndex++;
         targetPosition = m_PathList[currentPathIndex];
     }
-    
+    private void Update()
+    {
+        if(animHandler.currentState != AnimHandler.State.Move) return;
+        MoveByPath();
+    }
 }

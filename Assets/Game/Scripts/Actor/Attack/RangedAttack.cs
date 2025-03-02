@@ -9,7 +9,10 @@ public class RangedAttack : AttackHandler
     {
         base.Init(aRange,aSpeed);
         projectilePrefab = proPrefab;
+        
     }
+
+    
     protected override void Attack(HealthHandler enemy)
     {
         base.Attack(enemy);
@@ -23,7 +26,7 @@ public class RangedAttack : AttackHandler
         else if(angle is >= 0 and < 45 or < 0 and >= -45) animHandler.SetInt("direction",1);
         else if(angle is >= -135 and < -45) animHandler.SetInt("direction", 2);
         else animHandler.SetInt("direction", 3);
-        animHandler.SetAnim("Attack");
+        animHandler.SetAnim(AnimHandler.State.Attack);
         Projectile projectile = PoolingManager.Spawn(projectilePrefab, position, Quaternion.Euler(new Vector3(0,0,angle)), transform)
             .GetComponent<Projectile>();
         if(projectile != null) projectile.Init(enemy.Actor);

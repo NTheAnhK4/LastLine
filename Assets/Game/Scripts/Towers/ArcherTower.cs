@@ -3,17 +3,20 @@ using UnityEngine;
 
 public class ArcherTower : Tower
 {
-    [SerializeField] private RangedAttack archerAttack;
+    [SerializeField] private RangedAttack archerAttack; 
+    
     protected override void LoadComponent()
     {
         base.LoadComponent();
         if (archerAttack == null) archerAttack = transform.GetComponentInChildren<RangedAttack>();
-        ApplyData();
+       
     }
 
-    protected override void ApplyData()
+    public override void Init(int towerId, Vector3 flagPosition)
     {
-        base.ApplyData();
+        base.Init(towerId, flagPosition);
         archerAttack.Init(Data.Towers[towerId].AttackRange, Data.Towers[towerId].AttackSpeed, Data.Towers[towerId].UnitPrefab);
     }
+
+    
 }

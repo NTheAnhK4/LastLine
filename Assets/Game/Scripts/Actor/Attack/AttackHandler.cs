@@ -1,6 +1,9 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 [RequireComponent(typeof(CircleCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class AttackHandler : ActionHandler
@@ -13,16 +16,17 @@ public class AttackHandler : ActionHandler
     [SerializeField] private float attackSpeed;
     [SerializeField] private float coolDown;
 
+    
     protected override void LoadComponent()
     {
         base.LoadComponent();
         if (collid == null) collid = transform.GetComponentInChildren<CircleCollider2D>();
     }
 
-    public void Init(float aRange, float aSpeed)
+    public void Init(float sRange, float aSpeed)
     {
        
-        attackRange = aRange;
+        attackRange = sRange;
         collid.radius = attackRange;
         attackSpeed = aSpeed;
         coolDown = 0;
@@ -30,8 +34,8 @@ public class AttackHandler : ActionHandler
     }
     private bool IsEnemy(Transform obj)
     {
-        if (actor.tag.Equals("Tower")) return obj.tag.Equals("Enemy");
-        else if(actor.tag.Equals("Enemy")) return obj.tag.Equals("Tower");
+        if (actor.tag.Equals("Tower") || actor.tag.Equals("Solider")) return obj.tag.Equals("Enemy");
+        else if(actor.tag.Equals("Enemy")) return obj.tag.Equals("Tower") || obj.tag.Equals("Solider");
         return false;
     }
 
@@ -82,13 +86,21 @@ public class AttackHandler : ActionHandler
         if (coolDown >= attackSpeed)
         {
             HealthHandler enemy = GetPriorityTarget();
-            if(enemy != null) Attack(enemy);
+            if (enemy != null) Attack(enemy);
+            else
+            {
+                if(animHandler.currentState == AnimHandler.State.Attack) animHandler.RevertToPreviousAnim();
+            }
             coolDown = 0;
         }
+        
     }
 
+   
     protected virtual void Attack(HealthHandler enemy)
     {
         priorityTargets.Add(enemy);
     }
+
+   
 }

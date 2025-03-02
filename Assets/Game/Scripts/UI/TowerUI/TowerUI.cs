@@ -15,7 +15,7 @@ public class TowerUI : ComponentBehavior
 
     public Tower tower { get; set; }
 
-    protected Transform optionsHolder;
+    [SerializeField] protected Transform optionsHolder;
     protected override void LoadComponent()
     {
         base.LoadComponent();

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28520ebb35340f4b8a8ff83a420f881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadHandler: {fileID: 0}
+  deadHandler: {fileID: 5945430910754826129}
   healthUI: {fileID: 6106415315043866373}
   maxHealth: 0
   curHealth: 0
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 818515522943109050}
   - component: {fileID: 3826619702778470415}
   - component: {fileID: 4507075629845401115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rotten Driller
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -142,11 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee779a18bfb504c4e9d62aa9414ba7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMove: {fileID: 6255929705129766019}
+  enemyMove: {fileID: 8549898543848918828}
   enemyHealth: {fileID: 3576083919296827197}
-  enemyId: 1
   enemyAttack: {fileID: 4582914220756107621}
-  Data: {fileID: 11400000, guid: 4a05f3d1a88dc7b4db23a1d4a929ffff, type: 2}
 --- !u!1 &480610796450590587
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +278,7 @@ GameObject:
   - component: {fileID: 2273035695949430104}
   - component: {fileID: 5217432365937836709}
   - component: {fileID: 4582914220756107621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attack
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -559,10 +557,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5937499720506383948}
-  - component: {fileID: 6255929705129766019}
-  m_Layer: 0
+  - component: {fileID: 5267905215668482719}
+  - component: {fileID: 989925002057929850}
+  - component: {fileID: 8549898543848918828}
+  m_Layer: 6
   m_Name: Move
-  m_TagString: Untagged
+  m_TagString: Radar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -582,7 +582,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4202146423189770712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6255929705129766019
+--- !u!58 &5267905215668482719
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860064023213116209}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.19765353, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!50 &989925002057929850
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860064023213116209}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &8549898543848918828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -591,26 +653,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5860064023213116209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa4f09fa38c45947b7dd2086750cb8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 58d1f10938d6eb44cbccc4ab715922d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actor: {fileID: 818515522943109050}
   animHandler: {fileID: 9180978024309004541}
-  pathList:
-  - {x: -12.5, y: 1, z: 0}
-  - {x: -12.5, y: 0, z: 0}
-  - {x: -11, y: -1, z: 0}
-  - {x: -10, y: -2, z: 0}
-  - {x: -7, y: -2, z: 0}
-  - {x: -4, y: -4, z: 0}
-  - {x: 7.5, y: -4, z: 0}
-  - {x: 9.5, y: 0.5, z: 0}
-  - {x: 9.5, y: 5.5, z: 0}
-  - {x: 25, y: 5.5, z: 0}
-  enemyCtrl: {fileID: 0}
+  enemyCtrl: {fileID: 4507075629845401115}
   targetPosition: {x: 0, y: 0, z: 0}
   currentPathIndex: 0
   moveSpeed: 0
+  enemyTarget: []
 --- !u!1 &6153879668807914373
 GameObject:
   m_ObjectHideFlags: 0
