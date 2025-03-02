@@ -9,19 +9,23 @@ public class AnimHandler : ComponentBehavior
 
     public enum State
     {
-        Move,
         Idle,
+        Move,
+        
         Dead,
         Attack,
         Upgrade
     }
 
     public State currentState;
+    public State previousState;
     private static readonly int IsMove = Animator.StringToHash("isMove");
     private static readonly int OnDead = Animator.StringToHash("onDead");
     private static readonly int OnAttack = Animator.StringToHash("onAttack");
     private static readonly int OnUpgrade = Animator.StringToHash("onUpgrade");
-
+    private static readonly int IsIdle = Animator.StringToHash("isIdle");
+    
+    
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -30,25 +34,34 @@ public class AnimHandler : ComponentBehavior
 
     
 
-    public void SetAnim(string animName)
+    public void SetAnim(State newState)
     {
-        switch (animName)
+        if(currentState == newState) return;
+        previousState = currentState;
+        switch (newState)
         {
-            case "Move":
+            case State.Move:
+                if(currentState == State.Idle) anim.SetBool(IsIdle,false);
                 anim.SetBool(IsMove,true);
                 currentState = State.Move;
+                
                 break;
-            case "Dead":
+            case State.Dead:
                 anim.SetTrigger(OnDead);
                 currentState = State.Dead;
                 break;
-            case "Attack":
+            case State.Attack:
                 anim.SetTrigger(OnAttack);
                 currentState = State.Attack;
                 break;
-            case "Upgrade":
+            case State.Upgrade:
                 anim.SetTrigger(OnUpgrade);
                 currentState = State.Upgrade;
+                break;
+            case State.Idle:
+                if(currentState == State.Move) anim.SetBool(IsMove,false);
+                anim.SetBool(IsIdle, true);
+                currentState = State.Idle;
                 break;
         }
     }
@@ -57,6 +70,14 @@ public class AnimHandler : ComponentBehavior
     {
         anim.SetInteger(animName,value);
     }
+
+    public void RevertToPreviousAnim()
+    {
+        if(previousState == State.Upgrade) return;
+        SetAnim(previousState);
+    }
+
+    
 
     
 }

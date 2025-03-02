@@ -19,6 +19,7 @@ public class MeleeEnemy : Enemy
         enemyHealth.Init(enemyData.HealthPoint);
         enemyAttack.Init(enemyData.AttackRange, enemyData.AttackSpeed, enemyData.Damage);
         enemyDead.Init(enemyData.RewardGold, enemyData.Damage);
+        animHandler.SetAnim(AnimHandler.State.Move);
     }
     
 }

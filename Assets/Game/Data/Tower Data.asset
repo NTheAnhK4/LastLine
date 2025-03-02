@@ -20,12 +20,21 @@ MonoBehaviour:
     TowerPrefab: {fileID: 1848356552161296775, guid: 2ccf3502e6e4fe04c9dcf54f173859f9, type: 3}
     TowerUIPrefab: {fileID: 337339328675364455, guid: 7e7ae87b9d53fb64496e55750e4f99c2, type: 3}
     TowerUpgradeList:
-    - Cost: 75
+    - Cost: 20
       TowerId: 1
+    - Cost: 20
+      TowerId: 2
   - TowerName: Archer level 1
     AttackRange: 4
     AttackSpeed: 0.6
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 6503917657427825518, guid: f06f53ea328d7c24892d73538e3bed5b, type: 3}
+    TowerUIPrefab: {fileID: 0}
+    TowerUpgradeList: []
+  - TowerName: Guardian level 1
+    AttackRange: 4
+    AttackSpeed: 2
+    UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
+    TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
     TowerUIPrefab: {fileID: 0}
     TowerUpgradeList: []

@@ -15,7 +15,7 @@ public class DeadHandler : ActionHandler
 
     protected IEnumerator DoAnim()
     {
-        animHandler.SetAnim("Dead");
+        animHandler.SetAnim(AnimHandler.State.Dead);
         yield return new WaitForSeconds(1.5f);
         PoolingManager.Despawn(actor.gameObject);
     }
