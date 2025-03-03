@@ -18,6 +18,11 @@ public class SummonAttack : ComponentBehavior
     private bool[][] summonedUnits = new bool[3][];
     private List<Vector2Int> randomPositions;
 
+    public int SoliderNum
+    {
+        get => currentNumber;
+        set => currentNumber = value;
+    }
     public void Init(Vector3 spawnPosition, float summonedCooldown)
     {
         summonLimit = 3;
@@ -31,7 +36,7 @@ public class SummonAttack : ComponentBehavior
             Solider solider = PoolingManager.Spawn(SummonedUnitPrefab,newPosition, default,transform)
                 .GetComponent<Solider>();
         
-            solider.Init(m_SpawnPosition);
+            solider.Init(this,m_SpawnPosition);
         }
 
         currentNumber = summonLimit;
@@ -69,7 +74,7 @@ public class SummonAttack : ComponentBehavior
         Solider solider = PoolingManager.Spawn(SummonedUnitPrefab,newPosition, default,transform)
             .GetComponent<Solider>();
         
-        solider.Init(m_SpawnPosition);
+        solider.Init(this,m_SpawnPosition);
         isSummoning = false;
     }
 
