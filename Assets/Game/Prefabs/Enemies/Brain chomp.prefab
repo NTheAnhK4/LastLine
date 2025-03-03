@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2639461607320022474}
   currentState: 0
+  previousState: 0
 --- !u!95 &2639461607320022474
 Animator:
   serializedVersion: 5
@@ -236,8 +237,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5.2900085}
-  m_SizeDelta: {x: 75, y: 10.580017}
+  m_AnchoredPosition: {x: 0, y: -2.4999986}
+  m_SizeDelta: {x: 40, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3953063773000751913
 CanvasRenderer:
@@ -314,7 +315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.019, y: -0.336}
   m_SizeDelta: {x: 1919.9999, y: 1079.9999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8762020834732148250
@@ -547,7 +548,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -14.3, y: -495.28995}
-  m_SizeDelta: {x: 75, y: 10.580017}
+  m_SizeDelta: {x: 40, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5176306439061061250
 CanvasRenderer:
@@ -623,8 +624,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5.2900085}
-  m_SizeDelta: {x: 75, y: 10.580017}
+  m_AnchoredPosition: {x: 0, y: -2.4999986}
+  m_SizeDelta: {x: 40, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8802164004881300128
 CanvasRenderer:
@@ -772,6 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMove: {fileID: 4936725931782212235}
   enemyHealth: {fileID: 3450249322710370551}
+  animHandler: {fileID: 0}
   enemyAttack: {fileID: 1749630177747415076}
 --- !u!1 &7658395360366658020
 GameObject:

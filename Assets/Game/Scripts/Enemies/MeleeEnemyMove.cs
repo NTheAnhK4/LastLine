@@ -75,6 +75,7 @@ public class MeleeEnemyMove : EnemyMove
     {
         
         if (animHandler.currentState == AnimHandler.State.Attack) return;
+        if(animHandler.currentState == AnimHandler.State.Dead) return;
 
         if (targetEnemy == null || targetEnemy.IsDead)
         {

@@ -9,7 +9,7 @@ public class HealthHandler : ComponentBehavior
     [SerializeField] private HealthUI healthUI;
     [SerializeField] private float maxHealth;
     [SerializeField] private float curHealth;
-
+    public Action OnDead = null;
     public float CurHealth
     {
         get => curHealth;
@@ -34,6 +34,7 @@ public class HealthHandler : ComponentBehavior
     public bool IsDead;
     public void Init(float hp)
     {
+        OnDead = null;
         maxHealth = hp;
         CurHealth = hp;
         IsDead = false;
@@ -47,6 +48,7 @@ public class HealthHandler : ComponentBehavior
         if (curHealth <= 0)
         {
             IsDead = true;
+            OnDead?.Invoke();
             deadHandler.OnDead(true);
         }
     }
