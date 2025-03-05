@@ -8,6 +8,7 @@ public class TowerSlotUI : TowerUI
 {
     [SerializeField] private UpdateTowerInfor archer;
     [SerializeField] private UpdateTowerInfor guardian;
+    [SerializeField] private UpdateTowerInfor mage;
     private Transform uIImage;
     protected override void LoadComponent()
     {
@@ -22,12 +23,19 @@ public class TowerSlotUI : TowerUI
             btn = optionsHolder.Find("Guardian").GetComponentInChildren<Button>(),
             cost = optionsHolder.Find("Guardian").GetComponentInChildren<TextMeshProUGUI>()
         };
+        mage = new UpdateTowerInfor
+        {
+            btn = optionsHolder.Find("Mage").GetComponentInChildren<Button>(),
+            cost = optionsHolder.Find("Mage").GetComponentInChildren<TextMeshProUGUI>()
+        };
+        
     }
 
     protected  void Start()
     {
         archer.btn.onClick.AddListener(() =>
         {
+            
             int archerCost = int.Parse(archer.cost.text);
             if (archerCost <= LevelManager.Instance.Gold)
             {
@@ -39,11 +47,23 @@ public class TowerSlotUI : TowerUI
         });
         guardian.btn.onClick.AddListener(() =>
         {
+            
             int guardianCost = int.Parse(guardian.cost.text);
             if (guardianCost <= LevelManager.Instance.Gold)
             {
                 LevelManager.Instance.Gold -= guardianCost;
                 UpdateTower(1,1);
+            }
+            else PoolingManager.Despawn(gameObject);
+        });
+        mage.btn.onClick.AddListener(() =>
+        {
+            
+            int mageCost = int.Parse(mage.cost.text);
+            if (mageCost <= LevelManager.Instance.Gold)
+            {
+                LevelManager.Instance.Gold -= mageCost;
+                UpdateTower(2,1);
             }
             else PoolingManager.Despawn(gameObject);
         });

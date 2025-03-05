@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fde84348115649b49a9e04d91855bc0f
+guid: 8366ecadb81176e4b93f2d7392fc042b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GuardianUnitDead_0
+      name: MagicUnitIdle_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 1170
-        width: 170
-        height: 227
+        x: 18
+        y: 1127
+        width: 145
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b549900952e30b74086332e9820693b8
-      internalID: -1848225054
+      spriteID: 2f7995e10f8402b448174a1e7f6da499
+      internalID: 694223497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_1
+      name: MagicUnitIdle_1
       rect:
         serializedVersion: 2
-        x: 403
-        y: 1168
-        width: 190
-        height: 226
+        x: 422
+        y: 1127
+        width: 136
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4874d238138060478677da0b9240187
-      internalID: 788175079
+      spriteID: 964e9305c14f9854db778d6502388989
+      internalID: 2146613576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_2
+      name: MagicUnitIdle_2
       rect:
         serializedVersion: 2
-        x: 768
-        y: 1158
-        width: 216
-        height: 205
+        x: 826
+        y: 1127
+        width: 145
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2f1a861022c3a3459a18a56d8422ea3
-      internalID: 1976133831
+      spriteID: 8385b0f2853e6d643819151c9214ae87
+      internalID: 1147325326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_3
+      name: MagicUnitIdle_3
       rect:
         serializedVersion: 2
-        x: 1140
-        y: 1165
-        width: 234
-        height: 195
+        x: 1230
+        y: 1128
+        width: 153
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f931326ccc62d184c88a7f65fa841206
-      internalID: -552447108
+      spriteID: 986a999ec9f21c14aa8755c4ae5f1d53
+      internalID: -2046035815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_4
+      name: MagicUnitIdle_4
       rect:
         serializedVersion: 2
-        x: 1509
-        y: 1170
-        width: 241
-        height: 163
+        x: 1
+        y: 573
+        width: 163
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86bd5a6bce573634cb1c230c21e7c1b1
-      internalID: 847578074
+      spriteID: 7eb609059938e6443a09cd2d1831623b
+      internalID: -906153532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_5
+      name: MagicUnitIdle_5
       rect:
         serializedVersion: 2
-        x: 1901
-        y: 1176
-        width: 199
-        height: 148
+        x: 406
+        y: 573
+        width: 152
+        height: 228
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88e7fb7f10f302145bcd58e727580f44
-      internalID: 164075026
+      spriteID: 94956c241d5a89546bd31071aa9d6853
+      internalID: -1380725744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_6
+      name: MagicUnitIdle_6
       rect:
         serializedVersion: 2
-        x: 16
-        y: 658
-        width: 190
-        height: 216
+        x: 809
+        y: 573
+        width: 162
+        height: 228
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fcab472c81a33343a9bad1568d8a825
-      internalID: -276861489
+      spriteID: e75a784561af50d47b17ac6113b09945
+      internalID: -1980485654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_7
+      name: MagicUnitIdle_7
       rect:
         serializedVersion: 2
-        x: 410
-        y: 658
-        width: 188
-        height: 213
+        x: 1214
+        y: 573
+        width: 169
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fde60e81d3820442a98184494b767a6
-      internalID: -949733873
+      spriteID: 016aaa6479473a743b1ad3efe3262e9f
+      internalID: 722185142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_8
+      name: MagicUnitIdle_8
       rect:
         serializedVersion: 2
-        x: 757
-        y: 651
-        width: 234
-        height: 197
+        x: 10
+        y: 1
+        width: 153
+        height: 229
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 263237134eefb1040b9e513f9c1659a1
-      internalID: 1893445495
+      spriteID: d3fa5c00c80ca94488d19f81480202ce
+      internalID: -1553779135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_9
+      name: MagicUnitIdle_9
       rect:
         serializedVersion: 2
-        x: 1130
-        y: 647
-        width: 237
-        height: 181
+        x: 413
+        y: 1
+        width: 145
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 057011d7844af8441886659d381a9c3a
-      internalID: 1847159974
+      spriteID: f223ba926374ab84e8d0a5133667a673
+      internalID: -1675050576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_10
+      name: MagicUnitIdle_10
       rect:
         serializedVersion: 2
-        x: 1522
-        y: 656
-        width: 211
-        height: 158
+        x: 818
+        y: 1
+        width: 153
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 324e7e329b2b9b941ab81f3a7f0885b6
-      internalID: 647106796
+      spriteID: 75cd3de9ce6818645807e7eef25eb3b3
+      internalID: 1292382953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitDead_11
+      name: MagicUnitIdle_11
       rect:
         serializedVersion: 2
-        x: 1905
-        y: 656
-        width: 195
-        height: 154
+        x: 1222
+        y: 1
+        width: 162
+        height: 228
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,134 +368,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0c64d4013f96b9408a52469955de46d
-      internalID: -1341520841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitDead_12
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 122
-        width: 191
-        height: 222
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb4158072d1375f4087444e4ec254791
-      internalID: -1955414310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitDead_13
-      rect:
-        serializedVersion: 2
-        x: 412
-        y: 135
-        width: 184
-        height: 209
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f29c61ffcc369b94588403fea595874f
-      internalID: -181488268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitDead_14
-      rect:
-        serializedVersion: 2
-        x: 747
-        y: 119
-        width: 259
-        height: 191
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51ac3e48e1464d44695a11ce7f2e03e9
-      internalID: 325016358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitDead_15
-      rect:
-        serializedVersion: 2
-        x: 1119
-        y: 117
-        width: 254
-        height: 177
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0908ee7fdad8e2449753e3a3ceeb4d9
-      internalID: -839593068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitDead_16
-      rect:
-        serializedVersion: 2
-        x: 1506
-        y: 140
-        width: 220
-        height: 142
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4988636d463b554479c1aae00d25f887
-      internalID: -976393509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitDead_17
-      rect:
-        serializedVersion: 2
-        x: 1892
-        y: 135
-        width: 208
-        height: 156
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a8b144cfb1cecc49a68e9651e2dd740
-      internalID: -961080382
+      spriteID: 0b17f6b5759ef454f8ff7194f071504c
+      internalID: 819453931
       vertices: []
       indices: 
       edges: []
@@ -511,24 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GuardianUnitDead_0: -1848225054
-      GuardianUnitDead_1: 788175079
-      GuardianUnitDead_10: 647106796
-      GuardianUnitDead_11: -1341520841
-      GuardianUnitDead_12: -1955414310
-      GuardianUnitDead_13: -181488268
-      GuardianUnitDead_14: 325016358
-      GuardianUnitDead_15: -839593068
-      GuardianUnitDead_16: -976393509
-      GuardianUnitDead_17: -961080382
-      GuardianUnitDead_2: 1976133831
-      GuardianUnitDead_3: -552447108
-      GuardianUnitDead_4: 847578074
-      GuardianUnitDead_5: 164075026
-      GuardianUnitDead_6: -276861489
-      GuardianUnitDead_7: -949733873
-      GuardianUnitDead_8: 1893445495
-      GuardianUnitDead_9: 1847159974
+      MagicUnitIdle_0: 694223497
+      MagicUnitIdle_1: 2146613576
+      MagicUnitIdle_10: 1292382953
+      MagicUnitIdle_11: 819453931
+      MagicUnitIdle_2: 1147325326
+      MagicUnitIdle_3: -2046035815
+      MagicUnitIdle_4: -906153532
+      MagicUnitIdle_5: -1380725744
+      MagicUnitIdle_6: -1980485654
+      MagicUnitIdle_7: 722185142
+      MagicUnitIdle_8: -1553779135
+      MagicUnitIdle_9: -1675050576
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

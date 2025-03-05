@@ -15,7 +15,8 @@ public class GuardianTower : Tower
     public override void Init(int towerId, Vector3 flagPosition)
     {
         base.Init(towerId, flagPosition);
-        guardianAttack.Init(m_FlagPosition,Data.Towers[m_TowerId].AttackSpeed);
+        
+        guardianAttack.Init(Data.Towers[m_TowerId].UnitPrefab,m_FlagPosition,Data.Towers[m_TowerId].AttackSpeed);
     }
 
    

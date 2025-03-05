@@ -4,13 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class SummonAttack : ComponentBehavior
 {
     [SerializeField] private Vector3 m_SpawnPosition;
 
-    [SerializeField] private GameObject SummonedUnitPrefab;
+    [FormerlySerializedAs("SummonedUnitPrefab")] [SerializeField] private GameObject m_Unit;
     [SerializeField] private int summonLimit;
     [SerializeField] private float m_SummonCooldown;
     [SerializeField] private int currentNumber;
@@ -23,8 +24,9 @@ public class SummonAttack : ComponentBehavior
         get => currentNumber;
         set => currentNumber = value;
     }
-    public void Init(Vector3 spawnPosition, float summonedCooldown)
+    public void Init(GameObject unit, Vector3 spawnPosition, float summonedCooldown)
     {
+        m_Unit = unit;
         summonLimit = 3;
         currentNumber = 0;
         m_SummonCooldown = summonedCooldown;
@@ -33,7 +35,7 @@ public class SummonAttack : ComponentBehavior
         for (int i = 1; i <= summonLimit; ++i)
         {
             Vector3 newPosition = GetSpawnPos(m_SpawnPosition);
-            Solider solider = PoolingManager.Spawn(SummonedUnitPrefab,newPosition, default,transform)
+            Solider solider = PoolingManager.Spawn(m_Unit,newPosition, default,transform)
                 .GetComponent<Solider>();
         
             solider.Init(this,m_SpawnPosition);
@@ -71,7 +73,7 @@ public class SummonAttack : ComponentBehavior
         currentNumber++;
         yield return new WaitForSeconds(m_SummonCooldown);
         Vector3 newPosition = GetSpawnPos(m_SpawnPosition);
-        Solider solider = PoolingManager.Spawn(SummonedUnitPrefab,newPosition, default,transform)
+        Solider solider = PoolingManager.Spawn(m_Unit,newPosition, default,transform)
             .GetComponent<Solider>();
         
         solider.Init(this,m_SpawnPosition);

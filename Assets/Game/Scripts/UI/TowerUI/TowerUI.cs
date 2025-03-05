@@ -24,8 +24,9 @@ public class TowerUI : ComponentBehavior
 
     protected void UpdateTower(int towerUpgradeId, float timerBuild = 1)
     {
-        tower.UpdateTower(towerUpgradeId,timerBuild);
         PoolingManager.Despawn(gameObject);
+        tower.UpdateTower(towerUpgradeId,timerBuild);
+        
     }
     
 }

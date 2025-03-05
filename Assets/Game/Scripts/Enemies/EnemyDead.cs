@@ -14,14 +14,14 @@ public class EnemyDead : DeadHandler
     {
         if(hasAnim) DeadByDamage();
         else ReachPlayerBase();
-        
+        LevelManager.Instance.EnemyCount--;
     }
 
     private void DeadByDamage()
     {
         StartCoroutine(DoAnim());
         LevelManager.Instance.Gold += m_RewardGold;
-        LevelManager.Instance.EnemyCount--;
+        
     }
 
     private void ReachPlayerBase()

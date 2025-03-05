@@ -24,6 +24,8 @@ MonoBehaviour:
       TowerId: 1
     - Cost: 20
       TowerId: 2
+    - Cost: 20
+      TowerId: 3
   - TowerName: Archer level 1
     AttackRange: 4
     AttackSpeed: 0.6
@@ -33,8 +35,15 @@ MonoBehaviour:
     TowerUpgradeList: []
   - TowerName: Guardian level 1
     AttackRange: 4
+    AttackSpeed: 10
+    UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
+    TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
+    TowerUIPrefab: {fileID: 0}
+    TowerUpgradeList: []
+  - TowerName: Mage level 1
+    AttackRange: 6
     AttackSpeed: 2
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
-    TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
+    TowerPrefab: {fileID: 5332507477801701714, guid: ee24048670e403c44a51b0fd39899fc0, type: 3}
     TowerUIPrefab: {fileID: 0}
     TowerUpgradeList: []
