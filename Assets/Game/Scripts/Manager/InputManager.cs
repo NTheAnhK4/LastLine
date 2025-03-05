@@ -33,6 +33,7 @@ public class InputManager : Singleton<InputManager>
 
         if (pointer.collider != null)
         {
+            
             currentSelectedTower = pointer.collider.GetComponent<Tower>();
             if(currentSelectedTower != null) currentSelectedTower.ShowUI();
         }
