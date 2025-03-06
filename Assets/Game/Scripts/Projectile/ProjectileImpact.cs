@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class ProjectileImpact : ComponentBehavior
 {
+    [SerializeField] protected SoundType m_SoundType;
     [SerializeField] private Projectile projectile;
     [SerializeField] private Transform enemyTarget;
     [SerializeField] private float damage;
@@ -39,6 +40,6 @@ public class ProjectileImpact : ComponentBehavior
 
     protected virtual void PlaySound()
     {
-        SoundManager.PlaySFX(SoundType.Arrow,0.3f);
+        SoundManager.PlaySFX(m_SoundType,0.3f);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuardianTower : Tower
+public class SummonTower : Tower
 {
     [SerializeField] private SummonAttack guardianAttack;
     protected override void LoadComponent()

@@ -9,6 +9,7 @@ public class TowerSlotUI : TowerUI
     [SerializeField] private UpdateTowerInfor archer;
     [SerializeField] private UpdateTowerInfor guardian;
     [SerializeField] private UpdateTowerInfor mage;
+    [SerializeField] private UpdateTowerInfor catapult;
     private Transform uIImage;
     protected override void LoadComponent()
     {
@@ -27,6 +28,11 @@ public class TowerSlotUI : TowerUI
         {
             btn = optionsHolder.Find("Mage").GetComponentInChildren<Button>(),
             cost = optionsHolder.Find("Mage").GetComponentInChildren<TextMeshProUGUI>()
+        };
+        catapult = new UpdateTowerInfor
+        {
+            btn = optionsHolder.Find("Catapult").GetComponentInChildren<Button>(),
+            cost = optionsHolder.Find("Catapult").GetComponentInChildren<TextMeshProUGUI>()
         };
         
     }
@@ -64,6 +70,17 @@ public class TowerSlotUI : TowerUI
             {
                 LevelManager.Instance.Gold -= mageCost;
                 UpdateTower(2,1);
+            }
+            else PoolingManager.Despawn(gameObject);
+        });
+        catapult.btn.onClick.AddListener(() =>
+        {
+            
+            int catapultCost = int.Parse(catapult.cost.text);
+            if (catapultCost <= LevelManager.Instance.Gold)
+            {
+                LevelManager.Instance.Gold -= catapultCost;
+                UpdateTower(3,1);
             }
             else PoolingManager.Despawn(gameObject);
         });
