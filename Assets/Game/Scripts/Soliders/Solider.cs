@@ -22,10 +22,10 @@ public class Solider : ComponentBehavior
     public void Init(SummonAttack encampment, Vector3 flagPosition)
     {
         m_Encampment = encampment;
-        m_Attack.Init(1,2,0.5f);
+        m_Attack.Init(1,2,0.5f, DamageType.Physical);
         
         m_Move.Init(1,flagPosition);
-        m_Health.Init(20);
+        m_Health.Init(20,1,1);
         m_Health.OnDead += () =>
         {
             m_Encampment.SoliderNum--;

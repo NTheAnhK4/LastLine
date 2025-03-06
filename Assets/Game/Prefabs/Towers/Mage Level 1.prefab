@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 8482508396258728124}
   - component: {fileID: 9219795494236922634}
   - component: {fileID: 7998617216555047857}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mage Level 1
   m_TagString: Tower
   m_Icon: {fileID: 0}

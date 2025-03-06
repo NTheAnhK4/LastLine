@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 7404991934336324362}
   - component: {fileID: 628464745074007524}
   - component: {fileID: 7152554952291336756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Catapult Level 1
   m_TagString: Tower
   m_Icon: {fileID: 0}

@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 977733563858799526}
   currentState: 0
+  previousState: 0
 --- !u!1 &1848356552161296775
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ GameObject:
   - component: {fileID: 2339058399976492942}
   - component: {fileID: 7171847557068979092}
   - component: {fileID: 8518235055578659473}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerSlot
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -213,6 +214,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 7eacf0dcf2602ee47b8bb1f615dbff2f, type: 2}
-  towerId: 0
   animHandler: {fileID: 6010090730023999296}
   towerUI: {fileID: 1641854626290993541, guid: 7e7ae87b9d53fb64496e55750e4f99c2, type: 3}

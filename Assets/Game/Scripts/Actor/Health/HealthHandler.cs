@@ -1,6 +1,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class HealthHandler : ComponentBehavior
 {
@@ -9,6 +10,8 @@ public class HealthHandler : ComponentBehavior
     [SerializeField] private HealthUI healthUI;
     [SerializeField] private float maxHealth;
     [SerializeField] private float curHealth;
+    [SerializeField] private float m_PhysicalDamageReduction;
+    [SerializeField] private float m_MagicalDamageReduction;
     public Action OnDead = null;
     public float CurHealth
     {
@@ -32,18 +35,29 @@ public class HealthHandler : ComponentBehavior
     }
 
     public bool IsDead;
-    public void Init(float hp)
+    public void Init(float hp, float physicalDamageReduction, float magicalDamageReduction)
     {
         OnDead = null;
         maxHealth = hp;
         CurHealth = hp;
         IsDead = false;
+        m_PhysicalDamageReduction = physicalDamageReduction;
+        m_MagicalDamageReduction = magicalDamageReduction;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, DamageType damageType)
     {
-        
-        if(IsDead) return;
+
+        if (IsDead) return;
+        switch (damageType)
+        {
+            case DamageType.Physical:
+                damage *= m_PhysicalDamageReduction;
+                break;
+            case DamageType.Magical:
+                damage *= m_MagicalDamageReduction;
+                break;
+        }
         CurHealth = Mathf.Max(curHealth - damage, 0);
         if (curHealth <= 0)
         {

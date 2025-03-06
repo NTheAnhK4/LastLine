@@ -6,8 +6,9 @@ using UnityEngine;
 public class MeleeAttack : AttackHandler
 {
     [SerializeField] private float damage;
+    [SerializeField] private DamageType m_DamageType;
    
-    public void Init(float aRange, float aSpeed, float aDamage)
+    public void Init(float aRange, float aSpeed, float aDamage, DamageType damageType)
     {
         base.Init(aRange,aSpeed);
         this.damage = aDamage;
@@ -22,6 +23,6 @@ public class MeleeAttack : AttackHandler
         base.Attack(enemy);
         
         animHandler.SetAnim(AnimHandler.State.Attack);
-        enemy.TakeDamage(damage);
+        enemy.TakeDamage(damage, m_DamageType);
     }
 }
