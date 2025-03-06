@@ -9,6 +9,19 @@ public class EnemyMove : MoveHandler
     [SerializeField] private Vector3 targetPosition;
     [SerializeField] private int currentPathIndex;
     [SerializeField] protected float moveSpeed;
+
+    protected Vector3 direction;
+
+    public Vector3 Direction
+    {
+        get => direction;
+        set
+        {
+            if(direction.x < 0 && value.x > 0) animHandler.RotateAnim(true);
+            if(direction.x > 0 && value.x < 0) animHandler.RotateAnim(false);
+            direction = value;
+        }
+    }
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -27,7 +40,7 @@ public class EnemyMove : MoveHandler
 
     protected void MoveByPath()
     {
-        Vector3 direction = (targetPosition - enemyCtrl.transform.position).normalized;
+        Direction = (targetPosition - enemyCtrl.transform.position).normalized;
         enemyCtrl.transform.Translate(direction * (moveSpeed * Time.deltaTime));
         if (Vector3.Distance(enemyCtrl.transform.position, targetPosition) <= 0.4f)
         {

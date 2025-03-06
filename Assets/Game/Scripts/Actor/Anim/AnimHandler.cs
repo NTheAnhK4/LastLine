@@ -32,12 +32,18 @@ public class AnimHandler : ComponentBehavior
         if (anim == null) anim = transform.GetComponent<Animator>();
     }
 
+    public void RotateAnim(bool isFacingRight)
+    {
+        float scaleX = Mathf.Abs(transform.localScale.x) * (isFacingRight ? 1 : -1);
+        var localScale = transform.localScale;
+        localScale = new Vector3(scaleX, localScale.y, localScale.z);
+        transform.localScale = localScale;
+    }
     
 
     public void SetAnim(State newState)
     {
-        if(currentState == newState) return;
-        previousState = currentState;
+        if(currentState != newState) previousState = currentState;
         switch (newState)
         {
             case State.Move:

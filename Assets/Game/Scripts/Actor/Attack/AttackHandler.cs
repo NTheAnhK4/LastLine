@@ -82,6 +82,8 @@ public class AttackHandler : ActionHandler
 
     private void Update()
     {
+        
+       
         coolDown += Time.deltaTime;
         if (coolDown >= attackSpeed)
         {
@@ -100,6 +102,7 @@ public class AttackHandler : ActionHandler
     protected virtual void Attack(HealthHandler enemy)
     {
         priorityTargets.Add(enemy);
+       
     }
 
    

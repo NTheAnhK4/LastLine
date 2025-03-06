@@ -529,7 +529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2434099194064299451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -891,6 +891,7 @@ MonoBehaviour:
   attackSpeed: 0
   coolDown: 0
   damage: 0
+  m_DamageType: 0
 --- !u!1 &8678671126407856432
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,4 +940,6 @@ MonoBehaviour:
   healthUI: {fileID: 9053670086950378472}
   maxHealth: 0
   curHealth: 0
+  m_PhysicalDamageReduction: 0
+  m_MagicalDamageReduction: 0
   IsDead: 0

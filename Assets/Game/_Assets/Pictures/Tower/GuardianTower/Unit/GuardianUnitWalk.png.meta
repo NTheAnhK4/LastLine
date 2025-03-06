@@ -126,10 +126,10 @@ TextureImporter:
       name: GuardianUnitWalk_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 1209
-        width: 163
-        height: 203
+        x: 17
+        y: 1210
+        width: 139
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06f49fa98eb06c84883c26e60c38ef2e
-      internalID: -1839408736
+      spriteID: a75b5a67098733d448f4657c0ac775e2
+      internalID: -1312762
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: GuardianUnitWalk_1
       rect:
         serializedVersion: 2
-        x: 411
-        y: 1209
-        width: 164
-        height: 210
+        x: 398
+        y: 1202
+        width: 123
+        height: 217
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 068efc6da3191f54780fbedb6d2b9a01
-      internalID: -800848697
+      spriteID: 633ab5a40735c6f41b8cab6e651d3f11
+      internalID: 1982796237
       vertices: []
       indices: 
       edges: []
@@ -168,51 +168,9 @@ TextureImporter:
       name: GuardianUnitWalk_2
       rect:
         serializedVersion: 2
-        x: 785
-        y: 1192
-        width: 163
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf53b851d4f59c149b96fcf377744d51
-      internalID: -340821165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitWalk_3
-      rect:
-        serializedVersion: 2
-        x: 1182
-        y: 1192
-        width: 141
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82bbc1b3b5827a542a626a2160b504be
-      internalID: -547016553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitWalk_4
-      rect:
-        serializedVersion: 2
-        x: 1578
-        y: 1201
-        width: 124
+        x: 778
+        y: 1193
+        width: 139
         height: 218
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -221,8 +179,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f690bc76c624fb4587ba05f7e7c8969
-      internalID: 1645300093
+      spriteID: 470858c006dc2724f87dbe88811c1a07
+      internalID: 1445346663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitWalk_3
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 1193
+        width: 161
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496b29a697378ed4abe1e25a6d56b149
+      internalID: -1119728687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitWalk_4
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 1210
+        width: 162
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73310f0884fc054eb789cc29e54c792
+      internalID: 146604385
       vertices: []
       indices: 
       edges: []
@@ -231,10 +231,10 @@ TextureImporter:
       name: GuardianUnitWalk_5
       rect:
         serializedVersion: 2
-        x: 1943
-        y: 1209
-        width: 141
-        height: 203
+        x: 1914
+        y: 1210
+        width: 161
+        height: 201
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61b953ae27706f64699a5edbea6b1b00
-      internalID: -1859313588
+      spriteID: 7926ebf6c4f5ddf4eae7cd1b652d1056
+      internalID: 290280135
       vertices: []
       indices: 
       edges: []
@@ -252,9 +252,9 @@ TextureImporter:
       name: GuardianUnitWalk_6
       rect:
         serializedVersion: 2
-        x: 16
+        x: 2
         y: 684
-        width: 180
+        width: 162
         height: 195
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -263,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f46a3d7c1bde9c418bf72e64374f838
-      internalID: 360759179
+      spriteID: 0bd6e5d1708c8e94580ee41b18ef7a9d
+      internalID: 2030032567
       vertices: []
       indices: 
       edges: []
@@ -273,10 +273,10 @@ TextureImporter:
       name: GuardianUnitWalk_7
       rect:
         serializedVersion: 2
-        x: 411
-        y: 684
-        width: 173
-        height: 204
+        x: 391
+        y: 678
+        width: 138
+        height: 209
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78c9eb7cdc989c649bbdad25d6ba9164
-      internalID: -1640854506
+      spriteID: cf2191353c3defc4a8a35a481b4f82f8
+      internalID: 1734557444
       vertices: []
       indices: 
       edges: []
@@ -294,10 +294,10 @@ TextureImporter:
       name: GuardianUnitWalk_8
       rect:
         serializedVersion: 2
-        x: 778
-        y: 668
-        width: 179
-        height: 211
+        x: 763
+        y: 670
+        width: 162
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52616d1593f17cb4c97f42427521a90a
-      internalID: 964882115
+      spriteID: cf2037f5400e35744a48c063ba811bbe
+      internalID: -796312649
       vertices: []
       indices: 
       edges: []
@@ -315,10 +315,10 @@ TextureImporter:
       name: GuardianUnitWalk_9
       rect:
         serializedVersion: 2
-        x: 1174
-        y: 668
-        width: 164
-        height: 211
+        x: 1144
+        y: 670
+        width: 178
+        height: 209
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ada2abca5ad76c74b8b7719bb9cb52c0
-      internalID: 1916399323
+      spriteID: 620bafd02595da241b45566ecec6ba95
+      internalID: -1792485259
       vertices: []
       indices: 
       edges: []
@@ -336,72 +336,9 @@ TextureImporter:
       name: GuardianUnitWalk_10
       rect:
         serializedVersion: 2
-        x: 1570
-        y: 677
-        width: 140
-        height: 211
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c7148db5739ab0408851a93ffa6aa4f
-      internalID: 2104436843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitWalk_11
-      rect:
-        serializedVersion: 2
-        x: 1935
+        x: 1517
         y: 684
-        width: 164
-        height: 195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dec268403b45dfc4787c573d9a3925f4
-      internalID: -1299753000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitWalk_12
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 144
-        width: 189
-        height: 195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb4bb33ba59381845a22539fdd48d3fc
-      internalID: 673036969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitWalk_13
-      rect:
-        serializedVersion: 2
-        x: 412
-        y: 145
-        width: 163
+        width: 171
         height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -410,82 +347,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ebeedbf9380f714780a27895558bc94
-      internalID: -1894859353
+      spriteID: 12e5a725d3b13d44f96e726fdc3fe1af
+      internalID: 1136110926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitWalk_14
+      name: GuardianUnitWalk_11
       rect:
         serializedVersion: 2
-        x: 769
-        y: 128
-        width: 188
-        height: 211
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34973797a91bb774483d4cb28e36c0b4
-      internalID: 1194321617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitWalk_15
-      rect:
-        serializedVersion: 2
-        x: 1166
-        y: 129
-        width: 172
-        height: 210
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 426bf2b2527cfaf4dab0aa59d3e7ade6
-      internalID: 1126073069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitWalk_16
-      rect:
-        serializedVersion: 2
-        x: 1564
-        y: 136
-        width: 155
-        height: 212
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b2e4c87725767a43beca45d9b26a7ca
-      internalID: 55909771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitWalk_17
-      rect:
-        serializedVersion: 2
-        x: 1928
-        y: 144
-        width: 171
+        x: 1905
+        y: 684
+        width: 178
         height: 195
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -494,8 +368,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 974850adf17397f4085d1936e8dcb113
-      internalID: 773991876
+      spriteID: f5ec48a8b074157419037cd360f71e49
+      internalID: -804118445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitWalk_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 145
+        width: 169
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003b40bb31f57f34d8c07b8a99decd7a
+      internalID: -2118298325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitWalk_13
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 137
+        width: 153
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334fb199fb9268c44bb604aad334b0e7
+      internalID: 1488205105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitWalk_14
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 129
+        width: 170
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d5e9290e317a74093a1f6c489d5a0e
+      internalID: 2025333777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitWalk_15
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 129
+        width: 186
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8431fe0dd614ff448bbfb3454f2e7dc2
+      internalID: 46014865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitWalk_16
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 146
+        width: 162
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82de988d62d1c1c44b0d3780d81b6a3d
+      internalID: 1874617079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitWalk_17
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 146
+        width: 187
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ed659ca58b62641bbc338d08932163
+      internalID: 2055971992
       vertices: []
       indices: 
       edges: []
@@ -511,24 +511,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GuardianUnitWalk_0: -1839408736
-      GuardianUnitWalk_1: -800848697
-      GuardianUnitWalk_10: 2104436843
-      GuardianUnitWalk_11: -1299753000
-      GuardianUnitWalk_12: 673036969
-      GuardianUnitWalk_13: -1894859353
-      GuardianUnitWalk_14: 1194321617
-      GuardianUnitWalk_15: 1126073069
-      GuardianUnitWalk_16: 55909771
-      GuardianUnitWalk_17: 773991876
-      GuardianUnitWalk_2: -340821165
-      GuardianUnitWalk_3: -547016553
-      GuardianUnitWalk_4: 1645300093
-      GuardianUnitWalk_5: -1859313588
-      GuardianUnitWalk_6: 360759179
-      GuardianUnitWalk_7: -1640854506
-      GuardianUnitWalk_8: 964882115
-      GuardianUnitWalk_9: 1916399323
+      GuardianUnitWalk_0: -1312762
+      GuardianUnitWalk_1: 1982796237
+      GuardianUnitWalk_10: 1136110926
+      GuardianUnitWalk_11: -804118445
+      GuardianUnitWalk_12: -2118298325
+      GuardianUnitWalk_13: 1488205105
+      GuardianUnitWalk_14: 2025333777
+      GuardianUnitWalk_15: 46014865
+      GuardianUnitWalk_16: 1874617079
+      GuardianUnitWalk_17: 2055971992
+      GuardianUnitWalk_2: 1445346663
+      GuardianUnitWalk_3: -1119728687
+      GuardianUnitWalk_4: 146604385
+      GuardianUnitWalk_5: 290280135
+      GuardianUnitWalk_6: 2030032567
+      GuardianUnitWalk_7: 1734557444
+      GuardianUnitWalk_8: -796312649
+      GuardianUnitWalk_9: -1792485259
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -17,6 +17,19 @@ public class SoliderMove : MoveHandler
     
     private static HashSet<HealthHandler> occupiedEnemies = new HashSet<HealthHandler>();
     private HealthHandler targetEnemy;
+
+    private Vector3 direction;
+
+    public Vector3 Direction
+    {
+        get => direction;
+        set
+        {
+            if(direction.x <= 0 && value.x > 0) animHandler.RotateAnim(true);
+            if(direction.x >= 0 && value.x < 0) animHandler.RotateAnim(false);
+            direction = value;
+        }
+    }
     public void Init(float speed, Vector3 flagPosition)
     {
        
@@ -34,6 +47,8 @@ public class SoliderMove : MoveHandler
             if(healthHandler != null) enemyTarget.Add(healthHandler);
         }
     }
+
+    
 
     private HealthHandler GetEnemy()
     {
@@ -70,14 +85,21 @@ public class SoliderMove : MoveHandler
             return;
         }
         animHandler.SetAnim(AnimHandler.State.Move);
-        Vector3 direction = (target - actor.position).normalized;
+        Direction = (target - actor.position).normalized;
         actor.transform.Translate(direction * m_speed * Time.deltaTime);
     }
 
     private void Update()
     {
+        if (animHandler.currentState == AnimHandler.State.Attack || animHandler.currentState == AnimHandler.State.Dead)
+            return;
+
         
-        if (animHandler.currentState == AnimHandler.State.Attack) return;
+        if (targetEnemy != null && Vector3.Distance(m_FlagPosition, targetEnemy.Actor.position) >= maxDistance)
+        {
+            occupiedEnemies.Remove(targetEnemy);
+            targetEnemy = null;
+        }
 
         if (targetEnemy == null || targetEnemy.IsDead)
         {
@@ -94,4 +116,5 @@ public class SoliderMove : MoveHandler
             MoveToTarget(m_FlagPosition);
         }
     }
+
 }

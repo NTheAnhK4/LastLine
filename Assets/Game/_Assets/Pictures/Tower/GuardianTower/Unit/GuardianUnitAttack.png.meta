@@ -126,10 +126,10 @@ TextureImporter:
       name: GuardianUnitAttack_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 1178
-        width: 162
-        height: 217
+        x: 24
+        y: 1179
+        width: 168
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f641a09e8cf41344384e10b670787a69
-      internalID: 1353870331
+      spriteID: 4c5a2af13c07c6c4da8ab0c4d73bb39e
+      internalID: 2075684563
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: GuardianUnitAttack_1
       rect:
         serializedVersion: 2
-        x: 403
-        y: 1178
-        width: 146
-        height: 216
+        x: 394
+        y: 1179
+        width: 182
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15570eb4e23ab57409a3bb5646caf855
-      internalID: 1328927423
+      spriteID: 4ac54f740c892d64aa70a5101c33ee5a
+      internalID: -2027897705
       vertices: []
       indices: 
       edges: []
@@ -168,10 +168,10 @@ TextureImporter:
       name: GuardianUnitAttack_2
       rect:
         serializedVersion: 2
-        x: 797
-        y: 1178
-        width: 138
-        height: 225
+        x: 796
+        y: 1179
+        width: 111
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58750e189ab57a04eade519b542c9eb7
-      internalID: 1560082539
+      spriteID: dc94b647f18592240a38a57d3d0afe01
+      internalID: 1106470037
       vertices: []
       indices: 
       edges: []
@@ -189,10 +189,10 @@ TextureImporter:
       name: GuardianUnitAttack_3
       rect:
         serializedVersion: 2
-        x: 1192
+        x: 1165
         y: 1178
-        width: 113
-        height: 225
+        width: 137
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d01fe56c7a5ca314990a12957537b296
-      internalID: -635028428
+      spriteID: faf7b33ec8a60f94a8963dfe8cad0fff
+      internalID: 1949805661
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
       name: GuardianUnitAttack_4
       rect:
         serializedVersion: 2
-        x: 1523
-        y: 1178
-        width: 183
-        height: 208
+        x: 1552
+        y: 1179
+        width: 144
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9be72ddbc9a2955498af60a7564f8efe
-      internalID: -770586791
+      spriteID: 06a9542d21b58c74b9cd6a8cf27d309d
+      internalID: -230656206
       vertices: []
       indices: 
       edges: []
@@ -231,10 +231,10 @@ TextureImporter:
       name: GuardianUnitAttack_5
       rect:
         serializedVersion: 2
-        x: 1907
-        y: 1178
-        width: 170
-        height: 217
+        x: 1914
+        y: 1179
+        width: 160
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db5e629faff503d44a49e55022f660b0
-      internalID: -715581723
+      spriteID: 6f8a5ff6beeaea1429831307b2b70208
+      internalID: -1924244980
       vertices: []
       indices: 
       edges: []
@@ -252,10 +252,10 @@ TextureImporter:
       name: GuardianUnitAttack_6
       rect:
         serializedVersion: 2
-        x: 17
-        y: 657
-        width: 179
-        height: 209
+        x: 16
+        y: 658
+        width: 176
+        height: 207
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03b5c980113915c4f9b14561e312934d
-      internalID: 1245908852
+      spriteID: 66709a91dda67bb4db8c3b4494596728
+      internalID: 1536789035
       vertices: []
       indices: 
       edges: []
@@ -273,10 +273,10 @@ TextureImporter:
       name: GuardianUnitAttack_7
       rect:
         serializedVersion: 2
-        x: 403
-        y: 657
-        width: 163
-        height: 218
+        x: 386
+        y: 658
+        width: 191
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ecdf5046bcea2b4a918dc0ad2a5879c
-      internalID: 1552475926
+      spriteID: a94c4c5f779ba9f4fa9b3caf0fe2cab7
+      internalID: -1180541690
       vertices: []
       indices: 
       edges: []
@@ -294,10 +294,10 @@ TextureImporter:
       name: GuardianUnitAttack_8
       rect:
         serializedVersion: 2
-        x: 797
-        y: 657
-        width: 138
-        height: 218
+        x: 796
+        y: 658
+        width: 112
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a5edb34451fd594f85f44102f98fe17
-      internalID: -1987318997
+      spriteID: 77b2b27f22a518345993f1d155073142
+      internalID: 1543783637
       vertices: []
       indices: 
       edges: []
@@ -315,10 +315,10 @@ TextureImporter:
       name: GuardianUnitAttack_9
       rect:
         serializedVersion: 2
-        x: 1192
-        y: 657
-        width: 113
-        height: 218
+        x: 1165
+        y: 658
+        width: 137
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa130c112a8896340be05041cd6f2c7d
-      internalID: 287706156
+      spriteID: 38c26b84105cb314391918a2d32db9d1
+      internalID: 932761828
       vertices: []
       indices: 
       edges: []
@@ -336,10 +336,10 @@ TextureImporter:
       name: GuardianUnitAttack_10
       rect:
         serializedVersion: 2
-        x: 1522
-        y: 657
-        width: 193
-        height: 202
+        x: 1535
+        y: 658
+        width: 161
+        height: 216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,8 +347,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d8e9c06dffca374885dae37ef77aeae
-      internalID: -1586594819
+      spriteID: c65508b21cebcb94797dfbb295cd2cd4
+      internalID: 1337699439
       vertices: []
       indices: 
       edges: []
@@ -357,10 +357,10 @@ TextureImporter:
       name: GuardianUnitAttack_11
       rect:
         serializedVersion: 2
-        x: 1907
-        y: 657
-        width: 178
-        height: 209
+        x: 1905
+        y: 658
+        width: 177
+        height: 207
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,8 +368,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec612c1d31698eb409dd017acab5718e
-      internalID: -1437478319
+      spriteID: e6e4150ca38bd4749b1a3e8bd67df76a
+      internalID: -1565402708
       vertices: []
       indices: 
       edges: []
@@ -378,10 +378,10 @@ TextureImporter:
       name: GuardianUnitAttack_12
       rect:
         serializedVersion: 2
-        x: 9
-        y: 120
-        width: 187
-        height: 210
+        x: 16
+        y: 121
+        width: 184
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,8 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2a9e5c17ac19484fa9260edb251da0a
-      internalID: 969554881
+      spriteID: 8bd0e28c61e68244d98800883a6d62f7
+      internalID: -1287070900
       vertices: []
       indices: 
       edges: []
@@ -399,10 +399,10 @@ TextureImporter:
       name: GuardianUnitAttack_13
       rect:
         serializedVersion: 2
-        x: 403
-        y: 120
-        width: 169
-        height: 217
+        x: 386
+        y: 121
+        width: 190
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,8 +410,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2598508f228599241bfe861338f167d0
-      internalID: -960113658
+      spriteID: eab923f7002730849823199d33c23b2e
+      internalID: -1450335784
       vertices: []
       indices: 
       edges: []
@@ -420,10 +420,10 @@ TextureImporter:
       name: GuardianUnitAttack_14
       rect:
         serializedVersion: 2
-        x: 797
-        y: 120
-        width: 146
-        height: 217
+        x: 787
+        y: 121
+        width: 120
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,8 +431,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fdfbdf62dbdb114db1332f40426b239
-      internalID: -722175476
+      spriteID: 4c6cfe25aaf98714e9a6769c4d60ef99
+      internalID: -744410196
       vertices: []
       indices: 
       edges: []
@@ -441,10 +441,10 @@ TextureImporter:
       name: GuardianUnitAttack_15
       rect:
         serializedVersion: 2
-        x: 1192
-        y: 120
-        width: 122
-        height: 217
+        x: 1158
+        y: 121
+        width: 144
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,8 +452,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4244dca22b2cd7846af1e3c48e115c01
-      internalID: 130375424
+      spriteID: 6a7f7beff2042394486a736abba26b8d
+      internalID: -451463794
       vertices: []
       indices: 
       edges: []
@@ -462,10 +462,10 @@ TextureImporter:
       name: GuardianUnitAttack_16
       rect:
         serializedVersion: 2
-        x: 1523
-        y: 120
-        width: 192
-        height: 202
+        x: 1528
+        y: 121
+        width: 168
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,8 +473,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7ffde2ca807c5145a47708baeb1f751
-      internalID: 1522554607
+      spriteID: 6873916d31e01a14db5bf930369967d9
+      internalID: -571658153
       vertices: []
       indices: 
       edges: []
@@ -483,10 +483,10 @@ TextureImporter:
       name: GuardianUnitAttack_17
       rect:
         serializedVersion: 2
-        x: 1899
+        x: 1905
         y: 121
         width: 186
-        height: 209
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,8 +494,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cf0cd0fc406d5d4cadc4a20537758ab
-      internalID: -213005487
+      spriteID: 0d1135c46405dd24cb0db132a515f1fd
+      internalID: -773534560
       vertices: []
       indices: 
       edges: []
@@ -511,24 +511,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GuardianUnitAttack_0: 1353870331
-      GuardianUnitAttack_1: 1328927423
-      GuardianUnitAttack_10: -1586594819
-      GuardianUnitAttack_11: -1437478319
-      GuardianUnitAttack_12: 969554881
-      GuardianUnitAttack_13: -960113658
-      GuardianUnitAttack_14: -722175476
-      GuardianUnitAttack_15: 130375424
-      GuardianUnitAttack_16: 1522554607
-      GuardianUnitAttack_17: -213005487
-      GuardianUnitAttack_2: 1560082539
-      GuardianUnitAttack_3: -635028428
-      GuardianUnitAttack_4: -770586791
-      GuardianUnitAttack_5: -715581723
-      GuardianUnitAttack_6: 1245908852
-      GuardianUnitAttack_7: 1552475926
-      GuardianUnitAttack_8: -1987318997
-      GuardianUnitAttack_9: 287706156
+      GuardianUnitAttack_0: 2075684563
+      GuardianUnitAttack_1: -2027897705
+      GuardianUnitAttack_10: 1337699439
+      GuardianUnitAttack_11: -1565402708
+      GuardianUnitAttack_12: -1287070900
+      GuardianUnitAttack_13: -1450335784
+      GuardianUnitAttack_14: -744410196
+      GuardianUnitAttack_15: -451463794
+      GuardianUnitAttack_16: -571658153
+      GuardianUnitAttack_17: -773534560
+      GuardianUnitAttack_2: 1106470037
+      GuardianUnitAttack_3: 1949805661
+      GuardianUnitAttack_4: -230656206
+      GuardianUnitAttack_5: -1924244980
+      GuardianUnitAttack_6: 1536789035
+      GuardianUnitAttack_7: -1180541690
+      GuardianUnitAttack_8: 1543783637
+      GuardianUnitAttack_9: 932761828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

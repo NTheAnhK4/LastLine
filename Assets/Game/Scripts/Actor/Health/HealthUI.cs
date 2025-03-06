@@ -19,6 +19,7 @@ public class HealthUI : ComponentBehavior
         
         //Hide the health bar initially
         healthHolder.gameObject.SetActive(false);
+        timer = timeHide;
     }
 
     private void OnEnable()
@@ -40,4 +41,6 @@ public class HealthUI : ComponentBehavior
         timer += Time.deltaTime;
         if (timer >= timeHide) healthHolder.gameObject.SetActive(false);
     }
+
+    
 }

@@ -126,219 +126,9 @@ TextureImporter:
       name: GuardianUnitIdle_0
       rect:
         serializedVersion: 2
-        x: 223
+        x: 452
         y: 1212
-        width: 177
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: daabd178183675f48abd1726bbc3b4b4
-      internalID: -362670533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_1
-      rect:
-        serializedVersion: 2
-        x: 644
-        y: 1211
-        width: 161
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c12d836e38fd73468a355baddb3110b
-      internalID: 1978809958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_2
-      rect:
-        serializedVersion: 2
-        x: 1049
-        y: 1211
-        width: 177
-        height: 246
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d5da51d09e1fbd4eabc0f17d4004cee
-      internalID: 1777075683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_3
-      rect:
-        serializedVersion: 2
-        x: 1454
-        y: 1211
-        width: 195
-        height: 238
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47dd0ddba3cfef74ba368594ce0e940d
-      internalID: -589504923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_4
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 644
-        width: 195
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 785bfc1435ca865468e488f8389b87ad
-      internalID: -126610283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_5
-      rect:
-        serializedVersion: 2
-        x: 637
-        y: 644
-        width: 176
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d6725bb75a58864baba8cd9f1f31015
-      internalID: 876297015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_6
-      rect:
-        serializedVersion: 2
-        x: 1042
-        y: 644
-        width: 194
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37d4389f333fab74c998d0e82439b4c9
-      internalID: 1544824746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_7
-      rect:
-        serializedVersion: 2
-        x: 1446
-        y: 644
-        width: 211
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f120ed84389687749a948f6cd8894017
-      internalID: -1693631064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_8
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 58
-        width: 204
-        height: 229
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24de88af088127b4e81567010b7b439b
-      internalID: -1207289252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_9
-      rect:
-        serializedVersion: 2
-        x: 628
-        y: 58
-        width: 185
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e63ede480a3eedc4c9fb6e075405bb29
-      internalID: 1557290751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_10
-      rect:
-        serializedVersion: 2
-        x: 1033
-        y: 59
-        width: 203
+        width: 193
         height: 236
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -347,8 +137,218 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26e50801db9315443834972146113f8f
-      internalID: -677893668
+      spriteID: 476d55115ecce5c44bdbf048f70121ff
+      internalID: -738483430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_1
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1212
+        width: 175
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe45ae1c8f375724ea48e321b6828213
+      internalID: -1832174570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_2
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 1212
+        width: 159
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0f7cfb4dfefa940b985c13c97a7da5
+      internalID: 1809709978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_3
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 1212
+        width: 175
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0878543235907f4bb2269bc8969d588
+      internalID: -1665515124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_4
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 645
+        width: 209
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e783fe6caa582246868651d9e48bd4e
+      internalID: -616190161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_5
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 645
+        width: 192
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd68172e31ef154fa361dd5737c08ea
+      internalID: 1256135107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_6
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 645
+        width: 175
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba01b6be3f2b31b4e9278ca2ce796092
+      internalID: -1572059674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_7
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 645
+        width: 193
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babb25c238afeb649b025af1f424b366
+      internalID: -458315378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_8
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 59
+        width: 217
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50dbdd1dba1be0d4cbcc3d08f5554ed8
+      internalID: -1906928615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_9
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 59
+        width: 201
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 185d192aaa89b014086b020a60d78973
+      internalID: -333979975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GuardianUnitIdle_10
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 59
+        width: 184
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf875cabf21ce548b3cc0a11ba69b31
+      internalID: -219903610
       vertices: []
       indices: 
       edges: []
@@ -357,10 +357,10 @@ TextureImporter:
       name: GuardianUnitIdle_11
       rect:
         serializedVersion: 2
-        x: 1438
-        y: 58
-        width: 219
-        height: 229
+        x: 1692
+        y: 59
+        width: 202
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,8 +368,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96635e87498606f4a8da98d76df31089
-      internalID: -1667504947
+      spriteID: 281a05ac7c45e5c42bf01946d7bb66cf
+      internalID: -44735502
       vertices: []
       indices: 
       edges: []
@@ -385,18 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GuardianUnitIdle_0: -362670533
-      GuardianUnitIdle_1: 1978809958
-      GuardianUnitIdle_10: -677893668
-      GuardianUnitIdle_11: -1667504947
-      GuardianUnitIdle_2: 1777075683
-      GuardianUnitIdle_3: -589504923
-      GuardianUnitIdle_4: -126610283
-      GuardianUnitIdle_5: 876297015
-      GuardianUnitIdle_6: 1544824746
-      GuardianUnitIdle_7: -1693631064
-      GuardianUnitIdle_8: -1207289252
-      GuardianUnitIdle_9: 1557290751
+      GuardianUnitIdle_0: -738483430
+      GuardianUnitIdle_1: -1832174570
+      GuardianUnitIdle_10: -219903610
+      GuardianUnitIdle_11: -44735502
+      GuardianUnitIdle_2: 1809709978
+      GuardianUnitIdle_3: -1665515124
+      GuardianUnitIdle_4: -616190161
+      GuardianUnitIdle_5: 1256135107
+      GuardianUnitIdle_6: -1572059674
+      GuardianUnitIdle_7: -458315378
+      GuardianUnitIdle_8: -1906928615
+      GuardianUnitIdle_9: -333979975
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
