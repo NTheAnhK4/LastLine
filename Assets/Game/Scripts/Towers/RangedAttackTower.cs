@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class ArcherTower : Tower
+public class RangedAttackTower : Tower
 {
     [SerializeField] private RangedAttack archerAttack; 
     

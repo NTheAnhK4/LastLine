@@ -7,7 +7,8 @@ using UnityEngine;
 public enum SoundType
 {
     BackGround,
-    Arrow
+    Arrow,
+    SoilBreak
 }
 public class SoundManager : Singleton<SoundManager>
 {

@@ -26,6 +26,8 @@ MonoBehaviour:
       TowerId: 2
     - Cost: 20
       TowerId: 3
+    - Cost: 20
+      TowerId: 4
   - TowerName: Archer level 1
     AttackRange: 4
     AttackSpeed: 0.6
@@ -45,5 +47,12 @@ MonoBehaviour:
     AttackSpeed: 2
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 5332507477801701714, guid: ee24048670e403c44a51b0fd39899fc0, type: 3}
+    TowerUIPrefab: {fileID: 0}
+    TowerUpgradeList: []
+  - TowerName: Catapult level 1
+    AttackRange: 5
+    AttackSpeed: 1.5
+    UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
+    TowerPrefab: {fileID: 6969141493794900000, guid: f338c54d42ef31a498cf69c9b9033e64, type: 3}
     TowerUIPrefab: {fileID: 0}
     TowerUpgradeList: []
