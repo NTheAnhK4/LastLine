@@ -11,7 +11,7 @@ public class SummonAttack : ComponentBehavior
 {
     [SerializeField] private Vector3 m_SpawnPosition;
 
-    [FormerlySerializedAs("SummonedUnitPrefab")] [SerializeField] private GameObject m_Unit;
+    [SerializeField] private GameObject m_Unit;
     [SerializeField] private int summonLimit;
     [SerializeField] private float m_SummonCooldown;
     [SerializeField] private int currentNumber;
@@ -32,16 +32,9 @@ public class SummonAttack : ComponentBehavior
         m_SummonCooldown = summonedCooldown;
         m_SpawnPosition = spawnPosition;
         isSummoning = false;
-        for (int i = 1; i <= summonLimit; ++i)
-        {
-            Vector3 newPosition = GetSpawnPos(m_SpawnPosition);
-            Solider solider = PoolingManager.Spawn(m_Unit,newPosition, default,transform)
-                .GetComponent<Solider>();
-        
-            solider.Init(this,m_SpawnPosition);
-        }
+        for(int i = 0; i < summonLimit; ++i) OnSummon();
 
-        currentNumber = summonLimit;
+
     }
 
     protected override void Awake()
@@ -63,21 +56,27 @@ public class SummonAttack : ComponentBehavior
     private void Update()
     {
         if(currentNumber >= summonLimit || isSummoning) return;
-        StartCoroutine(Summon());
+        StartCoroutine(SummonByTime());
 
     }
 
-    IEnumerator Summon()
+    IEnumerator SummonByTime()
     {
         isSummoning = true;
-        currentNumber++;
+        
         yield return new WaitForSeconds(m_SummonCooldown);
+        OnSummon();
+        isSummoning = false;
+    }
+
+    private void OnSummon()
+    {
+        currentNumber++;
         Vector3 newPosition = GetSpawnPos(m_SpawnPosition);
         Solider solider = PoolingManager.Spawn(m_Unit,newPosition, default,transform)
             .GetComponent<Solider>();
         
         solider.Init(this,m_SpawnPosition);
-        isSummoning = false;
     }
 
     private Vector3 GetSpawnPos(Vector3 root)

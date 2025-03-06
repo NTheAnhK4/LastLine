@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2133620640892939580}
   currentState: 0
+  previousState: 0
 --- !u!1 &2435524733013629353
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +314,7 @@ GameObject:
   - component: {fileID: 1986967365732100580}
   - component: {fileID: 6969589960759456126}
   - component: {fileID: 2667724457067798718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Archer Level 1
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -395,12 +396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 7eacf0dcf2602ee47b8bb1f615dbff2f, type: 2}
-  towerId: 1
   animHandler: {fileID: 1789544318296176523}
-  TowerUIPrefab: {fileID: 0}
   towerUI: {fileID: 0}
   archerAttack: {fileID: 2610984385145488768}
-  projectilePrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
 --- !u!1 &8881655169308822015
 GameObject:
   m_ObjectHideFlags: 0

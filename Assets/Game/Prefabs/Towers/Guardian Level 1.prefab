@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpawnPosition: {x: 0, y: 0, z: 0}
-  m_Unit: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
-  summonLimit: 3
+  m_Unit: {fileID: 0}
+  summonLimit: 0
   m_SummonCooldown: 0
   currentNumber: 0
 --- !u!1 &2407921544822147048
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 4445264257873592267}
   - component: {fileID: 3164445586120462828}
   - component: {fileID: 6147574225964924277}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Guardian Level 1
   m_TagString: Tower
   m_Icon: {fileID: 0}

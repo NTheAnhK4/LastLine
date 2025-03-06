@@ -16,8 +16,8 @@ public class MeleeEnemy : Enemy
     public void Init(MeleeEnemyParam enemyData, List<Vector3> pathList)
     {
         enemyMove.Init(pathList,enemyData.MoveSpeed);
-        enemyHealth.Init(enemyData.HealthPoint);
-        enemyAttack.Init(enemyData.AttackRange, enemyData.AttackSpeed, enemyData.Damage);
+        enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
+        enemyAttack.Init(enemyData.AttackRange, enemyData.AttackSpeed, enemyData.Damage, enemyData.DamageType);
         enemyDead.Init(enemyData.RewardGold, enemyData.Damage);
         animHandler.SetAnim(AnimHandler.State.Move);
     }

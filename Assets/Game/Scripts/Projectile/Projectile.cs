@@ -25,6 +25,6 @@ public class Projectile : ComponentBehavior
         enemyTarget = enemyTrf;
         projectileMove.Init(enemyTarget, m_ProjectileData.Projectiles[m_ProjectileId].speed);
        
-        projectileImpact.Init(enemyTarget,m_ProjectileData.Projectiles[m_ProjectileId].damage);
+        projectileImpact.Init(enemyTarget,m_ProjectileData.Projectiles[m_ProjectileId].damage, m_ProjectileData.Projectiles[m_ProjectileId].DamageType);
     }
 }

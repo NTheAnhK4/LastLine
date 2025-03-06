@@ -13,13 +13,16 @@ public class MeleeEnemyParam
 {
     public string Name;
     public float HealthPoint;
+    public float PhysicalDamageReduction;
+    public float MagicalDamageReduction;
 
     public float MoveSpeed;
 
     public float Damage;
+    public DamageType DamageType;
     public float AttackRange;
     public float AttackSpeed;
-
+    
     public int RewardGold;
     public GameObject EnemyPrefab;
 }

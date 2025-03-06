@@ -12,3 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8044eb15e64c78428d85c79a6272571, type: 3}
   m_Name: ProjectileData
   m_EditorClassIdentifier: 
+  Projectiles:
+  - Name: Arrow
+    speed: 6
+    damage: 1
+    DamageType: 0
+  - Name: Soil Bullet
+    speed: 5
+    damage: 2
+    DamageType: 0
+  - Name: Mage Bullet
+    speed: 5
+    damage: 1.5
+    DamageType: 1

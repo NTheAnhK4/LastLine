@@ -8,16 +8,18 @@ public class ProjectileImpact : ComponentBehavior
     [SerializeField] private Projectile projectile;
     [SerializeField] private Transform enemyTarget;
     [SerializeField] private float damage;
+    [SerializeField] private DamageType m_DamageType;
     protected override void LoadComponent()
     {
         base.LoadComponent();
         if (projectile == null) projectile = transform.GetComponentInParent<Projectile>();
     }
 
-    public void Init(Transform enemyTrf, float dmg)
+    public void Init(Transform enemyTrf, float dmg, DamageType damageType)
     {
         enemyTarget = enemyTrf;
         damage = dmg;
+        m_DamageType = damageType;
     }
 
     private bool IsEnemy(Transform enemy)
@@ -33,7 +35,7 @@ public class ProjectileImpact : ComponentBehavior
         if (IsEnemy(other.transform))
         {
             PlaySound();
-            healthHandler.TakeDamage(damage);
+            healthHandler.TakeDamage(damage, m_DamageType);
             projectile.projectileDespawn.OnDead(false);
         }
     }
