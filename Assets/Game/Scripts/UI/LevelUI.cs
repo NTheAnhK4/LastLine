@@ -14,7 +14,7 @@ public class LevelUI : ComponentBehavior
     [SerializeField] private TextMeshProUGUI goldTxt;
     [SerializeField] private CenterUI winUI;
     [SerializeField] private CenterUI loseUI;
-    [SerializeField] private Transform panel;
+    [SerializeField] private PanelUI panel;
 
     private LevelParam m_LevelParam;
     private System.Action<object> onWinHandler;
@@ -49,7 +49,7 @@ public class LevelUI : ComponentBehavior
         Transform center = transform.Find("Center");
         winUI = center.Find("WinUI").GetComponent<CenterUI>();
         loseUI = center.Find("LoseUI").GetComponent<CenterUI>();
-        panel = center.Find("Panel");
+        panel = center.Find("Panel").GetComponent<PanelUI>();
     }
 
     private void OnEnable()

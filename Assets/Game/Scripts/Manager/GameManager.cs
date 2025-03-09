@@ -41,5 +41,10 @@ public class GameManager : Singleton<GameManager>
         if (Math.Abs(preSpeed - (-1)) < 0.01) GameSpeed = 1;
         else GameSpeed = preSpeed;
     }
+
+    public void ReplayLevel()
+    {
+        SelectLevel(LevelManager.Instance.CurrentLevel);
+    }
     
 }

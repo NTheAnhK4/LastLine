@@ -29,10 +29,19 @@ public class WinUI : CenterUI
             });
             
         });
+        rePlayBtn.onClick.AddListener(() =>
+        {
+            HideUI(() =>
+            {
+                GameManager.Instance.GameSpeed = 1;
+                GameManager.Instance.ReplayLevel();
+            });
+        });
     }
 
     private void OnDisable()
     {
         continueBtn.onClick.RemoveAllListeners();
+        rePlayBtn.onClick.RemoveAllListeners();
     }
 }
