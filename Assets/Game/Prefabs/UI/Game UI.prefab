@@ -1463,7 +1463,7 @@ RectTransform:
   m_GameObject: {fileID: 1573031070871946686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5608318677948834279}
@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81823daf1c10cd54b90e2df1d04eec81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalScale: {x: 0, y: 0, z: 0}
+  originalScale: {x: 1, y: 1, z: 1}
   rePlayBtn: {fileID: 4804891172959177226}
   quitBtn: {fileID: 7908396113376883711}
 --- !u!1 &1895538341992589860
@@ -4428,10 +4428,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4359638801438934479}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7054054298438312765}
+        m_TargetAssemblyTypeName: PanelUI, Assembly-CSharp
+        m_MethodName: HideUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

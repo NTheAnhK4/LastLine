@@ -8,6 +8,7 @@ public class LevelManager : Singleton<LevelManager>
     
     public EnemySpawner enemySpawner;
     public TowerSpawner towerSpawner;
+    public LevelSpawner levelSpawner;
     public LevelUI levelUI;
    
     private float healthPoint = 20;
@@ -76,14 +77,16 @@ public class LevelManager : Singleton<LevelManager>
 
     private void Start()
     {
-        int currentLevel = GameManager.Instance.SelectedLevel;
+        currentLevel = GameManager.Instance.SelectedLevel;
         PlayLevel(this.currentLevel);
     }
 
     private void PlayLevel(int level)
     {
+        
         GameManager.Instance.GameSpeed = 1;
         currentLevel = level;
+        levelSpawner.Init(LevelData.Levels[level].LevelPrefab);
         isGameOver = false;
         m_EnemyCount = 0;
         foreach (WayParam wayParam in LevelData.Levels[level].Ways)

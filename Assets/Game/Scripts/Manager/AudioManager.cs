@@ -68,6 +68,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public static void PlayBackGroundMusic(SoundType sound)
     {
+       
         Instance.m_MusicSource.Stop();
         Instance.m_MusicSource.clip = Instance.soundList[(int)sound].Sound;
 

@@ -11,6 +11,7 @@ public class LevelData : ScriptableObject
 public class LevelParam
 {
     public int InitialGold;
+    public GameObject LevelPrefab;
     public List<WayParam> Ways;
     public List<PathParam> Paths;
     public List<TowerInfor> TowerInfors;
