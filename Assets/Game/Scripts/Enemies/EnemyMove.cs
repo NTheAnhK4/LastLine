@@ -17,8 +17,8 @@ public class EnemyMove : MoveHandler
         get => direction;
         set
         {
-            if(direction.x < 0 && value.x > 0) animHandler.RotateAnim(true);
-            if(direction.x > 0 && value.x < 0) animHandler.RotateAnim(false);
+            if(direction.x < 0) animHandler.RotateAnim(false);
+            else animHandler.RotateAnim(true);
             direction = value;
         }
     }

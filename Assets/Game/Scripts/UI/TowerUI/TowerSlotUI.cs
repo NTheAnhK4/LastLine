@@ -1,5 +1,5 @@
 
-using System;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,54 +37,32 @@ public class TowerSlotUI : TowerUI
         
     }
 
-    protected  void Start()
+    void Start()
     {
-        archer.btn.onClick.AddListener(() =>
+        AddBuyListener(archer, 0);
+        AddBuyListener(guardian, 1);
+        AddBuyListener(mage, 2);
+        AddBuyListener(catapult, 3);
+    }
+
+    void AddBuyListener(UpdateTowerInfor towerInfor, int towerType)
+    {
+        towerInfor.btn.onClick.AddListener(() =>
         {
-            
-            int archerCost = int.Parse(archer.cost.text);
-            if (archerCost <= LevelManager.Instance.Gold)
+            int cost = int.Parse(towerInfor.cost.text);
+            if (cost <= LevelManager.Instance.Gold)
             {
-                LevelManager.Instance.Gold -= archerCost;
-                UpdateTower(0,1);
+                LevelManager.Instance.Gold -= cost;
+                UpdateTower(towerType, 1);
             }
-            else PoolingManager.Despawn(gameObject);
-           
-        });
-        guardian.btn.onClick.AddListener(() =>
-        {
-            
-            int guardianCost = int.Parse(guardian.cost.text);
-            if (guardianCost <= LevelManager.Instance.Gold)
+            else
             {
-                LevelManager.Instance.Gold -= guardianCost;
-                UpdateTower(1,1);
+                PoolingManager.Despawn(gameObject);
+                Debug.Log("Not enough money");
             }
-            else PoolingManager.Despawn(gameObject);
-        });
-        mage.btn.onClick.AddListener(() =>
-        {
-            
-            int mageCost = int.Parse(mage.cost.text);
-            if (mageCost <= LevelManager.Instance.Gold)
-            {
-                LevelManager.Instance.Gold -= mageCost;
-                UpdateTower(2,1);
-            }
-            else PoolingManager.Despawn(gameObject);
-        });
-        catapult.btn.onClick.AddListener(() =>
-        {
-            
-            int catapultCost = int.Parse(catapult.cost.text);
-            if (catapultCost <= LevelManager.Instance.Gold)
-            {
-                LevelManager.Instance.Gold -= catapultCost;
-                UpdateTower(3,1);
-            }
-            else PoolingManager.Despawn(gameObject);
         });
     }
+
 
     
 }

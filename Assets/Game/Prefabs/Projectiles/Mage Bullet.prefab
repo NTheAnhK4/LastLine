@@ -384,8 +384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d85eddac0bb11489ff38a45f5613f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SoundType: 3
+  m_SoundType: 4
   projectile: {fileID: 7448945896864377855}
   enemyTarget: {fileID: 0}
   damage: 0
   m_DamageType: 0
+  m_EffectPrefab: {fileID: 0}

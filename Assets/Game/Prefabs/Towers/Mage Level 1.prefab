@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 8620839119513022693}
   - component: {fileID: 4743636241566395293}
   - component: {fileID: 1083660024140557392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Attack
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06714553, y: -0.12553918}
+  m_Offset: {x: -0.036872625, y: -0.012064874}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -310,7 +310,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.8872437, y: 3.873669}
+  m_Size: {x: 2.1662145, y: 1.9446038}
   m_EdgeRadius: 0
 --- !u!114 &7998617216555047857
 MonoBehaviour:
