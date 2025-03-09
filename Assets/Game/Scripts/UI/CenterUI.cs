@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -29,14 +30,25 @@ public class CenterUI : ComponentBehavior
         });
         
     }
+    
     public void HideUI()
     {
         GameManager.Instance.SetPreSpeedGame();
-        tween = transform.DOScale(0, 0.3f).SetEase(Ease.InBack).OnComplete(() =>
+        tween = transform.DOScale(0, 0.5f).SetEase(Ease.InBack).OnComplete(() =>
         {
             gameObject.SetActive(false);
         });
         
+    }
+
+    public void HideUI(Action actionAfterHide)
+    {
+        GameManager.Instance.SetPreSpeedGame();
+        tween = transform.DOScale(0, 0.5f).SetEase(Ease.InBack).OnComplete(() =>
+        {
+            gameObject.SetActive(false);
+            actionAfterHide?.Invoke();
+        });
     }
 
     private void OnDestroy()

@@ -115,7 +115,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0003144741, y: 0.0028185174}
+  m_Offset: {x: 0.053191632, y: 0.01916761}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -126,7 +126,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5167917, y: 0.4923814}
+  m_Size: {x: 0.28493196, y: 0.26943928}
   m_EdgeRadius: 0
 --- !u!50 &3392934392689364802
 Rigidbody2D:
@@ -171,6 +171,8 @@ MonoBehaviour:
   projectile: {fileID: 2734303196570377524}
   enemyTarget: {fileID: 0}
   damage: 0
+  m_DamageType: 0
+  m_EffectPrefab: {fileID: 96591816011255216, guid: 65d2307c0f298194e95315f1d23f1812, type: 3}
 --- !u!1 &4244860337108714906
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,12 +297,12 @@ SpriteRenderer:
   m_SortingLayerID: 686679155
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1606135150, guid: 7583ef79e0f2c6d4fb5706f2f352a182, type: 3}
+  m_Sprite: {fileID: -1048705487, guid: 53014537441eaca42a55ac504be0a32e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.1, y: 0.03}
+  m_Size: {x: 1.5483333, y: 1.55}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -21,8 +21,13 @@ public class WinUI : CenterUI
     {
         continueBtn.onClick.AddListener(() =>
         {
-            GameManager.Instance.GameSpeed = 1;
-            SceneManager.LoadScene("WorldMap");
+            HideUI(() =>
+            {
+                GameManager.Instance.GameSpeed = 1;
+                SceneManager.LoadScene("WorldMap");
+                AudioManager.PlayBackGroundMusic(SoundType.SelectLevel);
+            });
+            
         });
     }
 
