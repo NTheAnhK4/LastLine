@@ -9,6 +9,7 @@ public class ProjectileImpact : ComponentBehavior
     [SerializeField] private Transform enemyTarget;
     [SerializeField] private float damage;
     [SerializeField] private DamageType m_DamageType;
+    [SerializeField] private Transform m_EffectPrefab;
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -37,11 +38,12 @@ public class ProjectileImpact : ComponentBehavior
             PlaySound();
             healthHandler.TakeDamage(damage, m_DamageType);
             projectile.projectileDespawn.OnDead(false);
+            if (m_EffectPrefab != null) PoolingManager.Spawn(m_EffectPrefab.gameObject, other.transform.position, default);
         }
     }
 
     protected virtual void PlaySound()
     {
-        SoundManager.PlaySFX(m_SoundType,0.3f);
+        AudioManager.PlaySFX(m_SoundType,0.3f);
     }
 }

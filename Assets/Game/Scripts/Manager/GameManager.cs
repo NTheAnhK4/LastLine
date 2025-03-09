@@ -33,6 +33,7 @@ public class GameManager : Singleton<GameManager>
     {
         SelectedLevel = level;
         SceneManager.LoadScene("InGame");
+        AudioManager.PlayBackGroundMusic(SoundType.InGame);
     }
 
     public void SetPreSpeedGame()

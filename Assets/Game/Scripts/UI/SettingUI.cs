@@ -23,8 +23,11 @@ public class SettingUI : CenterUI
     {
         quitBtn.onClick.AddListener(() =>
         {
-            GameManager.Instance.GameSpeed = 1;
-            SceneManager.LoadScene("WorldMap");
+            HideUI(() =>
+            {
+                GameManager.Instance.GameSpeed = 1;
+                SceneManager.LoadScene("WorldMap");
+            });
         });
     }
 

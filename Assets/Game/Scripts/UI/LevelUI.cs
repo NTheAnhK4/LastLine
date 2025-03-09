@@ -12,8 +12,8 @@ public class LevelUI : ComponentBehavior
     [SerializeField] private TextMeshProUGUI healthTxt;
     [SerializeField] private TextMeshProUGUI wayNumTxt;
     [SerializeField] private TextMeshProUGUI goldTxt;
-    [SerializeField] private Transform winUI;
-    [SerializeField] private Transform loseUI;
+    [SerializeField] private CenterUI winUI;
+    [SerializeField] private CenterUI loseUI;
     [SerializeField] private Transform panel;
 
     private LevelParam m_LevelParam;
@@ -47,8 +47,8 @@ public class LevelUI : ComponentBehavior
         }
 
         Transform center = transform.Find("Center");
-        winUI = center.Find("WinUI");
-        loseUI = center.Find("LoseUI");
+        winUI = center.Find("WinUI").GetComponent<CenterUI>();
+        loseUI = center.Find("LoseUI").GetComponent<CenterUI>();
         panel = center.Find("Panel");
     }
 
@@ -128,16 +128,16 @@ public class LevelUI : ComponentBehavior
         }
     }
 
-    private void SetUICenterActive(Transform centerUI)
+    private void SetUICenterActive(CenterUI centerUI)
     {
         if (centerUI == null)
         {
             Debug.LogWarning("centerUI has been destroyed or is missing.");
             return;
         }
-        centerUI.gameObject.SetActive(true);
+        centerUI.ShowUI();
         panel.gameObject.SetActive(true);
-        GameManager.Instance.GameSpeed = 0;
+        
     }
     private void OnWin()
     {

@@ -177,12 +177,18 @@ MonoBehaviour:
   m_MusicSource: {fileID: 2006700094037718173}
   m_SFXSource: {fileID: 1895941069207627392}
   soundList:
-  - name: BackGround
+  - name: InGame
     sound: {fileID: 8300000, guid: e7759495b4bbd6949bd6e6bdd12f2b2a, type: 3}
+  - name: SelectLevel
+    sound: {fileID: 8300000, guid: 933a95dc9fd4e544c93dc29a94f4d672, type: 3}
   - name: Arrow
     sound: {fileID: 8300000, guid: 149e1be7ad38078419f478d8b79ea26e, type: 3}
   - name: SoilBreak
     sound: {fileID: 8300000, guid: ad0627b68a52bc347946501b796f405d, type: 3}
+  - name: MagicImpact
+    sound: {fileID: 8300000, guid: f5ee36f9dec15e740a553f3cbce6fecd, type: 3}
+  m_MusicVolumeRate: 1
+  m_SFXVolumeRate: 1
 --- !u!1 &7520886719449396438
 GameObject:
   m_ObjectHideFlags: 0
