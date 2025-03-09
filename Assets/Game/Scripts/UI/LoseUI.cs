@@ -1,22 +1,19 @@
-using System;
-using DG.Tweening;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SettingUI : CenterUI
+public class LoseUI : CenterUI
 {
-    [SerializeField] private Button replayBtn;
+    [SerializeField] private Button rePlayBtn;
     [SerializeField] private Button quitBtn;
-   
     protected override void LoadComponent()
     {
         base.LoadComponent();
-        Transform buttonHolder = transform.Find("Button");
-        if (replayBtn == null) replayBtn = buttonHolder.Find("Replay").GetComponent<Button>();
+        Transform buttonHolder = transform.Find("Buttons");
+        if (rePlayBtn == null) rePlayBtn = buttonHolder.Find("RePlay").GetComponent<Button>();
         if (quitBtn == null) quitBtn = buttonHolder.Find("Quit").GetComponent<Button>();
-        
-        
     }
 
     private void OnEnable()
@@ -27,9 +24,11 @@ public class SettingUI : CenterUI
             {
                 GameManager.Instance.GameSpeed = 1;
                 SceneManager.LoadScene("WorldMap");
+                AudioManager.PlayBackGroundMusic(SoundType.SelectLevel);
             });
+            
         });
-        replayBtn.onClick.AddListener(() =>
+        rePlayBtn.onClick.AddListener(() =>
         {
             HideUI(() =>
             {
@@ -42,6 +41,6 @@ public class SettingUI : CenterUI
     private void OnDisable()
     {
         quitBtn.onClick.RemoveAllListeners();
-        replayBtn.onClick.RemoveAllListeners();
+        rePlayBtn.onClick.RemoveAllListeners();
     }
 }

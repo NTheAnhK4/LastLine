@@ -1115,7 +1115,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4035436930302963175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7054054298438312765}
+        m_TargetAssemblyTypeName: PanelUI, Assembly-CSharp
+        m_MethodName: HideUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1238691444009716268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068690476454192779}
   - component: {fileID: 8432768869015783920}
-  - component: {fileID: 1731870492893665277}
+  - component: {fileID: 4783999713337636043}
   m_Layer: 5
   m_Name: LoseUI
   m_TagString: Untagged
@@ -1451,7 +1463,7 @@ RectTransform:
   m_GameObject: {fileID: 1573031070871946686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5608318677948834279}
@@ -1474,7 +1486,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573031070871946686}
   m_CullTransparentMesh: 1
---- !u!114 &1731870492893665277
+--- !u!114 &4783999713337636043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1483,12 +1495,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1573031070871946686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98eabd7edd5e274bbeabc733b014f88, type: 3}
+  m_Script: {fileID: 11500000, guid: 81823daf1c10cd54b90e2df1d04eec81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalScale: {x: 1, y: 1, z: 1}
-  replayBtn: {fileID: 4804891172959177226}
-  quitBtn: {fileID: 0}
+  originalScale: {x: 0, y: 0, z: 0}
+  rePlayBtn: {fileID: 4804891172959177226}
+  quitBtn: {fileID: 7908396113376883711}
 --- !u!1 &1895538341992589860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,10 +1634,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4359638801438934479}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7054054298438312765}
+        m_TargetAssemblyTypeName: PanelUI, Assembly-CSharp
+        m_MethodName: HideUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1754,7 +1766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6842367046693438266}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7054054298438312765}
+        m_TargetAssemblyTypeName: PanelUI, Assembly-CSharp
+        m_MethodName: HideUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2061623119502298405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,18 +3042,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ReplayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 707295684510123979}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3042,10 +3054,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4359638801438934479}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7054054298438312765}
+        m_TargetAssemblyTypeName: PanelUI, Assembly-CSharp
+        m_MethodName: HideUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3479,18 +3491,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ReplayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1573031070871946686}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3503,10 +3503,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4359638801438934479}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7054054298438312765}
+        m_TargetAssemblyTypeName: PanelUI, Assembly-CSharp
+        m_MethodName: HideUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3849,18 +3849,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ReplayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4174628136219175831}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3873,10 +3861,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4359638801438934479}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7054054298438312765}
+        m_TargetAssemblyTypeName: PanelUI, Assembly-CSharp
+        m_MethodName: HideUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3896,6 +3884,7 @@ GameObject:
   - component: {fileID: 8767046559035583825}
   - component: {fileID: 8141148640087810336}
   - component: {fileID: 6620432333879227625}
+  - component: {fileID: 7054054298438312765}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -3943,7 +3932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.81960785}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3960,6 +3949,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7054054298438312765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359638801438934479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc027f1eb627c6147b66fa38ce240f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelImg: {fileID: 6620432333879227625}
 --- !u!1 &4391601032326185475
 GameObject:
   m_ObjectHideFlags: 0
@@ -4291,8 +4293,8 @@ MonoBehaviour:
   wayNumTxt: {fileID: 1946000290288503368}
   goldTxt: {fileID: 3667493022337687765}
   winUI: {fileID: 2299198840454268009}
-  loseUI: {fileID: 1731870492893665277}
-  panel: {fileID: 8767046559035583825}
+  loseUI: {fileID: 4783999713337636043}
+  panel: {fileID: 7054054298438312765}
 --- !u!1 &4700764234364064874
 GameObject:
   m_ObjectHideFlags: 0

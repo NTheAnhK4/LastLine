@@ -15,9 +15,14 @@ public class LevelManager : Singleton<LevelManager>
     
     private bool isGameOver;
     private int currentLevel;
-    [SerializeField] private int m_EnemyCount;
     
+    [SerializeField] private int m_EnemyCount;
 
+    public int CurrentLevel
+    {
+        get => currentLevel;
+        set => currentLevel = value;
+    }
 
     public int Gold
     {
@@ -97,8 +102,5 @@ public class LevelManager : Singleton<LevelManager>
         levelUI.Init(LevelData.Levels[level],-1);
     }
 
-    public void ReplayGame()
-    {
-        PlayLevel(currentLevel);
-    }
+    
 }
