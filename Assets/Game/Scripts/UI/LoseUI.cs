@@ -22,9 +22,7 @@ public class LoseUI : CenterUI
         {
             HideUI(() =>
             {
-                GameManager.Instance.GameSpeed = 1;
-                SceneManager.LoadScene("WorldMap");
-                AudioManager.PlayBackGroundMusic(SoundType.SelectLevel);
+                GameManager.Instance.GoToWorldMap();
             });
             
         });

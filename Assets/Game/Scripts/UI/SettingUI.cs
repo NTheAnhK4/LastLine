@@ -25,8 +25,7 @@ public class SettingUI : CenterUI
         {
             HideUI(() =>
             {
-                GameManager.Instance.GameSpeed = 1;
-                SceneManager.LoadScene("WorldMap");
+                GameManager.Instance.GoToWorldMap();
             });
         });
         replayBtn.onClick.AddListener(() =>
