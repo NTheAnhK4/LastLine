@@ -1,4 +1,4 @@
-
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "LevelData", menuName = "Data/Level Data")]
@@ -7,16 +7,17 @@ public class LevelData : ScriptableObject
     public List<LevelParam> Levels;
 }
 
-[System.Serializable]
+[Serializable]
 public class LevelParam
 {
     public int InitialGold;
+    public GameObject LevelPrefab;
     public List<WayParam> Ways;
     public List<PathParam> Paths;
-    public List<Vector3> TowerPositions;
+    public List<TowerInfor> TowerInfors;
 }
 
-[System.Serializable]
+[Serializable]
 public class PathParam
 {
     public Vector3 SignalPosition;
@@ -24,7 +25,7 @@ public class PathParam
     public List<Vector3> Positions;
 }
 
-[System.Serializable]
+[Serializable]
 public class MiniWayParam
 {
     public int PathId;
@@ -32,18 +33,24 @@ public class MiniWayParam
     public List<EnemyInfor> EnemyInfors;
 }
 
-[System.Serializable]
+[Serializable]
 public class EnemyInfor
 {
     public int EnemyId;
     public EnemyType EnemyType;
 }
-[System.Serializable]
+[Serializable]
 public class WayParam
 {
     public List<MiniWayParam> MiniWays;
 }
 
+[Serializable]
+public class TowerInfor
+{
+    public Vector3 Towerposition;
+    public Vector3 flagPosition;
+}
 public enum EnemyType
 {
     MeleeAttack,

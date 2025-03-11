@@ -15,7 +15,7 @@ public class TowerUI : ComponentBehavior
 
     public Tower tower { get; set; }
 
-    protected Transform optionsHolder;
+    [SerializeField] protected Transform optionsHolder;
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -24,8 +24,9 @@ public class TowerUI : ComponentBehavior
 
     protected void UpdateTower(int towerUpgradeId, float timerBuild = 1)
     {
-        tower.UpdateTower(towerUpgradeId,timerBuild);
         PoolingManager.Despawn(gameObject);
+        tower.UpdateTower(towerUpgradeId,timerBuild);
+        
     }
     
 }

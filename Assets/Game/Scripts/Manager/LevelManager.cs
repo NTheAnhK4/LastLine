@@ -8,6 +8,7 @@ public class LevelManager : Singleton<LevelManager>
     
     public EnemySpawner enemySpawner;
     public TowerSpawner towerSpawner;
+    public LevelSpawner levelSpawner;
     public LevelUI levelUI;
    
     private float healthPoint = 20;
@@ -15,9 +16,14 @@ public class LevelManager : Singleton<LevelManager>
     
     private bool isGameOver;
     private int currentLevel;
-    [SerializeField] private int m_EnemyCount;
     
+    [SerializeField] private int m_EnemyCount;
 
+    public int CurrentLevel
+    {
+        get => currentLevel;
+        set => currentLevel = value;
+    }
 
     public int Gold
     {
@@ -62,7 +68,11 @@ public class LevelManager : Singleton<LevelManager>
             if (m_EnemyCount != value)
             {
                 m_EnemyCount = value;
-                if(m_EnemyCount == 0) ObserverManager.Notify(EventId.Win);
+                if (m_EnemyCount == 0)
+                {
+                    ObserverManager.Notify(EventId.Win);
+                    CompleteLevel(3);
+                }
             }
         }
     }
@@ -71,14 +81,16 @@ public class LevelManager : Singleton<LevelManager>
 
     private void Start()
     {
-        int currentLevel = GameManager.Instance.SelectedLevel;
+        currentLevel = GameManager.Instance.SelectedLevel;
         PlayLevel(this.currentLevel);
     }
 
     private void PlayLevel(int level)
     {
+        
         GameManager.Instance.GameSpeed = 1;
         currentLevel = level;
+        levelSpawner.Init(LevelData.Levels[level].LevelPrefab);
         isGameOver = false;
         m_EnemyCount = 0;
         foreach (WayParam wayParam in LevelData.Levels[level].Ways)
@@ -97,8 +109,13 @@ public class LevelManager : Singleton<LevelManager>
         levelUI.Init(LevelData.Levels[level],-1);
     }
 
-    public void ReplayGame()
+    private void CompleteLevel(int stars)
     {
-        PlayLevel(currentLevel);
+        LevelProgress progress = JsonSaveSystem.LoadData<LevelProgress>();
+        progress.UpdateLevelState(currentLevel,stars);
+        progress.UpdateLevelState(currentLevel + 1, 0);
+       
+        JsonSaveSystem.SaveData(progress);
     }
+    
 }

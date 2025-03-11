@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - InitialGold: 125
+    LevelPrefab: {fileID: 2957135878730469215, guid: 88cb9de9427d5f3428d58dafc49f7d6e, type: 3}
     Ways:
     - MiniWays:
       - PathId: 0
@@ -57,8 +58,113 @@ MonoBehaviour:
       - {x: 9.5, y: 0.5, z: 0}
       - {x: 9.5, y: 5.5, z: 0}
       - {x: 25, y: 5.5, z: 0}
-    TowerPositions:
-    - {x: -1.5, y: -1.5, z: 0}
-    - {x: 12.5, y: 0, z: 0}
-    - {x: -0.5, y: -7.5, z: 0}
-    - {x: -10, y: -5.5, z: 0}
+    TowerInfors:
+    - Towerposition: {x: -1, y: -1.5, z: 0}
+      flagPosition: {x: -1, y: -4.5, z: 0}
+    - Towerposition: {x: -9, y: -5.5, z: 0}
+      flagPosition: {x: -9, y: -2.5, z: 0}
+    - Towerposition: {x: 0, y: -7.5, z: 0}
+      flagPosition: {x: 0, y: -4.5, z: 0}
+    - Towerposition: {x: 13, y: 1.5, z: 0}
+      flagPosition: {x: 9.5, y: 1.5, z: 0}
+  - InitialGold: 125
+    LevelPrefab: {fileID: 1391102852416604516, guid: 301533cf237a6db42bc0359cb361da97, type: 3}
+    Ways:
+    - MiniWays:
+      - PathId: 0
+        EnemyInfors:
+        - EnemyId: 0
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+        - EnemyId: 1
+          EnemyType: 0
+    - MiniWays:
+      - PathId: 0
+        EnemyInfors:
+        - EnemyId: 1
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+        - EnemyId: 1
+          EnemyType: 0
+        - EnemyId: 1
+          EnemyType: 0
+      - PathId: 1
+        EnemyInfors:
+        - EnemyId: 1
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+    - MiniWays:
+      - PathId: 0
+        EnemyInfors:
+        - EnemyId: 1
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+        - EnemyId: 1
+          EnemyType: 0
+        - EnemyId: 1
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+      - PathId: 1
+        EnemyInfors:
+        - EnemyId: 1
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+        - EnemyId: 1
+          EnemyType: 0
+        - EnemyId: 1
+          EnemyType: 0
+        - EnemyId: 0
+          EnemyType: 0
+    Paths:
+    - SignalPosition: {x: 9, y: 9, z: 0}
+      SignalAngle: 90
+      Positions:
+      - {x: 8, y: 12, z: 0}
+      - {x: 8, y: 9, z: 0}
+      - {x: -3.5, y: 9, z: 0}
+      - {x: -5, y: 6, z: 0}
+      - {x: -5, y: -3.5, z: 0}
+      - {x: -22, y: -3.5, z: 0}
+    - SignalPosition: {x: 16, y: -9, z: 0}
+      SignalAngle: -45
+      Positions:
+      - {x: 19, y: -13, z: 0}
+      - {x: 16, y: -9, z: 0}
+      - {x: 2, y: -9, z: 0}
+      - {x: 2, y: -2, z: 0}
+      - {x: -5, y: -2, z: 0}
+      - {x: -5, y: -3.5, z: 0}
+      - {x: -22, y: -3.5, z: 0}
+    TowerInfors:
+    - Towerposition: {x: -1.5, y: -5, z: 0}
+      flagPosition: {x: -2, y: -1, z: 0}
+    - Towerposition: {x: -8, y: -7.5, z: 0}
+      flagPosition: {x: -8, y: -4, z: 0}
+    - Towerposition: {x: -12.35, y: -0.44, z: 0}
+      flagPosition: {x: -12.5, y: -4, z: 0}
+    - Towerposition: {x: -7.5, y: -0.5, z: 0}
+      flagPosition: {x: -7.5, y: -4, z: 0}
+    - Towerposition: {x: -8.81, y: 4.58, z: 0}
+      flagPosition: {x: -5, y: 5, z: 0}
+    - Towerposition: {x: -0.81, y: 5.28, z: 0}
+      flagPosition: {x: -1, y: 8.5, z: 0}
+    - Towerposition: {x: 5, y: 5, z: 0}
+      flagPosition: {x: 5.35, y: 8.6, z: 0}
+    - Towerposition: {x: 2.19, y: 2.35, z: 0}
+      flagPosition: {x: -3.5, y: 2.5, z: 0}
+    - Towerposition: {x: 5.2, y: -1.22, z: 0}
+      flagPosition: {x: 2.19, y: -3.11, z: 0}

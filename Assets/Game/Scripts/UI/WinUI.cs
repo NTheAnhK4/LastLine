@@ -21,13 +21,25 @@ public class WinUI : CenterUI
     {
         continueBtn.onClick.AddListener(() =>
         {
-            GameManager.Instance.GameSpeed = 1;
-            SceneManager.LoadScene("WorldMap");
+            HideUI(() =>
+            {
+                GameManager.Instance.GoToWorldMap();
+            });
+            
+        });
+        rePlayBtn.onClick.AddListener(() =>
+        {
+            HideUI(() =>
+            {
+                GameManager.Instance.GameSpeed = 1;
+                GameManager.Instance.ReplayLevel();
+            });
         });
     }
 
     private void OnDisable()
     {
         continueBtn.onClick.RemoveAllListeners();
+        rePlayBtn.onClick.RemoveAllListeners();
     }
 }

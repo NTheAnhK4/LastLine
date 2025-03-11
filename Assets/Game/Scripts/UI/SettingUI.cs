@@ -23,13 +23,24 @@ public class SettingUI : CenterUI
     {
         quitBtn.onClick.AddListener(() =>
         {
-            GameManager.Instance.GameSpeed = 1;
-            SceneManager.LoadScene("WorldMap");
+            HideUI(() =>
+            {
+                GameManager.Instance.GoToWorldMap();
+            });
+        });
+        replayBtn.onClick.AddListener(() =>
+        {
+            HideUI(() =>
+            {
+                GameManager.Instance.GameSpeed = 1;
+                GameManager.Instance.ReplayLevel();
+            });
         });
     }
 
     private void OnDisable()
     {
         quitBtn.onClick.RemoveAllListeners();
+        replayBtn.onClick.RemoveAllListeners();
     }
 }

@@ -212,6 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2ced5e1147c4d4cb17ed24187d9171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ProjectileData: {fileID: 11400000, guid: 7a75f11898d465f4a8e03de682dfd905, type: 2}
+  m_ProjectileId: 0
   projectileMove: {fileID: 3824232637412106563}
   projectileImpact: {fileID: 2151265167577890030}
   enemyTarget: {fileID: 0}
@@ -333,9 +335,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d85eddac0bb11489ff38a45f5613f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SoundType: 2
   projectile: {fileID: 1273392326714338883}
   enemyTarget: {fileID: 0}
   damage: 0
+  m_DamageType: 0
+  m_EffectPrefab: {fileID: 0}
 --- !u!1 &6095535499197493310
 GameObject:
   m_ObjectHideFlags: 0

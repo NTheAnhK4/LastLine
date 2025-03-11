@@ -15,16 +15,22 @@ MonoBehaviour:
   MeleeEnemys:
   - Name: Brain chomp
     HealthPoint: 5
+    PhysicalDamageReduction: 1
+    MagicalDamageReduction: 1
     MoveSpeed: 2
     Damage: 1
+    DamageType: 0
     AttackRange: 0.4
-    AttackSpeed: 0.6
+    AttackSpeed: 1.5
     RewardGold: 1
     EnemyPrefab: {fileID: 7647574835406034084, guid: 482e80c310d670941bd3540c8a4473cf, type: 3}
   - Name: Rotten Driller
     HealthPoint: 6
+    PhysicalDamageReduction: 0.9
+    MagicalDamageReduction: 1
     MoveSpeed: 1
     Damage: 3
+    DamageType: 0
     AttackRange: 0.3
     AttackSpeed: 0.8
     RewardGold: 1
