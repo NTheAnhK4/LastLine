@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +15,8 @@ public class AudioUI : ComponentBehavior
 
     private void Start()
     {
+        m_SoundUI.value = AudioManager.Instance.MusicVolumeRate;
+        m_MusicUI.value = AudioManager.Instance.SfxVolumeRate;
         m_SoundUI.onValueChanged.AddListener(OnSoundValueChanged);
         m_MusicUI.onValueChanged.AddListener(OnMusicValueChanged);
     }
