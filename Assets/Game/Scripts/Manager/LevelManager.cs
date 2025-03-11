@@ -68,7 +68,11 @@ public class LevelManager : Singleton<LevelManager>
             if (m_EnemyCount != value)
             {
                 m_EnemyCount = value;
-                if(m_EnemyCount == 0) ObserverManager.Notify(EventId.Win);
+                if (m_EnemyCount == 0)
+                {
+                    ObserverManager.Notify(EventId.Win);
+                    CompleteLevel(3);
+                }
             }
         }
     }
@@ -105,5 +109,13 @@ public class LevelManager : Singleton<LevelManager>
         levelUI.Init(LevelData.Levels[level],-1);
     }
 
+    private void CompleteLevel(int stars)
+    {
+        LevelProgress progress = JsonSaveSystem.LoadData<LevelProgress>();
+        progress.UpdateLevelState(currentLevel,stars);
+        progress.UpdateLevelState(currentLevel + 1, 0);
+       
+        JsonSaveSystem.SaveData(progress);
+    }
     
 }

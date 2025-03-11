@@ -1,14 +1,16 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 
 public class GameManager : Singleton<GameManager>
 {
     public int SelectedLevel;
     private float gameSpeed = 1f;
     private float preSpeed = -1;
+    
+    
     public float GameSpeed
     {
         get => gameSpeed;
@@ -45,6 +47,14 @@ public class GameManager : Singleton<GameManager>
     public void ReplayLevel()
     {
         SelectLevel(LevelManager.Instance.CurrentLevel);
+    }
+
+    public void GoToWorldMap()
+    {
+        GameSpeed = 1;
+        SceneManager.LoadScene("WorldMap");
+        AudioManager.PlayBackGroundMusic(SoundType.SelectLevel);
+        
     }
     
 }
