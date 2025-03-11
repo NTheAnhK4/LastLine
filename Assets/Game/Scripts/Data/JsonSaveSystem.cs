@@ -17,6 +17,7 @@ public static class JsonSaveSystem
         string path = GetFilePath<T>();
         if (File.Exists(path))
         {
+           
             string json = File.ReadAllText(path);
             return JsonUtility.FromJson<T>(json);
         }
