@@ -14,45 +14,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Towers:
   - TowerName: Tower slot
+    Cost: 0
     AttackRange: 0
     AttackSpeed: 0
     UnitPrefab: {fileID: 0}
     TowerPrefab: {fileID: 1848356552161296775, guid: 2ccf3502e6e4fe04c9dcf54f173859f9, type: 3}
     TowerUIPrefab: {fileID: 337339328675364455, guid: 7e7ae87b9d53fb64496e55750e4f99c2, type: 3}
     TowerUpgradeList:
-    - Cost: 20
-      TowerId: 1
-    - Cost: 20
-      TowerId: 2
-    - Cost: 20
-      TowerId: 3
-    - Cost: 20
-      TowerId: 4
+    - TowerId: 1
+    - TowerId: 2
+    - TowerId: 3
+    - TowerId: 4
   - TowerName: Archer level 1
+    Cost: 15
     AttackRange: 4
     AttackSpeed: 0.6
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 6503917657427825518, guid: f06f53ea328d7c24892d73538e3bed5b, type: 3}
-    TowerUIPrefab: {fileID: 0}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: []
   - TowerName: Guardian level 1
+    Cost: 20
     AttackRange: 4
     AttackSpeed: 10
     UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
     TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
-    TowerUIPrefab: {fileID: 0}
+    TowerUIPrefab: {fileID: 1751286104996079788, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: []
   - TowerName: Mage level 1
+    Cost: 20
     AttackRange: 6
     AttackSpeed: 2
     UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
     TowerPrefab: {fileID: 5332507477801701714, guid: ee24048670e403c44a51b0fd39899fc0, type: 3}
-    TowerUIPrefab: {fileID: 0}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: []
   - TowerName: Catapult level 1
+    Cost: 25
     AttackRange: 5
     AttackSpeed: 1.5
     UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
     TowerPrefab: {fileID: 6969141493794900000, guid: f338c54d42ef31a498cf69c9b9033e64, type: 3}
-    TowerUIPrefab: {fileID: 0}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: []

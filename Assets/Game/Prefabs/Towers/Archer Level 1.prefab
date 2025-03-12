@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 2610984385145488768}
   - component: {fileID: 4948782025317067607}
   - component: {fileID: 8315935460590083833}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Attack
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -399,6 +399,8 @@ MonoBehaviour:
   animHandler: {fileID: 1789544318296176523}
   towerUI: {fileID: 0}
   archerAttack: {fileID: 2610984385145488768}
+  m_AttackRangeIndicatorPrefab: {fileID: 1588199561713397666, guid: 3d437cddca43570429fde3d18f1ea293, type: 3}
+  m_AttackRangeIndicator: {fileID: 0}
 --- !u!1 &8881655169308822015
 GameObject:
   m_ObjectHideFlags: 0
