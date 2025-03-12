@@ -13,6 +13,7 @@ public class TowerData : ScriptableObject
 public class TowerParam
 {
     public string TowerName;
+    public int Cost;
     public float AttackRange;
     public float AttackSpeed;
     public GameObject UnitPrefab;
@@ -24,7 +25,7 @@ public class TowerParam
 [System.Serializable]
 public class TowerUpgradeParam
 {
-    public int Cost;
+    
     public int TowerId;
 }
 
