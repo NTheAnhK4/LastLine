@@ -49,7 +49,8 @@ MonoBehaviour:
     UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
     TowerPrefab: {fileID: 5332507477801701714, guid: ee24048670e403c44a51b0fd39899fc0, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList: []
+    TowerUpgradeList:
+    - TowerId: 7
   - TowerName: Catapult level 1
     Cost: 25
     AttackRange: 5
@@ -73,5 +74,13 @@ MonoBehaviour:
     AttackSpeed: 1.4
     UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
     TowerPrefab: {fileID: 6008448965399928093, guid: 7a46cb606f7f7bc46b6f49dc3b0c7779, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: []
+  - TowerName: Mage level 2
+    Cost: 40
+    AttackRange: 6.5
+    AttackSpeed: 1.9
+    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
+    TowerPrefab: {fileID: 1992142533175281854, guid: c9618932d4e63ec4ab789b036f44fd67, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: []
