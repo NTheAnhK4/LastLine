@@ -57,12 +57,21 @@ MonoBehaviour:
     UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
     TowerPrefab: {fileID: 6969141493794900000, guid: f338c54d42ef31a498cf69c9b9033e64, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList: []
+    TowerUpgradeList:
+    - TowerId: 6
   - TowerName: Archer level 2
     Cost: 30
     AttackRange: 4.5
     AttackSpeed: 0.55
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 40787125080909617, guid: 08306ed9a281f224eac8de5824e97e5c, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: []
+  - TowerName: Catapult level 2
+    Cost: 50
+    AttackRange: 5.5
+    AttackSpeed: 1.4
+    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
+    TowerPrefab: {fileID: 6008448965399928093, guid: 7a46cb606f7f7bc46b6f49dc3b0c7779, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: []
