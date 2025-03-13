@@ -43,6 +43,7 @@ public class AnimHandler : ComponentBehavior
 
     public void SetAnim(State newState)
     {
+        
         if(currentState != newState) previousState = currentState;
         switch (newState)
         {
@@ -61,6 +62,7 @@ public class AnimHandler : ComponentBehavior
                 currentState = State.Attack;
                 break;
             case State.Upgrade:
+                
                 anim.SetTrigger(OnUpgrade);
                 currentState = State.Upgrade;
                 break;
@@ -74,12 +76,13 @@ public class AnimHandler : ComponentBehavior
 
     public void SetInt(string animName, int value)
     {
+        
         anim.SetInteger(animName,value);
     }
 
     public void RevertToPreviousAnim()
     {
-        if(previousState == State.Upgrade) return;
+        if(previousState == State.Upgrade) SetAnim(State.Idle);
         SetAnim(previousState);
     }
 

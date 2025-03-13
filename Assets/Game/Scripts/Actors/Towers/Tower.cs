@@ -39,7 +39,7 @@ public class Tower : ComponentBehavior
     }
 
     
-    public void UpdateTower(int upgradeId, float timerBuild = 1)
+    public virtual void UpdateTower(int upgradeId, float timerBuild = 1)
     {
         animHandler.SetInt("upgradeId",upgradeId);
         animHandler.SetAnim(AnimHandler.State.Upgrade);
@@ -58,6 +58,7 @@ public class Tower : ComponentBehavior
     {
         m_TowerId = towerId;
         m_FlagPosition = flagPosition;
+        animHandler.SetAnim(AnimHandler.State.Idle);
     }
     
     IEnumerator BuildNewTower(int towerUpgradeId, float timeBuild = 1)

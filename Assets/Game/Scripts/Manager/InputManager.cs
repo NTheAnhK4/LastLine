@@ -33,15 +33,17 @@ public class InputManager : Singleton<InputManager>
 
     private void HandleClickTower(RaycastHit2D pointer)
     {
+        
         if (currentSelectedTower != null)
         {
+            if(pointer.collider != null && pointer.collider.tag.Equals("TowerUI")) return;
             currentSelectedTower.HideUI();
             currentSelectedTower = null;
         }
 
         if (pointer.collider != null)
         {
-           
+            
             currentSelectedTower = pointer.collider.GetComponent<Tower>();
             if(currentSelectedTower != null) currentSelectedTower.ShowUI();
         }

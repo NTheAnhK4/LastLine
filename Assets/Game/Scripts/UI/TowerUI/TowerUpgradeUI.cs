@@ -28,17 +28,24 @@ public class TowerUpgradeUI : TowerUI
 
     private void OnEnable()
     {
-        // if(tower == null) return;
-        // int towerUpgradeId = tower.Data.Towers[tower.TowerId].TowerUpgradeList[0].TowerId;
-        // m_UpgradeTower.cost.text = tower.Data.Towers[towerUpgradeId].Cost.ToString();
-        //
-        // m_SellTower.cost.text = (tower.Data.Towers[tower.TowerId].Cost / 2).ToString();
+        if(tower == null) return;
+        if (tower.Data.Towers[tower.TowerId].TowerUpgradeList.Count == 0)
+        {
+            Debug.LogError("No upgrade data found for tower: " + tower.TowerId);
+            return;
+        }
+
+        int towerUpgradeId = tower.Data.Towers[tower.TowerId].TowerUpgradeList[0].TowerId;
+        m_UpgradeTower.cost.text = tower.Data.Towers[towerUpgradeId].Cost.ToString();
+        
+        m_SellTower.cost.text = (tower.Data.Towers[tower.TowerId].Cost / 2).ToString();
     }
 
     private void Start()
     {
         m_UpgradeTower.btn.onClick.AddListener(() =>
         {
+           
             int cost = int.Parse(m_UpgradeTower.cost.text);
             if (cost <= LevelManager.Instance.Gold)
             {
@@ -56,7 +63,7 @@ public class TowerUpgradeUI : TowerUI
             
             int cost = int.Parse(m_SellTower.cost.text);
             LevelManager.Instance.Gold += cost;
-            //UpdateTower(-1,1);
+            UpdateTower(-1,1.5f);
         });
     }
 

@@ -42,6 +42,12 @@ public class RangedAttackTower : Tower
         } 
     }
 
+    public override void UpdateTower(int upgradeId, float timerBuild = 1)
+    {
+        base.UpdateTower(upgradeId, timerBuild);
+        HideUI();
+    }
+
     public override void Init(int towerId, Vector3 flagPosition)
     {
         base.Init(towerId, flagPosition);

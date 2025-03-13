@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7743005676678100742}
   m_Layer: 5
   m_Name: UpgradeBtn
-  m_TagString: Untagged
+  m_TagString: TowerUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2349595066924649221}
   m_Layer: 5
   m_Name: SellBtn
-  m_TagString: Untagged
+  m_TagString: TowerUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 2187635738594421260}
   m_Layer: 5
   m_Name: UIImg
-  m_TagString: Untagged
+  m_TagString: TowerUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,7 +277,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -83, y: -85}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 200, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4065768728668926153
 CanvasRenderer:
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 3619473666135063246}
   m_Layer: 5
   m_Name: Upgrade
-  m_TagString: Untagged
+  m_TagString: TowerUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,8 +352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100.57, y: -42.06}
-  m_SizeDelta: {x: 93.02, y: 84.11}
+  m_AnchoredPosition: {x: 97.827, y: -51.79}
+  m_SizeDelta: {x: 98.505, y: 103.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3619473666135063246
 CanvasRenderer:
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 3337246616686298359}
   m_Layer: 0
   m_Name: TowerUpgradeUI
-  m_TagString: Untagged
+  m_TagString: TowerUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.5274286, y: 9.171094, z: 0, w: 0}
+  m_margin: {x: 8.607169, y: -0.57214737, z: 3.0893307, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 3705109311407407855}
   m_Layer: 5
   m_Name: Sell
-  m_TagString: Untagged
+  m_TagString: TowerUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,8 +586,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -162.2}
-  m_SizeDelta: {x: 93.02, y: 75.6}
+  m_AnchoredPosition: {x: 97.827, y: -225.14}
+  m_SizeDelta: {x: 98.505, y: 99.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3705109311407407855
 CanvasRenderer:
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 3071626461414214307}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: TowerUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -742,8 +742,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -4.45, y: 11.95}
-  m_SizeDelta: {x: 56.01, y: 23.89}
+  m_AnchoredPosition: {x: -4.45, y: 0.0025024414}
+  m_SizeDelta: {x: 56.01, y: -0.0050011}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7288470082302752669
 CanvasRenderer:
@@ -836,7 +836,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 8.250709, y: -14.159347, z: 4.183468, w: 21.560831}
+  m_margin: {x: 7.374152, y: -14.784511, z: 0.48933217, w: 40.104366}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
