@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,13 +24,23 @@ public class TowerUpgradeUI : TowerUI
         
     }
 
+    private void LoadData()
+    {
+        if(tower == null) return;
+        if (tower.Data.Towers[tower.TowerId].TowerUpgradeList.Count == 0)
+        {
+            Debug.LogWarning("Tower upgrade list is empty");
+            return;
+        }
+        int towerUpgradeId = tower.Data.Towers[tower.TowerId].TowerUpgradeList[0].TowerId;
+        m_UpgradeTower.cost.text = tower.Data.Towers[towerUpgradeId].Cost.ToString();
+        int sellCost = tower.Data.Towers[tower.TowerId].Cost / 2;
+        m_SellTower.cost.text = sellCost.ToString();
+    }
+
     private void OnEnable()
     {
-        // if(tower == null) return;
-        // int towerUpgradeId = tower.Data.Towers[tower.TowerId].TowerUpgradeList[0].TowerId;
-        // m_UpgradeTower.cost.text = tower.Data.Towers[towerUpgradeId].Cost.ToString();
-        //
-        // m_SellTower.cost.text = (tower.Data.Towers[tower.TowerId].Cost / 2).ToString();
+        LoadData();
     }
 
     private void Start()
@@ -43,7 +51,7 @@ public class TowerUpgradeUI : TowerUI
             if (cost <= LevelManager.Instance.Gold)
             {
                 LevelManager.Instance.Gold -= cost;
-                UpdateTower(0, 1);
+                UpdateTower(0, 1.5f);
             }
             else
             {
@@ -56,8 +64,9 @@ public class TowerUpgradeUI : TowerUI
             
             int cost = int.Parse(m_SellTower.cost.text);
             LevelManager.Instance.Gold += cost;
-            //UpdateTower(-1,1);
+            UpdateTower(-1,1.5f);
         });
+        LoadData();
     }
 
    
