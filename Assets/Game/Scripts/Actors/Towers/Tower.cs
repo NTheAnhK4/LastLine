@@ -8,6 +8,11 @@ public class Tower : ComponentBehavior
     public TowerData Data;
     protected int m_TowerId;
 
+    public int TowerId
+    {
+        get => m_TowerId;
+        set => m_TowerId = value;
+    }
     [SerializeField] protected AnimHandler animHandler;
     [SerializeField] private TowerUI towerUI;
 
@@ -20,18 +25,17 @@ public class Tower : ComponentBehavior
         isUpgrade = false;
     }
 
-    public void ShowUI()
+    public virtual void ShowUI()
     {
        
         if(Data.Towers[m_TowerId].TowerUIPrefab == null || isUpgrade) return;
         towerUI = PoolingManager.Spawn(Data.Towers[m_TowerId].TowerUIPrefab,transform.position).GetComponent<TowerUI>();
-        towerUI.tower = this;
+        if(towerUI != null) towerUI.tower = this;
     }
 
-    public void HideUI()
+    public virtual void HideUI()
     {
-        if(towerUI == null) return;
-        PoolingManager.Despawn(towerUI.gameObject);
+        if(towerUI != null) PoolingManager.Despawn(towerUI.gameObject);
     }
 
     
@@ -39,7 +43,9 @@ public class Tower : ComponentBehavior
     {
         animHandler.SetInt("upgradeId",upgradeId);
         animHandler.SetAnim(AnimHandler.State.Upgrade);
-        int towerUpgradeId = Data.Towers[m_TowerId].TowerUpgradeList[upgradeId].TowerId;
+        int towerUpgradeId;
+        if (upgradeId >= 0) towerUpgradeId = Data.Towers[m_TowerId].TowerUpgradeList[upgradeId].TowerId;
+        else towerUpgradeId = 0;
         StartCoroutine(BuildNewTower(towerUpgradeId, timerBuild));
     }
     

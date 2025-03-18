@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InputManager : Singleton<InputManager>
 {
     [SerializeField] private Tower currentSelectedTower = null;
-    public List<Transform> ac;
+   
     private RaycastHit2D GetRayCast()
     {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
@@ -41,7 +41,7 @@ public class InputManager : Singleton<InputManager>
 
         if (pointer.collider != null)
         {
-           ac.Add(pointer.collider.transform);
+           
             currentSelectedTower = pointer.collider.GetComponent<Tower>();
             if(currentSelectedTower != null) currentSelectedTower.ShowUI();
         }

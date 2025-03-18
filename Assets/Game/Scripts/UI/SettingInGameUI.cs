@@ -1,10 +1,9 @@
-using System;
-using DG.Tweening;
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 using UnityEngine.UI;
 
-public class SettingUI : CenterUI
+public class SettingInGameUI : CenterUI
 {
     [SerializeField] private Button replayBtn;
     [SerializeField] private Button quitBtn;

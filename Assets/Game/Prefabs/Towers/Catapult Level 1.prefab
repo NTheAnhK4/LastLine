@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 6409841825805166584}
   - component: {fileID: 3023415542123557010}
   - component: {fileID: 5623903072587579666}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Attack
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -209,6 +209,7 @@ MonoBehaviour:
   attackSpeed: 0
   coolDown: 0
   projectilePrefab: {fileID: 0}
+  projectilePosition: {x: 0, y: 0.5, z: 0}
 --- !u!58 &3023415542123557010
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -370,7 +371,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02741623, y: 0.091953516}
+  m_Offset: {x: -0.02741623, y: 0.26292682}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -381,7 +382,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3364258, y: 2.2661142}
+  m_Size: {x: 2.3364258, y: 4.708589}
   m_EdgeRadius: 0
 --- !u!114 &7152554952291336756
 MonoBehaviour:
@@ -399,6 +400,8 @@ MonoBehaviour:
   animHandler: {fileID: 3849738567766336197}
   towerUI: {fileID: 0}
   archerAttack: {fileID: 6409841825805166584}
+  m_AttackRangeIndicatorPrefab: {fileID: 1588199561713397666, guid: 3d437cddca43570429fde3d18f1ea293, type: 3}
+  m_AttackRangeIndicator: {fileID: 0}
 --- !u!1 &7794786732796502387
 GameObject:
   m_ObjectHideFlags: 0
