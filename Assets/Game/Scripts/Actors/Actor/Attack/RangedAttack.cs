@@ -4,6 +4,7 @@ using UnityEngine;
 public class RangedAttack : AttackHandler
 {
     [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Vector3 projectilePosition;
 
     public void Init(float aRange, float aSpeed, GameObject proPrefab)
     {
@@ -22,6 +23,23 @@ public class RangedAttack : AttackHandler
         Vector3 direction = (enemyPosition - position);
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        
+        SetDirection(angle);
+        
+        animHandler.SetAnim(AnimHandler.State.Attack);
+
+
+        
+        Projectile projectile = PoolingManager.Spawn(projectilePrefab, 
+                actor.transform.TransformPoint(projectilePosition), 
+                Quaternion.Euler(new Vector3(0,0,angle)), 
+                transform)
+            .GetComponent<Projectile>();
+        if(projectile != null) projectile.Init(enemy.Actor);
+    }
+
+    private void SetDirection(float angle)
+    {
         if(angle is < 45 and >= 0) animHandler.SetInt("direction",1);
         else if(angle is < 90 and >= 45) animHandler.SetInt("direction",0);
         
@@ -33,11 +51,5 @@ public class RangedAttack : AttackHandler
         
         else if(angle is >= 90 and < 135) animHandler.SetInt("direction",7);
         else animHandler.SetInt("direction",6);
-        
-       
-        animHandler.SetAnim(AnimHandler.State.Attack);
-        Projectile projectile = PoolingManager.Spawn(projectilePrefab, position, Quaternion.Euler(new Vector3(0,0,angle)), transform)
-            .GetComponent<Projectile>();
-        if(projectile != null) projectile.Init(enemy.Actor);
     }
 }
