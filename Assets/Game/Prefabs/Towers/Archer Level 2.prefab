@@ -352,6 +352,7 @@ MonoBehaviour:
   attackSpeed: 0
   coolDown: 0
   projectilePrefab: {fileID: 0}
+  projectilePosition: {x: -0.15, y: 1, z: 0}
 --- !u!58 &3211053767859619081
 CircleCollider2D:
   m_ObjectHideFlags: 0
