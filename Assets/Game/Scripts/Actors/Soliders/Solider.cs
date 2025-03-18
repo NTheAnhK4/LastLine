@@ -30,7 +30,7 @@ public class Solider : ComponentBehavior
         m_Health.Init(20,1,1);
         m_Health.OnDead += () =>
         {
-            m_Encampment.SoliderNum--;
+            m_Encampment.Soliders.Remove(this);
         };
     }
     
