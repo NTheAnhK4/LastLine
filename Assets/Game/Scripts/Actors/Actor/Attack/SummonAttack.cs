@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 
 public class SummonAttack : ComponentBehavior
@@ -14,21 +14,19 @@ public class SummonAttack : ComponentBehavior
     [SerializeField] private GameObject m_Unit;
     [SerializeField] private int summonLimit;
     [SerializeField] private float m_SummonCooldown;
-    [SerializeField] private int currentNumber;
+    
     private bool isSummoning;
     private bool[][] summonedUnits = new bool[3][];
     private List<Vector2Int> randomPositions;
+    public List<Solider> Soliders;
 
-    public int SoliderNum
-    {
-        get => currentNumber;
-        set => currentNumber = value;
-    }
+    
     public void Init(GameObject unit, Vector3 spawnPosition, float summonedCooldown)
     {
+        Soliders = new List<Solider>();
         m_Unit = unit;
         summonLimit = 3;
-        currentNumber = 0;
+        
         m_SummonCooldown = summonedCooldown;
         m_SpawnPosition = spawnPosition;
         isSummoning = false;
@@ -55,7 +53,7 @@ public class SummonAttack : ComponentBehavior
    
     private void Update()
     {
-        if(currentNumber >= summonLimit || isSummoning) return;
+        if(Soliders.Count >= summonLimit || isSummoning) return;
         StartCoroutine(SummonByTime());
 
     }
@@ -71,11 +69,10 @@ public class SummonAttack : ComponentBehavior
 
     private void OnSummon()
     {
-        currentNumber++;
         Vector3 newPosition = GetSpawnPos(m_SpawnPosition);
         Solider solider = PoolingManager.Spawn(m_Unit,newPosition, default,transform)
             .GetComponent<Solider>();
-        
+        Soliders.Add(solider);
         solider.Init(this,m_SpawnPosition);
     }
 
@@ -92,6 +89,14 @@ public class SummonAttack : ComponentBehavior
             }
         }
         return Vector3.zero;
+    }
+
+    public void Disband()
+    {
+        foreach (var solider in Soliders)
+        {
+            PoolingManager.Despawn(solider.gameObject);
+        }
     }
     
 }

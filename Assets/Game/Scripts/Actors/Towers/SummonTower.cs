@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class SummonTower : Tower
@@ -19,5 +18,8 @@ public class SummonTower : Tower
         guardianAttack.Init(Data.Towers[m_TowerId].UnitPrefab,m_FlagPosition,Data.Towers[m_TowerId].AttackSpeed);
     }
 
-   
+    private void OnDisable()
+    {
+        guardianAttack.Disband();
+    }
 }

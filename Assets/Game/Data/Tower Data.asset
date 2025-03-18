@@ -40,8 +40,9 @@ MonoBehaviour:
     AttackSpeed: 10
     UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
     TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
-    TowerUIPrefab: {fileID: 1751286104996079788, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList: []
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList:
+    - TowerId: 8
   - TowerName: Mage level 1
     Cost: 20
     AttackRange: 6
@@ -82,5 +83,13 @@ MonoBehaviour:
     AttackSpeed: 1.9
     UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
     TowerPrefab: {fileID: 1992142533175281854, guid: c9618932d4e63ec4ab789b036f44fd67, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: []
+  - TowerName: Guardian level 2
+    Cost: 40
+    AttackRange: 4.5
+    AttackSpeed: 9.5
+    UnitPrefab: {fileID: 2651033401249118599, guid: 3b0c3525b8295844ea00f6412c2b8df6, type: 3}
+    TowerPrefab: {fileID: 3100071290906627879, guid: 792c82e97f76ec4458b0c08cd1cb2ef8, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: []
