@@ -15,8 +15,8 @@ public class AudioUI : ComponentBehavior
 
     private void Start()
     {
-        m_SoundUI.value = AudioManager.Instance.MusicVolumeRate;
-        m_MusicUI.value = AudioManager.Instance.SfxVolumeRate;
+        m_SoundUI.value = AudioManager.Instance.SfxVolumeRate;
+        m_MusicUI.value = AudioManager.Instance.MusicVolumeRate;
         m_SoundUI.onValueChanged.AddListener(OnSoundValueChanged);
         m_MusicUI.onValueChanged.AddListener(OnMusicValueChanged);
     }
@@ -30,4 +30,10 @@ public class AudioUI : ComponentBehavior
     {
         AudioManager.Instance.MusicVolumeRate = value;
     }
+    private void OnDestroy()
+    {
+        m_SoundUI.onValueChanged.RemoveListener(OnSoundValueChanged);
+        m_MusicUI.onValueChanged.RemoveListener(OnMusicValueChanged);
+    }
+
 }

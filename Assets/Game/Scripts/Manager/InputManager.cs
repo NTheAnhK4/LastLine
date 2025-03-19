@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 public class InputManager : Singleton<InputManager>
 {
     [SerializeField] private Tower currentSelectedTower = null;
-   
+  
     private RaycastHit2D GetRayCast()
     {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
@@ -33,6 +34,11 @@ public class InputManager : Singleton<InputManager>
 
     private void HandleClickTower(RaycastHit2D pointer)
     {
+        if (pointer.collider != null)
+        {
+            Tower towerSelected = pointer.collider.GetComponent<Tower>();
+            if(towerSelected != null && towerSelected == currentSelectedTower) return;
+        }
         if (currentSelectedTower != null)
         {
             currentSelectedTower.HideUI();
