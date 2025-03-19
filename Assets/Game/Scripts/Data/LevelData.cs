@@ -36,7 +36,10 @@ public class MiniWayParam
 [Serializable]
 public class EnemyInfor
 {
+    [Header("Enemy Id")]
     public int EnemyId;
+    [Header("Spawn Delay")]
+    public float SpawnDelay = 2;
     public EnemyType EnemyType;
 }
 [Serializable]

@@ -35,3 +35,14 @@ MonoBehaviour:
     AttackSpeed: 0.8
     RewardGold: 1
     EnemyPrefab: {fileID: 461616533364891258, guid: 8e78ecd3410c0f24f83b44f53bf69ed7, type: 3}
+  - Name: Spider
+    HealthPoint: 3
+    PhysicalDamageReduction: 1
+    MagicalDamageReduction: 1
+    MoveSpeed: 3
+    Damage: 1
+    DamageType: 0
+    AttackRange: 0.3
+    AttackSpeed: 1.5
+    RewardGold: 1
+    EnemyPrefab: {fileID: 2358647661431263450, guid: 09b0333c6f743df42ba1918a92735f2b, type: 3}
