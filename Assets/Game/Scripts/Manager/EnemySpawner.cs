@@ -65,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
         foreach (var enemyInfor in miniWayParam.EnemyInfors)
         {
             SpawnEnemy(miniWayParam.PathId, enemyInfor);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(enemyInfor.SpawnDelay);
             if(this == null) yield break;
         }
     }
