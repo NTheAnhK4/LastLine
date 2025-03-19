@@ -19,12 +19,18 @@ public class CenterUI : ComponentBehavior
             gameObject.SetActive(false);
         }
     }
+
+    protected virtual void SetInteractable(bool canInteractable)
+    {
+        
+    }
     public void ShowUI()
     {
         gameObject.SetActive(true);
         transform.localScale = Vector3.zero;
         tween = transform.DOScale(originalScale, 0.5f).SetEase(Ease.OutBack).OnComplete(() =>
         {
+            SetInteractable(true);
             GameManager.Instance.GameSpeed = 0;
             
         });
@@ -33,6 +39,7 @@ public class CenterUI : ComponentBehavior
     
     public void HideUI()
     {
+        SetInteractable(false);
         GameManager.Instance.SetPreSpeedGame();
         tween = transform.DOScale(0, 0.5f).SetEase(Ease.InBack).OnComplete(() =>
         {
@@ -43,6 +50,7 @@ public class CenterUI : ComponentBehavior
 
     public void HideUI(Action actionAfterHide)
     {
+        SetInteractable(false);
         GameManager.Instance.SetPreSpeedGame();
         tween = transform.DOScale(0, 0.5f).SetEase(Ease.InBack).OnComplete(() =>
         {

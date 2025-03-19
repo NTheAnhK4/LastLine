@@ -23,9 +23,10 @@ public class RangedAttackTower : Tower
     {
         base.ShowUI();
         if(m_AttackRangeIndicatorPrefab == null) return;
-        m_AttackRangeIndicator = PoolingManager.Spawn(m_AttackRangeIndicatorPrefab, transform.position).transform;
-        m_AttackRangeIndicator.transform.DOScale(2 * m_AttackRange, 0.4f);
-      
+        
+        if(m_AttackRangeIndicator == null) m_AttackRangeIndicator = PoolingManager.Spawn(m_AttackRangeIndicatorPrefab, transform.position).transform;
+
+        m_AttackRangeIndicator.transform.DOScale(2 * m_AttackRange, 0.3f);
 
     }
 
@@ -37,6 +38,7 @@ public class RangedAttackTower : Tower
             m_AttackRangeIndicator.transform.DOScale(0, 0.2f).OnComplete(() =>
             {
                 PoolingManager.Despawn(m_AttackRangeIndicator.gameObject);
+                m_AttackRangeIndicator = null;
             });
 
         } 

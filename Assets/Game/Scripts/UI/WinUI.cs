@@ -42,4 +42,11 @@ public class WinUI : CenterUI
         continueBtn.onClick.RemoveAllListeners();
         rePlayBtn.onClick.RemoveAllListeners();
     }
+
+    protected override void SetInteractable(bool canInteractable)
+    {
+        base.SetInteractable(canInteractable);
+        rePlayBtn.interactable = canInteractable;
+        continueBtn.interactable = canInteractable;
+    }
 }
