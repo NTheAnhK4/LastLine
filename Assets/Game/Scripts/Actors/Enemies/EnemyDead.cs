@@ -1,5 +1,4 @@
 
-using UnityEngine;
 
 public class EnemyDead : DeadHandler
 {
@@ -14,7 +13,7 @@ public class EnemyDead : DeadHandler
     {
         if(hasAnim) DeadByDamage();
         else ReachPlayerBase();
-        LevelManager.Instance.EnemyCount--;
+        LevelManager.Instance.HandleEnemyDead(actor.GetComponent<Enemy>());
     }
 
     private void DeadByDamage()

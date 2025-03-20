@@ -9,9 +9,13 @@ public class EnemySpawner : MonoBehaviour
     private LevelParam m_LevelParam;
     public int currentWay = -1;
     private System.Action<object> onSpawnWay;
+
+    public readonly HashSet<Enemy> activeEnemies = new HashSet<Enemy>();
+
     public void Init(LevelParam levelParam)
     {
         m_LevelParam = levelParam;
+       
     }
     private void OnEnable()
     {
@@ -40,6 +44,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnAllMiniWays(List<MiniWayParam> miniWays)
     {
+      
         List<Coroutine> runningCoroutines = new List<Coroutine>();
 
         //Run all MiniWays in parallel
@@ -54,9 +59,8 @@ public class EnemySpawner : MonoBehaviour
             yield return coroutine;
         }
 
-        // When all MiniWays have spawned, send an event
-        if (currentWay + 1 < m_LevelParam.Ways.Count)
-            ObserverManager.Notify(EventId.SpawnedEnemies, currentWay);
+      
+            
     }
 
     private IEnumerator SpawnMiniWay(MiniWayParam miniWayParam)
@@ -80,8 +84,14 @@ public class EnemySpawner : MonoBehaviour
        
             var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
             MeleeEnemy meleeEnemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<MeleeEnemy>();
-        
-            meleeEnemy.Init(Data.MeleeEnemies[enemyInfor.EnemyId],m_LevelParam.Paths[pathId].Positions);
+
+            if (meleeEnemy != null)
+            {
+                meleeEnemy.Init(Data.MeleeEnemies[enemyInfor.EnemyId],m_LevelParam.Paths[pathId].Positions);
+                activeEnemies.Add(meleeEnemy);
+            }
+            
+            
         }
         else
         {
@@ -91,14 +101,37 @@ public class EnemySpawner : MonoBehaviour
 
             var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
             RangedEnemy rangedEnemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<RangedEnemy>();
+            if (rangedEnemy != null)
+            {
+                rangedEnemy.Init(Data.RangedEnemies[enemyInfor.EnemyId], m_LevelParam.Paths[pathId].Positions);
+                activeEnemies.Add(rangedEnemy);
+            }
             
-            rangedEnemy.Init(Data.RangedEnemies[enemyInfor.EnemyId], m_LevelParam.Paths[pathId].Positions);
         }
         
     }
 
+    public bool IsFinishGame(Enemy enemy)
+    {
+        if (activeEnemies.Contains(enemy))
+        {
+            activeEnemies.Remove(enemy);
+            if (activeEnemies.Count == 0)
+            {
+                if (currentWay + 1 < m_LevelParam.Ways.Count)
+                {
+                    ObserverManager.Notify(EventId.SpawnedEnemies, currentWay);
+                    return false;
+                }
+                else return true;
+            }
+        }
+
+        return false;
+    }
     private void OnDestroy()
     {
         StopAllCoroutines();
     }
+    
 }

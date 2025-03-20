@@ -9,7 +9,9 @@ public class Enemy : ComponentBehavior
     [SerializeField] protected AnimHandler animHandler;
     
     public EnemyDead enemyDead { get; private set; }
-  
+
+    public EnemyMove EnemyMove => enemyMove;
+
     protected override void LoadComponent()
     {
         base.LoadComponent();

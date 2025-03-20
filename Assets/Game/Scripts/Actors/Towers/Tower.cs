@@ -41,6 +41,7 @@ public class Tower : ComponentBehavior
     
     public void UpdateTower(int upgradeId, float timerBuild = 1)
     {
+        HideUI();
         animHandler.SetInt("upgradeId",upgradeId);
         animHandler.SetAnim(AnimHandler.State.Upgrade);
         int towerUpgradeId;

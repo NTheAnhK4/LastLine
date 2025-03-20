@@ -742,7 +742,6 @@ MonoBehaviour:
   towerSpawner: {fileID: 1727073450}
   levelSpawner: {fileID: 8171488049963696825}
   levelUI: {fileID: 116033094}
-  m_EnemyCount: 0
 --- !u!114 &1832823445
 MonoBehaviour:
   m_ObjectHideFlags: 0

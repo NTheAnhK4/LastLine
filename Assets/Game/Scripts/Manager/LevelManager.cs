@@ -17,8 +17,9 @@ public class LevelManager : Singleton<LevelManager>
     
     private bool isGameOver;
     private int currentLevel;
-    
-    [SerializeField] private int m_EnemyCount;
+
+
+  
 
     public int CurrentLevel
     {
@@ -60,21 +61,10 @@ public class LevelManager : Singleton<LevelManager>
     }
 
    
-
-    public int EnemyCount
-    {
-        get => m_EnemyCount;
-        set
-        {
-            if (m_EnemyCount != value)
-            {
-                m_EnemyCount = value;
-                if (m_EnemyCount == 0) StartCoroutine(HandleWin());
-            }
-        }
-    }
-
     
+   
+   
+
 
     private void Start()
     {
@@ -89,14 +79,8 @@ public class LevelManager : Singleton<LevelManager>
         currentLevel = level;
         levelSpawner.Init(LevelData.Levels[level].LevelPrefab);
         isGameOver = false;
-        m_EnemyCount = 0;
-        foreach (WayParam wayParam in LevelData.Levels[level].Ways)
-        {
-            foreach (MiniWayParam miniWayParam in wayParam.MiniWays)
-            {
-                m_EnemyCount += miniWayParam.EnemyInfors.Count;
-            }
-        }
+        
+        
         HealthPoint = 20;
         Gold = LevelData.Levels[level].InitialGold;
         
@@ -120,6 +104,15 @@ public class LevelManager : Singleton<LevelManager>
         yield return new WaitForSeconds(2f);
         ObserverManager.Notify(EventId.Win);
         CompleteLevel(3);
+    }
+
+    public void HandleEnemyDead(Enemy enemy)
+    {
+        if (enemySpawner != null)
+        {
+            bool isFinishGame = enemySpawner.IsFinishGame(enemy);
+            if (isFinishGame) StartCoroutine(HandleWin());
+        }
     }
     
 }
