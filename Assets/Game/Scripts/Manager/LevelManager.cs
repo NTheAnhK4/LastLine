@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class LevelManager : Singleton<LevelManager>
@@ -68,11 +69,7 @@ public class LevelManager : Singleton<LevelManager>
             if (m_EnemyCount != value)
             {
                 m_EnemyCount = value;
-                if (m_EnemyCount == 0)
-                {
-                    ObserverManager.Notify(EventId.Win);
-                    CompleteLevel(3);
-                }
+                if (m_EnemyCount == 0) StartCoroutine(HandleWin());
             }
         }
     }
@@ -116,6 +113,13 @@ public class LevelManager : Singleton<LevelManager>
         progress.UpdateLevelState(currentLevel + 1, 0);
        
         JsonSaveSystem.SaveData(progress);
+    }
+
+    private IEnumerator HandleWin()
+    {
+        yield return new WaitForSeconds(2f);
+        ObserverManager.Notify(EventId.Win);
+        CompleteLevel(3);
     }
     
 }

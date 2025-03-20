@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a40e91856f6f04593234fa00fb5000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 4a05f3d1a88dc7b4db23a1d4a929ffff, type: 2}
+  Data: {fileID: 11400000, guid: 72f970173b868284caedd1b45e4a1f9b, type: 2}
   currentWay: -1
 --- !u!4 &2018987660
 Transform:

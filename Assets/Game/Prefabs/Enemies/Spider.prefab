@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee779a18bfb504c4e9d62aa9414ba7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMove: {fileID: 4904354322320606431}
+  enemyMove: {fileID: 1001543129108532935}
   enemyHealth: {fileID: 6513591163728730114}
   animHandler: {fileID: 5366370078768965103}
   enemyAttack: {fileID: 4078413594176017886}
@@ -209,8 +209,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.1256, y: -0.0804}
-  m_SizeDelta: {x: 54.7012, y: 71.9031}
+  m_AnchoredPosition: {x: 0.0327, y: 0.306}
+  m_SizeDelta: {x: 37.6045, y: 30.167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6798323261277516060
 Canvas:
@@ -791,7 +791,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &5366370078768965103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 5406821308220427922}
   - component: {fileID: 7740670683248919512}
   - component: {fileID: 8235769857044122761}
-  - component: {fileID: 4904354322320606431}
+  - component: {fileID: 1001543129108532935}
   m_Layer: 8
   m_Name: Move
   m_TagString: Radar
@@ -924,7 +924,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4904354322320606431
+--- !u!114 &1001543129108532935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -933,7 +933,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8199168609724412060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d1f10938d6eb44cbccc4ab715922d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2aa4f09fa38c45947b7dd2086750cb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actor: {fileID: 1678928061670210717}
@@ -942,4 +942,5 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   currentPathIndex: 0
   moveSpeed: 0
-  enemyTarget: []
+  enemyTargets: []
+  m_AttackRange: 0
