@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: Enemy Data
   m_EditorClassIdentifier: 
   MeleeEnemies:
-  - Name: Brain chomp
-    HealthPoint: 5
-    PhysicalDamageReduction: 1
-    MagicalDamageReduction: 1
-    MoveSpeed: 2
+  - Name: Monster
+    HealthPoint: 7
+    PhysicalDamageReduction: 0.9
+    MagicalDamageReduction: 0.9
+    MoveSpeed: 0.7
     DamageType: 0
     AttackRange: 0.4
     AttackSpeed: 1.5
-    DamageToTower: 1
-    RewardGold: 1
-    EnemyPrefab: {fileID: 7647574835406034084, guid: 482e80c310d670941bd3540c8a4473cf, type: 3}
-    Damage: 1
-  - Name: Rotten Driller
-    HealthPoint: 6
-    PhysicalDamageReduction: 0.9
+    DamageToTower: 2
+    RewardGold: 3
+    EnemyPrefab: {fileID: 1420592936187739759, guid: 09317a1d2c95c6049a64f5c5e8d04ec0, type: 3}
+    Damage: 3
+  - Name: Wolf
+    HealthPoint: 3
+    PhysicalDamageReduction: 1
     MagicalDamageReduction: 1
-    MoveSpeed: 1
+    MoveSpeed: 3
     DamageType: 0
     AttackRange: 0.3
-    AttackSpeed: 0.8
+    AttackSpeed: 0.5
     DamageToTower: 1
     RewardGold: 1
-    EnemyPrefab: {fileID: 461616533364891258, guid: 8e78ecd3410c0f24f83b44f53bf69ed7, type: 3}
-    Damage: 3
+    EnemyPrefab: {fileID: 7007174157395247517, guid: efff15ddcf656a84cb76868a56ee48b4, type: 3}
+    Damage: 1
   - Name: Spider
     HealthPoint: 3
     PhysicalDamageReduction: 1
