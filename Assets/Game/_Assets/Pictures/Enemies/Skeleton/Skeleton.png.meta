@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ea1c39f257aa4f48a260b0173bb9bfc
+guid: 6220424385491af42aeb8bb29baf643b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GuardianUnitIdle_0
+      name: SkeletonAttack5
       rect:
         serializedVersion: 2
-        x: 452
-        y: 1212
-        width: 193
-        height: 236
+        x: 8
+        y: 980
+        width: 121
+        height: 196
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 476d55115ecce5c44bdbf048f70121ff
-      internalID: -738483430
+      spriteID: f582e39f4e08bae4c9fe2e1ffb59d1ee
+      internalID: -1069972908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_1
+      name: SkeletonAttack4
       rect:
         serializedVersion: 2
-        x: 875
-        y: 1212
+        x: 369
+        y: 981
+        width: 167
+        height: 187
+      alignment: 9
+      pivot: {x: 0.38618314, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99701e7b933aec439067936ab13a392
+      internalID: 1305055188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonAttack3
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 980
         width: 175
-        height: 244
+        height: 189
+      alignment: 9
+      pivot: {x: 0.33588624, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0f084573123dd479f3ed360b3d2289
+      internalID: -828775746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonAttack2
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 979
+        width: 139
+        height: 189
+      alignment: 9
+      pivot: {x: 0.40716332, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dfe957841f175a4ca77f85bde395ee4
+      internalID: -1836783135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonAttack1
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 980
+        width: 121
+        height: 196
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +221,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe45ae1c8f375724ea48e321b6828213
-      internalID: -1832174570
+      spriteID: e98463154c307c7408e1417222eae314
+      internalID: 396978608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_2
+      name: SkeletonAttack0
       rect:
         serializedVersion: 2
-        x: 1296
-        y: 1212
+        x: 1787
+        y: 974
+        width: 133
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f04029df2cc3ee4c80a97ab62c1c6df
+      internalID: 801705762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDead5
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 503
+        width: 106
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec7c7745bd130348980b86f5a9c32e0
+      internalID: -892245570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDead4
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 496
         width: 159
-        height: 236
+        height: 61
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +284,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af0f7cfb4dfefa940b985c13c97a7da5
-      internalID: 1809709978
+      spriteID: 3be3b4d7fbe0ebf478ab6477269dc0d2
+      internalID: -1202849887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_3
+      name: SkeletonDead3
       rect:
         serializedVersion: 2
-        x: 1701
-        y: 1212
+        x: 640
+        y: 489
+        width: 250
+        height: 83
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5dd8785831e4545ac66c88dc1d91f1
+      internalID: -1943638519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDead2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 488
+        width: 212
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08603d10d53b6c94598f1293d7e05c2f
+      internalID: 2091472705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkeletonDead1
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 488
         width: 175
-        height: 236
+        height: 153
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0878543235907f4bb2269bc8969d588
-      internalID: -1665515124
+      spriteID: db8a4487ecfec3945a0b6fcb5a4e7cbb
+      internalID: 2028801747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_4
+      name: SkeletonDead0
       rect:
         serializedVersion: 2
-        x: 448
-        y: 647
-        width: 209
-        height: 226
+        x: 1792
+        y: 489
+        width: 128
+        height: 195
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e783fe6caa582246868651d9e48bd4e
-      internalID: -616190161
+      spriteID: a2099be1ae0120e4abbe6c766023ac4c
+      internalID: 1487427692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_5
+      name: SkeletonMove5
       rect:
         serializedVersion: 2
-        x: 865
-        y: 645
-        width: 192
-        height: 235
+        x: 0
+        y: 5
+        width: 108
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +389,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcd68172e31ef154fa361dd5737c08ea
-      internalID: 1256135107
+      spriteID: 1cb383a6d0749d546aa036d9c20c7179
+      internalID: 164811394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_6
+      name: SkeletonMove4
       rect:
         serializedVersion: 2
-        x: 1287
-        y: 645
-        width: 175
-        height: 235
+        x: 354
+        y: 7
+        width: 114
+        height: 196
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +410,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba01b6be3f2b31b4e9278ca2ce796092
-      internalID: -1572059674
+      spriteID: 414c051a335308348b44f8f0ffa5de34
+      internalID: 857540904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_7
+      name: SkeletonMove3
       rect:
         serializedVersion: 2
-        x: 1692
-        y: 645
-        width: 193
-        height: 226
+        x: 707
+        y: 0
+        width: 130
+        height: 195
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +431,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: babb25c238afeb649b025af1f424b366
-      internalID: -458315378
+      spriteID: 654b2ce2cd8369c4fa7780cea76fb271
+      internalID: 2128845131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_8
+      name: SkeletonMove2
       rect:
         serializedVersion: 2
-        x: 444
-        y: 59
-        width: 217
-        height: 227
+        x: 1061
+        y: 0
+        width: 145
+        height: 195
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +452,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50dbdd1dba1be0d4cbcc3d08f5554ed8
-      internalID: -1906928615
+      spriteID: edd0dbc5cb2c0c44c986f42fc713eeee
+      internalID: 345853994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_9
+      name: SkeletonMove1
       rect:
         serializedVersion: 2
-        x: 865
-        y: 59
-        width: 201
-        height: 235
+        x: 1430
+        y: 5
+        width: 137
+        height: 199
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,20 +473,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 185d192aaa89b014086b020a60d78973
-      internalID: -333979975
+      spriteID: aaf7df3d42ab8014baa3d56234f5fa55
+      internalID: 445289186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GuardianUnitIdle_10
+      name: SkeletonMove0
       rect:
         serializedVersion: 2
-        x: 1287
-        y: 59
-        width: 184
-        height: 235
+        x: 1806
+        y: 5
+        width: 116
+        height: 189
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,29 +494,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdf875cabf21ce548b3cc0a11ba69b31
-      internalID: -219903610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GuardianUnitIdle_11
-      rect:
-        serializedVersion: 2
-        x: 1692
-        y: 59
-        width: 202
-        height: 227
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 281a05ac7c45e5c42bf01946d7bb66cf
-      internalID: -44735502
+      spriteID: a21766d56ea93cf40b7e4f77021d0319
+      internalID: -359338924
       vertices: []
       indices: 
       edges: []
@@ -385,18 +511,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GuardianUnitIdle_0: -738483430
-      GuardianUnitIdle_1: -1832174570
-      GuardianUnitIdle_10: -219903610
-      GuardianUnitIdle_11: -44735502
-      GuardianUnitIdle_2: 1809709978
-      GuardianUnitIdle_3: -1665515124
-      GuardianUnitIdle_4: -616190161
-      GuardianUnitIdle_5: 1256135107
-      GuardianUnitIdle_6: -1572059674
-      GuardianUnitIdle_7: -458315378
-      GuardianUnitIdle_8: -1906928615
-      GuardianUnitIdle_9: -333979975
+      SkeletonAttack0: 801705762
+      SkeletonAttack1: 396978608
+      SkeletonAttack2: -1836783135
+      SkeletonAttack3: -828775746
+      SkeletonAttack4: 1305055188
+      SkeletonAttack5: -1069972908
+      SkeletonDead0: 1487427692
+      SkeletonDead1: 2028801747
+      SkeletonDead2: 2091472705
+      SkeletonDead3: -1943638519
+      SkeletonDead4: -1202849887
+      SkeletonDead5: -892245570
+      SkeletonMove0: -359338924
+      SkeletonMove1: 445289186
+      SkeletonMove2: 345853994
+      SkeletonMove3: 2128845131
+      SkeletonMove4: 857540904
+      SkeletonMove5: 164811394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

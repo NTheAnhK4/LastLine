@@ -1,12 +1,11 @@
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public MeleeEnemyData Data;
+    public EnemyData Data;
     private LevelParam m_LevelParam;
     public int currentWay = -1;
     private System.Action<object> onSpawnWay;
@@ -73,15 +72,29 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(int pathId, EnemyInfor enemyInfor)
     {
-        if (enemyInfor.EnemyType != EnemyType.MeleeAttack) return;
-        if (enemyInfor.EnemyId < 0 || enemyInfor.EnemyId >= Data.MeleeEnemys.Count) return;
-        var enemyPrefab = Data.MeleeEnemys[enemyInfor.EnemyId].EnemyPrefab;
-        if (enemyPrefab == null) return;
+        if (enemyInfor.EnemyType == EnemyType.MeleeAttack)
+        {
+            if (enemyInfor.EnemyId < 0 || enemyInfor.EnemyId >= Data.MeleeEnemies.Count) return;
+            var enemyPrefab = Data.MeleeEnemies[enemyInfor.EnemyId].EnemyPrefab;
+            if (enemyPrefab == null) return;
        
-        var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
-        MeleeEnemy meleeEnemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<MeleeEnemy>();
+            var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
+            MeleeEnemy meleeEnemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<MeleeEnemy>();
         
-        meleeEnemy.Init(Data.MeleeEnemys[enemyInfor.EnemyId],m_LevelParam.Paths[pathId].Positions);
+            meleeEnemy.Init(Data.MeleeEnemies[enemyInfor.EnemyId],m_LevelParam.Paths[pathId].Positions);
+        }
+        else
+        {
+            if(enemyInfor.EnemyId < 0 || enemyInfor.EnemyId >= Data.RangedEnemies.Count) return;
+            var enemyPrefab = Data.RangedEnemies[enemyInfor.EnemyId].EnemyPrefab;
+            if(enemyPrefab == null) return;
+
+            var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
+            RangedEnemy rangedEnemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<RangedEnemy>();
+            
+            rangedEnemy.Init(Data.RangedEnemies[enemyInfor.EnemyId], m_LevelParam.Paths[pathId].Positions);
+        }
+        
     }
 
     private void OnDestroy()

@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &2869554366905855773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 200103580375392980}
   - component: {fileID: 5389839763964615142}
   - component: {fileID: 9052011472113456325}
-  - component: {fileID: 4936725931782212235}
+  - component: {fileID: 9183637688850645192}
   m_Layer: 8
   m_Name: Move
   m_TagString: Radar
@@ -493,7 +493,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4936725931782212235
+--- !u!114 &9183637688850645192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5002771380340530660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d1f10938d6eb44cbccc4ab715922d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2aa4f09fa38c45947b7dd2086750cb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actor: {fileID: 7758480801160409643}
@@ -511,7 +511,8 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   currentPathIndex: 0
   moveSpeed: 0
-  enemyTarget: []
+  enemyTargets: []
+  m_AttackRange: 0
 --- !u!1 &5306239784823888461
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,9 +772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee779a18bfb504c4e9d62aa9414ba7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMove: {fileID: 4936725931782212235}
+  enemyMove: {fileID: 9183637688850645192}
   enemyHealth: {fileID: 3450249322710370551}
-  animHandler: {fileID: 0}
+  animHandler: {fileID: 2869554366905855773}
   enemyAttack: {fileID: 1749630177747415076}
 --- !u!1 &7658395360366658020
 GameObject:

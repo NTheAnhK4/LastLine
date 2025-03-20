@@ -181,21 +181,21 @@ MonoBehaviour:
           EnemyType: 0
       - PathId: 1
         EnemyInfors:
-        - EnemyId: 1
-          SpawnDelay: 2
-          EnemyType: 0
         - EnemyId: 0
-          SpawnDelay: 2
-          EnemyType: 0
-        - EnemyId: 1
-          SpawnDelay: 2
-          EnemyType: 0
-        - EnemyId: 1
-          SpawnDelay: 2
-          EnemyType: 0
+          SpawnDelay: 1
+          EnemyType: 1
         - EnemyId: 0
-          SpawnDelay: 2
-          EnemyType: 0
+          SpawnDelay: 1
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 1
     Paths:
     - SignalPosition: {x: 9, y: 9, z: 0}
       SignalAngle: 90
