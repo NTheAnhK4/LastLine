@@ -14,7 +14,8 @@ public class AnimHandler : ComponentBehavior
         
         Dead,
         Attack,
-        Upgrade
+        Upgrade,
+        DoSkill
     }
 
     public State currentState;
@@ -24,8 +25,9 @@ public class AnimHandler : ComponentBehavior
     private static readonly int OnAttack = Animator.StringToHash("onAttack");
     private static readonly int OnUpgrade = Animator.StringToHash("onUpgrade");
     private static readonly int IsIdle = Animator.StringToHash("isIdle");
-    
-    
+    private static readonly int DoSkill = Animator.StringToHash("doSkill");
+
+
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -68,6 +70,10 @@ public class AnimHandler : ComponentBehavior
                 if(currentState == State.Move) anim.SetBool(IsMove,false);
                 anim.SetBool(IsIdle, true);
                 currentState = State.Idle;
+                break;
+            case State.DoSkill:
+                anim.SetTrigger(DoSkill);
+                currentState = State.DoSkill;
                 break;
         }
     }

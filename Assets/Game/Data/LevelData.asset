@@ -196,13 +196,48 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1
           EnemyType: 1
+    - MiniWays:
+      - PathId: 0
+        EnemyInfors:
+        - EnemyId: 2
+          SpawnDelay: 0.75
+          EnemyType: 0
+        - EnemyId: 2
+          SpawnDelay: 0.75
+          EnemyType: 0
+        - EnemyId: 2
+          SpawnDelay: 0.75
+          EnemyType: 0
+        - EnemyId: 2
+          SpawnDelay: 0.75
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 0.75
+          EnemyType: 0
+      - PathId: 1
+        EnemyInfors:
+        - EnemyId: 3
+          SpawnDelay: 2
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 2
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 2
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 2
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 2
+          EnemyType: 0
     Paths:
     - SignalPosition: {x: 9, y: 9, z: 0}
       SignalAngle: 90
       Positions:
       - {x: 8, y: 12, z: 0}
-      - {x: 8, y: 9, z: 0}
-      - {x: -3.5, y: 9, z: 0}
+      - {x: 8, y: 8, z: 0}
+      - {x: -3.5, y: 8, z: 0}
       - {x: -5, y: 6, z: 0}
       - {x: -5, y: -3.5, z: 0}
       - {x: -22, y: -3.5, z: 0}
@@ -229,8 +264,8 @@ MonoBehaviour:
       flagPosition: {x: -5, y: 5, z: 0}
     - Towerposition: {x: -0.81, y: 5.28, z: 0}
       flagPosition: {x: -1, y: 8.5, z: 0}
-    - Towerposition: {x: 5, y: 5, z: 0}
-      flagPosition: {x: 5.35, y: 8.6, z: 0}
+    - Towerposition: {x: 7, y: -5.5, z: 0}
+      flagPosition: {x: 7, y: -8.5, z: 0}
     - Towerposition: {x: 2.19, y: 2.35, z: 0}
       flagPosition: {x: -3.5, y: 2.5, z: 0}
     - Towerposition: {x: 5.2, y: -1.22, z: 0}

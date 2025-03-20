@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class EnemyMove : MoveHandler
@@ -10,7 +11,7 @@ public class EnemyMove : MoveHandler
     private List<Vector3> m_PathList;
     
     [SerializeField] private Vector3 targetPosition;
-    [SerializeField] private int currentPathIndex;
+    [SerializeField] private int m_CurrentPathIndex;
     [SerializeField] protected float moveSpeed;
 
     protected Vector3 direction;
@@ -29,20 +30,24 @@ public class EnemyMove : MoveHandler
             direction = value;
         }
     }
+
+    public int CurrentPathIndex => m_CurrentPathIndex;
+
+    public List<Vector3> PathList => m_PathList;
     protected override void LoadComponent()
     {
         base.LoadComponent();
         if (enemyCtrl == null) enemyCtrl = transform.GetComponentInParent<Enemy>();
     }
 
-    public void Init(List<Vector3> pathList, float eMoveSpeed, float aRange)
+    public void Init(List<Vector3> pathList, float eMoveSpeed, float aRange, int currentPathIndex = 1)
     {
         m_AttackRange = aRange;
         m_PathList = pathList;
         moveSpeed = eMoveSpeed;
         if(animHandler != null) animHandler.SetAnim(AnimHandler.State.Move);
-        currentPathIndex = 1;
-        targetPosition = m_PathList[currentPathIndex];
+        m_CurrentPathIndex = currentPathIndex;
+        targetPosition = m_PathList[m_CurrentPathIndex];
     }
 
 
@@ -52,7 +57,7 @@ public class EnemyMove : MoveHandler
         enemyCtrl.transform.Translate(direction * (moveSpeed * Time.deltaTime));
         if (Vector3.Distance(enemyCtrl.transform.position, targetPosition) <= 0.4f)
         {
-            if (currentPathIndex == m_PathList.Count - 1) enemyCtrl.enemyDead.OnDead(false);
+            if (m_CurrentPathIndex == m_PathList.Count - 1) enemyCtrl.enemyDead.OnDead(false);
             else SetNextPosition();
         }
     }
@@ -60,8 +65,8 @@ public class EnemyMove : MoveHandler
 
     private void SetNextPosition()
     {
-        currentPathIndex++;
-        targetPosition = m_PathList[currentPathIndex];
+        m_CurrentPathIndex++;
+        targetPosition = m_PathList[m_CurrentPathIndex];
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -119,19 +124,20 @@ public class EnemyMove : MoveHandler
     private void Update()
     {
         
-        if (animHandler.currentState == AnimHandler.State.Attack) return;
-        if(animHandler.currentState == AnimHandler.State.Dead) return;
-
+        if (animHandler.currentState == AnimHandler.State.Attack||
+            animHandler.currentState == AnimHandler.State.Dead||
+            animHandler.currentState == AnimHandler.State.DoSkill) return;
+       
         if (targetEnemy == null || targetEnemy.IsDead) targetEnemy = GetEnemy();
 
         if (targetEnemy != null) MoveToTarget(targetEnemy.Actor.position);
         else
         {
             animHandler.SetAnim(AnimHandler.State.Move);
-            if (currentPathIndex + 1 < m_PathList.Count)
+            if (m_CurrentPathIndex + 1 < m_PathList.Count)
             {
-                if ((enemyCtrl.transform.position - m_PathList[currentPathIndex + 1]).sqrMagnitude <
-                    (enemyCtrl.transform.position - m_PathList[currentPathIndex]).sqrMagnitude)
+                if ((enemyCtrl.transform.position - m_PathList[m_CurrentPathIndex + 1]).sqrMagnitude <
+                    (enemyCtrl.transform.position - m_PathList[m_CurrentPathIndex]).sqrMagnitude)
                 {
                     SetNextPosition();
                 }

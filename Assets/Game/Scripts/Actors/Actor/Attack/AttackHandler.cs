@@ -83,7 +83,7 @@ public class AttackHandler : ActionHandler
     private void Update()
     {
         
-       
+        if(animHandler.currentState == AnimHandler.State.DoSkill) return;
         coolDown += Time.deltaTime;
         if (coolDown >= attackSpeed)
         {
