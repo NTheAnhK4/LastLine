@@ -24,7 +24,7 @@ public class LevelTracker : Singleton<LevelTracker>
     private void Start()
     {
         LevelProgress levelProgress = JsonSaveSystem.LoadData<LevelProgress>();
-        if (levelProgress == null || levelProgress.LevelStates == null)
+        if (levelProgress == null || levelProgress.LevelStates == null || levelProgress.LevelStates.Count == 0)
         {
             for(int i = 0; i < m_LevelButtons.Length; ++i) m_LevelButtons[i].HideFlag();
             SetLevelTrackerInfor(0,0);
@@ -33,9 +33,14 @@ public class LevelTracker : Singleton<LevelTracker>
         
         for (int i = 0; i < m_LevelButtons.Length; ++i)
         {
-            LevelState levelState = levelProgress.LevelStates[i];
-            if(levelState != null) SetLevelTrackerInfor(levelState.LevelIndex,levelState.Stars);
-            else m_LevelButtons[i].HideFlag();
+            if(i >= levelProgress.LevelStates.Count) m_LevelButtons[i].HideFlag();
+            else
+            {
+                LevelState levelState = levelProgress.LevelStates[i];
+                if(levelState != null) SetLevelTrackerInfor(levelState.LevelIndex,levelState.Stars);
+                else m_LevelButtons[i].HideFlag();
+            }
+           
         }
     }
 

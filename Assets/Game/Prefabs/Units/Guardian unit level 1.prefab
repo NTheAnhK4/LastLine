@@ -101,7 +101,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
   m_Radius: 5
 --- !u!50 &2178458378444552196
@@ -220,7 +220,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24210429, y: -0.04723382}
+  m_Offset: {x: -0.24210429, y: 0.4465376}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -231,7 +231,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9361329, y: 1.267549}
+  m_Size: {x: 0.9361329, y: 1.0846713}
   m_EdgeRadius: 0
 --- !u!114 &1026006175486206891
 MonoBehaviour:
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Attack: {fileID: 6699292041032025304}
   m_Move: {fileID: 681192711015142832}
   m_Health: {fileID: 6863728649450564083}
-  m_Anim: {fileID: 0}
+  m_Anim: {fileID: 8738056302592369945}
 --- !u!1 &3292714917931515486
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,8 +287,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.27, y: 0.0098}
-  m_SizeDelta: {x: 39.016, y: 59.9299}
+  m_AnchoredPosition: {x: -0.27, y: 0.4759}
+  m_SizeDelta: {x: 39.016, y: 58.9424}
   m_Pivot: {x: 0.49221247, y: 0.5145928}
 --- !u!223 &9051585316016274432
 Canvas:
@@ -895,7 +895,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
   m_Radius: 4
 --- !u!50 &4033641573657095375

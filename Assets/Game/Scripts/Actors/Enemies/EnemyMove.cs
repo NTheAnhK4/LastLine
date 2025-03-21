@@ -1,7 +1,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 
 public class EnemyMove : MoveHandler
@@ -16,10 +16,10 @@ public class EnemyMove : MoveHandler
 
     protected Vector3 direction;
     [Header("Target")]
-    [SerializeField] private List<HealthHandler> enemyTargets;
+    [SerializeField] private List<HealthHandler> enemyTargets = new List<HealthHandler>();
 
     [SerializeField] private float m_AttackRange;
-    private HealthHandler targetEnemy;
+    [SerializeField] private HealthHandler targetEnemy;
     public Vector3 Direction
     {
         get => direction;
@@ -46,8 +46,12 @@ public class EnemyMove : MoveHandler
         m_PathList = pathList;
         moveSpeed = eMoveSpeed;
         if(animHandler != null) animHandler.SetAnim(AnimHandler.State.Move);
+        
         m_CurrentPathIndex = currentPathIndex;
         targetPosition = m_PathList[m_CurrentPathIndex];
+
+        targetEnemy = null;
+        enemyTargets.Clear();
     }
 
 
@@ -119,7 +123,7 @@ public class EnemyMove : MoveHandler
         }
         animHandler.SetAnim(AnimHandler.State.Move);
         Vector3 direction = (target - actor.position).normalized;
-        actor.transform.Translate(direction * moveSpeed * Time.deltaTime);
+        actor.transform.Translate(direction * (moveSpeed * Time.deltaTime));
     }
     private void Update()
     {

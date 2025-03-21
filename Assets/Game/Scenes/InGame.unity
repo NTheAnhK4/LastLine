@@ -606,6 +606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4674580168826237004, guid: b6495e085fe5c8144b4ae909be936a2f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7632310862259563340, guid: b6495e085fe5c8144b4ae909be936a2f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

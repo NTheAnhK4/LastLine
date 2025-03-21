@@ -114,5 +114,13 @@ public class LevelManager : Singleton<LevelManager>
             if (isFinishGame) StartCoroutine(HandleWin());
         }
     }
+
+    public void HandeEnemyCloneSpawn(Enemy enemy)
+    {
+        if (enemySpawner != null)
+        {
+            enemySpawner.activeEnemies.Add(enemy);
+        }
+    }
     
 }
