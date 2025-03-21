@@ -8,14 +8,15 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(Rigidbody2D))]
 public class AttackHandler : ActionHandler
 {
-    [SerializeField] protected List<HealthHandler> detectedEnemies;
+    [SerializeField] protected List<HealthHandler> detectedEnemies = new List<HealthHandler>();
     protected readonly HashSet<HealthHandler> priorityTargets = new HashSet<HealthHandler>();
+   
     [SerializeField] private CircleCollider2D collid;
     
     [SerializeField] private float attackRange;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float coolDown;
-
+    
     
     protected override void LoadComponent()
     {
@@ -30,6 +31,9 @@ public class AttackHandler : ActionHandler
         collid.radius = attackRange;
         attackSpeed = aSpeed;
         coolDown = 0;
+        
+        detectedEnemies.Clear();
+        priorityTargets.Clear();
 
     }
     private bool IsEnemy(Transform obj)

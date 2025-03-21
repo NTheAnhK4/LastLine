@@ -270,3 +270,54 @@ MonoBehaviour:
       flagPosition: {x: -3.5, y: 2.5, z: 0}
     - Towerposition: {x: 5.2, y: -1.22, z: 0}
       flagPosition: {x: 2.19, y: -3.11, z: 0}
+  - InitialGold: 300
+    LevelPrefab: {fileID: 1733958067788854335, guid: d02e6b7ab5804b846981778adcdaa85f, type: 3}
+    Ways:
+    - MiniWays:
+      - PathId: 0
+        EnemyInfors:
+        - EnemyId: 3
+          SpawnDelay: 1
+          EnemyType: 0
+    Paths:
+    - SignalPosition: {x: -16, y: 4.5, z: 0}
+      SignalAngle: 180
+      Positions:
+      - {x: -20, y: 4.5, z: 0}
+      - {x: -7.5, y: 4.5, z: 0}
+      - {x: -7.5, y: 2, z: 0}
+      - {x: -1.5, y: 2, z: 0}
+      - {x: -1, y: -12, z: 0}
+    - SignalPosition: {x: 2.5, y: 9, z: 0}
+      SignalAngle: 90
+      Positions:
+      - {x: 2.5, y: 12, z: 0}
+      - {x: -0.5, y: 3, z: 0}
+      - {x: -1, y: -12, z: 0}
+    - SignalPosition: {x: 12, y: 8.5, z: 0}
+      SignalAngle: 45
+      Positions:
+      - {x: 18.5, y: 11.5, z: 0}
+      - {x: 11.5, y: 6.5, z: 0}
+      - {x: 10.5, y: -2, z: 0}
+      - {x: -0.5, y: -5, z: 0}
+      - {x: -1, y: -12, z: 0}
+    TowerInfors:
+    - Towerposition: {x: -4.5, y: -5.5, z: 0}
+      flagPosition: {x: 0.5, y: -5.5, z: 0}
+    - Towerposition: {x: -7, y: -0.5, z: 0}
+      flagPosition: {x: -7, y: 2, z: 0}
+    - Towerposition: {x: 4, y: -8, z: 0}
+      flagPosition: {x: 0, y: -8, z: 0}
+    - Towerposition: {x: 8.5, y: -5.5, z: 0}
+      flagPosition: {x: 8.5, y: -2.5, z: 0}
+    - Towerposition: {x: 15.5, y: 5.5, z: 0}
+      flagPosition: {x: 11.5, y: 5.5, z: 0}
+    - Towerposition: {x: 7.5, y: 4.5, z: 0}
+      flagPosition: {x: 10.5, y: 4.5, z: 0}
+    - Towerposition: {x: 5, y: 0.5, z: 0}
+      flagPosition: {x: 5, y: -3.5, z: 0}
+    - Towerposition: {x: 6.5, y: 8.5, z: 0}
+      flagPosition: {x: 2.5, y: 8.5, z: 0}
+    - Towerposition: {x: -3.5, y: 5.5, z: 0}
+      flagPosition: {x: -3.5, y: 1.5, z: 0}

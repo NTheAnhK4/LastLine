@@ -24,10 +24,10 @@ public class Solider : ComponentBehavior
     {
         m_Encampment = encampment;
         m_Anim.SetAnim(AnimHandler.State.Idle);
-        m_Attack.Init(1,2,0.5f, DamageType.Physical);
+        m_Attack.Init(1,2,2f, DamageType.Physical);
         
         m_Move.Init(1,flagPosition);
-        m_Health.Init(20,1,1);
+        m_Health.Init(70,1,1);
         m_Health.OnDead += () =>
         {
             m_Encampment.Soliders.Remove(this);

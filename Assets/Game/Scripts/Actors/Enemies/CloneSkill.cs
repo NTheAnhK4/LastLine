@@ -16,7 +16,7 @@ public class CloneSkill : HandleSkill
 
     protected override Vector3 GetPosition()
     {
-        return m_Enemy.transform.TransformPoint(Vector3.left);
+        return m_Enemy.transform.TransformPoint(Vector3.left * 0.3f);
     }
 
     protected override GameObject SpawnObject(Vector3 position)
@@ -29,13 +29,18 @@ public class CloneSkill : HandleSkill
             if (enemyPrefab != null)
             {
                 enemyPrefab.Init(meleeEnemy.EData,meleeEnemy.EnemyMove.PathList, meleeEnemy.EnemyMove.CurrentPathIndex);
+                LevelManager.Instance.HandeEnemyCloneSpawn(enemyPrefab);
             }
         }
         else if (m_Enemy is RangedEnemy rangedEnemy)
         {
             RangedEnemy enemyPrefab = objectPrefab.GetComponent<RangedEnemy>();
-            if(enemyPrefab != null)
+            if (enemyPrefab != null)
+            {
                 enemyPrefab.Init(rangedEnemy.EData,rangedEnemy.EnemyMove.PathList, rangedEnemy.EnemyMove.CurrentPathIndex);
+                LevelManager.Instance.HandeEnemyCloneSpawn(enemyPrefab);
+            }
+               
         }
         return objectPrefab;
     }

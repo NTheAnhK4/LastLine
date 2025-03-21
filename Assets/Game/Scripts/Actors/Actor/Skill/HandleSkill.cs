@@ -28,12 +28,13 @@ public class HandleSkill : ComponentBehavior
             yield return new WaitForSeconds(m_CoolDown);
             for (int i = 0; i < m_SpawnCount; ++i)
             {
-                Vector3 position = GetPosition();
-                SpawnObject(position);
                 if (m_AnimHander != null)
                 {
                     m_AnimHander.SetAnim(AnimHandler.State.DoSkill);
-                    yield return new WaitForSeconds(1);
+                    yield return new WaitForSeconds(1.5f);
+                    Vector3 position = GetPosition();
+                    SpawnObject(position);
+                    m_AnimHander.RevertToPreviousAnim();
                 }
                 
             }
