@@ -11,15 +11,21 @@ public class SummonTower : Tower
         
     }
 
-    public override void Init(int towerId, Vector3 flagPosition)
+    public override void Init(int towerId, Vector3 flagPosition, int towerLevel)
     {
-        base.Init(towerId, flagPosition);
+        base.Init(towerId, flagPosition, towerLevel);
         
-        guardianAttack.Init(Data.Towers[m_TowerId].UnitPrefab,m_FlagPosition,Data.Towers[m_TowerId].AttackSpeed);
+        guardianAttack.Init(Data.Towers[m_TowerId].UnitPrefab,m_FlagPosition,Data.Towers[m_TowerId].AttackSpeed, m_TowerLevel);
     }
 
     private void OnDisable()
     {
         guardianAttack.Disband();
+    }
+
+    public void SetNewFlag(Vector3 newFlagPosition)
+    {
+        m_FlagPosition = newFlagPosition;
+        if(guardianAttack != null) guardianAttack.SetNewFlagPosition(newFlagPosition);
     }
 }

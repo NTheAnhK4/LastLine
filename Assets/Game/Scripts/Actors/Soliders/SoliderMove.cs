@@ -1,8 +1,7 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 [RequireComponent(typeof(CircleCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -76,17 +75,20 @@ public class SoliderMove : MoveHandler
         return enemyClosest;
     }
 
-    private void MoveToTarget(Vector3 target)
+    public void MoveToTarget(Vector3 target, bool isFlag = false)
     {
+        if (isFlag) m_FlagPosition = target;
         float distance = Vector3.Distance(target, actor.position);
-        if (distance <= 1)
+        float minDistance = (isFlag ? 0.0001f : 1f);
+        if (distance <= minDistance)
         {
             animHandler.SetAnim(AnimHandler.State.Idle);
             return;
         }
+      
         animHandler.SetAnim(AnimHandler.State.Move);
         Direction = (target - actor.position).normalized;
-        actor.transform.Translate(direction * m_speed * Time.deltaTime);
+        actor.transform.Translate(direction * m_speed * Time.deltaTime, Space.World);
     }
 
     private void Update()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -13,7 +14,7 @@ public class LevelProgress
         int index = LevelStates.FindIndex(level => level.LevelIndex == levelIndex);
     
          if (index == -1) LevelStates.Add(new LevelState() { LevelIndex = levelIndex, Stars = stars });
-         else if (index < LevelStates.Count) LevelStates[index].Stars = stars;
+         else if (index < LevelStates.Count) LevelStates[index].Stars = Math.Max(LevelStates[index].Stars, stars);
     
         JsonSaveSystem.SaveData(this);
     }

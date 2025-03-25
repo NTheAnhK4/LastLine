@@ -102,8 +102,14 @@ public class LevelManager : Singleton<LevelManager>
     private IEnumerator HandleWin()
     {
         yield return new WaitForSeconds(2f);
-        ObserverManager.Notify(EventId.Win);
-        CompleteLevel(3);
+        int star;
+        if (healthPoint > 12) star = 3;
+        else if (healthPoint > 6) star = 2;
+        else star = 1;
+      
+        CompleteLevel(star);
+        ObserverManager.Notify(EventId.Win, star);
+        
     }
 
     public void HandleEnemyDead(Enemy enemy)

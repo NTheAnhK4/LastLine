@@ -15,7 +15,7 @@ MonoBehaviour:
   Projectiles:
   - Name: Arrow
     speed: 6
-    damage: 1
+    damage: 0.7
     DamageType: 0
   - Name: Soil Bullet
     speed: 5

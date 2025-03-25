@@ -1,21 +1,19 @@
 
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 
 public class InputManager : Singleton<InputManager>
 {
     [SerializeField] private Tower currentSelectedTower = null;
-  
-    private RaycastHit2D GetRayCast()
+    
+    private RaycastHit2D GetRayCast(LayerMask layerMask)
     {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         worldPosition.z = 0;
-        int towerLayer = LayerMask.NameToLayer("Tower");
-        int defaultLayer = LayerMask.NameToLayer("Default");
-        LayerMask layerMask = (1 << towerLayer) | (1 << defaultLayer);
+       
+       
         return Physics2D.Raycast(worldPosition,Vector2.right,0.5f, layerMask);
        
     }
@@ -25,20 +23,30 @@ public class InputManager : Singleton<InputManager>
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D pointer = GetRayCast();
-           
-            HandleClickTower(pointer);
+            HandleClickTower();
+            HandleClickGuardianPlace();
         }
         
     }
 
-    private void HandleClickTower(RaycastHit2D pointer)
+    private void HandleClickTower()
     {
+        int towerLayer = LayerMask.NameToLayer("Tower");
+        int defaultLayer = LayerMask.NameToLayer("Default");
+        int guardianPlaceLayer = LayerMask.NameToLayer("GuardianPlace");
+
+       
+        RaycastHit2D guardianHit = GetRayCast(1 << guardianPlaceLayer);
+        if (guardianHit.collider != null) return;
+
+       
+        RaycastHit2D pointer = GetRayCast((1 << towerLayer) | (1 << defaultLayer));
         if (pointer.collider != null)
         {
             Tower towerSelected = pointer.collider.GetComponent<Tower>();
-            if(towerSelected != null && towerSelected == currentSelectedTower) return;
+            if (towerSelected != null && towerSelected == currentSelectedTower) return;
         }
+
         if (currentSelectedTower != null)
         {
             currentSelectedTower.HideUI();
@@ -47,9 +55,35 @@ public class InputManager : Singleton<InputManager>
 
         if (pointer.collider != null)
         {
-           
             currentSelectedTower = pointer.collider.GetComponent<Tower>();
-            if(currentSelectedTower != null) currentSelectedTower.ShowUI();
+            if (currentSelectedTower != null) currentSelectedTower.ShowUI();
         }
     }
+
+    private void HandleClickGuardianPlace()
+    {
+        int guardianPlaceLayer = LayerMask.NameToLayer("GuardianPlace");
+        RaycastHit2D pointer = GetRayCast((1 << guardianPlaceLayer));
+        if(pointer.collider == null) return;
+        else
+        {
+            if (currentSelectedTower == null)
+            {
+                Debug.LogWarning("Tower selected is null");
+                return;
+            }
+
+            if (currentSelectedTower is SummonTower summonTower)
+            {
+                summonTower.SetNewFlag(pointer.point);
+            }
+            else
+            {
+                Debug.LogWarning("Type of tower is wrong");
+                return;
+            }
+        }
+
+    }
+    
 }
