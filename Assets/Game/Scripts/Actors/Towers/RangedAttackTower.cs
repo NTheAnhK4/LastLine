@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class RangedAttackTower : Tower
 {
-    [SerializeField] private RangedAttack archerAttack;
+    [SerializeField] private RangedAttack rangedAttack;
     
     [SerializeField] private GameObject m_AttackRangeIndicatorPrefab;
     [SerializeField] private Transform m_AttackRangeIndicator;
@@ -15,7 +15,7 @@ public class RangedAttackTower : Tower
     protected override void LoadComponent()
     {
         base.LoadComponent();
-        if (archerAttack == null) archerAttack = transform.GetComponentInChildren<RangedAttack>();
+        if (rangedAttack == null) rangedAttack = transform.GetComponentInChildren<RangedAttack>();
        
     }
 
@@ -44,11 +44,11 @@ public class RangedAttackTower : Tower
         } 
     }
 
-    public override void Init(int towerId, Vector3 flagPosition)
+    public override void Init(int towerId, Vector3 flagPosition, int towerLevel = 1)
     {
-        base.Init(towerId, flagPosition);
+        base.Init(towerId, flagPosition, towerLevel);
         m_AttackRange = Data.Towers[towerId].AttackRange;
-        archerAttack.Init(Data.Towers[towerId].AttackRange, Data.Towers[towerId].AttackSpeed, Data.Towers[towerId].UnitPrefab);
+        rangedAttack.Init(Data.Towers[towerId].AttackRange, Data.Towers[towerId].AttackSpeed, Data.Towers[towerId].UnitPrefab, towerLevel);
     }
 
     

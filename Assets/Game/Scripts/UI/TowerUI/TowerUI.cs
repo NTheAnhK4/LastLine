@@ -28,5 +28,10 @@ public class TowerUI : ComponentBehavior
         tower.UpdateTower(towerUpgradeId,timerBuild);
         
     }
+
+    public virtual void CheckButtonsAvailable()
+    {
+        
+    }
     
 }

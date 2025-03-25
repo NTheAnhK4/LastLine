@@ -40,7 +40,7 @@ MonoBehaviour:
     AttackSpeed: 10
     UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
     TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
     TowerUpgradeList:
     - TowerId: 8
   - TowerName: Mage level 1
@@ -91,5 +91,5 @@ MonoBehaviour:
     AttackSpeed: 9.5
     UnitPrefab: {fileID: 2651033401249118599, guid: 3b0c3525b8295844ea00f6412c2b8df6, type: 3}
     TowerPrefab: {fileID: 3100071290906627879, guid: 792c82e97f76ec4458b0c08cd1cb2ef8, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
     TowerUpgradeList: []

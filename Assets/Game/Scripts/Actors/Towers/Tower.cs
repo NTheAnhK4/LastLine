@@ -7,7 +7,7 @@ public class Tower : ComponentBehavior
 {
     public TowerData Data;
     protected int m_TowerId;
-
+    [SerializeField] protected int m_TowerLevel;
     public int TowerId
     {
         get => m_TowerId;
@@ -30,7 +30,13 @@ public class Tower : ComponentBehavior
        
         if(Data.Towers[m_TowerId].TowerUIPrefab == null || isUpgrade) return;
         towerUI = PoolingManager.Spawn(Data.Towers[m_TowerId].TowerUIPrefab,transform.position).GetComponent<TowerUI>();
-        if(towerUI != null) towerUI.tower = this;
+        towerUI.gameObject.SetActive(false);
+        if (towerUI != null)
+        {
+            towerUI.tower = this;
+            towerUI.CheckButtonsAvailable();
+            towerUI.gameObject.SetActive(true);
+        }
     }
 
     public virtual void HideUI()
@@ -55,10 +61,11 @@ public class Tower : ComponentBehavior
         isUpgrade = false;
     }
 
-    public virtual void Init(int towerId,Vector3 flagPosition)
+    public virtual void Init(int towerId,Vector3 flagPosition, int towerLevel = 0)
     {
         m_TowerId = towerId;
         m_FlagPosition = flagPosition;
+        m_TowerLevel = towerLevel;
     }
     
     IEnumerator BuildNewTower(int towerUpgradeId, float timeBuild = 1)
@@ -67,7 +74,7 @@ public class Tower : ComponentBehavior
         yield return new WaitForSeconds(timeBuild);
         Tower tower = PoolingManager.Spawn(Data.Towers[towerUpgradeId].TowerPrefab,transform.position)
             .GetComponent<Tower>();
-        tower.Init(towerUpgradeId,m_FlagPosition);
+        tower.Init(towerUpgradeId,m_FlagPosition, m_TowerLevel + 1);
         
         
         PoolingManager.Despawn(this.gameObject);

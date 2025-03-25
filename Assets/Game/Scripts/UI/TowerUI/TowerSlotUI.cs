@@ -1,5 +1,6 @@
 
 
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,7 +44,10 @@ public class TowerSlotUI : TowerUI
         AddBuyListener(guardian, 1);
         AddBuyListener(mage, 2);
         AddBuyListener(catapult, 3);
+       
     }
+
+  
 
     void AddBuyListener(UpdateTowerInfor towerInfor, int towerType)
     {
@@ -58,10 +62,34 @@ public class TowerSlotUI : TowerUI
             else
             {
                 PoolingManager.Despawn(gameObject);
-                Debug.Log("Not enough money");
+                
             }
         });
     }
+
+    public override void CheckButtonsAvailable()
+    {
+        CheckButtonAvailable(archer);
+        CheckButtonAvailable(guardian);
+        CheckButtonAvailable(mage);
+        CheckButtonAvailable(catapult);
+    }
+
+    private void CheckButtonAvailable(UpdateTowerInfor towerInfor)
+    {
+        int towerCost = int.Parse(towerInfor.cost.text);
+        if (towerCost > LevelManager.Instance.Gold)
+        {
+            towerInfor.btn.interactable = false;
+            towerInfor.cost.color = Color.red;
+        }
+        else
+        {
+            towerInfor.btn.interactable = true;
+            towerInfor.cost.color = Color.white;
+        }
+    }
+    
 
 
     

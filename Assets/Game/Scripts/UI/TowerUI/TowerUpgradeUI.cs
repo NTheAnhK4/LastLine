@@ -1,4 +1,5 @@
 
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,27 +25,12 @@ public class TowerUpgradeUI : TowerUI
         
     }
 
-    private void LoadData()
-    {
-        if(tower == null) return;
-        if (tower.Data.Towers[tower.TowerId].TowerUpgradeList.Count == 0)
-        {
-            Debug.LogWarning("Tower upgrade list is empty");
-            return;
-        }
-        int towerUpgradeId = tower.Data.Towers[tower.TowerId].TowerUpgradeList[0].TowerId;
-        m_UpgradeTower.cost.text = tower.Data.Towers[towerUpgradeId].Cost.ToString();
-        int sellCost = tower.Data.Towers[tower.TowerId].Cost / 2;
-        m_SellTower.cost.text = sellCost.ToString();
-    }
+   
+    
 
-    private void OnEnable()
+    protected virtual void Start()
     {
-        LoadData();
-    }
-
-    private void Start()
-    {
+        
         m_UpgradeTower.btn.onClick.AddListener(() =>
         {
             int cost = int.Parse(m_UpgradeTower.cost.text);
@@ -56,7 +42,7 @@ public class TowerUpgradeUI : TowerUI
             else
             {
                 PoolingManager.Despawn(gameObject);
-                Debug.Log("Not enough money");
+               
             }
         });
         m_SellTower.btn.onClick.AddListener(() =>
@@ -66,8 +52,50 @@ public class TowerUpgradeUI : TowerUI
             LevelManager.Instance.Gold += cost;
             UpdateTower(-1,1.5f);
         });
-        LoadData();
+        
     }
 
+   
+
+    public override void CheckButtonsAvailable()
+    {
+        if (tower == null || tower.Data.Towers[tower.TowerId].TowerUpgradeList.Count == 0)
+        {
+            m_UpgradeTower.btn.interactable = false;
+            m_UpgradeTower.cost.text = "--";
+            m_UpgradeTower.cost.color = Color.white;
+        }
+        else
+        {
+            int towerUpgradeId = tower.Data.Towers[tower.TowerId].TowerUpgradeList[0].TowerId;
+            m_UpgradeTower.cost.text = tower.Data.Towers[towerUpgradeId].Cost.ToString();
+           
+            int upgradeCost = int.Parse(m_UpgradeTower.cost.text);
+            if (upgradeCost > LevelManager.Instance.Gold)
+            {
+                m_UpgradeTower.btn.interactable = false;
+                m_UpgradeTower.cost.color = Color.red;
+            }
+            else
+            {
+                m_UpgradeTower.btn.interactable = true;
+                m_UpgradeTower.cost.color = Color.white;
+            }
+            
+            
+        }
+
+        if (tower == null || tower.TowerId >= tower.Data.Towers.Count)
+        {
+            m_SellTower.btn.interactable = false;
+            m_SellTower.cost.text = "--";
+        }
+        else
+        {
+            int sellCost = tower.Data.Towers[tower.TowerId].Cost / 2;
+            m_SellTower.cost.text = sellCost.ToString();
+            m_SellTower.btn.interactable = true;
+        }
+    }
    
 }

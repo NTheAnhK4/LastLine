@@ -1,6 +1,7 @@
 
 
 
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class LevelUI : ComponentBehavior
     [SerializeField] private TextMeshProUGUI healthTxt;
     [SerializeField] private TextMeshProUGUI wayNumTxt;
     [SerializeField] private TextMeshProUGUI goldTxt;
-    [SerializeField] private CenterUI winUI;
+    [SerializeField] private WinUI winUI;
     [SerializeField] private CenterUI loseUI;
     [SerializeField] private PanelUI panel;
 
@@ -23,6 +24,7 @@ public class LevelUI : ComponentBehavior
     private System.Action<object> onUpdateGoldHandler;
     private System.Action<object> onSpawnedEnemiesHandler;
     private System.Action<object> onLoseHandler;
+   
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -47,7 +49,7 @@ public class LevelUI : ComponentBehavior
         }
 
         Transform center = transform.Find("Center");
-        winUI = center.Find("WinUI").GetComponent<CenterUI>();
+        winUI = center.Find("WinUI").GetComponent<WinUI>();
         loseUI = center.Find("LoseUI").GetComponent<CenterUI>();
         panel = center.Find("Panel").GetComponent<PanelUI>();
     }
@@ -59,16 +61,16 @@ public class LevelUI : ComponentBehavior
         onAttackCastleHandler = param => UpdateHealthUI((float)param);
         onUpdateGoldHandler = param => UpdateGoldUI((int)param);
         onSpawnedEnemiesHandler = param => SpawnSignalWay((int)param);
-        onLoseHandler = param => OnLose();
-        onWinHandler = param => OnWin(); 
-
+        onLoseHandler = _ => OnLose();
+        onWinHandler = param => OnWin((int)param);
+       
         ObserverManager.Attach(EventId.SpawnWay, onSpawnWayHandler);
         ObserverManager.Attach(EventId.AttackCastle, onAttackCastleHandler);
         ObserverManager.Attach(EventId.UpdateGold, onUpdateGoldHandler);
         ObserverManager.Attach(EventId.SpawnedEnemies, onSpawnedEnemiesHandler);
         ObserverManager.Attach(EventId.Win, onWinHandler);
         ObserverManager.Attach(EventId.Lose, onLoseHandler);
-        
+       
     }
 
     private void OnDisable()
@@ -79,6 +81,7 @@ public class LevelUI : ComponentBehavior
         ObserverManager.Detach(EventId.SpawnedEnemies, onSpawnedEnemiesHandler);
         ObserverManager.Detach(EventId.Win, onWinHandler);
         ObserverManager.Detach(EventId.Lose, onLoseHandler);
+        
     }
     
     private void UpdateWayUI(int wayId)
@@ -139,8 +142,9 @@ public class LevelUI : ComponentBehavior
         panel.gameObject.SetActive(true);
         
     }
-    private void OnWin()
+    private void OnWin(int starCount)
     {
+        winUI.SetStars(starCount);
         SetUICenterActive(winUI);
     }
 
@@ -148,6 +152,7 @@ public class LevelUI : ComponentBehavior
     {
         SetUICenterActive(loseUI);
     }
+
    
 
 }
