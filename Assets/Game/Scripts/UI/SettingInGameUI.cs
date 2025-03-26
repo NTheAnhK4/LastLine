@@ -43,10 +43,5 @@ public class SettingInGameUI : CenterUI
         replayBtn.onClick.RemoveAllListeners();
     }
 
-    protected override void SetInteractable(bool canInteractable)
-    {
-        base.SetInteractable(canInteractable);
-        replayBtn.interactable = canInteractable;
-        quitBtn.interactable = canInteractable;
-    }
+   
 }
