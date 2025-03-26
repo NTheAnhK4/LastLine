@@ -43,10 +43,5 @@ public class LoseUI : CenterUI
         rePlayBtn.onClick.RemoveAllListeners();
     }
 
-    protected override void SetInteractable(bool canInteractable)
-    {
-        base.SetInteractable(canInteractable);
-        rePlayBtn.interactable = canInteractable;
-        quitBtn.interactable = canInteractable;
-    }
+   
 }

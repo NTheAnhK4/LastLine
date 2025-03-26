@@ -14,11 +14,7 @@ public class SettingWorldMapUI : CenterUI
         if (quitBtn == null) quitBtn = buttonHolder.Find("Quit").GetComponent<Button>();
     }
 
-    protected override void SetInteractable(bool canInteractable)
-    {
-        base.SetInteractable(canInteractable);
-        quitBtn.interactable = canInteractable;
-    }
+   
 
     private void OnEnable()
     {
