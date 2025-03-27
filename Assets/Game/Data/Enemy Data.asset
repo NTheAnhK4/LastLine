@@ -66,7 +66,7 @@ MonoBehaviour:
     HealthPoint: 9
     PhysicalDamageReduction: 0.7
     MagicalDamageReduction: 1
-    MoveSpeed: 2
+    MoveSpeed: 0.5
     DamageType: 0
     AttackRange: 2
     AttackSpeed: 1

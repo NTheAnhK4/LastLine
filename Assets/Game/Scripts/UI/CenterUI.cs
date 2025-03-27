@@ -12,6 +12,7 @@ public class CenterUI : ComponentBehavior
     protected override void LoadComponent()
     {
         base.LoadComponent();
+        if (CanvasGroup == null) CanvasGroup = transform.GetComponent<CanvasGroup>();
         if (originalScale == Vector3.zero)
         {
             var transform1 = transform;

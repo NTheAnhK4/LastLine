@@ -105,7 +105,7 @@ public class SummonAttack : ComponentBehavior
     {
         foreach (var solider in activeUnits.Values)
         {
-            PoolingManager.Despawn(solider.gameObject);
+            if(solider != null) PoolingManager.Despawn(solider.gameObject);
             
         }
     }
