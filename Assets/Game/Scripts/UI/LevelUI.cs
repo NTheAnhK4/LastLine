@@ -2,6 +2,7 @@
 
 
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ public class LevelUI : ComponentBehavior
     [SerializeField] private WinUI winUI;
     [SerializeField] private CenterUI loseUI;
     [SerializeField] private PanelUI panel;
+
+    private Dictionary<Vector3, GameObject> m_SignalWayChecker = new Dictionary<Vector3, GameObject>();
 
     private LevelParam m_LevelParam;
     private System.Action<object> onWinHandler;
@@ -121,6 +124,8 @@ public class LevelUI : ComponentBehavior
         foreach (MiniWayParam miniWay in m_LevelParam.Ways[wayId + 1].MiniWays)
         {
             int pathId = miniWay.PathId;
+            if(m_SignalWayChecker.ContainsKey(paths[pathId].SignalPosition)) continue;
+            
             Transform signalWayTrf = PoolingManager.Spawn(SignalWayPrefab, paths[pathId].SignalPosition, default, transform).transform;
 
             RectTransform border = signalWayTrf.Find("SignalWay").Find("Boder 2").GetComponent<RectTransform>();
