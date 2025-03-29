@@ -1,0 +1,2738 @@
+fileFormatVersion: 2
+guid: d68e86203ce27a147b180e37290f0fa8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ObjectRiverTileset_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 437
+        width: 104
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2275d9dd0554bb4b94b6ce367ce8b75
+      internalID: -1761714465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 437
+        width: 104
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb4a108d3fafc24891ff7b3ecbf10b4
+      internalID: 487527957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_2
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 437
+        width: 104
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d096a813f5e204cb24914e0455df31
+      internalID: -307667209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_3
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 437
+        width: 104
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20365b26a8f5374691979ab42befb27
+      internalID: -1743101104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_4
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 467
+        width: 73
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ae04da72c93764680cef6c0d347f3a
+      internalID: -1984841915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 467
+        width: 73
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03864a0e765237e45ad07d4725a112ee
+      internalID: -878246172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_6
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 467
+        width: 74
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126d1765890469140870e7cf195b75da
+      internalID: 1541464172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_7
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 467
+        width: 73
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3657d4bb3aad94fb9d645cb53cdae5
+      internalID: 2014638908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_8
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 362
+        width: 73
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66116622ec4f7e943bd61d73e721e45a
+      internalID: -1924002743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 359
+        width: 53
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f979d1acc698e43997603d7f6ffee1
+      internalID: -819127469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_10
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 359
+        width: 44
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213cb079b256dde41989f8a32c131ee1
+      internalID: -120452370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_11
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 359
+        width: 52
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805654745f538944aa6aa595273feb3c
+      internalID: -1113685179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_12
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 359
+        width: 44
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e72b06894ee294797d9deced9953d8
+      internalID: 998240735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_13
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 359
+        width: 53
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1469c5fb2c2d0714b980e262de18bce9
+      internalID: 1605513237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_14
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 359
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4461ea07cfb2945ac11a55ed15ed88
+      internalID: -1079290390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_15
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 359
+        width: 52
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238254491a199e6478db2352474285d2
+      internalID: 1438378364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_16
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 359
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f54e4e1880cce4f825863ed76a6642
+      internalID: -1216799706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_17
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 411
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e4c2a184c97e0479e85cbd33c60354
+      internalID: 176854375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_18
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 411
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9cd7c17597f7e4bba689e53166d5d4
+      internalID: -88726970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_19
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 411
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbf3a5b8613b164399153a714210b79
+      internalID: -1951539653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_20
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 411
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbe16d10cd36374c8d06057c5c52190
+      internalID: 634911410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_21
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 412
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93949b0db46caa4293abfa6a760ad55
+      internalID: 90264498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_22
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 412
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220db57efee9d4341900541adb63a2f5
+      internalID: 1256440573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_23
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 411
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74b09f191a8a8241ab7c2fb420fc3d6
+      internalID: 1390054083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_24
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 411
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ed25cc04679e74e93a89452dfe3ce1
+      internalID: -1374898895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_25
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 362
+        width: 73
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72cd9241a08e86c4ca8722d64389ef6f
+      internalID: 1301304297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_26
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 362
+        width: 73
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523b993654c207e438f8a1a65b59259f
+      internalID: -1138608290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_27
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 362
+        width: 74
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41236a490badd4e4787669e5f0ab595b
+      internalID: -811840568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_28
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 362
+        width: 73
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed02113d7fbf86d499df86bb01139f51
+      internalID: 109831300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_29
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 230
+        width: 52
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d4ba7096bb76245b450972f17dbde5
+      internalID: 1005027868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_30
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 230
+        width: 52
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d53a0342445724dae384efdd63eadf
+      internalID: -519221075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_31
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 230
+        width: 52
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45ef46fd32f69c48a3de667fd8af2f3
+      internalID: -798552029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_32
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 230
+        width: 53
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ccadf5ae8a96045b3b6237937c85b6
+      internalID: 1262423198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_33
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 256
+        width: 130
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662b485b723c09e4a97bce46a75a0e14
+      internalID: -1362010535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_34
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 255
+        width: 130
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776f6ed25d96e0a45b6e86f96baae15d
+      internalID: -1149606175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_35
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 256
+        width: 130
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4313395f5e40048b9702bbffa8661e
+      internalID: 1417665283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_36
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 256
+        width: 130
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63685acea9249d43b2b7fa9fc3c4c25
+      internalID: -1286245856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_37
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 168
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea5ca999799880418c3942692cba524
+      internalID: 1421319005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_38
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 168
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 531213733653d61479e8818a6a32ecf0
+      internalID: 698878911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_39
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 168
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879a9f2a3def1d24992ba9e10d229b19
+      internalID: -187243378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_40
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 168
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e73737a4a4c5d48860cd7eb8ad6c70
+      internalID: -755881596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_41
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 162
+        width: 30
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efabe0c06cef69f479f3edf5f460956b
+      internalID: 1016674308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_42
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 199
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36f9fd28f53a284eb70c428ba70aa8d
+      internalID: -389921636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_43
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 162
+        width: 33
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94389138de67f99418da478a9e319d55
+      internalID: 509371212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 162
+        width: 29
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e65ec0044f9abc4aa563516358fa8b7
+      internalID: 1718275130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_45
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 199
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72edf308a4c70643b28db5fe344d2ce
+      internalID: 1451583362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_46
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 162
+        width: 34
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b9908ee7913c3e4ba39d5738d14105c
+      internalID: -1910132144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_47
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 162
+        width: 29
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be606a717b9552439ba564b2c241a33
+      internalID: 173208367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_48
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 199
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaeb303cb4d0d374b997e752369eccd6
+      internalID: 1434945045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_49
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 162
+        width: 34
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae60b7f75b3ceab41b6163e2ec150243
+      internalID: -159575204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_50
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 162
+        width: 29
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f50220158b76e643b5f5ddad175cea7
+      internalID: -1460750625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_51
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 199
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c8bcbcc8d81214b8b1da44b32dc859
+      internalID: -3978647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_52
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 162
+        width: 35
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f05ca76f05663448e462d244258de8
+      internalID: 312273041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_53
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 152
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c33dbc365ba9045b987040d02b19f0
+      internalID: 1566176593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_54
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 151
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1259d323787071f4eb7150513dca1881
+      internalID: 1268907199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_55
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 152
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbddfa96cc56a9445ab16bc814ac1898
+      internalID: 1291243616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_56
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 152
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075d08b6b98d21846850d23efdf794b5
+      internalID: 1469124426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_57
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 100
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7eaba86b4af484f8b63e9f6a96ff5a
+      internalID: -1122627872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_58
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 100
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdb2ce45a8d434b4aab4581709755649
+      internalID: -1965460241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_59
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 100
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba138e4ac7c0f947bcea1c13e0bf091
+      internalID: -2034822867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_60
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 100
+        width: 53
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f9edb65fd87fe4c86e9ae0752b0bcd
+      internalID: 1150144956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_61
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 130
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa856d1017a3034c91ed50228cc2fe8
+      internalID: -762404921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_62
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 130
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a45f02c570cab49a7897d4df22e68a
+      internalID: 331585259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_63
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 130
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca986f3ce451ea43af1245dec66ab24
+      internalID: 298105331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_64
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 130
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe40e6e88febf54ba93f733ada3ce7f
+      internalID: 458111711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_65
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 55
+        width: 34
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8a9514bf699e641abadb1c2ebe894c
+      internalID: -354565221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_66
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 109
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6741c2d5522bbc448b641db664a9cd31
+      internalID: -1367863491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_67
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 110
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8490bf0cd140c1448b94308200bfada
+      internalID: 2073790761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_68
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 121
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07841f32132638e42879f9728e227439
+      internalID: 1663284011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_69
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 121
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f30f038c21f6264695307b3d01da560
+      internalID: 1282739480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_70
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 121
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997a9e61ccb906848bd9d0ffeb0ad97c
+      internalID: 1601493847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_71
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 97
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a64fc19756afb42881c47e9c2699b5
+      internalID: -1449613293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_72
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 96
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536b15692a2c4944e84c612ca11ad08d
+      internalID: 425251263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_74
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 96
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7607c7a40a962e041baf2429144e9e05
+      internalID: 109369303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_75
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 61
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2707ff219853e74d9db2e6d9defe727
+      internalID: -49361358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_76
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 61
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05cd035c1fefe1d499c94b1e0c7fa2aa
+      internalID: -885893596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_77
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 61
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74aaad28f2350c7438a0c8add25c230e
+      internalID: 871239766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_78
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 61
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5345ea664511a4a8a7183be414315d
+      internalID: 635410739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_79
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 61
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388507268f5c2ba469e9b3a33bd29e14
+      internalID: -1747485262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_80
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 61
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a313862aedabe409f065bf630501d7
+      internalID: 577295367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_81
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 62
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfafe869f18fc04794a8dd50623a0a0
+      internalID: 1257772428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_82
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 61
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1de877ecc67904da59ea77fe48b9b6
+      internalID: -900925872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_83
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 57
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754072ad8aa11d548b11d10182a8a815
+      internalID: 1559280507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_84
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 57
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195005044462ab541b89becb513b1a73
+      internalID: -673269391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_85
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 58
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457586e8528f01a4bb0acb1814306fbe
+      internalID: -659806817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_86
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 57
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba5e742624e4fb47ae67348f22d9e9d
+      internalID: -1898883958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_87
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 61
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f418fa94b63b1442a44d153fc959c54
+      internalID: -570852795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_88
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 62
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5ee51c7b014124695689ca4a03174e
+      internalID: -1187667959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_89
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 62
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf04208251359ee46bd96745da380b45
+      internalID: -1567057734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_90
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 62
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e3840653803d814fa0104dc05a1ea35
+      internalID: -698421451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_91
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 71
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c28e4c28a465e344977b961a43a32e4
+      internalID: 465719137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_92
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 71
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d1fd387afc37947ba025406ab63e83
+      internalID: 831335375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_93
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 71
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebda6e1333b169347bdcec7327c42526
+      internalID: -336395492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_94
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 71
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4f5aba1840e8b4c8d1b96131cad3e1
+      internalID: -1247338421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_95
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 56
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5a56c99d8a02948a579f6d2b7b8272
+      internalID: 364102028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_96
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 47
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0207a3dca85154ca1d6c3415176978
+      internalID: 1075971266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_97
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 46
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69a8dd615e5c2c43bc4f88a445a9102
+      internalID: -103992970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_98
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 47
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef0a9e1ee7089d49bb58f77029a26a4
+      internalID: -3680309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_99
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 47
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb78db3d9a6496846967ed84b8eed61e
+      internalID: 192725247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_100
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 7
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3fee0d12a581c1429ce6360c4754afc
+      internalID: 191705315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_101
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 7
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636d102d5a75b7146b5f0466dec03d17
+      internalID: 392220728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_102
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 8
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb33de3649cf69f45a4a32a36b36f8a3
+      internalID: 1260415092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_103
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 7
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92ec2a79ff31634b9330a6fbef561c0
+      internalID: 602552090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_104
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 5
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45102cd90bca6374c9307e5920c8a5d1
+      internalID: -1508354406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_105
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 5
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 197e5b319494fc24281074850a2963b6
+      internalID: 1575431662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_106
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 6
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c66c7cae900af46891e834083e2d7f
+      internalID: 176316103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_107
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 5
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce95b04d73f42e4083182d2944a8c7d
+      internalID: -2037985546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_108
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 9
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c6f6dc9b4fe2743aaa495ca6921d0d
+      internalID: 1572805843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_109
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 10
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da16e747ee0870d4e96f300724d4489e
+      internalID: -377031453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_110
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 10
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 409edb98869fd0144ac0794dda19e98a
+      internalID: -1134849595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_111
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 10
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770dce2e13005bc439f18b6c9aa5ea29
+      internalID: -448881340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_112
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 12
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9456920f457f00246b9d529cb190d810
+      internalID: -1839275900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_113
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 12
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93520244f16aeb49a779c35180a5d8b
+      internalID: 670271836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_114
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 12
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c16174dd11c554d86a7eca7020bbb0
+      internalID: 1297578154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_115
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 12
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10da2de381af31d4f8cf0ac5c588c9ff
+      internalID: 1139879002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_116
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 1
+        width: 78
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2319250dac57f3343b732932bb8af934
+      internalID: -332059284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_117
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 2
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7086cd1198b9add43ae3dad4892afad4
+      internalID: -961940243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObjectRiverTileset_118
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 2
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0faabdfa3212d549941b696fde84308
+      internalID: 388401620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ObjectRiverTileset_0: -1761714465
+      ObjectRiverTileset_1: 487527957
+      ObjectRiverTileset_10: -120452370
+      ObjectRiverTileset_100: 191705315
+      ObjectRiverTileset_101: 392220728
+      ObjectRiverTileset_102: 1260415092
+      ObjectRiverTileset_103: 602552090
+      ObjectRiverTileset_104: -1508354406
+      ObjectRiverTileset_105: 1575431662
+      ObjectRiverTileset_106: 176316103
+      ObjectRiverTileset_107: -2037985546
+      ObjectRiverTileset_108: 1572805843
+      ObjectRiverTileset_109: -377031453
+      ObjectRiverTileset_11: -1113685179
+      ObjectRiverTileset_110: -1134849595
+      ObjectRiverTileset_111: -448881340
+      ObjectRiverTileset_112: -1839275900
+      ObjectRiverTileset_113: 670271836
+      ObjectRiverTileset_114: 1297578154
+      ObjectRiverTileset_115: 1139879002
+      ObjectRiverTileset_116: -332059284
+      ObjectRiverTileset_117: -961940243
+      ObjectRiverTileset_118: 388401620
+      ObjectRiverTileset_119: -1868779705
+      ObjectRiverTileset_12: 998240735
+      ObjectRiverTileset_13: 1605513237
+      ObjectRiverTileset_14: -1079290390
+      ObjectRiverTileset_15: 1438378364
+      ObjectRiverTileset_16: -1216799706
+      ObjectRiverTileset_17: 176854375
+      ObjectRiverTileset_18: -88726970
+      ObjectRiverTileset_19: -1951539653
+      ObjectRiverTileset_2: -307667209
+      ObjectRiverTileset_20: 634911410
+      ObjectRiverTileset_21: 90264498
+      ObjectRiverTileset_22: 1256440573
+      ObjectRiverTileset_23: 1390054083
+      ObjectRiverTileset_24: -1374898895
+      ObjectRiverTileset_25: 1301304297
+      ObjectRiverTileset_26: -1138608290
+      ObjectRiverTileset_27: -811840568
+      ObjectRiverTileset_28: 109831300
+      ObjectRiverTileset_29: 1005027868
+      ObjectRiverTileset_3: -1743101104
+      ObjectRiverTileset_30: -519221075
+      ObjectRiverTileset_31: -798552029
+      ObjectRiverTileset_32: 1262423198
+      ObjectRiverTileset_33: -1362010535
+      ObjectRiverTileset_34: -1149606175
+      ObjectRiverTileset_35: 1417665283
+      ObjectRiverTileset_36: -1286245856
+      ObjectRiverTileset_37: 1421319005
+      ObjectRiverTileset_38: 698878911
+      ObjectRiverTileset_39: -187243378
+      ObjectRiverTileset_4: -1984841915
+      ObjectRiverTileset_40: -755881596
+      ObjectRiverTileset_41: 1016674308
+      ObjectRiverTileset_42: -389921636
+      ObjectRiverTileset_43: 509371212
+      ObjectRiverTileset_44: 1718275130
+      ObjectRiverTileset_45: 1451583362
+      ObjectRiverTileset_46: -1910132144
+      ObjectRiverTileset_47: 173208367
+      ObjectRiverTileset_48: 1434945045
+      ObjectRiverTileset_49: -159575204
+      ObjectRiverTileset_5: -878246172
+      ObjectRiverTileset_50: -1460750625
+      ObjectRiverTileset_51: -3978647
+      ObjectRiverTileset_52: 312273041
+      ObjectRiverTileset_53: 1566176593
+      ObjectRiverTileset_54: 1268907199
+      ObjectRiverTileset_55: 1291243616
+      ObjectRiverTileset_56: 1469124426
+      ObjectRiverTileset_57: -1122627872
+      ObjectRiverTileset_58: -1965460241
+      ObjectRiverTileset_59: -2034822867
+      ObjectRiverTileset_6: 1541464172
+      ObjectRiverTileset_60: 1150144956
+      ObjectRiverTileset_61: -762404921
+      ObjectRiverTileset_62: 331585259
+      ObjectRiverTileset_63: 298105331
+      ObjectRiverTileset_64: 458111711
+      ObjectRiverTileset_65: -354565221
+      ObjectRiverTileset_66: -1367863491
+      ObjectRiverTileset_67: 2073790761
+      ObjectRiverTileset_68: 1663284011
+      ObjectRiverTileset_69: 1282739480
+      ObjectRiverTileset_7: 2014638908
+      ObjectRiverTileset_70: 1601493847
+      ObjectRiverTileset_71: -1449613293
+      ObjectRiverTileset_72: 425251263
+      ObjectRiverTileset_73: 156168881
+      ObjectRiverTileset_74: 109369303
+      ObjectRiverTileset_75: -49361358
+      ObjectRiverTileset_76: -885893596
+      ObjectRiverTileset_77: 871239766
+      ObjectRiverTileset_78: 635410739
+      ObjectRiverTileset_79: -1747485262
+      ObjectRiverTileset_8: -1924002743
+      ObjectRiverTileset_80: 577295367
+      ObjectRiverTileset_81: 1257772428
+      ObjectRiverTileset_82: -900925872
+      ObjectRiverTileset_83: 1559280507
+      ObjectRiverTileset_84: -673269391
+      ObjectRiverTileset_85: -659806817
+      ObjectRiverTileset_86: -1898883958
+      ObjectRiverTileset_87: -570852795
+      ObjectRiverTileset_88: -1187667959
+      ObjectRiverTileset_89: -1567057734
+      ObjectRiverTileset_9: -819127469
+      ObjectRiverTileset_90: -698421451
+      ObjectRiverTileset_91: 465719137
+      ObjectRiverTileset_92: 831335375
+      ObjectRiverTileset_93: -336395492
+      ObjectRiverTileset_94: -1247338421
+      ObjectRiverTileset_95: 364102028
+      ObjectRiverTileset_96: 1075971266
+      ObjectRiverTileset_97: -103992970
+      ObjectRiverTileset_98: -3680309
+      ObjectRiverTileset_99: 192725247
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

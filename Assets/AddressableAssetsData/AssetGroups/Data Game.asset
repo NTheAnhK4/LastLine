@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Data Game
+  m_EditorClassIdentifier: 
+  m_GroupName: Data Game
+  m_Data:
+    m_SerializedData: []
+  m_GUID: eafa6f9a6b53c2f4ebe19bd36f566917
+  m_SerializeEntries:
+  - m_GUID: 72f970173b868284caedd1b45e4a1f9b
+    m_Address: Assets/Game/Data/Enemy Data.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Game Data
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 774d2656e095cf94ea1faa4e5b156c19
+    m_Address: Assets/Game/Data/Buff Data.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Game Data
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a75f11898d465f4a8e03de682dfd905
+    m_Address: Assets/Game/Data/ProjectileData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Game Data
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7eacf0dcf2602ee47b8bb1f615dbff2f
+    m_Address: Assets/Game/Data/Tower Data.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Game Data
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdd4ba4d71d0ab2428cd3eb2da321466
+    m_Address: Assets/Game/Data/Skill Data.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Game Data
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f697f635866dc124bb71228a3098b788
+    m_Address: Assets/Game/Data/LevelData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Game Data
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8eed7b0be0f1844489cac9a003c6737b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7f4e96d73c25a484d9d5fff0b636fa7a, type: 2}
+    - {fileID: 11400000, guid: b143b63d459d2044598fa5aad596b6f5, type: 2}

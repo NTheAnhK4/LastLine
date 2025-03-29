@@ -9,6 +9,7 @@ public enum SoundType
 {
     InGame,
     SelectLevel,
+    LoadingScene,
     Arrow,
     SoilBreak,
     MagicImpact
@@ -34,7 +35,7 @@ public class AudioManager : Singleton<AudioManager>
         get => m_MusicVolumeRate;
         set
         {
-            if (Math.Abs(m_SFXVolumeRate - value) > 0.1f)
+            if (Math.Abs(m_SFXVolumeRate - value) > 0.0001f)
             {
                 m_MusicSource.volume = value;
                 m_MusicVolumeRate = value;
@@ -55,13 +56,11 @@ public class AudioManager : Singleton<AudioManager>
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
-    {
-        PlayBackGroundMusic(SoundType.SelectLevel);
-    }
+ 
 
     public static void PlaySFX(SoundType sound, float volume = 1)
     {
+        
         volume = Mathf.Clamp(volume * Instance.m_SFXVolumeRate, 0, 1);
         Instance.m_SFXSource.PlayOneShot(Instance.soundList[(int)sound].Sound, volume);
     }

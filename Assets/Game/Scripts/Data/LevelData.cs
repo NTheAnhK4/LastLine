@@ -10,6 +10,7 @@ public class LevelData : ScriptableObject
 [Serializable]
 public class LevelParam
 {
+    public int TowerHealth = 20;
     public int InitialGold;
     public GameObject LevelPrefab;
     public List<WayParam> Ways;
@@ -36,7 +37,10 @@ public class MiniWayParam
 [Serializable]
 public class EnemyInfor
 {
+    [Header("Enemy Id")]
     public int EnemyId;
+    [Header("Spawn Delay")]
+    public float SpawnDelay = 2;
     public EnemyType EnemyType;
 }
 [Serializable]

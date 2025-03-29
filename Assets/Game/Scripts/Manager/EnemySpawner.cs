@@ -1,28 +1,31 @@
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public MeleeEnemyData Data;
+    
     private LevelParam m_LevelParam;
     public int currentWay = -1;
     private System.Action<object> onSpawnWay;
+
+    public readonly HashSet<Enemy> activeEnemies = new HashSet<Enemy>();
+
     public void Init(LevelParam levelParam)
     {
         m_LevelParam = levelParam;
+       
     }
     private void OnEnable()
     {
         onSpawnWay = _ => SpawnWay();
-        ObserverManager.Attach(EventId.SpawnNextWay, onSpawnWay);
+        ObserverManager<GameEventID>.Attach(GameEventID.SpawnNextWay, onSpawnWay);
     }
 
     private void OnDisable()
     {
-        ObserverManager.Detach(EventId.SpawnNextWay, onSpawnWay);
+        ObserverManager<GameEventID>.Detach(GameEventID.SpawnNextWay, onSpawnWay);
         
     }
 
@@ -34,13 +37,14 @@ public class EnemySpawner : MonoBehaviour
         currentWay++;
         if (currentWay == ways.Count) return;
         
-        ObserverManager.Notify(EventId.SpawnWay, currentWay + 1);
+        ObserverManager<GameEventID>.Notify(GameEventID.SpawnWay, currentWay + 1);
 
         StartCoroutine(SpawnAllMiniWays(ways[currentWay].MiniWays));
     }
 
     private IEnumerator SpawnAllMiniWays(List<MiniWayParam> miniWays)
     {
+      
         List<Coroutine> runningCoroutines = new List<Coroutine>();
 
         //Run all MiniWays in parallel
@@ -55,9 +59,8 @@ public class EnemySpawner : MonoBehaviour
             yield return coroutine;
         }
 
-        // When all MiniWays have spawned, send an event
-        if (currentWay + 1 < m_LevelParam.Ways.Count)
-            ObserverManager.Notify(EventId.SpawnedEnemies, currentWay);
+      
+            
     }
 
     private IEnumerator SpawnMiniWay(MiniWayParam miniWayParam)
@@ -65,7 +68,7 @@ public class EnemySpawner : MonoBehaviour
         foreach (var enemyInfor in miniWayParam.EnemyInfors)
         {
             SpawnEnemy(miniWayParam.PathId, enemyInfor);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(enemyInfor.SpawnDelay);
             if(this == null) yield break;
         }
     }
@@ -73,19 +76,43 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(int pathId, EnemyInfor enemyInfor)
     {
-        if (enemyInfor.EnemyType != EnemyType.MeleeAttack) return;
-        if (enemyInfor.EnemyId < 0 || enemyInfor.EnemyId >= Data.MeleeEnemys.Count) return;
-        var enemyPrefab = Data.MeleeEnemys[enemyInfor.EnemyId].EnemyPrefab;
-        if (enemyPrefab == null) return;
-       
+        GameObject enemyPrefab = GameFactory.GetEnemyPrefab(enemyInfor.EnemyType, enemyInfor.EnemyId);
+        if(enemyPrefab == null) return;
         var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
-        MeleeEnemy meleeEnemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<MeleeEnemy>();
+        Enemy enemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<Enemy>();
+        if(enemy != null)  enemy.Init(enemyInfor.EnemyId,pathId);
+        activeEnemies.Add(enemy);
         
-        meleeEnemy.Init(Data.MeleeEnemys[enemyInfor.EnemyId],m_LevelParam.Paths[pathId].Positions);
+        
     }
 
+    public bool IsFinishGame(Enemy enemy)
+    {
+        if (activeEnemies.Contains(enemy))
+        {
+            activeEnemies.Remove(enemy);
+            if (activeEnemies.Count == 0)
+            {
+                if (currentWay + 1 < m_LevelParam.Ways.Count)
+                {
+                    ObserverManager<GameEventID>.Notify(GameEventID.SpawnedEnemies, currentWay);
+                    return false;
+                }
+                else return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsFinishGame()
+    {
+        return activeEnemies.Count == 0;
+    }
     private void OnDestroy()
     {
         StopAllCoroutines();
     }
+    
 }
+

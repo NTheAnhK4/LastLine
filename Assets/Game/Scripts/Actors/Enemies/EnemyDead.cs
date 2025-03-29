@@ -1,5 +1,4 @@
 
-using UnityEngine;
 
 public class EnemyDead : DeadHandler
 {
@@ -14,20 +13,20 @@ public class EnemyDead : DeadHandler
     {
         if(hasAnim) DeadByDamage();
         else ReachPlayerBase();
-        LevelManager.Instance.EnemyCount--;
+        InGameManager.Instance.HandleEnemyDead(actor.GetComponent<Enemy>());
     }
 
     private void DeadByDamage()
     {
         StartCoroutine(DoAnim());
-        LevelManager.Instance.Gold += m_RewardGold;
+        InGameManager.Instance.Gold += m_RewardGold;
         
     }
 
     private void ReachPlayerBase()
     {
         PoolingManager.Despawn(actor.gameObject);
-        LevelManager.Instance.HealthPoint -= m_Damage;
+        InGameManager.Instance.HealthPoint -= m_Damage;
         
     }
 }

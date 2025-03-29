@@ -12,6 +12,7 @@ public class Projectile : ComponentBehavior
     [SerializeField] private ProjectileImpact projectileImpact;
     public DeadByDistance projectileDespawn { get; private set; }
     [SerializeField] private Transform enemyTarget;
+    [SerializeField] protected int m_ProjectileLevel;
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -20,11 +21,14 @@ public class Projectile : ComponentBehavior
         if (projectileImpact == null) projectileImpact = transform.GetComponentInChildren<ProjectileImpact>();
     }
 
-    public void Init(Transform enemyTrf)
+    public void Init(Transform enemyTrf, int projectileLevel = 1)
     {
         enemyTarget = enemyTrf;
-        projectileMove.Init(enemyTarget, m_ProjectileData.Projectiles[m_ProjectileId].speed);
+        m_ProjectileLevel = projectileLevel;
+        projectileMove.Init(enemyTarget, m_ProjectileData.Projectiles[m_ProjectileId].speed + m_ProjectileLevel);
        
-        projectileImpact.Init(enemyTarget,m_ProjectileData.Projectiles[m_ProjectileId].damage, m_ProjectileData.Projectiles[m_ProjectileId].DamageType);
+        projectileImpact.Init(enemyTarget,
+            m_ProjectileData.Projectiles[m_ProjectileId].damage * m_ProjectileLevel, 
+            m_ProjectileData.Projectiles[m_ProjectileId].DamageType);
     }
 }

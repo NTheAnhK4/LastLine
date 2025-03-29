@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Solider : ComponentBehavior
@@ -9,7 +8,9 @@ public class Solider : ComponentBehavior
     [SerializeField] private SoliderMove m_Move;
     [SerializeField] private HealthHandler m_Health;
     [SerializeField] private AnimHandler m_Anim;
-   
+
+    public SoliderMove Move => m_Move;
+
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -20,17 +21,18 @@ public class Solider : ComponentBehavior
 
     }
 
-    public void Init(SummonAttack encampment, Vector3 flagPosition)
+    public void Init(SummonAttack encampment, Vector3 flagPosition, int encampMentLevel = 1)
     {
+        
         m_Encampment = encampment;
         m_Anim.SetAnim(AnimHandler.State.Idle);
-        m_Attack.Init(1,2,0.5f, DamageType.Physical);
+        m_Attack.Init(0.25f + 0.5f * encampMentLevel,2 - 0.1f * encampMentLevel,2f + encampMentLevel, DamageType.Physical);
         
-        m_Move.Init(1,flagPosition);
-        m_Health.Init(20,1,1);
+        m_Move.Init(1 + 0.5f * encampMentLevel,flagPosition);
+        m_Health.Init(70 + encampMentLevel * 10,1 - 0.1f * encampMentLevel,1 - 0.1f * encampMentLevel);
         m_Health.OnDead += () =>
         {
-            m_Encampment.Soliders.Remove(this);
+            m_Encampment.OnSoliderDead(flagPosition);
         };
     }
     

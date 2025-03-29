@@ -373,7 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3207183663399262420}
   - component: {fileID: 3337246616686298359}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TowerUpgradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}

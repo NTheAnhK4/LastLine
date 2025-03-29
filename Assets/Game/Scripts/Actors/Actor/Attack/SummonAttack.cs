@@ -6,97 +6,126 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
 public class SummonAttack : ComponentBehavior
 {
-    [SerializeField] private Vector3 m_SpawnPosition;
+    [SerializeField] private Vector3 m_FlagPosition;
 
     [SerializeField] private GameObject m_Unit;
     [SerializeField] private int summonLimit;
     [SerializeField] private float m_SummonCooldown;
     
-    private bool isSummoning;
-    private bool[][] summonedUnits = new bool[3][];
-    private List<Vector2Int> randomPositions;
-    public List<Solider> Soliders;
-
     
-    public void Init(GameObject unit, Vector3 spawnPosition, float summonedCooldown)
+    private List<Vector3> m_SpawnPosition = new List<Vector3>();
+    private Dictionary<Vector3, Solider> activeUnits = new Dictionary<Vector3, Solider>();
+
+    private int m_ActorLevel;
+    public void Init(GameObject unit, Vector3 flagPosition, float summonedCooldown, int actorLevel = 1)
     {
-        Soliders = new List<Solider>();
+        activeUnits = new Dictionary<Vector3, Solider>();
         m_Unit = unit;
+        m_ActorLevel = actorLevel;
+        
         summonLimit = 3;
         
+       
         m_SummonCooldown = summonedCooldown;
-        m_SpawnPosition = spawnPosition;
-        isSummoning = false;
+        m_FlagPosition = flagPosition;
+        InitializeSpawnPosition(m_FlagPosition);
+        
+       
         for(int i = 0; i < summonLimit; ++i) OnSummon();
 
 
     }
 
-    protected override void Awake()
+
+    private void InitializeSpawnPosition(Vector3 flagPosition, float radius = 0.8f)
     {
-        base.Awake();
-        randomPositions = new List<Vector2Int>()
+        m_SpawnPosition.Clear();
+        for (int i = 0; i < summonLimit; ++i)
         {
-            new Vector2Int(-1,1), new Vector2Int(0,0), new Vector2Int(1,1),
-            new Vector2Int(-1,-1), new Vector2Int(1,-1), new Vector2Int(-1,0),
-            new Vector2Int(0,1), new Vector2Int(1,0), new Vector2Int(0,-1)
-        };
-        for (int i = 0; i < 3; ++i)
-        {
-            summonedUnits[i] = new bool[3];
+            float angle = (i / (float)summonLimit) * Mathf.PI * 2;
+
+            Vector3 pos = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle),0f) * radius + flagPosition;
+            m_SpawnPosition.Add(pos);
         }
     }
-
    
-    private void Update()
-    {
-        if(Soliders.Count >= summonLimit || isSummoning) return;
-        StartCoroutine(SummonByTime());
-
-    }
+   
 
     IEnumerator SummonByTime()
     {
-        isSummoning = true;
-        
         yield return new WaitForSeconds(m_SummonCooldown);
-        OnSummon();
-        isSummoning = false;
+        if (activeUnits.Count < summonLimit)
+        {
+            OnSummon();
+        }
+        
     }
 
     private void OnSummon()
     {
-        Vector3 newPosition = GetSpawnPos(m_SpawnPosition);
-        Solider solider = PoolingManager.Spawn(m_Unit,newPosition, default,transform)
+        Vector3 newPosition = GetSpawnPosition();
+        Transform transform1;
+        Solider solider = PoolingManager.Spawn(m_Unit,(transform1 = transform).parent.parent.position)
             .GetComponent<Solider>();
-        Soliders.Add(solider);
-        solider.Init(this,m_SpawnPosition);
+        if (solider != null)
+        {
+            activeUnits[newPosition] = solider;
+            solider.Init(this,newPosition, m_ActorLevel);
+            
+            solider.Move.MoveToTarget(newPosition, true);
+
+
+        }
+       
     }
 
-    private Vector3 GetSpawnPos(Vector3 root)
+    private Vector3 GetSpawnPosition()
     {
-        foreach (Vector2Int pos in randomPositions)
+        foreach (Vector3 spawnPos in m_SpawnPosition)
         {
-            int i = pos.x + 1;
-            int j = pos.y + 1;
-            if (!summonedUnits[i][j])
-            {
-                summonedUnits[i][j] = true;
-                return new Vector3(root.x + pos.x, root.y + pos.y, root.z);
-            }
+            if (!activeUnits.ContainsKey(spawnPos)) return spawnPos;
         }
+
+        Debug.LogWarning("Not enough space for solider");
         return Vector3.zero;
     }
 
+    public void OnSoliderDead(Vector3 position)
+    {
+        if (activeUnits.ContainsKey(position))
+        {
+            activeUnits.Remove(position);
+            StartCoroutine(SummonByTime());
+        }
+        
+    }
     public void Disband()
     {
-        foreach (var solider in Soliders)
+        foreach (var solider in activeUnits.Values)
         {
-            PoolingManager.Despawn(solider.gameObject);
+            if(solider != null) PoolingManager.Despawn(solider.gameObject);
+            
         }
     }
-    
+
+    public void SetNewFlagPosition(Vector3 newFlagPosition)
+    {
+        m_FlagPosition = newFlagPosition;
+        
+        //clear old dictionary
+        List<Solider> soliders = new List<Solider>(activeUnits.Values);
+        activeUnits.Clear();
+        InitializeSpawnPosition(newFlagPosition);
+        
+        //move solider
+        foreach (Solider solider in soliders)
+        {
+            Vector3 newPosition = GetSpawnPosition();
+            solider.Move.MoveToTarget(newPosition,true);
+            activeUnits[newPosition] = solider;
+        }
+        
+    }
 }

@@ -26,6 +26,11 @@ public class ProjectileMove : ComponentBehavior
     }
     private void Move()
     {
+        if (enemyTarget == null || !enemyTarget.gameObject.activeInHierarchy)
+        {
+            PoolingManager.Despawn(actor.gameObject);
+            return;
+        }
         SetDirection();
         actor.Translate(currentDirection* (bulletSpeed * Time.deltaTime), Space.World);
     }

@@ -42,4 +42,6 @@ public class SettingInGameUI : CenterUI
         quitBtn.onClick.RemoveAllListeners();
         replayBtn.onClick.RemoveAllListeners();
     }
+
+   
 }

@@ -26,6 +26,7 @@ public class LoseUI : CenterUI
             });
             
         });
+     
         rePlayBtn.onClick.AddListener(() =>
         {
             HideUI(() =>
@@ -41,4 +42,6 @@ public class LoseUI : CenterUI
         quitBtn.onClick.RemoveAllListeners();
         rePlayBtn.onClick.RemoveAllListeners();
     }
+
+   
 }

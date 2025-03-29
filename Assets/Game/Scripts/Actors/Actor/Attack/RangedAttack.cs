@@ -6,11 +6,13 @@ public class RangedAttack : AttackHandler
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Vector3 projectilePosition;
 
-    public void Init(float aRange, float aSpeed, GameObject proPrefab)
+    [SerializeField] private int m_ActorLevel;
+
+    public void Init(float aRange, float aSpeed, GameObject proPrefab, int actorLevel = 1)
     {
         base.Init(aRange,aSpeed);
         projectilePrefab = proPrefab;
-        
+        m_ActorLevel = actorLevel;
     }
 
     
@@ -35,7 +37,7 @@ public class RangedAttack : AttackHandler
                 Quaternion.Euler(new Vector3(0,0,angle)), 
                 transform)
             .GetComponent<Projectile>();
-        if(projectile != null) projectile.Init(enemy.Actor);
+        if(projectile != null) projectile.Init(enemy.Actor, m_ActorLevel);
     }
 
     private void SetDirection(float angle)
