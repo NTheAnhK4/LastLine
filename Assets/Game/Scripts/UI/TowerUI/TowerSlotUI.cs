@@ -54,9 +54,9 @@ public class TowerSlotUI : TowerUI
         towerInfor.btn.onClick.AddListener(() =>
         {
             int cost = int.Parse(towerInfor.cost.text);
-            if (cost <= LevelManager.Instance.Gold)
+            if (cost <= InGameManager.Instance.Gold)
             {
-                LevelManager.Instance.Gold -= cost;
+                InGameManager.Instance.Gold -= cost;
                 UpdateTower(towerType, 1);
             }
             else
@@ -78,7 +78,7 @@ public class TowerSlotUI : TowerUI
     private void CheckButtonAvailable(UpdateTowerInfor towerInfor)
     {
         int towerCost = int.Parse(towerInfor.cost.text);
-        if (towerCost > LevelManager.Instance.Gold)
+        if (towerCost > InGameManager.Instance.Gold)
         {
             towerInfor.btn.interactable = false;
             towerInfor.cost.color = Color.red;

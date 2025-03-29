@@ -10,6 +10,7 @@ public class LevelData : ScriptableObject
 [Serializable]
 public class LevelParam
 {
+    public int TowerHealth = 20;
     public int InitialGold;
     public GameObject LevelPrefab;
     public List<WayParam> Ways;

@@ -34,9 +34,9 @@ public class TowerUpgradeUI : TowerUI
         m_UpgradeTower.btn.onClick.AddListener(() =>
         {
             int cost = int.Parse(m_UpgradeTower.cost.text);
-            if (cost <= LevelManager.Instance.Gold)
+            if (cost <= InGameManager.Instance.Gold)
             {
-                LevelManager.Instance.Gold -= cost;
+                InGameManager.Instance.Gold -= cost;
                 UpdateTower(0, 1.5f);
             }
             else
@@ -49,7 +49,7 @@ public class TowerUpgradeUI : TowerUI
         {
             
             int cost = int.Parse(m_SellTower.cost.text);
-            LevelManager.Instance.Gold += cost;
+            InGameManager.Instance.Gold += cost;
             UpdateTower(-1,1.5f);
         });
         
@@ -71,7 +71,7 @@ public class TowerUpgradeUI : TowerUI
             m_UpgradeTower.cost.text = tower.Data.Towers[towerUpgradeId].Cost.ToString();
            
             int upgradeCost = int.Parse(m_UpgradeTower.cost.text);
-            if (upgradeCost > LevelManager.Instance.Gold)
+            if (upgradeCost > InGameManager.Instance.Gold)
             {
                 m_UpgradeTower.btn.interactable = false;
                 m_UpgradeTower.cost.color = Color.red;

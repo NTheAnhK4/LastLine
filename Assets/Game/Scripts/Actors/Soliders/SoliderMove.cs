@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class SoliderMove : MoveHandler
 {
-    [SerializeField] private float m_speed = 1;
+   
     
     [SerializeField] private Vector3 m_FlagPosition;
     [SerializeField] private float maxDistance = 5;
@@ -32,7 +32,7 @@ public class SoliderMove : MoveHandler
     public void Init(float speed, Vector3 flagPosition)
     {
        
-        m_speed = speed;
+        moveSpeed = speed;
         m_FlagPosition = flagPosition;
        
         
@@ -88,7 +88,7 @@ public class SoliderMove : MoveHandler
       
         animHandler.SetAnim(AnimHandler.State.Move);
         Direction = (target - actor.position).normalized;
-        actor.transform.Translate(direction * m_speed * Time.deltaTime, Space.World);
+        actor.transform.Translate(direction * (moveSpeed * Time.deltaTime), Space.World);
     }
 
     private void Update()

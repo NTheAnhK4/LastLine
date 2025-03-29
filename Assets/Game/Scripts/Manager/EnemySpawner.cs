@@ -20,12 +20,12 @@ public class EnemySpawner : MonoBehaviour
     private void OnEnable()
     {
         onSpawnWay = _ => SpawnWay();
-        ObserverManager.Attach(EventId.SpawnNextWay, onSpawnWay);
+        ObserverManager<GameEventID>.Attach(GameEventID.SpawnNextWay, onSpawnWay);
     }
 
     private void OnDisable()
     {
-        ObserverManager.Detach(EventId.SpawnNextWay, onSpawnWay);
+        ObserverManager<GameEventID>.Detach(GameEventID.SpawnNextWay, onSpawnWay);
         
     }
 
@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
         currentWay++;
         if (currentWay == ways.Count) return;
         
-        ObserverManager.Notify(EventId.SpawnWay, currentWay + 1);
+        ObserverManager<GameEventID>.Notify(GameEventID.SpawnWay, currentWay + 1);
 
         StartCoroutine(SpawnAllMiniWays(ways[currentWay].MiniWays));
     }
@@ -120,7 +120,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 if (currentWay + 1 < m_LevelParam.Ways.Count)
                 {
-                    ObserverManager.Notify(EventId.SpawnedEnemies, currentWay);
+                    ObserverManager<GameEventID>.Notify(GameEventID.SpawnedEnemies, currentWay);
                     return false;
                 }
                 else return true;

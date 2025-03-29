@@ -12,7 +12,7 @@ public class EnemyMove : MoveHandler
     
     [SerializeField] private Vector3 targetPosition;
     [SerializeField] private int m_CurrentPathIndex;
-    [SerializeField] protected float moveSpeed;
+   
 
     protected Vector3 direction;
     [Header("Target")]
@@ -31,7 +31,7 @@ public class EnemyMove : MoveHandler
         }
     }
 
-    public int CurrentPathIndex => m_CurrentPathIndex;
+    
 
     public List<Vector3> PathList => m_PathList;
     protected override void LoadComponent()
@@ -40,14 +40,14 @@ public class EnemyMove : MoveHandler
         if (enemyCtrl == null) enemyCtrl = transform.GetComponentInParent<Enemy>();
     }
 
-    public void Init(List<Vector3> pathList, float eMoveSpeed, float aRange, int currentPathIndex = 1)
+    public void Init(List<Vector3> pathList, float eMoveSpeed, float aRange)
     {
         m_AttackRange = aRange;
         m_PathList = pathList;
         moveSpeed = eMoveSpeed;
         if(animHandler != null) animHandler.SetAnim(AnimHandler.State.Move);
-        
-        m_CurrentPathIndex = currentPathIndex;
+
+        m_CurrentPathIndex = GetCurrentIndex();
         targetPosition = m_PathList[m_CurrentPathIndex];
 
         targetEnemy = null;
@@ -150,5 +150,22 @@ public class EnemyMove : MoveHandler
             MoveByPath();
         }
         
+    }
+
+    private int GetCurrentIndex()
+    {
+        int pathIndex = 0;
+        float minDistance = float.MaxValue;
+        for (int i = 0; i < m_PathList.Count; ++i)
+        {
+            float distance = Vector3.Distance(actor.position, m_PathList[i]);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                pathIndex = i;
+            }
+        }
+
+        return pathIndex;
     }
 }

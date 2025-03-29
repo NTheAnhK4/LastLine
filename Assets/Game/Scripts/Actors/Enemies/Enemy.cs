@@ -1,13 +1,16 @@
 
 
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : ComponentBehavior
 {
+    
     [SerializeField] protected EnemyMove enemyMove;
     [SerializeField] protected HealthHandler enemyHealth;
     [SerializeField] protected AnimHandler animHandler;
-    
+    [HideInInspector] public EnemyParam EData { get; protected set; }
     public EnemyDead enemyDead { get; private set; }
 
     public EnemyMove EnemyMove => enemyMove;
@@ -22,6 +25,6 @@ public class Enemy : ComponentBehavior
         if (animHandler == null) animHandler = transform.GetComponentInChildren<AnimHandler>();
 
     }
-    
-    
+
+   
 }

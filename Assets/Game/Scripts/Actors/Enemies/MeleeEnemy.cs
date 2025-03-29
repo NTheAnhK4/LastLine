@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
-    public MeleeEnemyParam EData { get; private set; }
-    [SerializeField] private MeleeAttack enemyAttack;
+   [SerializeField] private MeleeAttack enemyAttack;
     
     protected override void LoadComponent()
     {
@@ -14,10 +13,10 @@ public class MeleeEnemy : Enemy
         
     }
 
-    public void Init(MeleeEnemyParam enemyData, List<Vector3> pathList, int currentPathIndex = 1)
+    public void Init(MeleeEnemyParam enemyData, List<Vector3> pathList)
     {
         EData = enemyData;
-        enemyMove.Init(pathList,enemyData.MoveSpeed, enemyData.AttackRange,currentPathIndex);
+        enemyMove.Init(pathList,enemyData.MoveSpeed, enemyData.AttackRange);
         enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
         enemyAttack.Init(enemyData.AttackRange, enemyData.AttackSpeed, enemyData.Damage, enemyData.DamageType);
         enemyDead.Init(enemyData.RewardGold, enemyData.DamageToTower);

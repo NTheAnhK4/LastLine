@@ -437,7 +437,7 @@ MonoBehaviour:
       flagPosition: {x: 2.5, y: 8.5, z: 0}
     - Towerposition: {x: -3.5, y: 5.5, z: 0}
       flagPosition: {x: -3.5, y: 1.5, z: 0}
-  - InitialGold: 101
+  - InitialGold: 250
     LevelPrefab: {fileID: 6908930367934497124, guid: ef86ba31906c6b54594861de82540cdb, type: 3}
     Ways:
     - MiniWays:
@@ -557,6 +557,63 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1
           EnemyType: 1
+      - PathId: 1
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 2
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 2
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 0.5
+          EnemyType: 0
+      - PathId: 2
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 2
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 3
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 3
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 3
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 3
+          EnemyType: 1
+      - PathId: 3
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 2
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 3
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 3
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 3
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 3
+          EnemyType: 1
+    - MiniWays:
+      - PathId: 0
+        EnemyInfors:
+        - EnemyId: 4
+          SpawnDelay: 1
+          EnemyType: 0
       - PathId: 1
         EnemyInfors:
         - EnemyId: 0

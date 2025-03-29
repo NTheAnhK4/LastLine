@@ -46,7 +46,7 @@ public class GameManager : Singleton<GameManager>
 
     public void ReplayLevel()
     {
-        SelectLevel(LevelManager.Instance.CurrentLevel);
+        SelectLevel(InGameManager.Instance.CurrentLevel);
     }
 
     public void GoToWorldMap()
