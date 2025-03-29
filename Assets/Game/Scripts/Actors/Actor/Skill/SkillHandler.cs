@@ -1,45 +1,43 @@
 
-using System.Collections;
 
+using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+
 
 public class SkillHandler : ComponentBehavior
 {
-    protected AnimHandler m_AnimHander;
-    [SerializeField] protected float m_CoolDown = 1;
-   
-    [SerializeField] protected bool m_Loop = true;
-    
+    [SerializeField] private AnimHandler m_AnimHandler;
+    private List<ISkill> m_Skills = new List<ISkill>();
     protected override void LoadComponent()
     {
         base.LoadComponent();
-        if (m_AnimHander == null) m_AnimHander = transform.parent.parent.GetComponentInChildren<AnimHandler>();
+        if (m_AnimHandler == null) m_AnimHandler = transform.parent.parent.GetComponentInChildren<AnimHandler>();
     }
 
-    private void Start()
+    public void Init(List<EnemySkillParam> enemySkills)
     {
-        StartCoroutine(DoSkill());
-    }
+        m_Skills = new List<ISkill>();
+        foreach (EnemySkillParam enemySkill in enemySkills)
+        {
+            ISkill skill = GameFactory.GetSkill(enemySkill.SkillType, enemySkill.SkillId, transform.parent.parent.gameObject);
+            m_Skills.Add(skill);
+        }
 
-    protected virtual IEnumerator DoSkill()
+       
+    }
+    private void Update()
     {
-        do
-        { 
-            yield return new WaitForSeconds(m_CoolDown);
-            if (m_AnimHander != null)
-            {
-                m_AnimHander.SetAnim(AnimHandler.State.DoSkill);
-                StartCoroutine(OnDoSkill());
-                m_AnimHander.RevertToPreviousAnim();
-            }
-        } while (m_Loop);
+       
+        foreach (ISkill skill in m_Skills)
+        {
+            skill.Update();
+            if (skill.CanDoSkill) skill.DoSkillAsync(m_AnimHandler, 1.5f).Forget();
+        }
+
+        m_Skills.RemoveAll(skill => skill.IsFinish);
     }
 
     
-
-    protected virtual IEnumerator OnDoSkill()
-    {
-        yield return null;
-    }
     
 }

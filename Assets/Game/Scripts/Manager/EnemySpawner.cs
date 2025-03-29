@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public EnemyData Data;
+    
     private LevelParam m_LevelParam;
     public int currentWay = -1;
     private System.Action<object> onSpawnWay;
@@ -76,38 +76,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(int pathId, EnemyInfor enemyInfor)
     {
-        if (enemyInfor.EnemyType == EnemyType.MeleeAttack)
-        {
-            if (enemyInfor.EnemyId < 0 || enemyInfor.EnemyId >= Data.MeleeEnemies.Count) return;
-            var enemyPrefab = Data.MeleeEnemies[enemyInfor.EnemyId].EnemyPrefab;
-            if (enemyPrefab == null) return;
-       
-            var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
-            MeleeEnemy meleeEnemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<MeleeEnemy>();
-
-            if (meleeEnemy != null)
-            {
-                meleeEnemy.Init(Data.MeleeEnemies[enemyInfor.EnemyId],m_LevelParam.Paths[pathId].Positions);
-                activeEnemies.Add(meleeEnemy);
-            }
-            
-            
-        }
-        else
-        {
-            if(enemyInfor.EnemyId < 0 || enemyInfor.EnemyId >= Data.RangedEnemies.Count) return;
-            var enemyPrefab = Data.RangedEnemies[enemyInfor.EnemyId].EnemyPrefab;
-            if(enemyPrefab == null) return;
-
-            var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
-            RangedEnemy rangedEnemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<RangedEnemy>();
-            if (rangedEnemy != null)
-            {
-                rangedEnemy.Init(Data.RangedEnemies[enemyInfor.EnemyId], m_LevelParam.Paths[pathId].Positions);
-                activeEnemies.Add(rangedEnemy);
-            }
-            
-        }
+        GameObject enemyPrefab = GameFactory.GetEnemyPrefab(enemyInfor.EnemyType, enemyInfor.EnemyId);
+        if(enemyPrefab == null) return;
+        var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
+        Enemy enemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<Enemy>();
+        if(enemy != null)  enemy.Init(enemyInfor.EnemyId,pathId);
+        activeEnemies.Add(enemy);
+        
         
     }
 
@@ -129,9 +104,15 @@ public class EnemySpawner : MonoBehaviour
 
         return false;
     }
+
+    public bool IsFinishGame()
+    {
+        return activeEnemies.Count == 0;
+    }
     private void OnDestroy()
     {
         StopAllCoroutines();
     }
     
 }
+

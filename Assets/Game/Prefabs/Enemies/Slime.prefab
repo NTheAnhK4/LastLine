@@ -110,12 +110,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 3349981511150631570}
   animHandler: {fileID: 2873437971107494716}
+  moveSpeed: 0
   enemyCtrl: {fileID: 8589373115703683017}
   targetPosition: {x: 0, y: 0, z: 0}
   m_CurrentPathIndex: 0
-  moveSpeed: 0
   enemyTargets: []
   m_AttackRange: 0
+  targetEnemy: {fileID: 0}
 --- !u!1 &1817186742882886490
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1434450199270656829}
-  - component: {fileID: 8856009309657552012}
+  - component: {fileID: 8045160244443773074}
   m_Layer: 8
   m_Name: Skill
   m_TagString: Untagged
@@ -860,7 +861,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1212632882837777835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8856009309657552012
+--- !u!114 &8045160244443773074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -869,13 +870,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6161740138679840424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c139fbd39205254abff9110f83a13b1, type: 3}
+  m_Script: {fileID: 11500000, guid: f2df952d06e81d04c813b204f558cde8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CoolDown: 1
-  m_ObjectCreated: {fileID: 3711839664627574386}
-  m_Loop: 1
-  m_SpawnCount: 1
+  m_AnimHandler: {fileID: 2873437971107494716}
 --- !u!1 &8654222364386459150
 GameObject:
   m_ObjectHideFlags: 0
