@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class CloneSkill : HandleSkill
+public class CloneSkill : SummonSkill
 {
     private Enemy m_Enemy;
     protected override void LoadComponent()
@@ -28,8 +28,12 @@ public class CloneSkill : HandleSkill
             MeleeEnemy enemyPrefab = objectPrefab.GetComponent<MeleeEnemy>();
             if (enemyPrefab != null)
             {
-                enemyPrefab.Init(meleeEnemy.EData,meleeEnemy.EnemyMove.PathList, meleeEnemy.EnemyMove.CurrentPathIndex);
-                LevelManager.Instance.HandeEnemyCloneSpawn(enemyPrefab);
+                if (meleeEnemy.EData is MeleeEnemyParam meleeEnemyParam)
+                {
+                    enemyPrefab.Init(meleeEnemyParam,meleeEnemy.EnemyMove.PathList);
+                    InGameManager.Instance.HandeEnemyCloneSpawn(enemyPrefab);
+                }
+                
             }
         }
         else if (m_Enemy is RangedEnemy rangedEnemy)
@@ -37,8 +41,12 @@ public class CloneSkill : HandleSkill
             RangedEnemy enemyPrefab = objectPrefab.GetComponent<RangedEnemy>();
             if (enemyPrefab != null)
             {
-                enemyPrefab.Init(rangedEnemy.EData,rangedEnemy.EnemyMove.PathList, rangedEnemy.EnemyMove.CurrentPathIndex);
-                LevelManager.Instance.HandeEnemyCloneSpawn(enemyPrefab);
+                if (rangedEnemy.EData is RangedEnemyParam rangedEnemyParam)
+                {
+                    enemyPrefab.Init(rangedEnemyParam,rangedEnemy.EnemyMove.PathList);
+                    InGameManager.Instance.HandeEnemyCloneSpawn(enemyPrefab);
+                }
+                
             }
                
         }

@@ -67,23 +67,23 @@ public class LevelUI : ComponentBehavior
         onLoseHandler = _ => OnLose();
         onWinHandler = param => OnWin((int)param);
        
-        ObserverManager.Attach(EventId.SpawnWay, onSpawnWayHandler);
-        ObserverManager.Attach(EventId.AttackCastle, onAttackCastleHandler);
-        ObserverManager.Attach(EventId.UpdateGold, onUpdateGoldHandler);
-        ObserverManager.Attach(EventId.SpawnedEnemies, onSpawnedEnemiesHandler);
-        ObserverManager.Attach(EventId.Win, onWinHandler);
-        ObserverManager.Attach(EventId.Lose, onLoseHandler);
+        ObserverManager<GameEventID>.Attach(GameEventID.SpawnWay, onSpawnWayHandler);
+        ObserverManager<GameEventID>.Attach(GameEventID.AttackCastle, onAttackCastleHandler);
+        ObserverManager<GameEventID>.Attach(GameEventID.UpdateGold, onUpdateGoldHandler);
+        ObserverManager<GameEventID>.Attach(GameEventID.SpawnedEnemies, onSpawnedEnemiesHandler);
+        ObserverManager<GameEventID>.Attach(GameEventID.Win, onWinHandler);
+        ObserverManager<GameEventID>.Attach(GameEventID.Lose, onLoseHandler);
        
     }
 
     private void OnDisable()
     {
-        ObserverManager.Detach(EventId.SpawnWay, onSpawnWayHandler);
-        ObserverManager.Detach(EventId.AttackCastle, onAttackCastleHandler);
-        ObserverManager.Detach(EventId.UpdateGold, onUpdateGoldHandler);
-        ObserverManager.Detach(EventId.SpawnedEnemies, onSpawnedEnemiesHandler);
-        ObserverManager.Detach(EventId.Win, onWinHandler);
-        ObserverManager.Detach(EventId.Lose, onLoseHandler);
+        ObserverManager<GameEventID>.Detach(GameEventID.SpawnWay, onSpawnWayHandler);
+        ObserverManager<GameEventID>.Detach(GameEventID.AttackCastle, onAttackCastleHandler);
+        ObserverManager<GameEventID>.Detach(GameEventID.UpdateGold, onUpdateGoldHandler);
+        ObserverManager<GameEventID>.Detach(GameEventID.SpawnedEnemies, onSpawnedEnemiesHandler);
+        ObserverManager<GameEventID>.Detach(GameEventID.Win, onWinHandler);
+        ObserverManager<GameEventID>.Detach(GameEventID.Lose, onLoseHandler);
         
     }
     
@@ -110,7 +110,7 @@ public class LevelUI : ComponentBehavior
         if(preWay == -1) SpawnSignalWay(-1,false);
         else SpawnSignalWay(preWay);
         goldTxt.text = m_LevelParam.InitialGold.ToString();
-        healthTxt.text = LevelManager.Instance.HealthPoint.ToString();
+        healthTxt.text = InGameManager.Instance.HealthPoint.ToString();
         int wayNum = m_LevelParam.Ways.Count;
         wayNumTxt.text = "0/" + wayNum.ToString();
 

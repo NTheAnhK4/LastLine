@@ -1,9 +1,10 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : Singleton<LevelManager>
+public class InGameManager : Singleton<InGameManager>
 {
     public LevelData LevelData;
     
@@ -19,7 +20,20 @@ public class LevelManager : Singleton<LevelManager>
     private int currentLevel;
 
 
-  
+    public List<Vector3> GetPath(int pathId)
+    {
+        if (LevelData == null || currentLevel >= LevelData.Levels.Count)
+        {
+            Debug.Log("param for level data is missing");
+            return null;
+        }
+        return LevelData.Levels[currentLevel].Paths[pathId].Positions;
+    }
+
+    public int GetPathNum()
+    {
+        return LevelData.Levels[currentLevel].Paths.Count;
+    }
 
     public int CurrentLevel
     {
@@ -35,7 +49,7 @@ public class LevelManager : Singleton<LevelManager>
             if (gold != value)
             {
                 gold = value;
-                ObserverManager.Notify(EventId.UpdateGold, gold);
+                ObserverManager<GameEventID>.Notify(GameEventID.UpdateGold, gold);
             }
         }
     }
@@ -52,9 +66,9 @@ public class LevelManager : Singleton<LevelManager>
                 if (HealthPoint <= 0)
                 {
                     isGameOver = true;
-                    ObserverManager.Notify(EventId.Lose);
+                    ObserverManager<GameEventID>.Notify(GameEventID.Lose);
                 }
-                else ObserverManager.Notify(EventId.AttackCastle, healthPoint);
+                else ObserverManager<GameEventID>.Notify(GameEventID.AttackCastle, healthPoint);
             }
             
         }
@@ -79,9 +93,9 @@ public class LevelManager : Singleton<LevelManager>
         currentLevel = level;
         levelSpawner.Init(LevelData.Levels[level].LevelPrefab);
         isGameOver = false;
-        
-        
-        HealthPoint = 20;
+
+
+        HealthPoint = LevelData.Levels[currentLevel].TowerHealth;
         Gold = LevelData.Levels[level].InitialGold;
         
         enemySpawner.Init(LevelData.Levels[level]);
@@ -108,7 +122,7 @@ public class LevelManager : Singleton<LevelManager>
         else star = 1;
       
         CompleteLevel(star);
-        ObserverManager.Notify(EventId.Win, star);
+        ObserverManager<GameEventID>.Notify(GameEventID.Win, star);
         
     }
 

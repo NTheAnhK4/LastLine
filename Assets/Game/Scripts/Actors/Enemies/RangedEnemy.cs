@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy
 {
-    public RangedEnemyParam EData { get; private set; }
     [SerializeField] private RangedAttack enemyAttack;
     
     protected override void LoadComponent()
@@ -13,10 +12,10 @@ public class RangedEnemy : Enemy
         if (enemyAttack == null) enemyAttack = transform.GetComponentInChildren<RangedAttack>();
     }
 
-    public void Init(RangedEnemyParam enemyData, List<Vector3> pathList,  int currentPathIndex = 1)
+    public void Init(RangedEnemyParam enemyData, List<Vector3> pathList)
     {
         EData = enemyData;
-        enemyMove.Init(pathList,enemyData.MoveSpeed, enemyData.AttackRange, currentPathIndex);
+        enemyMove.Init(pathList,enemyData.MoveSpeed, enemyData.AttackRange);
         enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
         enemyDead.Init(enemyData.RewardGold, enemyData.DamageToTower);
         animHandler.SetAnim(AnimHandler.State.Move);

@@ -44,19 +44,19 @@ public class WaySignal : ComponentBehavior
             if (IsRoundActive)
             {
                 int goldNum = Mathf.RoundToInt(m_TimeFill - m_Timer);
-                LevelManager.Instance.Gold += goldNum;
+                InGameManager.Instance.Gold += goldNum;
             }
-            ObserverManager.Notify(EventId.SpawnNextWay);
+            ObserverManager<GameEventID>.Notify(GameEventID.SpawnNextWay);
             Disapperance();
         });
         onSpawnWayHandler = _ => Disapperance();
-        ObserverManager.Attach(EventId.SpawnWay, onSpawnWayHandler);
+        ObserverManager<GameEventID>.Attach(GameEventID.SpawnWay, onSpawnWayHandler);
     }
 
     private void OnDisable()
     {
         signalBtn.onClick.RemoveAllListeners();
-        ObserverManager.Detach(EventId.SpawnWay, onSpawnWayHandler);
+        ObserverManager<GameEventID>.Detach(GameEventID.SpawnWay, onSpawnWayHandler);
     }
 
     private void Disapperance()
@@ -77,7 +77,7 @@ public class WaySignal : ComponentBehavior
     {
         if (!IsRoundActive ) return;
         if(m_Timer >= m_TimeFill){
-            ObserverManager.Notify(EventId.SpawnNextWay);
+            ObserverManager<GameEventID>.Notify(GameEventID.SpawnNextWay);
             PoolingManager.Despawn(transform.parent.gameObject);
         }
         m_Timer += Time.deltaTime;

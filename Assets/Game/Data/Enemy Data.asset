@@ -61,6 +61,18 @@ MonoBehaviour:
     RewardGold: 1
     EnemyPrefab: {fileID: 3711839664627574386, guid: 53d200874de4a3347a314ede48a1ceee, type: 3}
     Damage: 1
+  - Name: Spearfang
+    HealthPoint: 60
+    PhysicalDamageReduction: 0.4
+    MagicalDamageReduction: 1
+    MoveSpeed: 2
+    DamageType: 0
+    AttackRange: 0.25
+    AttackSpeed: 1
+    DamageToTower: 10
+    RewardGold: 50
+    EnemyPrefab: {fileID: 2910671038581073855, guid: 8b35df66f3c249347a56a08dbbb1172a, type: 3}
+    Damage: 5
   RangedEnemies:
   - Name: Skeleton
     HealthPoint: 9
