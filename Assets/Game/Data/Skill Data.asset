@@ -17,3 +17,9 @@ MonoBehaviour:
     IsLoop: 1
     EnemyType: 0
     EnemyId: 3
+  BuffSkills:
+  - CoolDown: 20
+    IsLoop: 1
+    BuffSkillInfors:
+    - BuffID: 0
+      BuffType: 0

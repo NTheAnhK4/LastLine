@@ -108,6 +108,7 @@ Transform:
   - {fileID: 978918202962182421}
   - {fileID: 8468772989407537326}
   - {fileID: 8424573740360081580}
+  - {fileID: 8880897524595964661}
   m_Father: {fileID: 7068862738059981456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2239706875801338211
@@ -161,6 +162,50 @@ MonoBehaviour:
   m_PhysicalDamageReduction: 0
   m_MagicalDamageReduction: 0
   IsDead: 0
+--- !u!1 &3237693388522777296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8880897524595964661}
+  - component: {fileID: 4053608310756467706}
+  m_Layer: 8
+  m_Name: Buff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8880897524595964661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237693388522777296}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3218997669549160181}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4053608310756467706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237693388522777296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077a1763b44b2f04f966dcca105a005d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3492875138954665382
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +340,7 @@ GameObject:
   - component: {fileID: 6511035126214377083}
   - component: {fileID: 491949412758967118}
   - component: {fileID: 7932375704262178035}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Attack
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -400,6 +445,7 @@ MonoBehaviour:
   coolDown: 0
   projectilePrefab: {fileID: 0}
   projectilePosition: {x: 0, y: 0.5, z: 0}
+  m_ActorLevel: 0
 --- !u!1 &3892984638595413928
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +624,7 @@ GameObject:
   - component: {fileID: 8345724289715351911}
   - component: {fileID: 7302561645281830871}
   - component: {fileID: 5586636397417199338}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Move
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -676,12 +722,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 7068862738059981456}
   animHandler: {fileID: 556257640512250266}
+  moveSpeed: 0
   enemyCtrl: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   m_CurrentPathIndex: 0
-  moveSpeed: 0
   enemyTargets: []
   m_AttackRange: 0
+  targetEnemy: {fileID: 0}
 --- !u!1 &4907604065118203274
 GameObject:
   m_ObjectHideFlags: 0

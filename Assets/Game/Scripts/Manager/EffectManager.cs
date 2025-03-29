@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-using UnityEditor;
+
 using UnityEngine;
 
 public enum EffectID
@@ -13,7 +13,7 @@ public enum EffectID
 public class EffectManager : Singleton<EffectManager>
 { 
     [SerializeField] private List<EffectSource> m_EffectSources;
-    private const string m_AddressEffect = "Assets/Game/Prefabs/Effect";
+   
    
     public static GameObject PlayEffect(EffectID effectID, Vector3 position, Transform parent = null)
     {
@@ -41,7 +41,7 @@ public class EffectManager : Singleton<EffectManager>
             if (i < m_EffectSources.Count) m_EffectSources[i].Name = names[i];
             else m_EffectSources.Add(new EffectSource() { Name = names[i] });
 
-            m_EffectSources[i].LoadEffectPrefab(m_AddressEffect);
+           
         }
     }
 
@@ -68,13 +68,5 @@ public class EffectSource
         get => m_EffectPrefab;
     }
 
-    public void LoadEffectPrefab(string folderPath)
-    {
-        string prefabPath = $"{folderPath}/{Name}.prefab";
-        m_EffectPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
-        if (m_EffectPrefab == null)
-        {
-            Debug.LogWarning($"Can't find prefab: {prefabPath}");
-        }
-    }
+    
 }

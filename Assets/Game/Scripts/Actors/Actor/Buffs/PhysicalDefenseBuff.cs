@@ -1,17 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PhysicalDefenseBuff : IBuff
 {
-    public PhysicalDefenseBuff(GameObject target, GameObject buffEffectPrefab) : base(target, buffEffectPrefab)
+    private HealthHandler _healthHandler;
+    public PhysicalDefenseBuff(BuffParam buffParam, GameObject target) : base(buffParam, target)
     {
+        _healthHandler = m_Target.GetComponentInChildren<HealthHandler>();
     }
 
     public override void Apply()
     {
         base.Apply();
-        HealthHandler healthHandler = m_Target.GetComponentInChildren<HealthHandler>();
-        
+        if (_healthHandler != null)
+        {
+            if (m_BuffParam.IsMultiplier) _healthHandler.PhysicalDamageReduction *= m_BuffParam.Value;
+            else _healthHandler.PhysicalDamageReduction += m_BuffParam.Value;
+        }
+    }
+
+    public override void Remove()
+    {
+        base.Remove();
+        if (_healthHandler != null)
+        {
+            if (m_BuffParam.IsMultiplier) _healthHandler.PhysicalDamageReduction /= m_BuffParam.Value;
+            else _healthHandler.PhysicalDamageReduction -= m_BuffParam.Value;
+        }
+      
     }
 }

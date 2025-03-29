@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 6989558916224316667}
   - component: {fileID: 797935208226388191}
   - component: {fileID: 4560523128265937313}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Move
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -445,7 +445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077a1763b44b2f04f966dcca105a005d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffPrefab: {fileID: 7568261548991436289, guid: 5ad8ab499158b3e4bb19c9e5d76d7cb2, type: 3}
 --- !u!1 &2581611846561134662
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +673,7 @@ GameObject:
   - component: {fileID: 965880011336045489}
   - component: {fileID: 6961936633928709888}
   - component: {fileID: 4052827885413801360}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Attack
   m_TagString: Radar
   m_Icon: {fileID: 0}

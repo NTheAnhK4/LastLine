@@ -717,3 +717,114 @@ MonoBehaviour:
       flagPosition: {x: 2, y: 2, z: 0}
     - Towerposition: {x: -6, y: 6.5, z: 0}
       flagPosition: {x: -6, y: 2, z: 0}
+  - TowerHealth: 20
+    InitialGold: 250
+    LevelPrefab: {fileID: 6908930367934497124, guid: ef86ba31906c6b54594861de82540cdb, type: 3}
+    Ways:
+    - MiniWays:
+      - PathId: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 4
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - PathId: 1
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+    Paths:
+    - SignalPosition: {x: -16, y: 7, z: 0}
+      SignalAngle: 180
+      Positions:
+      - {x: -20, y: 6.5, z: 0}
+      - {x: -12, y: 6.5, z: 0}
+      - {x: -6.6, y: 2, z: 0}
+      - {x: 4, y: 2, z: 0}
+      - {x: 13, y: 6.5, z: 0}
+      - {x: 20, y: 6.5, z: 0}
+    - SignalPosition: {x: -16, y: 7, z: 0}
+      SignalAngle: 180
+      Positions:
+      - {x: -20, y: 6.5, z: 0}
+      - {x: -12, y: 6.5, z: 0}
+      - {x: -6.6, y: 2, z: 0}
+      - {x: 4, y: 2, z: 0}
+      - {x: 6, y: -7, z: 0}
+      - {x: 9, y: -9, z: 0}
+      - {x: 20, y: -9, z: 0}
+    - SignalPosition: {x: -16, y: -8, z: 0}
+      SignalAngle: 180
+      Positions:
+      - {x: -20, y: -8, z: 0}
+      - {x: -9.5, y: -8, z: 0}
+      - {x: -6.6, y: 2, z: 0}
+      - {x: 4, y: 2, z: 0}
+      - {x: 6, y: -7, z: 0}
+      - {x: 9, y: -9, z: 0}
+      - {x: 20, y: -9, z: 0}
+    - SignalPosition: {x: -16, y: -8, z: 0}
+      SignalAngle: 180
+      Positions:
+      - {x: -20, y: -8, z: 0}
+      - {x: -9.5, y: -8, z: 0}
+      - {x: -6.6, y: 2, z: 0}
+      - {x: 4, y: 2, z: 0}
+      - {x: 13, y: 6.5, z: 0}
+      - {x: 20, y: 6.5, z: 0}
+    TowerInfors:
+    - Towerposition: {x: -12, y: 1.5, z: 0}
+      flagPosition: {x: -10, y: 5, z: 0}
+    - Towerposition: {x: -12.5, y: -4.5, z: 0}
+      flagPosition: {x: -12.5, y: -8.5, z: 0}
+    - Towerposition: {x: -1, y: -0.5, z: 0}
+      flagPosition: {x: -1, y: 2, z: 0}
+    - Towerposition: {x: -4.5, y: -6.5, z: 0}
+      flagPosition: {x: -8.5, y: -6.5, z: 0}
+    - Towerposition: {x: 2.5, y: -7.5, z: 0}
+      flagPosition: {x: 6, y: -7.5, z: 0}
+    - Towerposition: {x: 12, y: 2.5, z: 0}
+      flagPosition: {x: 12, y: 6, z: 0}
+    - Towerposition: {x: 8.5, y: -2, z: 0}
+      flagPosition: {x: 5, y: -2, z: 0}
+    - Towerposition: {x: 14, y: -5.5, z: 0}
+      flagPosition: {x: 14, y: -9.5, z: 0}
+    - Towerposition: {x: 2, y: 6.5, z: 0}
+      flagPosition: {x: 2, y: 2, z: 0}
+    - Towerposition: {x: -6, y: 6.5, z: 0}
+      flagPosition: {x: -6, y: 2, z: 0}

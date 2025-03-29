@@ -13,6 +13,12 @@ public class HealthHandler : ComponentBehavior
     [SerializeField] private float m_PhysicalDamageReduction;
     [SerializeField] private float m_MagicalDamageReduction;
     public Action OnDead = null;
+
+    public float PhysicalDamageReduction
+    {
+        get => m_PhysicalDamageReduction;
+        set => m_PhysicalDamageReduction = value;
+    }
     public float CurHealth
     {
         get => curHealth;
