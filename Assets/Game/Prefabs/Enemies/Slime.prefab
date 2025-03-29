@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3653274277839156717}
   - component: {fileID: 7491883379679540892}
   - component: {fileID: 5955596862022833070}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Move
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -615,6 +615,7 @@ Transform:
   - {fileID: 4166340825124421333}
   - {fileID: 4798588797733018800}
   - {fileID: 1434450199270656829}
+  - {fileID: 5989363588009445407}
   m_Father: {fileID: 3349981511150631570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4741866271087216198
@@ -663,6 +664,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 3349981511150631570}
   animHandler: {fileID: 2873437971107494716}
+--- !u!1 &4768582354061839719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5989363588009445407}
+  - component: {fileID: 7796107792572307503}
+  m_Layer: 8
+  m_Name: Buff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5989363588009445407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768582354061839719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1212632882837777835}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7796107792572307503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768582354061839719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077a1763b44b2f04f966dcca105a005d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5237907792943772379
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,9 +884,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1434450199270656829}
   - component: {fileID: 8045160244443773074}
-  m_Layer: 8
+  - component: {fileID: 8368009150852015302}
+  - component: {fileID: 5126645773090904569}
+  m_Layer: 6
   m_Name: Skill
-  m_TagString: Untagged
+  m_TagString: Radar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -874,6 +921,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AnimHandler: {fileID: 2873437971107494716}
+  Allies: []
+  Enemies: []
+--- !u!58 &8368009150852015302
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6161740138679840424}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!50 &5126645773090904569
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6161740138679840424}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8654222364386459150
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +997,7 @@ GameObject:
   - component: {fileID: 5321726991681952571}
   - component: {fileID: 7290834585861254155}
   - component: {fileID: 8914801611844351707}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Attack
   m_TagString: Radar
   m_Icon: {fileID: 0}

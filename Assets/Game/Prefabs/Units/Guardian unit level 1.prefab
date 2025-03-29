@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 7123119301888424379}
   - component: {fileID: 2178458378444552196}
   - component: {fileID: 6699292041032025304}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Attack
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -841,7 +841,7 @@ GameObject:
   - component: {fileID: 4936515643510858676}
   - component: {fileID: 4033641573657095375}
   - component: {fileID: 681192711015142832}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Move
   m_TagString: Radar
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actor: {fileID: 7011541230270185365}
   animHandler: {fileID: 8738056302592369945}
-  m_speed: 1
+  moveSpeed: 0
   m_FlagPosition: {x: 0, y: 0, z: 0}
   maxDistance: 5
   enemyTarget: []

@@ -1,18 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class NewBehaviourScript : MonoBehaviour
+[CreateAssetMenu(fileName = "Data/Buff", menuName = "Buff Data")]
+public class BuffData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<BuffParam> Buffs;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[Serializable]
+public class BuffParam
+{
+    public string Name;
+    public bool IsMultiplier;
+    public float Duration;
+    public bool IsStackable;
+    public int MaxStacks;
+    public float TickInterval;
+    public float Value;
+    public GameObject BuffEffectPrefab;
+    
+    
 }

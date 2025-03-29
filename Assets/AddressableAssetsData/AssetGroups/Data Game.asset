@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Game Data
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 774d2656e095cf94ea1faa4e5b156c19
+    m_Address: Assets/Game/Data/Buff Data.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Game Data
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7a75f11898d465f4a8e03de682dfd905
     m_Address: Assets/Game/Data/ProjectileData.asset
     m_ReadOnly: 0

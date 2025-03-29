@@ -78,7 +78,9 @@ MonoBehaviour:
     DamageToTower: 10
     RewardGold: 50
     EnemyPrefab: {fileID: 2910671038581073855, guid: 8b35df66f3c249347a56a08dbbb1172a, type: 3}
-    EnemySkills: []
+    EnemySkills:
+    - SkillType: 1
+      SkillId: 0
     Damage: 5
   RangedEnemies:
   - Name: Skeleton

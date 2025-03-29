@@ -1,4 +1,5 @@
 
+using System.IO;
 using UnityEngine;
 
 public static class GameFactory
@@ -34,6 +35,11 @@ public static class GameFactory
                     Debug.LogWarning("skill id is run out of index");
                 else skillParam = DataManager.Instance.GetData<SkillData>()?.SummonSkills[skillId];
                 break;
+            case SkillType.Buff:
+                if (skillId < 0 || skillId >= DataManager.Instance.GetData<SkillData>()?.BuffSkills.Count)
+                    Debug.LogWarning("Skill id is run out of index");
+                else skillParam = DataManager.Instance.GetData<SkillData>()?.BuffSkills[skillId];
+                break;
         }
 
         return skillParam;
@@ -47,8 +53,27 @@ public static class GameFactory
             case SkillType.Summon:
                 skill = new SummonSkill(GetSkillParam(skillType, skillId), actor);
                 break;
+            case SkillType.Buff:
+                skill = new BuffSkill(GetSkillParam(skillType, skillId), actor);
+                break;
+            
         }
 
         return skill;
     }
+
+    public static IBuff GetBuff(BuffType buffType, int buffId, GameObject target)
+    {
+        if (buffId < 0 || buffId >= DataManager.Instance.GetData<BuffData>().Buffs.Count) return null;
+        IBuff buff = null;
+        switch (buffType)
+        {
+            case BuffType.PhysicalDefense:
+                buff = new PhysicalDefenseBuff(DataManager.Instance.GetData<BuffData>().Buffs[buffId], target);
+                break;
+        }
+
+        return buff;
+    }
+    
 }
