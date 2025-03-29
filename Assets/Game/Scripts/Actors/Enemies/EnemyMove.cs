@@ -33,7 +33,7 @@ public class EnemyMove : MoveHandler
 
     
 
-    public List<Vector3> PathList => m_PathList;
+   
     protected override void LoadComponent()
     {
         base.LoadComponent();

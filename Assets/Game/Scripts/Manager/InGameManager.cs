@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class InGameManager : Singleton<InGameManager>
 {
-    public LevelData LevelData;
+    
     
     public EnemySpawner enemySpawner;
     public TowerSpawner towerSpawner;
@@ -22,17 +22,20 @@ public class InGameManager : Singleton<InGameManager>
 
     public List<Vector3> GetPath(int pathId)
     {
-        if (LevelData == null || currentLevel >= LevelData.Levels.Count)
+        LevelData levelData = DataManager.Instance.GetData<LevelData>();
+        if (levelData == null || currentLevel >= levelData.Levels.Count)
         {
             Debug.Log("param for level data is missing");
             return null;
         }
-        return LevelData.Levels[currentLevel].Paths[pathId].Positions;
+        return levelData.Levels[currentLevel].Paths[pathId].Positions;
     }
 
     public int GetPathNum()
     {
-        return LevelData.Levels[currentLevel].Paths.Count;
+        LevelData levelData = DataManager.Instance.GetData<LevelData>();
+        if (levelData == null) return 0;
+        return levelData.Levels[currentLevel].Paths.Count;
     }
 
     public int CurrentLevel
@@ -91,17 +94,22 @@ public class InGameManager : Singleton<InGameManager>
         
         GameManager.Instance.GameSpeed = 1;
         currentLevel = level;
-        levelSpawner.Init(LevelData.Levels[level].LevelPrefab);
-        isGameOver = false;
+        LevelData levelData = DataManager.Instance.GetData<LevelData>();
+        if (levelData != null)
+        {
+            levelSpawner.Init(levelData.Levels[level].LevelPrefab);
+            isGameOver = false;
 
 
-        HealthPoint = LevelData.Levels[currentLevel].TowerHealth;
-        Gold = LevelData.Levels[level].InitialGold;
+            HealthPoint = DataManager.Instance.GetData<LevelData>().Levels[currentLevel].TowerHealth;
+            Gold = levelData.Levels[level].InitialGold;
         
-        enemySpawner.Init(LevelData.Levels[level]);
-        towerSpawner.Init(LevelData.Levels[level]);
-        towerSpawner.SpawnTower();
-        levelUI.Init(LevelData.Levels[level],-1);
+            enemySpawner.Init(levelData.Levels[level]);
+            towerSpawner.Init(levelData.Levels[level]);
+            towerSpawner.SpawnTower();
+            levelUI.Init(levelData.Levels[level],-1);
+        }
+        
     }
 
     private void CompleteLevel(int stars)
@@ -116,6 +124,7 @@ public class InGameManager : Singleton<InGameManager>
     private IEnumerator HandleWin()
     {
         yield return new WaitForSeconds(2f);
+        if (!enemySpawner.IsFinishGame()) yield return null;
         int star;
         if (healthPoint > 12) star = 3;
         else if (healthPoint > 6) star = 2;

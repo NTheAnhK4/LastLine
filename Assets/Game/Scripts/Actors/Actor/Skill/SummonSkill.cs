@@ -1,44 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class SummonSkill : SkillHandler
+public class SummonSkill : ISkill
 {
-    [SerializeField] protected GameObject m_ObjectCreated;
-    [SerializeField] protected int m_SpawnCount;
-    protected virtual Vector3 GetPosition()
+    public SummonSkill(SkillParam skillParam, GameObject actor) : base(skillParam, actor)
     {
-        return Vector3.zero;
     }
 
-    protected virtual GameObject SpawnObject(Vector3 position)
-    {
-        if (m_ObjectCreated != null) return PoolingManager.Spawn(m_ObjectCreated, position);
-        return null;
-    }
-    protected override IEnumerator OnDoSkill()
+    protected override void DoSkill()
     {
         
-        yield return new WaitForSeconds(1.5f);
-        Vector3 position = GetPosition();
-        SpawnObject(position);
-        m_AnimHander.RevertToPreviousAnim();
+        if (m_SkillParam is not SummonSkillParam summonSkillParam)
+        {
+            Debug.LogWarning("Type of data for summon skill is wrong");
+            return;
+        }
+
+        GameObject objectPrefab = GameFactory.GetEnemyPrefab(summonSkillParam.EnemyType, summonSkillParam.EnemyId);
+        if (objectPrefab != null)
+        {
+            Enemy spawnedEnemy = PoolingManager.Spawn(objectPrefab, m_Actor.transform.position - Vector3.left * 0.5f, Quaternion.identity).GetComponent<Enemy>();
+            Enemy enemy = m_Actor.GetComponent<Enemy>();
+            if (enemy != null && spawnedEnemy != null)
+            {
+                InGameManager.Instance.HandeEnemyCloneSpawn(enemy);
+                spawnedEnemy.Init(summonSkillParam.EnemyId,enemy.PathId);
+            }
+        }
+       
+       
     }
 
-    protected override IEnumerator DoSkill()
-    {
-        do
-        { 
-            yield return new WaitForSeconds(m_CoolDown);
-            for (int i = 0; i < m_SpawnCount; ++i)
-            {
-                if (m_AnimHander != null)
-                {
-                    m_AnimHander.SetAnim(AnimHandler.State.DoSkill);
-                    StartCoroutine(OnDoSkill());
-                }
-                
-            }
-        } while (m_Loop);
-    }
+  
 }

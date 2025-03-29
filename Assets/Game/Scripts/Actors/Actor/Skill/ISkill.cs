@@ -1,33 +1,55 @@
 
+using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public abstract class ISkill
 {
-    protected float m_CoolDown;
-    protected bool m_IsLoop;
-    protected GameObject m_Actor;
+    protected readonly SkillParam m_SkillParam;
+    protected readonly GameObject m_Actor;
     public bool IsFinish;
     private float m_Timer;
-    public ISkill(ISkillData data)
+    public bool IsDoingSkill;
+    protected ISkill(SkillParam skillParam, GameObject actor)
     {
-        m_CoolDown = data.CoolDown;
-        m_IsLoop = data.IsLoop;
-        m_Actor = data.Actor;
+      
+        m_SkillParam = skillParam;
+        m_Actor = actor;
+        
         IsFinish = false;
         m_Timer = 0;
+        IsDoingSkill = false;
     }
 
     public void Update()
     {
-        if(!m_IsLoop && IsFinish) return;
+        if(IsFinish) return;
         m_Timer += Time.deltaTime;
-        if (m_Timer >= m_CoolDown)
-        {
-            IsFinish = true;
-            m_Timer = 0;
-            DoSkill();
-        }
+    }
+
+    public bool CanDoSkill => m_Timer >= m_SkillParam.CoolDown;
+
+    public async UniTask DoSkillAsync(AnimHandler animHandler, float animTime)
+    {
+        if(IsDoingSkill || animHandler.currentState == AnimHandler.State.Dead || animHandler.currentState == AnimHandler.State.Attack) return;
+        animHandler.SetAnim(AnimHandler.State.DoSkill);
+        IsDoingSkill = true;
+        if (!m_SkillParam.IsLoop) IsFinish = true;
+        m_Timer = 0;
+        await UniTask.Delay(TimeSpan.FromSeconds(animTime));
+        IsDoingSkill = false;
+        animHandler.RevertToPreviousAnim();
+        DoSkill();
     }
 
     protected abstract void DoSkill();
+   
+
+}
+
+public enum SkillType
+{
+    Summon,
+    Buff,
+    Debuff
 }

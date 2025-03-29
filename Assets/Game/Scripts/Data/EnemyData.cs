@@ -1,13 +1,15 @@
 
 using System;
 using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 [CreateAssetMenu(menuName = "Data/Enemy Data",fileName = "Enemy Data")]
 public class EnemyData : ScriptableObject
 {
-    [FormerlySerializedAs("MeleeEnemys")] public List<MeleeEnemyParam> MeleeEnemies;
+   
+    public List<MeleeEnemyParam> MeleeEnemies;
     public List<RangedEnemyParam> RangedEnemies;
 }
 
@@ -26,6 +28,8 @@ public class EnemyParam
     public float DamageToTower = 1;
     public int RewardGold;
     public GameObject EnemyPrefab;
+
+    public List<EnemySkillParam> EnemySkills;
 }
 [Serializable]
 public class MeleeEnemyParam : EnemyParam
@@ -36,4 +40,13 @@ public class MeleeEnemyParam : EnemyParam
 public class RangedEnemyParam : EnemyParam
 {
     public GameObject ProjectilePrefab;
+}
+
+[Serializable]
+public class EnemySkillParam
+{
+    public SkillType SkillType;
+    public int SkillId;
+
+    
 }
