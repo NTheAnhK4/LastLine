@@ -13,6 +13,8 @@ public class LevelParam
     public int TowerHealth = 20;
     public int InitialGold;
     public GameObject LevelPrefab;
+    public Vector2 MinLimitCamera;
+    public Vector2 MaxLimitCamera;
     public List<WayParam> Ways;
     public List<PathParam> Paths;
     public List<TowerInfor> TowerInfors;

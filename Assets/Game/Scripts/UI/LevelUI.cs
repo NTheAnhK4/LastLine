@@ -126,12 +126,18 @@ public class LevelUI : ComponentBehavior
             int pathId = miniWay.PathId;
             if(m_SignalWayChecker.ContainsKey(paths[pathId].SignalPosition)) continue;
             
-            Transform signalWayTrf = PoolingManager.Spawn(SignalWayPrefab, paths[pathId].SignalPosition, default, transform).transform;
-
-            RectTransform border = signalWayTrf.Find("SignalWay").Find("Boder 2").GetComponent<RectTransform>();
-            border.rotation = Quaternion.Euler(new Vector3(0, 0, paths[pathId].SignalAngle));
-            WaySignal waySignal = signalWayTrf.GetComponentInChildren<WaySignal>();
-            waySignal.Init(10, isActive);
+            Transform signalWayTrf = PoolingManager.Spawn(SignalWayPrefab, paths[pathId].SignalPosition).transform;
+            if (signalWayTrf != null)
+            {
+                signalWayTrf.localScale = new Vector3(1, 1, 1) * 2;
+                m_SignalWayChecker[paths[pathId].SignalPosition] = signalWayTrf.gameObject;
+                RectTransform border = signalWayTrf.Find("Signal").Find("SignalWay").Find("Boder 2").GetComponent<RectTransform>();
+                border.rotation = Quaternion.Euler(new Vector3(0, 0, paths[pathId].SignalAngle));
+                WaySignal waySignal = signalWayTrf.GetComponentInChildren<WaySignal>();
+                waySignal.Init(10, isActive);
+            }
+            
+            
 
         }
     }
@@ -161,3 +167,4 @@ public class LevelUI : ComponentBehavior
    
 
 }
+

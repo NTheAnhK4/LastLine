@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class InGameManager : Singleton<InGameManager>
 {
-    
-    
+
+    #region Variables
+
     public EnemySpawner enemySpawner;
     public TowerSpawner towerSpawner;
     public LevelSpawner levelSpawner;
@@ -19,6 +20,9 @@ public class InGameManager : Singleton<InGameManager>
     private bool isGameOver;
     private int currentLevel;
 
+    #endregion
+
+    #region PathManager
 
     public List<Vector3> GetPath(int pathId)
     {
@@ -37,6 +41,11 @@ public class InGameManager : Singleton<InGameManager>
         if (levelData == null) return 0;
         return levelData.Levels[currentLevel].Paths.Count;
     }
+
+    #endregion
+
+
+    #region Properties
 
     public int CurrentLevel
     {
@@ -77,11 +86,12 @@ public class InGameManager : Singleton<InGameManager>
         }
     }
 
-   
-    
-   
-   
+    #endregion
 
+
+
+
+    #region LevelManager
 
     private void Start()
     {
@@ -94,6 +104,7 @@ public class InGameManager : Singleton<InGameManager>
         
         GameManager.Instance.GameSpeed = 1;
         currentLevel = level;
+        if (InputManager.Instance != null) InputManager.Instance.SetLimitScene(currentLevel);
         LevelData levelData = DataManager.Instance.GetData<LevelData>();
         if (levelData != null)
         {
@@ -111,7 +122,6 @@ public class InGameManager : Singleton<InGameManager>
         }
         
     }
-
     private void CompleteLevel(int stars)
     {
         LevelProgress progress = JsonSaveSystem.LoadData<LevelProgress>();
@@ -120,6 +130,10 @@ public class InGameManager : Singleton<InGameManager>
        
         JsonSaveSystem.SaveData(progress);
     }
+    #endregion
+
+
+    #region Game Result Handling
 
     private IEnumerator HandleWin()
     {
@@ -151,5 +165,12 @@ public class InGameManager : Singleton<InGameManager>
             enemySpawner.activeEnemies.Add(enemy);
         }
     }
+
+    #endregion
+   
+
+   
+
+    
     
 }
