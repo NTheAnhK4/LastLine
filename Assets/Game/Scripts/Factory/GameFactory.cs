@@ -9,16 +9,21 @@ public static class GameFactory
         GameObject enemyPrefab = null;
         switch (enemyType)
         {
-            case EnemyType.MeleeAttack:
+            case EnemyType.MeleeEnemy:
                 if (enemyId < 0 || enemyId >= DataManager.Instance.GetData<EnemyData>()?.MeleeEnemies.Count)
                     Debug.LogWarning("Enemy id is run out of index");
                 
                 else enemyPrefab = DataManager.Instance.GetData<EnemyData>()?.MeleeEnemies[enemyId].EnemyPrefab;
                 break;
-            case EnemyType.RangedAttack:
+            case EnemyType.RangedEnemy:
                 if (enemyId < 0 || enemyId >= DataManager.Instance.GetData<EnemyData>()?.RangedEnemies.Count)
                     Debug.LogWarning("Enemy id is run out of index");
                 else enemyPrefab = DataManager.Instance.GetData<EnemyData>()?.RangedEnemies[enemyId].EnemyPrefab;
+                break;
+            case EnemyType.FlyEnemy:
+                if (enemyId < 0 || enemyId >= DataManager.Instance.GetData<EnemyData>()?.FlyEnemies.Count)
+                    Debug.LogWarning("Enemy id is run out of index");
+                else enemyPrefab = DataManager.Instance.GetData<EnemyData>()?.FlyEnemies[enemyId].EnemyPrefab;
                 break;
         }
 

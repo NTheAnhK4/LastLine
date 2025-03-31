@@ -38,8 +38,9 @@ public class AttackHandler : ActionHandler
     }
     private bool IsEnemy(Transform obj)
     {
-        if (actor.tag.Equals("Tower") || actor.tag.Equals("Solider")) return obj.tag.Equals("Enemy");
-        else if(actor.tag.Equals("Enemy")) return obj.tag.Equals("Tower") || obj.tag.Equals("Solider");
+        if (actor.tag.Equals("Tower")) return obj.tag.Equals("Enemy") || obj.tag.Equals("FlyEnemy");
+        if(actor.tag.Equals("Solider")) return obj.tag.Equals("Enemy");
+        else if(actor.tag.Equals("Enemy")) return obj.tag.Equals("Solider");
         return false;
     }
 

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "Data/Buff", menuName = "Buff Data")]
+[CreateAssetMenu(menuName = "Data/Buff", fileName = "Buff Data")]
 public class BuffData : ScriptableObject
 {
     public List<BuffParam> Buffs;

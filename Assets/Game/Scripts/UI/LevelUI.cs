@@ -136,10 +136,8 @@ public class LevelUI : ComponentBehavior
                 WaySignal waySignal = signalWayTrf.GetComponentInChildren<WaySignal>();
                 waySignal.Init(10, isActive);
             }
-            
-            
-
         }
+        m_SignalWayChecker.Clear();
     }
 
     private void SetUICenterActive(CenterUI centerUI)

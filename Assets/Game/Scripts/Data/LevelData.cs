@@ -59,6 +59,7 @@ public class TowerInfor
 }
 public enum EnemyType
 {
-    MeleeAttack,
-    RangedAttack
+    MeleeEnemy,
+    RangedEnemy,
+    FlyEnemy
 }
