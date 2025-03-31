@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skill Data
   m_EditorClassIdentifier: 
   SummonSkills:
-  - CoolDown: 7
+  - CoolDown: 10
     IsLoop: 1
     EnemyType: 0
     EnemyId: 3

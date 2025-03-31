@@ -205,16 +205,16 @@ MonoBehaviour:
     - MiniWays:
       - PathId: 0
         EnemyInfors:
-        - EnemyId: 2
-          SpawnDelay: 0.75
+        - EnemyId: 0
+          SpawnDelay: 1.75
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.75
           EnemyType: 0
-        - EnemyId: 2
-          SpawnDelay: 0.75
+        - EnemyId: 0
+          SpawnDelay: 1.75
           EnemyType: 0
-        - EnemyId: 2
-          SpawnDelay: 0.75
-          EnemyType: 0
-        - EnemyId: 2
+        - EnemyId: 0
           SpawnDelay: 0.75
           EnemyType: 0
         - EnemyId: 0
@@ -611,9 +611,21 @@ MonoBehaviour:
     - MiniWays:
       - PathId: 0
         EnemyInfors:
-        - EnemyId: 4
+        - EnemyId: 0
           SpawnDelay: 1
-          EnemyType: 0
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
       - PathId: 1
         EnemyInfors:
         - EnemyId: 0
@@ -1027,6 +1039,328 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1.5
           EnemyType: 1
+    - MiniWays:
+      - PathId: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+      - PathId: 1
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - PathId: 7
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+      - PathId: 6
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+      - PathId: 4
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - PathId: 5
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - PathId: 2
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - PathId: 3
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+    - MiniWays:
+      - PathId: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 3
+          SpawnDelay: 1
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 1
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 1
+          EnemyType: 0
+      - PathId: 1
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 3
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - PathId: 7
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 3
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+      - PathId: 6
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 3
+          SpawnDelay: 1
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 1
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 1
+          EnemyType: 0
+      - PathId: 4
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 1
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 1
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 3
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - PathId: 5
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - PathId: 2
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - PathId: 3
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 4
+          SpawnDelay: 1.5
+          EnemyType: 0
     Paths:
     - SignalPosition: {x: -16, y: -3, z: 0}
       SignalAngle: 180
@@ -1040,19 +1374,19 @@ MonoBehaviour:
       - {x: -22, y: -3.5, z: 0}
       - {x: 4, y: -3.5, z: 0}
       - {x: 4, y: -21, z: 0}
-    - SignalPosition: {x: 16, y: -3, z: 0}
+    - SignalPosition: {x: 15, y: -3, z: 0}
       SignalAngle: 0
       Positions:
       - {x: 21, y: -3.5, z: 0}
       - {x: 4, y: -3.5, z: 0}
       - {x: 4, y: -21, z: 0}
-    - SignalPosition: {x: 16, y: -3, z: 0}
+    - SignalPosition: {x: 15, y: -3, z: 0}
       SignalAngle: 0
       Positions:
       - {x: 21, y: -3.5, z: 0}
       - {x: -4, y: -3.5, z: 0}
       - {x: -4, y: -21, z: 0}
-    - SignalPosition: {x: 16, y: 4, z: 0}
+    - SignalPosition: {x: 15, y: 4, z: 0}
       SignalAngle: 0
       Positions:
       - {x: 21, y: 4, z: 0}
@@ -1060,7 +1394,7 @@ MonoBehaviour:
       - {x: 7.5, y: -3.5, z: 0}
       - {x: -4, y: -3.5, z: 0}
       - {x: -4, y: -21, z: 0}
-    - SignalPosition: {x: 16, y: 4, z: 0}
+    - SignalPosition: {x: 15, y: 4, z: 0}
       SignalAngle: 0
       Positions:
       - {x: 21, y: 4, z: 0}
@@ -1068,7 +1402,7 @@ MonoBehaviour:
       - {x: 7.5, y: -3.5, z: 0}
       - {x: 4, y: -3.5, z: 0}
       - {x: 4, y: -21, z: 0}
-    - SignalPosition: {x: -16, y: -3, z: 0}
+    - SignalPosition: {x: -16, y: 4, z: 0}
       SignalAngle: 180
       Positions:
       - {x: -21, y: 4, z: 0}
@@ -1076,7 +1410,7 @@ MonoBehaviour:
       - {x: -8, y: -3.5, z: 0}
       - {x: -4, y: -3.5, z: 0}
       - {x: -4, y: -21, z: 0}
-    - SignalPosition: {x: -16, y: -3, z: 0}
+    - SignalPosition: {x: -16, y: 4, z: 0}
       SignalAngle: 180
       Positions:
       - {x: -21, y: 4, z: 0}

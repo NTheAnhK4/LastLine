@@ -11,6 +11,7 @@ public class EnemyData : ScriptableObject
    
     public List<MeleeEnemyParam> MeleeEnemies;
     public List<RangedEnemyParam> RangedEnemies;
+    public List<EnemyParam> FlyEnemies;
 }
 
 [Serializable]

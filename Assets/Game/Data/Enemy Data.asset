@@ -96,3 +96,16 @@ MonoBehaviour:
     EnemyPrefab: {fileID: 6344821919482248283, guid: e28ae64c7aac636469ad66b671d76459, type: 3}
     EnemySkills: []
     ProjectilePrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
+  FlyEnemies:
+  - Name: Bee
+    HealthPoint: 2
+    PhysicalDamageReduction: 1
+    MagicalDamageReduction: 1
+    MoveSpeed: 2.5
+    DamageType: 0
+    AttackRange: 0
+    AttackSpeed: 0
+    DamageToTower: 1
+    RewardGold: 1
+    EnemyPrefab: {fileID: 5688390882361842724, guid: 0cb15d1c028e5aa41836f6012db27eeb, type: 3}
+    EnemySkills: []

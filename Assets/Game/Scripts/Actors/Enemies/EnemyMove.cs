@@ -125,33 +125,6 @@ public class EnemyMove : MoveHandler
         Vector3 direction = (target - actor.position).normalized;
         actor.transform.Translate(direction * (moveSpeed * Time.deltaTime));
     }
-    private void Update()
-    {
-        
-        if (animHandler.currentState == AnimHandler.State.Attack||
-            animHandler.currentState == AnimHandler.State.Dead||
-            animHandler.currentState == AnimHandler.State.DoSkill) return;
-       
-        if (targetEnemy == null || targetEnemy.IsDead) targetEnemy = GetEnemy();
-
-        if (targetEnemy != null) MoveToTarget(targetEnemy.Actor.position);
-        else
-        {
-            animHandler.SetAnim(AnimHandler.State.Move);
-            if (m_CurrentPathIndex + 1 < m_PathList.Count)
-            {
-                if ((enemyCtrl.transform.position - m_PathList[m_CurrentPathIndex + 1]).sqrMagnitude <
-                    (enemyCtrl.transform.position - m_PathList[m_CurrentPathIndex]).sqrMagnitude)
-                {
-                    SetNextPosition();
-                }
-
-            }
-            MoveByPath();
-        }
-        
-    }
-
     private int GetCurrentIndex()
     {
         int pathIndex = 0;
@@ -166,6 +139,44 @@ public class EnemyMove : MoveHandler
             }
         }
 
+        if (pathIndex == 0 && pathIndex < m_PathList.Count - 1) pathIndex++;
+        
         return pathIndex;
     }
+
+   
+
+   
+    private void Update()
+    {
+        
+        if (animHandler.currentState == AnimHandler.State.Attack||
+            animHandler.currentState == AnimHandler.State.Dead||
+            animHandler.currentState == AnimHandler.State.DoSkill) return;
+        if(actor.tag.Equals("FlyEnemy")) MoveByPath();
+        else
+        {
+            if (targetEnemy == null || targetEnemy.IsDead) targetEnemy = GetEnemy();
+
+            if (targetEnemy != null) MoveToTarget(targetEnemy.Actor.position);
+            else
+            {
+                animHandler.SetAnim(AnimHandler.State.Move);
+                if (m_CurrentPathIndex + 1 < m_PathList.Count)
+                {
+                    if ((enemyCtrl.transform.position - m_PathList[m_CurrentPathIndex + 1]).sqrMagnitude <
+                        (enemyCtrl.transform.position - m_PathList[m_CurrentPathIndex]).sqrMagnitude)
+                    {
+                        SetNextPosition();
+                    }
+
+                }
+                MoveByPath();
+            }
+        }
+        
+        
+    }
+
+   
 }
