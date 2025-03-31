@@ -73,12 +73,16 @@ MonoBehaviour:
     TowerInfors:
     - Towerposition: {x: -1, y: -1.5, z: 0}
       flagPosition: {x: -1, y: -4.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: -9, y: -5.5, z: 0}
       flagPosition: {x: -9, y: -2.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 0, y: -7.5, z: 0}
       flagPosition: {x: 0, y: -4.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 13, y: 1.5, z: 0}
       flagPosition: {x: 9.5, y: 1.5, z: 0}
+      TowerId: 0
   - TowerHealth: 20
     InitialGold: 125
     LevelPrefab: {fileID: 1391102852416604516, guid: 301533cf237a6db42bc0359cb361da97, type: 3}
@@ -260,22 +264,31 @@ MonoBehaviour:
     TowerInfors:
     - Towerposition: {x: -1.5, y: -5, z: 0}
       flagPosition: {x: -2, y: -1, z: 0}
+      TowerId: 0
     - Towerposition: {x: -8, y: -7.5, z: 0}
       flagPosition: {x: -8, y: -4, z: 0}
+      TowerId: 0
     - Towerposition: {x: -12.35, y: -0.44, z: 0}
       flagPosition: {x: -12.5, y: -4, z: 0}
+      TowerId: 0
     - Towerposition: {x: -7.5, y: -0.5, z: 0}
       flagPosition: {x: -7.5, y: -4, z: 0}
+      TowerId: 0
     - Towerposition: {x: -8.81, y: 4.58, z: 0}
       flagPosition: {x: -5, y: 5, z: 0}
+      TowerId: 0
     - Towerposition: {x: -0.81, y: 5.28, z: 0}
       flagPosition: {x: -1, y: 8.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 7, y: -5.5, z: 0}
       flagPosition: {x: 7, y: -8.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 2.19, y: 2.35, z: 0}
       flagPosition: {x: -3.5, y: 2.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 5.2, y: -1.22, z: 0}
       flagPosition: {x: 2.19, y: -3.11, z: 0}
+      TowerId: 0
   - TowerHealth: 20
     InitialGold: 50
     LevelPrefab: {fileID: 1733958067788854335, guid: d02e6b7ab5804b846981778adcdaa85f, type: 3}
@@ -418,22 +431,31 @@ MonoBehaviour:
     TowerInfors:
     - Towerposition: {x: -4.5, y: -5.5, z: 0}
       flagPosition: {x: 0.5, y: -5.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: -7, y: -0.5, z: 0}
       flagPosition: {x: -7, y: 2, z: 0}
+      TowerId: 0
     - Towerposition: {x: 4, y: -8, z: 0}
       flagPosition: {x: 0, y: -8, z: 0}
+      TowerId: 0
     - Towerposition: {x: 8.5, y: -5.5, z: 0}
       flagPosition: {x: 8.5, y: -2.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 15.5, y: 5.5, z: 0}
       flagPosition: {x: 11.5, y: 5.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 7.5, y: 4.5, z: 0}
       flagPosition: {x: 10.5, y: 4.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 5, y: 0.5, z: 0}
       flagPosition: {x: 5, y: -3.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 6.5, y: 8.5, z: 0}
       flagPosition: {x: 2.5, y: 8.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: -3.5, y: 5.5, z: 0}
       flagPosition: {x: -3.5, y: 1.5, z: 0}
+      TowerId: 0
   - TowerHealth: 20
     InitialGold: 250
     LevelPrefab: {fileID: 6908930367934497124, guid: ef86ba31906c6b54594861de82540cdb, type: 3}
@@ -719,24 +741,34 @@ MonoBehaviour:
     TowerInfors:
     - Towerposition: {x: -12, y: 1.5, z: 0}
       flagPosition: {x: -10, y: 5, z: 0}
+      TowerId: 0
     - Towerposition: {x: -12.5, y: -4.5, z: 0}
       flagPosition: {x: -12.5, y: -8.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: -1, y: -0.5, z: 0}
       flagPosition: {x: -1, y: 2, z: 0}
+      TowerId: 0
     - Towerposition: {x: -4.5, y: -6.5, z: 0}
       flagPosition: {x: -8.5, y: -6.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 2.5, y: -7.5, z: 0}
       flagPosition: {x: 6, y: -7.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 12, y: 2.5, z: 0}
       flagPosition: {x: 12, y: 6, z: 0}
+      TowerId: 0
     - Towerposition: {x: 8.5, y: -2, z: 0}
       flagPosition: {x: 5, y: -2, z: 0}
+      TowerId: 0
     - Towerposition: {x: 14, y: -5.5, z: 0}
       flagPosition: {x: 14, y: -9.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 2, y: 6.5, z: 0}
       flagPosition: {x: 2, y: 2, z: 0}
+      TowerId: 0
     - Towerposition: {x: -6, y: 6.5, z: 0}
       flagPosition: {x: -6, y: 2, z: 0}
+      TowerId: 0
   - TowerHealth: 20
     InitialGold: 250
     LevelPrefab: {fileID: 1321275328670987909, guid: 9676254e8fbb44f43a738b075ff727f5, type: 3}
@@ -1421,29 +1453,43 @@ MonoBehaviour:
     TowerInfors:
     - Towerposition: {x: -12, y: 7.5, z: 0}
       flagPosition: {x: -12, y: 3.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: -5.5, y: 4.5, z: 0}
       flagPosition: {x: -8, y: 2, z: 0}
+      TowerId: 0
     - Towerposition: {x: -2.5, y: 0.5, z: 0}
       flagPosition: {x: -2.5, y: -3.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 3, y: 0.5, z: 0}
       flagPosition: {x: 3, y: -3.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 6, y: 4.5, z: 0}
       flagPosition: {x: 9, y: 1.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 11.5, y: 7, z: 0}
       flagPosition: {x: 11.5, y: 3.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 12.5, y: 0.5, z: 0}
       flagPosition: {x: 8.5, y: 0.5, z: 0}
+      TowerId: 6
     - Towerposition: {x: -11.5, y: 0.5, z: 0}
       flagPosition: {x: -8, y: 0.5, z: 0}
+      TowerId: 6
     - Towerposition: {x: -8, y: -6.5, z: 0}
       flagPosition: {x: -4, y: -6.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 0, y: -6.5, z: 0}
       flagPosition: {x: 0, y: -4, z: 0}
+      TowerId: 0
     - Towerposition: {x: 7.5, y: -6.5, z: 0}
       flagPosition: {x: 4.5, y: -6.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 7.5, y: -13.5, z: 0}
       flagPosition: {x: 4.5, y: -13.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: 0, y: -13.5, z: 0}
       flagPosition: {x: -3.5, y: -13.5, z: 0}
+      TowerId: 0
     - Towerposition: {x: -8, y: -13.5, z: 0}
       flagPosition: {x: -4.5, y: -13.5, z: 0}
+      TowerId: 0
