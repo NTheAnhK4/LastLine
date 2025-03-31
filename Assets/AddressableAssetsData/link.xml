@@ -8,22 +8,35 @@
     <type fullname="EnemyData" preserve="all" />
     <type fullname="EnemyDead" preserve="all" />
     <type fullname="EnemyMove" preserve="all" />
+<<<<<<< HEAD
     <type fullname="FlyEnemy" preserve="all" />
+=======
+>>>>>>> af1f55887cf512aa8c0dc49c9f8b5686eb9326d7
     <type fullname="GuardianUpgradeUI" preserve="all" />
     <type fullname="HealthHandler" preserve="all" />
     <type fullname="HealthUI" preserve="all" />
     <type fullname="LevelData" preserve="all" />
     <type fullname="MeleeAttack" preserve="all" />
     <type fullname="MeleeEnemy" preserve="all" />
+<<<<<<< HEAD
     <type fullname="MultiImpactProjectile" preserve="all" />
     <type fullname="ParticleEffect" preserve="all" />
     <type fullname="Projectile" preserve="all" />
     <type fullname="ProjectileData" preserve="all" />
+=======
+    <type fullname="ParticleEffect" preserve="all" />
+    <type fullname="Projectile" preserve="all" />
+    <type fullname="ProjectileData" preserve="all" />
+    <type fullname="ProjectileImpact" preserve="all" />
+>>>>>>> af1f55887cf512aa8c0dc49c9f8b5686eb9326d7
     <type fullname="ProjectileMove" preserve="all" />
     <type fullname="RangedAttack" preserve="all" />
     <type fullname="RangedAttackTower" preserve="all" />
     <type fullname="RangedEnemy" preserve="all" />
+<<<<<<< HEAD
     <type fullname="SingleImpactProjectile" preserve="all" />
+=======
+>>>>>>> af1f55887cf512aa8c0dc49c9f8b5686eb9326d7
     <type fullname="SkillData" preserve="all" />
     <type fullname="SkillHandler" preserve="all" />
     <type fullname="Solider" preserve="all" />
@@ -38,7 +51,10 @@
     <type fullname="BuffSkillInfor" preserve="nothing" serialized="true" />
     <type fullname="BuffSkillParam" preserve="nothing" serialized="true" />
     <type fullname="EnemyInfor" preserve="nothing" serialized="true" />
+<<<<<<< HEAD
     <type fullname="EnemyParam" preserve="nothing" serialized="true" />
+=======
+>>>>>>> af1f55887cf512aa8c0dc49c9f8b5686eb9326d7
     <type fullname="EnemySkillParam" preserve="nothing" serialized="true" />
     <type fullname="LevelParam" preserve="nothing" serialized="true" />
     <type fullname="MeleeEnemyParam" preserve="nothing" serialized="true" />
