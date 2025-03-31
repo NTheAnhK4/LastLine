@@ -1,16 +1,76 @@
 
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 
 public class InputManager : Singleton<InputManager>
 {
-    [SerializeField] private Tower currentSelectedTower = null;
     
+    
+    public Vector2 minLimits = new Vector2(0, -5); 
+    public Vector2 maxLimits = new Vector2(0, 3.75f);
+
+    private Vector3 dragOrigin;
+    [SerializeField] private Tower currentSelectedTower = null;
+    [SerializeField] private Camera mainCamera;
+
+    public Camera MainCamera
+    {
+        get
+        {
+            if(mainCamera == null) mainCamera = GameObject.FindObjectOfType<Camera>();
+            return mainCamera;
+        }
+    }
+
+    private string currentSceneName;
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(gameObject);
+        
+    }
+
+    private void OnEnable()
+    {
+        LoadComponent();
+        UpdateScene();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void LoadComponent()
+    {
+        if (mainCamera == null) mainCamera = GameObject.FindObjectOfType<Camera>();
+    }
+
+    private void Reset()
+    {
+        LoadComponent();
+    }
+
+    private void OnSceneLoaded(Scene scene,LoadSceneMode mode)
+    {
+        UpdateScene();
+    }
+    private void UpdateScene()
+    {
+        currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "WorldMap")
+        {
+            minLimits = Vector2.zero;
+            maxLimits = Vector2.zero;
+        }
+        
+    }
     private RaycastHit2D GetRayCast(LayerMask layerMask)
     {
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        Vector3 worldPosition = MainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         worldPosition.z = 0;
        
        
@@ -21,14 +81,36 @@ public class InputManager : Singleton<InputManager>
 
     private void Update()
     {
+        if(currentSceneName == "InGame") HandleInputInGame();
+        if (Input.GetMouseButtonDown(0))
+        {
+            dragOrigin = MainCamera.ScreenToWorldPoint(Input.mousePosition);
+        }
+
+        if (Input.GetMouseButton(0)) 
+        {
+            Vector3 difference = dragOrigin - MainCamera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 newPosition = MainCamera.transform.position + difference;
+
+            
+            newPosition.x = Mathf.Clamp(newPosition.x, minLimits.x, maxLimits.x);
+            newPosition.y = Mathf.Clamp(newPosition.y, minLimits.y, maxLimits.y);
+
+            MainCamera.transform.position = newPosition;
+        }
+        
+    }
+
+    #region InGame
+
+    private void HandleInputInGame()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             HandleClickTower();
             HandleClickGuardianPlace();
         }
-        
     }
-
     private void HandleClickTower()
     {
         int towerLayer = LayerMask.NameToLayer("Tower");
@@ -65,25 +147,34 @@ public class InputManager : Singleton<InputManager>
         int guardianPlaceLayer = LayerMask.NameToLayer("GuardianPlace");
         RaycastHit2D pointer = GetRayCast((1 << guardianPlaceLayer));
         if(pointer.collider == null) return;
-        else
+       
+        if (currentSelectedTower == null)
         {
-            if (currentSelectedTower == null)
-            {
-                Debug.LogWarning("Tower selected is null");
-                return;
-            }
-
-            if (currentSelectedTower is SummonTower summonTower)
-            {
-                summonTower.SetNewFlag(pointer.point);
-            }
-            else
-            {
-                Debug.LogWarning("Type of tower is wrong");
-                return;
-            }
+            Debug.LogWarning("Tower selected is null");
+            return;
         }
 
+        if (currentSelectedTower is SummonTower summonTower)
+        {
+            summonTower.SetNewFlag(pointer.point);
+        }
+        else
+        {
+            Debug.LogWarning("Type of tower is wrong");
+        
+        }
+        
+
+    }
+
+    #endregion
+
+    public void SetLimitScene(int currentLevel)
+    {
+        LevelParam levelParam = DataManager.Instance.GetData<LevelData>().Levels[currentLevel];
+        minLimits = levelParam.MinLimitCamera;
+        maxLimits = levelParam.MaxLimitCamera;
     }
     
+   
 }
