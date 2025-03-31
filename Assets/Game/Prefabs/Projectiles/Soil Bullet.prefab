@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 4987185330311036452}
   - component: {fileID: 6775004918160850226}
   - component: {fileID: 3392934392689364802}
-  - component: {fileID: 8447237362354358232}
+  - component: {fileID: 6588645845760654571}
   m_Layer: 0
   m_Name: Impact
   m_TagString: Untagged
@@ -155,7 +155,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8447237362354358232
+--- !u!114 &6588645845760654571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1528450619478661169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0d85eddac0bb11489ff38a45f5613f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fe1e24909508474fbc85dd3aa7a3a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_SoundType: 4
@@ -219,11 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2ced5e1147c4d4cb17ed24187d9171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ProjectileData: {fileID: 11400000, guid: 7a75f11898d465f4a8e03de682dfd905, type: 2}
   m_ProjectileId: 1
   projectileMove: {fileID: 2550759448540750754}
-  projectileImpact: {fileID: 8447237362354358232}
+  m_ProjectileImpact: {fileID: 6588645845760654571}
   enemyTarget: {fileID: 0}
+  m_ProjectileLevel: 0
 --- !u!1 &5572078485860520224
 GameObject:
   m_ObjectHideFlags: 0

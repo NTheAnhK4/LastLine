@@ -59,7 +59,7 @@ public class TowerUpgradeUI : TowerUI
 
     public override void CheckButtonsAvailable()
     {
-        if (tower == null || tower.Data.Towers[tower.TowerId].TowerUpgradeList.Count == 0)
+        if (tower == null || tower.m_TowerData.Towers[tower.TowerId].TowerUpgradeList.Count == 0)
         {
             m_UpgradeTower.btn.interactable = false;
             m_UpgradeTower.cost.text = "--";
@@ -67,8 +67,8 @@ public class TowerUpgradeUI : TowerUI
         }
         else
         {
-            int towerUpgradeId = tower.Data.Towers[tower.TowerId].TowerUpgradeList[0].TowerId;
-            m_UpgradeTower.cost.text = tower.Data.Towers[towerUpgradeId].Cost.ToString();
+            int towerUpgradeId = tower.m_TowerData.Towers[tower.TowerId].TowerUpgradeList[0].TowerId;
+            m_UpgradeTower.cost.text = tower.m_TowerData.Towers[towerUpgradeId].Cost.ToString();
            
             int upgradeCost = int.Parse(m_UpgradeTower.cost.text);
             if (upgradeCost > InGameManager.Instance.Gold)
@@ -85,14 +85,14 @@ public class TowerUpgradeUI : TowerUI
             
         }
 
-        if (tower == null || tower.TowerId >= tower.Data.Towers.Count)
+        if (tower == null || tower.TowerId >= tower.m_TowerData.Towers.Count)
         {
             m_SellTower.btn.interactable = false;
             m_SellTower.cost.text = "--";
         }
         else
         {
-            int sellCost = tower.Data.Towers[tower.TowerId].Cost / 2;
+            int sellCost = tower.m_TowerData.Towers[tower.TowerId].Cost / 2;
             m_SellTower.cost.text = sellCost.ToString();
             m_SellTower.btn.interactable = true;
         }
