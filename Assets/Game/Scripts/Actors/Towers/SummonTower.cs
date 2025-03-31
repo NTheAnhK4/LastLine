@@ -15,7 +15,7 @@ public class SummonTower : Tower
     {
         base.Init(towerId, flagPosition, towerLevel);
         
-        guardianAttack.Init(Data.Towers[m_TowerId].UnitPrefab,m_FlagPosition,Data.Towers[m_TowerId].AttackSpeed, m_TowerLevel);
+        guardianAttack.Init(m_TowerData.Towers[m_TowerId].UnitPrefab,m_FlagPosition,m_TowerData.Towers[m_TowerId].AttackSpeed, m_TowerLevel);
     }
 
     private void OnDisable()

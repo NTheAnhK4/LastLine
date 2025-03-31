@@ -2,13 +2,13 @@
 using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class ProjectileImpact : ComponentBehavior
+public class SingleImpactProjectile : ComponentBehavior
 {
     [SerializeField] protected SoundType m_SoundType;
     [SerializeField] private Projectile projectile;
     [SerializeField] private Transform enemyTarget;
-    [SerializeField] private float damage;
-    [SerializeField] private DamageType m_DamageType;
+    [SerializeField] protected float damage;
+    [SerializeField] protected DamageType m_DamageType;
     [SerializeField] private Transform m_EffectPrefab;
     protected override void LoadComponent()
     {
@@ -23,7 +23,7 @@ public class ProjectileImpact : ComponentBehavior
         m_DamageType = damageType;
     }
 
-    private bool IsEnemy(Transform enemy)
+    protected bool IsEnemy(Transform enemy)
     {
         if (enemy == null) return false;
         if (enemyTarget.tag.Equals("Enemy")) return enemy.tag.Equals("Enemy") || enemy.tag.Equals("FlyEnemy");
@@ -40,6 +40,7 @@ public class ProjectileImpact : ComponentBehavior
             healthHandler.TakeDamage(damage, m_DamageType);
             projectile.projectileDespawn.OnDead(false);
             if (m_EffectPrefab != null) PoolingManager.Spawn(m_EffectPrefab.gameObject, other.transform.position, default);
+            AfterImpact();
         }
     }
 
@@ -47,4 +48,10 @@ public class ProjectileImpact : ComponentBehavior
     {
         AudioManager.PlaySFX(m_SoundType,0.3f);
     }
+
+    protected virtual void AfterImpact()
+    {
+        
+    }
+   
 }

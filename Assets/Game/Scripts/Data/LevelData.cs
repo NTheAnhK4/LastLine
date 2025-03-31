@@ -56,6 +56,7 @@ public class TowerInfor
 {
     public Vector3 Towerposition;
     public Vector3 flagPosition;
+    public int TowerId = 0;
 }
 public enum EnemyType
 {

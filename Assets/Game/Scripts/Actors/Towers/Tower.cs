@@ -1,11 +1,12 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class Tower : ComponentBehavior
 {
-    public TowerData Data;
+    public TowerData m_TowerData;
     protected int m_TowerId;
     [SerializeField] protected int m_TowerLevel;
     public int TowerId
@@ -28,8 +29,8 @@ public class Tower : ComponentBehavior
     public virtual void ShowUI()
     {
        
-        if(Data.Towers[m_TowerId].TowerUIPrefab == null || isUpgrade) return;
-        towerUI = PoolingManager.Spawn(Data.Towers[m_TowerId].TowerUIPrefab,transform.position).GetComponent<TowerUI>();
+        if(m_TowerData.Towers[m_TowerId].TowerUIPrefab == null || isUpgrade) return;
+        towerUI = PoolingManager.Spawn(m_TowerData.Towers[m_TowerId].TowerUIPrefab,transform.position).GetComponent<TowerUI>();
         towerUI.gameObject.SetActive(false);
         if (towerUI != null)
         {
@@ -51,7 +52,7 @@ public class Tower : ComponentBehavior
         animHandler.SetInt("upgradeId",upgradeId);
         animHandler.SetAnim(AnimHandler.State.Upgrade);
         int towerUpgradeId;
-        if (upgradeId >= 0) towerUpgradeId = Data.Towers[m_TowerId].TowerUpgradeList[upgradeId].TowerId;
+        if (upgradeId >= 0) towerUpgradeId = m_TowerData.Towers[m_TowerId].TowerUpgradeList[upgradeId].TowerId;
         else towerUpgradeId = 0;
         StartCoroutine(BuildNewTower(towerUpgradeId, timerBuild));
     }
@@ -66,13 +67,14 @@ public class Tower : ComponentBehavior
         m_TowerId = towerId;
         m_FlagPosition = flagPosition;
         m_TowerLevel = towerLevel;
+        m_TowerData = DataManager.Instance.GetData<TowerData>();
     }
     
     IEnumerator BuildNewTower(int towerUpgradeId, float timeBuild = 1)
     {
         isUpgrade = true;
         yield return new WaitForSeconds(timeBuild);
-        Tower tower = PoolingManager.Spawn(Data.Towers[towerUpgradeId].TowerPrefab,transform.position)
+        Tower tower = PoolingManager.Spawn(m_TowerData.Towers[towerUpgradeId].TowerPrefab,transform.position)
             .GetComponent<Tower>();
         tower.Init(towerUpgradeId,m_FlagPosition, m_TowerLevel + 1);
         
