@@ -24,7 +24,7 @@ public class SummonSkill : ISkill
             if (enemy != null && spawnedEnemy != null)
             {
                 InGameManager.Instance.HandeEnemyCloneSpawn(enemy);
-                spawnedEnemy.Init(summonSkillParam.EnemyId,enemy.PathId);
+                spawnedEnemy.Init(summonSkillParam.EnemyId,enemy.GetCurrentNodePath());
             }
         }
        
