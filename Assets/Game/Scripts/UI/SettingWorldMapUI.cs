@@ -26,6 +26,9 @@ public class SettingWorldMapUI : CenterUI
 
     private void Exit()
     {
+        PlayerPrefs.SetFloat("MusicVolumeData",AudioManager.Instance.MusicVolumeRate);
+        PlayerPrefs.SetFloat("SFXVolumeData",AudioManager.Instance.SfxVolumeRate);
+        PlayerPrefs.Save();
         #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
         #else

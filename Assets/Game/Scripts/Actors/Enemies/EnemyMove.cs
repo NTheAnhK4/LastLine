@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -7,14 +8,17 @@ using UnityEngine;
 public class EnemyMove : MoveHandler
 {
     [SerializeField] private Enemy enemyCtrl;
-    [Header("Move information")]
-    private List<Vector3> m_PathList;
-    
+    [Header("Move information")] 
+    private List<NodePathParam> m_NodePaths;
+
+    private NodePathParam m_CurrentNodePath;
     [SerializeField] private Vector3 targetPosition;
-    [SerializeField] private int m_CurrentPathIndex;
+   
    
 
     protected Vector3 direction;
+
+    public NodePathParam CurrentNodePath => m_CurrentNodePath;
     [Header("Target")]
     [SerializeField] private List<HealthHandler> enemyTargets = new List<HealthHandler>();
 
@@ -40,15 +44,16 @@ public class EnemyMove : MoveHandler
         if (enemyCtrl == null) enemyCtrl = transform.GetComponentInParent<Enemy>();
     }
 
-    public void Init(List<Vector3> pathList, float eMoveSpeed, float aRange)
+    public void Init(NodePathParam currentNodePath, float eMoveSpeed, float aRange)
     {
+        m_NodePaths = DataManager.Instance.GetData<LevelData>().Levels[InGameManager.Instance.CurrentLevel].NodePaths;
+        m_CurrentNodePath = currentNodePath;
         m_AttackRange = aRange;
-        m_PathList = pathList;
+        
         moveSpeed = eMoveSpeed;
         if(animHandler != null) animHandler.SetAnim(AnimHandler.State.Move);
 
-        m_CurrentPathIndex = GetCurrentIndex();
-        targetPosition = m_PathList[m_CurrentPathIndex];
+        SetNextPosition();
 
         targetEnemy = null;
         enemyTargets.Clear();
@@ -61,7 +66,7 @@ public class EnemyMove : MoveHandler
         enemyCtrl.transform.Translate(direction * (moveSpeed * Time.deltaTime));
         if (Vector3.Distance(enemyCtrl.transform.position, targetPosition) <= 0.4f)
         {
-            if (m_CurrentPathIndex == m_PathList.Count - 1) enemyCtrl.enemyDead.OnDead(false);
+            if (IsLeaf()) enemyCtrl.enemyDead.OnDead(false);
             else SetNextPosition();
         }
     }
@@ -69,8 +74,17 @@ public class EnemyMove : MoveHandler
 
     private void SetNextPosition()
     {
-        m_CurrentPathIndex++;
-        targetPosition = m_PathList[m_CurrentPathIndex];
+        
+        int childID = Random.Range(0, m_CurrentNodePath.ChildID.Count());
+        int nodeID = m_CurrentNodePath.ChildID[childID];
+       
+        m_CurrentNodePath = m_NodePaths[nodeID];
+        targetPosition = m_CurrentNodePath.Point;
+    }
+
+    private bool IsLeaf()
+    {
+        return m_CurrentNodePath.ChildID == null || !m_CurrentNodePath.ChildID.Any();
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -125,25 +139,7 @@ public class EnemyMove : MoveHandler
         Vector3 direction = (target - actor.position).normalized;
         actor.transform.Translate(direction * (moveSpeed * Time.deltaTime));
     }
-    private int GetCurrentIndex()
-    {
-        int pathIndex = 0;
-        float minDistance = float.MaxValue;
-        for (int i = 0; i < m_PathList.Count; ++i)
-        {
-            float distance = Vector3.Distance(actor.position, m_PathList[i]);
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                pathIndex = i;
-            }
-        }
-
-        if (pathIndex == 0 && pathIndex < m_PathList.Count - 1) pathIndex++;
-        
-        return pathIndex;
-    }
-
+   
    
 
    
@@ -156,21 +152,12 @@ public class EnemyMove : MoveHandler
         if(actor.tag.Equals("FlyEnemy")) MoveByPath();
         else
         {
-            if (targetEnemy == null || targetEnemy.IsDead) targetEnemy = GetEnemy();
+            if (targetEnemy == null || targetEnemy.IsDead || !targetEnemy.gameObject.activeInHierarchy) targetEnemy = GetEnemy();
 
-            if (targetEnemy != null) MoveToTarget(targetEnemy.Actor.position);
+            if (targetEnemy != null && targetEnemy.gameObject.activeInHierarchy) MoveToTarget(targetEnemy.Actor.position);
             else
             {
                 animHandler.SetAnim(AnimHandler.State.Move);
-                if (m_CurrentPathIndex + 1 < m_PathList.Count)
-                {
-                    if ((enemyCtrl.transform.position - m_PathList[m_CurrentPathIndex + 1]).sqrMagnitude <
-                        (enemyCtrl.transform.position - m_PathList[m_CurrentPathIndex]).sqrMagnitude)
-                    {
-                        SetNextPosition();
-                    }
-
-                }
                 MoveByPath();
             }
         }

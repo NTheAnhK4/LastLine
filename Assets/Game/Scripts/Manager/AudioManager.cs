@@ -54,6 +54,8 @@ public class AudioManager : Singleton<AudioManager>
     {
         base.Awake();
         DontDestroyOnLoad(gameObject);
+        m_MusicVolumeRate = PlayerPrefs.GetFloat("MusicVolumeData", 0.5f);
+        m_SFXVolumeRate = PlayerPrefs.GetFloat("SFXVolumeData", 1);
     }
 
  

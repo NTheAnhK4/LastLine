@@ -119,11 +119,11 @@ public class LevelUI : ComponentBehavior
     private void SpawnSignalWay(int wayId, bool isActive = true)
     {
         if(this == null) return;
-        var paths = m_LevelParam.Paths;
+        var paths = m_LevelParam.Roots;
         
         foreach (MiniWayParam miniWay in m_LevelParam.Ways[wayId + 1].MiniWays)
         {
-            int pathId = miniWay.PathId;
+            int pathId = miniWay.RootID;
             if(m_SignalWayChecker.ContainsKey(paths[pathId].SignalPosition)) continue;
             
             Transform signalWayTrf = PoolingManager.Spawn(SignalWayPrefab, paths[pathId].SignalPosition).transform;

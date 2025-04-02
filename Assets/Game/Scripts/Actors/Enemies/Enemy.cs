@@ -8,16 +8,15 @@ public class Enemy : ComponentBehavior
     [SerializeField] protected EnemyMove enemyMove;
     [SerializeField] protected HealthHandler enemyHealth;
     [SerializeField] protected AnimHandler animHandler;
-  
+   
     public EnemyDead enemyDead { get; private set; }
 
     public EnemyMove EnemyMove => enemyMove;
     protected int m_EnemyId;
-    protected int m_PathId;
-
+   
     public int EnemyId => m_EnemyId;
 
-    public int PathId => m_PathId;
+   
 
     protected override void LoadComponent()
     {
@@ -30,10 +29,14 @@ public class Enemy : ComponentBehavior
 
     }
 
-    public virtual void Init(int enemyId, int pathId)
+    public virtual void Init(int enemyId, NodePathParam nodePath)
     {
-        
+       
     }
 
+    public NodePathParam GetCurrentNodePath()
+    {
+        return enemyMove.CurrentNodePath;
+    }
    
 }

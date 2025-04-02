@@ -11,9 +11,10 @@ public class EnemySpawner : MonoBehaviour
     private System.Action<object> onSpawnWay;
 
     public readonly HashSet<Enemy> activeEnemies = new HashSet<Enemy>();
-
+    
     public void Init(LevelParam levelParam)
     {
+        
         m_LevelParam = levelParam;
        
     }
@@ -67,20 +68,20 @@ public class EnemySpawner : MonoBehaviour
     {
         foreach (var enemyInfor in miniWayParam.EnemyInfors)
         {
-            SpawnEnemy(miniWayParam.PathId, enemyInfor);
+            SpawnEnemy(miniWayParam.RootID, enemyInfor);
             yield return new WaitForSeconds(enemyInfor.SpawnDelay);
             if(this == null) yield break;
         }
     }
 
 
-    private void SpawnEnemy(int pathId, EnemyInfor enemyInfor)
+    private void SpawnEnemy(int rootId, EnemyInfor enemyInfor)
     {
         GameObject enemyPrefab = GameFactory.GetEnemyPrefab(enemyInfor.EnemyType, enemyInfor.EnemyId);
         if(enemyPrefab == null) return;
-        var spawnPosition = m_LevelParam.Paths[pathId].Positions[0];
+        var spawnPosition = m_LevelParam.Roots[rootId].Point;
         Enemy enemy = PoolingManager.Spawn(enemyPrefab, spawnPosition, default, transform).GetComponent<Enemy>();
-        if(enemy != null)  enemy.Init(enemyInfor.EnemyId,pathId);
+        if(enemy != null)  enemy.Init(enemyInfor.EnemyId,m_LevelParam.Roots[rootId]);
         activeEnemies.Add(enemy);
         
         

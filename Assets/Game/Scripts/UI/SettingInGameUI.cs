@@ -1,4 +1,5 @@
 
+using DG.Tweening;
 using UnityEngine;
 
 using UnityEngine.UI;
@@ -24,15 +25,17 @@ public class SettingInGameUI : CenterUI
         {
             HideUI(() =>
             {
+                
                 GameManager.Instance.GoToWorldMap();
+                
             });
         });
         replayBtn.onClick.AddListener(() =>
         {
             HideUI(() =>
             {
-                GameManager.Instance.GameSpeed = 1;
                 GameManager.Instance.ReplayLevel();
+                
             });
         });
     }
