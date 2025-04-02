@@ -5858,6 +5858,8 @@ MonoBehaviour:
   - {fileID: 1787764635}
   - {fileID: 1490453464}
   - {fileID: 854332891}
+  FinishNormalLevel: {fileID: 21300000, guid: 01556f42a6f9c214fb0af71ba5e3a159, type: 3}
+  UnFinishNormalLevel: {fileID: 21300000, guid: 2fcb674bfe8c1ce40af82c79703c5c21, type: 3}
 --- !u!1 &1695421613
 GameObject:
   m_ObjectHideFlags: 0

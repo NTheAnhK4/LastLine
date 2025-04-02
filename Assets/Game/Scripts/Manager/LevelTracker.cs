@@ -4,6 +4,8 @@ using UnityEngine;
 public class LevelTracker : Singleton<LevelTracker>
 {
     [SerializeField] private LevelButton[] m_LevelButtons;
+    public Sprite FinishNormalLevel;
+    public Sprite UnFinishNormalLevel;
 
     private void LoadComponent()
     {
@@ -55,7 +57,7 @@ public class LevelTracker : Singleton<LevelTracker>
         if (numberStar >= 0)
         {
             m_LevelButtons[level].NumberStar = numberStar;
-            m_LevelButtons[level].ShowFlag();
+            m_LevelButtons[level].ShowFlag(FinishNormalLevel,UnFinishNormalLevel);
         }
         //unlock level
         else m_LevelButtons[level].HideFlag();

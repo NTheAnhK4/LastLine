@@ -38,9 +38,10 @@ public class SingleImpactProjectile : ComponentBehavior
         {
             PlaySound();
             healthHandler.TakeDamage(damage, m_DamageType);
+            AfterImpact();
             projectile.projectileDespawn.OnDead(false);
             if (m_EffectPrefab != null) PoolingManager.Spawn(m_EffectPrefab.gameObject, other.transform.position, default);
-            AfterImpact();
+            
         }
     }
 
