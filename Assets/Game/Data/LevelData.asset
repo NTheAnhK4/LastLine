@@ -1455,7 +1455,7 @@ MonoBehaviour:
       TowerId: 0
     - Towerposition: {x: 6, y: 4.5, z: 0}
       flagPosition: {x: 9, y: 1.5, z: 0}
-      TowerId: 0
+      TowerId: 13
     - Towerposition: {x: 11.5, y: 7, z: 0}
       flagPosition: {x: 11.5, y: 3.5, z: 0}
       TowerId: 0

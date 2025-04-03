@@ -14,7 +14,7 @@ public class AttackHandler : ActionHandler
     [SerializeField] private CircleCollider2D collid;
     
     [SerializeField] private float attackRange;
-    [SerializeField] private float attackSpeed;
+    [SerializeField] protected float attackSpeed;
     [SerializeField] private float coolDown;
     
     

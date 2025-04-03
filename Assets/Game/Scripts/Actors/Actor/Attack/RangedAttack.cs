@@ -27,7 +27,8 @@ public class RangedAttack : AttackHandler
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         
         SetDirection(angle);
-        
+       
+       
         animHandler.SetAnim(AnimHandler.State.Attack);
 
 
