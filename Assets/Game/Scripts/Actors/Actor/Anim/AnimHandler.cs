@@ -43,7 +43,7 @@ public class AnimHandler : ComponentBehavior
     }
     
 
-    public void SetAnim(State newState)
+    public void SetAnim(State newState, float animSpeed = 1)
     {
         if(currentState != newState) previousState = currentState;
         switch (newState)
@@ -76,11 +76,18 @@ public class AnimHandler : ComponentBehavior
                 currentState = State.DoSkill;
                 break;
         }
+
+        anim.speed = animSpeed;
     }
 
     public void SetInt(string animName, int value)
     {
         anim.SetInteger(animName,value);
+    }
+
+    public void SetFloat(string animName, float value)
+    {
+        anim.SetFloat(animName,value);
     }
 
     public void RevertToPreviousAnim()

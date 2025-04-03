@@ -101,4 +101,40 @@ MonoBehaviour:
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 5893692417750805127, guid: e2ac00359fa5ced46a161a921626cfe9, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList:
+    - TowerId: 10
+  - TowerName: Archer level 4
+    Cost: 60
+    AttackRange: 6
+    AttackSpeed: 0.35
+    UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
+    TowerPrefab: {fileID: 8761633789349402526, guid: 7a205c53f2b71f043a670035db4558b0, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList:
+    - TowerId: 11
+  - TowerName: Archer level 5
+    Cost: 75
+    AttackRange: 6.5
+    AttackSpeed: 0.3
+    UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
+    TowerPrefab: {fileID: 429472193650386157, guid: 5faa110031f2f664998abe29611af1ef, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList:
+    - TowerId: 12
+  - TowerName: Archer level 6
+    Cost: 90
+    AttackRange: 7
+    AttackSpeed: 0.25
+    UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
+    TowerPrefab: {fileID: 8976427532779379860, guid: f02486dfbfd30e04986e11d05c06a006, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList:
+    - TowerId: 13
+  - TowerName: Archer level 7
+    Cost: 120
+    AttackRange: 7.5
+    AttackSpeed: 0.2
+    UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
+    TowerPrefab: {fileID: 8629915954259703471, guid: 21da77d8d79390749aa68f56985c0ad5, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: []

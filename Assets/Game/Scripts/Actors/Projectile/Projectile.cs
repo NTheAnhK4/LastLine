@@ -31,7 +31,7 @@ public class Projectile : ComponentBehavior
             projectileMove.Init(enemyTarget, m_ProjectileData.Projectiles[m_ProjectileId].speed + m_ProjectileLevel);
        
             m_ProjectileImpact.Init(enemyTarget,
-                m_ProjectileData.Projectiles[m_ProjectileId].damage * m_ProjectileLevel, 
+                m_ProjectileData.Projectiles[m_ProjectileId].damage + (m_ProjectileLevel - 1) * 0.5f, 
                 m_ProjectileData.Projectiles[m_ProjectileId].DamageType);
         }
         

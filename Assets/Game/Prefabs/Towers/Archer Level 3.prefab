@@ -54,7 +54,7 @@ MonoBehaviour:
   attackSpeed: 0
   coolDown: 0
   projectilePrefab: {fileID: 0}
-  projectilePosition: {x: -0.15, y: 1, z: 0}
+  projectilePosition: {x: 0, y: 1, z: 0}
   m_ActorLevel: 0
 --- !u!58 &8149210824278771685
 CircleCollider2D:
