@@ -92,10 +92,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00d4f20127406c40bd345361e7f41bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 7eacf0dcf2602ee47b8bb1f615dbff2f, type: 2}
+  m_TowerData: {fileID: 0}
+  m_TowerLevel: 0
   animHandler: {fileID: 2012259970192160611}
   towerUI: {fileID: 0}
-  archerAttack: {fileID: 8593769916727223563}
+  rangedAttack: {fileID: 0}
   m_AttackRangeIndicatorPrefab: {fileID: 1588199561713397666, guid: 3d437cddca43570429fde3d18f1ea293, type: 3}
   m_AttackRangeIndicator: {fileID: 0}
 --- !u!1 &4570320381848298196
@@ -153,6 +154,7 @@ MonoBehaviour:
   coolDown: 0
   projectilePrefab: {fileID: 0}
   projectilePosition: {x: 0, y: 1.5, z: 0}
+  m_ActorLevel: 0
 --- !u!58 &1377364681926487586
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -242,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 5053751155853489659}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -428,7 +430,7 @@ Transform:
   m_GameObject: {fileID: 7408902940783087749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.32, z: 0}
+  m_LocalPosition: {x: 0, y: 2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
