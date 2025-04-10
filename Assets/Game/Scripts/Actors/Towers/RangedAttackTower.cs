@@ -47,6 +47,7 @@ public class RangedAttackTower : Tower
     public override void Init(int towerId, Vector3 flagPosition, int towerLevel = 1)
     {
         base.Init(towerId, flagPosition, towerLevel);
+        if(animHandler != null) animHandler.SetAnim(AnimHandler.State.Idle);
         m_AttackRange = m_TowerData.Towers[towerId].AttackRange;
         rangedAttack.Init(m_TowerData.Towers[towerId].AttackRange, m_TowerData.Towers[towerId].AttackSpeed, m_TowerData.Towers[towerId].UnitPrefab, towerLevel);
     }

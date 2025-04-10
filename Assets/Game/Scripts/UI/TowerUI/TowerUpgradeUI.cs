@@ -37,7 +37,7 @@ public class TowerUpgradeUI : TowerUI
             if (cost <= InGameManager.Instance.Gold)
             {
                 InGameManager.Instance.Gold -= cost;
-                UpdateTower(0, 1.5f);
+                UpdateTower(0);
             }
             else
             {
@@ -50,7 +50,7 @@ public class TowerUpgradeUI : TowerUI
             
             int cost = int.Parse(m_SellTower.cost.text);
             InGameManager.Instance.Gold += cost;
-            UpdateTower(-1,1.5f);
+            UpdateTower(-1);
         });
         
     }

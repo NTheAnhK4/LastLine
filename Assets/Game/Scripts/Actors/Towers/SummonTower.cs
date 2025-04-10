@@ -14,7 +14,7 @@ public class SummonTower : Tower
     public override void Init(int towerId, Vector3 flagPosition, int towerLevel)
     {
         base.Init(towerId, flagPosition, towerLevel);
-        
+        if(animHandler != null) animHandler.SetAnim(AnimHandler.State.Idle);
         guardianAttack.Init(m_TowerData.Towers[m_TowerId].UnitPrefab,m_FlagPosition,m_TowerData.Towers[m_TowerId].AttackSpeed, m_TowerLevel);
     }
 
