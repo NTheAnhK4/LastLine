@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class AnimHandler : ComponentBehavior
@@ -42,9 +43,11 @@ public class AnimHandler : ComponentBehavior
         transform.localScale = localScale;
     }
     
+    
 
-    public void SetAnim(State newState, float animSpeed = 1)
+    public void SetAnim(State newState)
     {
+       
         if(currentState != newState) previousState = currentState;
         switch (newState)
         {
@@ -55,16 +58,20 @@ public class AnimHandler : ComponentBehavior
                 
                 break;
             case State.Dead:
+                anim.ResetTrigger(OnDead);
                 anim.SetTrigger(OnDead);
                 currentState = State.Dead;
                 break;
             case State.Attack:
+               
                 anim.SetTrigger(OnAttack);
                 currentState = State.Attack;
                 break;
             case State.Upgrade:
+                anim.ResetTrigger(OnUpgrade);
                 anim.SetTrigger(OnUpgrade);
                 currentState = State.Upgrade;
+               
                 break;
             case State.Idle:
                 if(currentState == State.Move) anim.SetBool(IsMove,false);
@@ -72,12 +79,12 @@ public class AnimHandler : ComponentBehavior
                 currentState = State.Idle;
                 break;
             case State.DoSkill:
+               
                 anim.SetTrigger(DoSkill);
                 currentState = State.DoSkill;
                 break;
         }
-
-        anim.speed = animSpeed;
+        
     }
 
     public void SetInt(string animName, int value)
@@ -92,10 +99,35 @@ public class AnimHandler : ComponentBehavior
 
     public void RevertToPreviousAnim()
     {
-        if(previousState == State.Upgrade) return;
+        if (previousState == State.Upgrade)
+        {
+            SetAnim(State.Idle);
+            return;
+        };
         SetAnim(previousState);
     }
 
+    public float GetAnimLength(int animLayer = 0)
+    {
+        float rawLength = anim.GetCurrentAnimatorStateInfo(0).length;
+        float speed = anim.speed;
+        if (speed == 0) return float.PositiveInfinity;
+        return rawLength/speed;
+    }
+
+    public void SetSpeed(float animSpeed = 1)
+    {
+        anim.speed = animSpeed;
+    }
+
+    public float GetAnimTimeElapsed()
+    {
+        float animLength = GetAnimLength();
+        float normalizedTime = anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1f;
+        return normalizedTime * animLength;
+
+    }
+   
     
 
     

@@ -57,7 +57,7 @@ public class TowerSlotUI : TowerUI
             if (cost <= InGameManager.Instance.Gold)
             {
                 InGameManager.Instance.Gold -= cost;
-                UpdateTower(towerType, 1);
+                UpdateTower(towerType);
             }
             else
             {

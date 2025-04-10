@@ -16,9 +16,10 @@ public class Tower : ComponentBehavior
     }
     [SerializeField] protected AnimHandler animHandler;
     [SerializeField] private TowerUI towerUI;
-
+    
     protected Vector3 m_FlagPosition;
     private bool isUpgrade;
+    private int towerUpgradeId;
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -46,16 +47,7 @@ public class Tower : ComponentBehavior
     }
 
     
-    public void UpdateTower(int upgradeId, float timerBuild = 1)
-    {
-        HideUI();
-        animHandler.SetInt("upgradeId",upgradeId);
-        animHandler.SetAnim(AnimHandler.State.Upgrade);
-        int towerUpgradeId;
-        if (upgradeId >= 0) towerUpgradeId = m_TowerData.Towers[m_TowerId].TowerUpgradeList[upgradeId].TowerId;
-        else towerUpgradeId = 0;
-        StartCoroutine(BuildNewTower(towerUpgradeId, timerBuild));
-    }
+  
     
     protected void OnEnable()
     {
@@ -68,19 +60,35 @@ public class Tower : ComponentBehavior
         m_FlagPosition = flagPosition;
         m_TowerLevel = towerLevel;
         m_TowerData = DataManager.Instance.GetData<TowerData>();
+        
+
     }
-    
-    IEnumerator BuildNewTower(int towerUpgradeId, float timeBuild = 1)
+    public void UpdateTower(int upgradeId)
     {
+        HideUI();
+        animHandler.SetInt("upgradeId",upgradeId);
+        animHandler.SetAnim(AnimHandler.State.Upgrade);
+       
+       
+        
+        if (upgradeId >= 0) towerUpgradeId = m_TowerData.Towers[m_TowerId].TowerUpgradeList[upgradeId].TowerId;
+        else towerUpgradeId = 0;
+       
+        
+    }
+
+    public IEnumerator BuildNewTower()
+    {
+        
         isUpgrade = true;
-        yield return new WaitForSeconds(timeBuild);
+        yield return new WaitForSeconds(0.1f);
         Tower tower = PoolingManager.Spawn(m_TowerData.Towers[towerUpgradeId].TowerPrefab,transform.position)
             .GetComponent<Tower>();
-        tower.Init(towerUpgradeId,m_FlagPosition, m_TowerLevel + 1);
-        
-        
+      
+        if(towerUpgradeId >= 0) tower.Init(towerUpgradeId,m_FlagPosition, m_TowerLevel + 1);
         PoolingManager.Despawn(this.gameObject);
-        
     }
+
+   
     
 }

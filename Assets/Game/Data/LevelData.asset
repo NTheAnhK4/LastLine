@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - TowerHealth: 20
-    InitialGold: 125
+    InitialGold: 2147483647
     LevelPrefab: {fileID: 2957135878730469215, guid: 88cb9de9427d5f3428d58dafc49f7d6e, type: 3}
     MinLimitCamera: {x: 0, y: 0}
     MaxLimitCamera: {x: 0, y: 0}

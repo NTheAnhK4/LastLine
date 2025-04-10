@@ -1,4 +1,4 @@
-
+using System.Collections;
 using UnityEngine;
 
 public class RangedAttack : AttackHandler
@@ -7,7 +7,9 @@ public class RangedAttack : AttackHandler
     [SerializeField] private Vector3 projectilePosition;
 
     [SerializeField] private int m_ActorLevel;
+    
 
+   
     public void Init(float aRange, float aSpeed, GameObject proPrefab, int actorLevel = 1)
     {
         base.Init(aRange,aSpeed);
@@ -30,7 +32,7 @@ public class RangedAttack : AttackHandler
        
        
         animHandler.SetAnim(AnimHandler.State.Attack);
-
+       
 
         
         Projectile projectile = PoolingManager.Spawn(projectilePrefab, 
@@ -40,6 +42,7 @@ public class RangedAttack : AttackHandler
             .GetComponent<Projectile>();
         if(projectile != null) projectile.Init(enemy.Actor, m_ActorLevel);
     }
+    
 
     private void SetDirection(float angle)
     {

@@ -22,10 +22,10 @@ public class TowerUI : ComponentBehavior
         if(optionsHolder == null) optionsHolder = transform.Find("Canvas").Find("UIImg");
     }
 
-    protected void UpdateTower(int towerUpgradeId, float timerBuild = 1)
+    protected void UpdateTower(int towerUpgradeId)
     {
         PoolingManager.Despawn(gameObject);
-        tower.UpdateTower(towerUpgradeId,timerBuild);
+        tower.UpdateTower(towerUpgradeId);
         
     }
 
