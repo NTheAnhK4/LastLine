@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TowerSlotUpdateToMageTower
+  m_Name: MageLevel2LAttack
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,19 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1754196166, guid: 05feb9e0f7e1c2446b438d64f594fbb6, type: 3}
+      value: {fileID: 1888193141, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
+    - time: 0.2
+      value: {fileID: 1545031191, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
+    - time: 0.4
+      value: {fileID: -1838181287, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
+    - time: 0.6
+      value: {fileID: 1498721143, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
+    - time: 0.8
+      value: {fileID: -428230499, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
     - time: 1
-      value: {fileID: -853737393, guid: f30b87765f0c96a4f9bd8b51c2c79262, type: 3}
-    - time: 1.5
-      value: {fileID: -853737393, guid: f30b87765f0c96a4f9bd8b51c2c79262, type: 3}
+      value: {fileID: -906334977, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Units
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -39,7 +45,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 678517581
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -48,15 +54,18 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1754196166, guid: 05feb9e0f7e1c2446b438d64f594fbb6, type: 3}
-    - {fileID: -853737393, guid: f30b87765f0c96a4f9bd8b51c2c79262, type: 3}
-    - {fileID: -853737393, guid: f30b87765f0c96a4f9bd8b51c2c79262, type: 3}
+    - {fileID: 1888193141, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
+    - {fileID: 1545031191, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
+    - {fileID: -1838181287, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
+    - {fileID: 1498721143, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
+    - {fileID: -428230499, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
+    - {fileID: -906334977, guid: 1b405309b558e6d4091fff27c228466c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5166667
+    m_StopTime: 1.0166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -75,11 +84,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 1.5
-    functionName: BuildTower
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
