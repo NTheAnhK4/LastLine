@@ -1,10 +1,13 @@
-
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using Core.UI;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
-
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class WinUI : CenterUI
+public class WinView : UICenterView
 {
     [Header("Button")]
     [SerializeField] private Button rePlayBtn;
@@ -14,7 +17,10 @@ public class WinUI : CenterUI
 
     [SerializeField] private Sprite m_GoldStar;
     [SerializeField] private Sprite m_EmptyStar;
-    protected override void LoadComponent()
+    public int StarCount = 0;
+   
+
+    protected override  void LoadComponent()
     {
         base.LoadComponent();
         Transform buttonHolder = transform.Find("Buttons");
@@ -33,22 +39,22 @@ public class WinUI : CenterUI
 
     private void OnEnable()
     {
-        continueBtn.onClick.AddListener(() =>
-        {
-            HideUI(() =>
-            {
-                GameManager.Instance.GoToWorldMap();
-            });
-            
-        });
-        rePlayBtn.onClick.AddListener(() =>
-        {
-            HideUI(() =>
-            {
-                GameManager.Instance.GameSpeed = 1;
-                GameManager.Instance.ReplayLevel();
-            });
-        });
+        continueBtn.onClick.AddListener(OnContinueBtnClick);
+        rePlayBtn.onClick.AddListener(OnReplayBtnClick);
+    }
+
+    private async void OnContinueBtnClick()
+    {
+        await ViewAnimationController.PlayHideAnimation(ViewAnimationType.PopZoom);
+        GameManager.Instance.GameSpeed = 1;
+        GameManager.Instance.GoToWorldMap();
+    }
+
+    private async void OnReplayBtnClick()
+    {
+        await ViewAnimationController.PlayHideAnimation(ViewAnimationType.PopZoom);
+        GameManager.Instance.GameSpeed = 1;
+        GameManager.Instance.ReplayLevel();
     }
 
     private void OnDisable()
@@ -59,14 +65,23 @@ public class WinUI : CenterUI
 
     
 
-    public void SetStars(int starCount)
+    public void SetStars()
     {
-        for (int i = 0; i <= starCount - 1; ++i)
+        for (int i = 0; i <= StarCount - 1; ++i)
         {
             if(i >= m_Stars.Count) return;
             m_Stars[i].sprite = m_GoldStar;
         }
 
-        for (int i = starCount; i < 3; ++i) m_Stars[i].sprite = m_EmptyStar;
+        for (int i = StarCount; i < 3; ++i) m_Stars[i].sprite = m_EmptyStar;
     }
+
+    protected override UniTask OnShow()
+    {
+        GameManager.Instance.GameSpeed = 0;
+        SetStars();
+        return base.OnShow();
+    }
+
+    
 }

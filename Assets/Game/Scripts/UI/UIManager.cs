@@ -1,25 +1,25 @@
-
-
-
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.UI;
 using TMPro;
 using UnityEngine;
 
-
-public class LevelUI : ComponentBehavior
+public class UIManager : ComponentBehavior
 {
-    
     public GameObject SignalWayPrefab;
+    
+   
     [SerializeField] private TextMeshProUGUI healthTxt;
     [SerializeField] private TextMeshProUGUI wayNumTxt;
     [SerializeField] private TextMeshProUGUI goldTxt;
-    [SerializeField] private WinUI winUI;
-    [SerializeField] private CenterUI loseUI;
+    
+    [SerializeField] private  WinView winView;
+    [SerializeField] private LoseView loseView;
+    [SerializeField] private InGameSetting inGameSetting;
     [SerializeField] private PanelUI panel;
-
     private Dictionary<Vector3, GameObject> m_SignalWayChecker = new Dictionary<Vector3, GameObject>();
-
+    
     private LevelParam m_LevelParam;
     private System.Action<object> onWinHandler;
     private System.Action<object> onSpawnWayHandler;
@@ -27,7 +27,6 @@ public class LevelUI : ComponentBehavior
     private System.Action<object> onUpdateGoldHandler;
     private System.Action<object> onSpawnedEnemiesHandler;
     private System.Action<object> onLoseHandler;
-   
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -50,11 +49,10 @@ public class LevelUI : ComponentBehavior
                     goldTxt = hpAndCoin.Find("Gold")?.Find("GoldTxt")?.GetComponent<TextMeshProUGUI>();
             }
         }
-
-        Transform center = transform.Find("Center");
-        winUI = center.Find("WinUI").GetComponent<WinUI>();
-        loseUI = center.Find("LoseUI").GetComponent<CenterUI>();
-        panel = center.Find("Panel").GetComponent<PanelUI>();
+        if (winView == null) winView = transform.GetComponentInChildren<WinView>();
+        if (loseView == null) loseView = transform.GetComponentInChildren<LoseView>();
+        if (inGameSetting == null) inGameSetting = transform.GetComponentInChildren<InGameSetting>();
+        panel = transform.Find("Center").Find("Panel").GetComponent<PanelUI>();
     }
 
     private void OnEnable()
@@ -140,29 +138,23 @@ public class LevelUI : ComponentBehavior
         m_SignalWayChecker.Clear();
     }
 
-    private void SetUICenterActive(CenterUI centerUI)
-    {
-        if (centerUI == null)
-        {
-            Debug.LogWarning("centerUI has been destroyed or is missing.");
-            return;
-        }
-        centerUI.ShowUI();
-        panel.gameObject.SetActive(true);
-        
-    }
-    private void OnWin(int starCount)
-    {
-        winUI.SetStars(starCount);
-        SetUICenterActive(winUI);
-    }
-
-    private void OnLose()
-    {
-        SetUICenterActive(loseUI);
-    }
-
    
+    private async void OnWin(int starCount)
+    {
+        winView.StarCount = starCount;
+        await ViewAnimationController.PlayForceShowAnimation(ViewAnimationType.PopZoom, winView);
+    }
 
+    private async void OnLose()
+    {
+        
+        await ViewAnimationController.PlayForceShowAnimation(ViewAnimationType.PopZoom, loseView);
+    }
+
+    public async void OnSetting()
+    {
+        GameManager.Instance.GameSpeed = 0;
+        await ViewAnimationController.PlayShowAnimation(ViewAnimationType.PopZoom, inGameSetting);
+    }
+    
 }
-

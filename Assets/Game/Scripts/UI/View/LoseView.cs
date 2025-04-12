@@ -1,13 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.UI;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoseUI : CenterUI
+public class LoseView : UICenterView
 {
     [SerializeField] private Button rePlayBtn;
     [SerializeField] private Button quitBtn;
+   
+
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -18,23 +22,26 @@ public class LoseUI : CenterUI
 
     private void OnEnable()
     {
-        quitBtn.onClick.AddListener(() =>
-        {
-            HideUI(() =>
-            {
-                GameManager.Instance.GoToWorldMap();
-            });
-            
-        });
+        quitBtn.onClick.AddListener(OnQuitBtnClick);
      
-        rePlayBtn.onClick.AddListener(() =>
-        {
-            HideUI(() =>
-            {
-                GameManager.Instance.GameSpeed = 1;
-                GameManager.Instance.ReplayLevel();
-            });
-        });
+        rePlayBtn.onClick.AddListener(OnReplayBtnClick);
+    }
+
+    
+   
+
+    private async void OnQuitBtnClick()
+    {
+        await ViewAnimationController.PlayHideAnimation(ViewAnimationType.PopZoom);
+        GameManager.Instance.GameSpeed = 1;
+        GameManager.Instance.GoToWorldMap();
+    }
+
+    private async void OnReplayBtnClick()
+    {
+        await ViewAnimationController.PlayHideAnimation(ViewAnimationType.PopZoom);
+        GameManager.Instance.GameSpeed = 1;
+        GameManager.Instance.ReplayLevel();
     }
 
     private void OnDisable()
@@ -42,6 +49,4 @@ public class LoseUI : CenterUI
         quitBtn.onClick.RemoveAllListeners();
         rePlayBtn.onClick.RemoveAllListeners();
     }
-
-   
 }

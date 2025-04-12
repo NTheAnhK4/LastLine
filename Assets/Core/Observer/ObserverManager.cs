@@ -6,6 +6,7 @@ using UnityEngine;
 public static class ObserverManager<T> where T:Enum
 {
     private static Dictionary<T, Action<object>> _events = new Dictionary<T, Action<object>>();
+    private static readonly Dictionary<T, object> _eventData = new();
 
     public static void Attach(T eventID,Action<object> callback)
     {
@@ -58,6 +59,29 @@ public static class ObserverManager<T> where T:Enum
             return;
         }
         _events[eventID]?.Invoke(param);
+    }
+    public  static _T GetData<_T>(T eventID)
+    {
+        if (_eventData.TryGetValue(eventID, out object data))
+        {
+            return (_T)data;
+        }
+
+        return default;
+    }
+
+    public static void EmitEvent(T eventID, object data = null)
+    {
+        if (_eventData.ContainsKey(eventID))
+        {
+            _eventData[eventID] = data;
+        }
+        else _eventData[eventID] = data;
+
+        if (_events.TryGetValue(eventID, out Action<object> thisEvent))
+        {
+            thisEvent.Invoke(data);
+        }
     }
 }
 

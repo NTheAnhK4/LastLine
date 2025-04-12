@@ -12,7 +12,7 @@ public class InGameManager : Singleton<InGameManager>
     public EnemySpawner enemySpawner;
     public TowerSpawner towerSpawner;
     public LevelSpawner levelSpawner;
-    public LevelUI levelUI;
+    public UIManager uiManager;
    
     private float healthPoint = 20;
     private int gold;
@@ -98,7 +98,7 @@ public class InGameManager : Singleton<InGameManager>
             enemySpawner.Init(levelData.Levels[level]);
             towerSpawner.Init(levelData.Levels[level]);
             towerSpawner.SpawnTower();
-            levelUI.Init(levelData.Levels[level],-1);
+            uiManager.Init(levelData.Levels[level],-1);
         }
         
     }

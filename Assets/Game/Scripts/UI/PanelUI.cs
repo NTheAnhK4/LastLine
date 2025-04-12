@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.UI;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,10 @@ public class PanelUI : ComponentBehavior
 {
     [SerializeField] private Image m_PanelImg;
     private Tween m_Tween;
+    
+
+ 
+
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -21,18 +26,22 @@ public class PanelUI : ComponentBehavior
     {
         ShowUI();
     }
-
+    
     public void ShowUI()
     {
-        m_PanelImg.DOFade(0.95f, 0.6f);
+    
+     
+        m_PanelImg.DOFade(0.95f, 0.3f).SetUpdate(true);
     }
-
+    
     public void HideUI()
     {
         m_PanelImg.DOFade(0f, 0.3f).OnComplete(() =>
         {
             gameObject.SetActive(false);
-        });
+        }).SetUpdate(true);
+        
+       
     }
 
 
