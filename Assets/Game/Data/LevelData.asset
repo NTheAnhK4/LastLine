@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - TowerHealth: 20
-    InitialGold: 125
+    InitialGold: 2147483647
     LevelPrefab: {fileID: 2957135878730469215, guid: 88cb9de9427d5f3428d58dafc49f7d6e, type: 3}
     MinLimitCamera: {x: 0, y: 0}
     MaxLimitCamera: {x: 0, y: 0}
     Ways:
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 2
@@ -32,7 +32,7 @@ MonoBehaviour:
           SpawnDelay: 2
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 2
@@ -44,7 +44,7 @@ MonoBehaviour:
           SpawnDelay: 2
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 2
@@ -55,21 +55,30 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 2
           EnemyType: 0
-    Paths:
-    - SignalPosition: {x: -16, y: 0.5, z: 0}
+    Roots:
+    - Point: {x: -20, y: 0, z: 0}
+      ChildID: 00000000
+      SignalPosition: {x: -16, y: 0, z: 0}
       SignalAngle: 180
-      Positions:
-      - {x: -20, y: 1, z: 0}
-      - {x: -12.5, y: 1, z: 0}
-      - {x: -12.5, y: 0, z: 0}
-      - {x: -11, y: -1, z: 0}
-      - {x: -10, y: -2, z: 0}
-      - {x: -7, y: -2, z: 0}
-      - {x: -4, y: -4, z: 0}
-      - {x: 7.5, y: -4, z: 0}
-      - {x: 9.5, y: 0.5, z: 0}
-      - {x: 9.5, y: 5.5, z: 0}
-      - {x: 25, y: 5.5, z: 0}
+    NodePaths:
+    - Point: {x: -13, y: 0, z: 0}
+      ChildID: 01000000
+    - Point: {x: -10.5, y: -3, z: 0}
+      ChildID: 02000000
+    - Point: {x: -7, y: -3, z: 0}
+      ChildID: 03000000
+    - Point: {x: -7, y: -3, z: 0}
+      ChildID: 04000000
+    - Point: {x: -4.5, y: -5, z: 0}
+      ChildID: 05000000
+    - Point: {x: 7, y: -5, z: 0}
+      ChildID: 06000000
+    - Point: {x: 9, y: -0.5, z: 0}
+      ChildID: 07000000
+    - Point: {x: 9, y: 5, z: 0}
+      ChildID: 08000000
+    - Point: {x: 20, y: 4.5, z: 0}
+      ChildID: 
     TowerInfors:
     - Towerposition: {x: -1, y: -1.5, z: 0}
       flagPosition: {x: -1, y: -4.5, z: 0}
@@ -90,7 +99,7 @@ MonoBehaviour:
     MaxLimitCamera: {x: 0, y: 0}
     Ways:
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 2
@@ -108,7 +117,7 @@ MonoBehaviour:
           SpawnDelay: 2
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 2
@@ -125,7 +134,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 2
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 2
@@ -137,7 +146,7 @@ MonoBehaviour:
           SpawnDelay: 2
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 2
@@ -154,7 +163,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 2
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 2
@@ -172,7 +181,7 @@ MonoBehaviour:
           SpawnDelay: 2
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 2
           SpawnDelay: 0.75
@@ -189,7 +198,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 0.75
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1
@@ -207,7 +216,7 @@ MonoBehaviour:
           SpawnDelay: 1
           EnemyType: 1
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.75
@@ -224,7 +233,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 0.75
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 3
           SpawnDelay: 2
@@ -241,26 +250,32 @@ MonoBehaviour:
         - EnemyId: 3
           SpawnDelay: 2
           EnemyType: 0
-    Paths:
-    - SignalPosition: {x: 9, y: 8, z: 0}
-      SignalAngle: 90
-      Positions:
-      - {x: 8, y: 12, z: 0}
-      - {x: 8, y: 8, z: 0}
-      - {x: -3.5, y: 8, z: 0}
-      - {x: -5, y: 6, z: 0}
-      - {x: -5, y: -3.5, z: 0}
-      - {x: -22, y: -3.5, z: 0}
-    - SignalPosition: {x: 16, y: -9, z: 0}
+    Roots:
+    - Point: {x: 11, y: 11, z: 0}
+      ChildID: 00000000
+      SignalPosition: {x: 7, y: 8, z: 0}
+      SignalAngle: 45
+    - Point: {x: 18, y: -13, z: 0}
+      ChildID: 05000000
+      SignalPosition: {x: 13, y: -9, z: 0}
       SignalAngle: -45
-      Positions:
-      - {x: 19, y: -13, z: 0}
-      - {x: 16, y: -9, z: 0}
-      - {x: 2, y: -9, z: 0}
-      - {x: 2, y: -2, z: 0}
-      - {x: -5, y: -2, z: 0}
-      - {x: -5, y: -3.5, z: 0}
-      - {x: -22, y: -3.5, z: 0}
+    NodePaths:
+    - Point: {x: 8, y: 8, z: 0}
+      ChildID: 01000000
+    - Point: {x: -4, y: 8, z: 0}
+      ChildID: 02000000
+    - Point: {x: -4, y: -1, z: 0}
+      ChildID: 03000000
+    - Point: {x: -6.5, y: -4, z: 0}
+      ChildID: 04000000
+    - Point: {x: -20, y: -4, z: 0}
+      ChildID: 
+    - Point: {x: 14, y: -9, z: 0}
+      ChildID: 06000000
+    - Point: {x: 3, y: -9, z: 0}
+      ChildID: 07000000
+    - Point: {x: 1, y: -2, z: 0}
+      ChildID: 02000000
     TowerInfors:
     - Towerposition: {x: -1.5, y: -5, z: 0}
       flagPosition: {x: -2, y: -1, z: 0}
@@ -296,7 +311,7 @@ MonoBehaviour:
     MaxLimitCamera: {x: 0, y: 0}
     Ways:
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1.5
@@ -314,7 +329,7 @@ MonoBehaviour:
           SpawnDelay: 1.5
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1
@@ -331,7 +346,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1
@@ -348,7 +363,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1
           EnemyType: 0
-      - PathId: 2
+      - RootID: 2
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1.5
@@ -366,7 +381,7 @@ MonoBehaviour:
           SpawnDelay: 1.5
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1
@@ -383,7 +398,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1.5
@@ -400,34 +415,41 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 0.5
           EnemyType: 0
-      - PathId: 2
+      - RootID: 2
         EnemyInfors:
         - EnemyId: 3
           SpawnDelay: 3
           EnemyType: 0
-    Paths:
-    - SignalPosition: {x: -16, y: 4.5, z: 0}
+    Roots:
+    - Point: {x: -20, y: 4.5, z: 0}
+      ChildID: 00000000
+      SignalPosition: {x: -16, y: 4.5, z: 0}
       SignalAngle: 180
-      Positions:
-      - {x: -20, y: 4.5, z: 0}
-      - {x: -7.5, y: 4.5, z: 0}
-      - {x: -7.5, y: 2, z: 0}
-      - {x: -1.5, y: 2, z: 0}
-      - {x: -1, y: -12, z: 0}
-    - SignalPosition: {x: 2.5, y: 9, z: 0}
+    - Point: {x: 2, y: 11, z: 0}
+      ChildID: 04000000
+      SignalPosition: {x: 2, y: 8, z: 0}
       SignalAngle: 90
-      Positions:
-      - {x: 2.5, y: 12, z: 0}
-      - {x: -0.5, y: 3, z: 0}
-      - {x: -1, y: -12, z: 0}
-    - SignalPosition: {x: 12, y: 8.5, z: 0}
+    - Point: {x: 19, y: 12, z: 0}
+      ChildID: 05000000
+      SignalPosition: {x: 12, y: 8, z: 0}
       SignalAngle: 45
-      Positions:
-      - {x: 18.5, y: 11.5, z: 0}
-      - {x: 11.5, y: 6.5, z: 0}
-      - {x: 10.5, y: -2, z: 0}
-      - {x: -0.5, y: -5, z: 0}
-      - {x: -1, y: -12, z: 0}
+    NodePaths:
+    - Point: {x: -8, y: 4, z: 0}
+      ChildID: 01000000
+    - Point: {x: -1, y: -1, z: 0}
+      ChildID: 02000000
+    - Point: {x: -1, y: -6.5, z: 0}
+      ChildID: 03000000
+    - Point: {x: -1, y: -13, z: 0}
+      ChildID: 
+    - Point: {x: 0.5, y: 4, z: 0}
+      ChildID: 01000000
+    - Point: {x: 12, y: 8.5, z: 0}
+      ChildID: 06000000
+    - Point: {x: 11, y: 0, z: 0}
+      ChildID: 07000000
+    - Point: {x: 8, y: -3, z: 0}
+      ChildID: 02000000
     TowerInfors:
     - Towerposition: {x: -4.5, y: -5.5, z: 0}
       flagPosition: {x: 0.5, y: -5.5, z: 0}
@@ -463,7 +485,7 @@ MonoBehaviour:
     MaxLimitCamera: {x: 0, y: 0}
     Ways:
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -486,7 +508,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -510,7 +532,7 @@ MonoBehaviour:
           SpawnDelay: 1.5
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1
@@ -527,7 +549,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1
@@ -544,7 +566,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1
           EnemyType: 1
-      - PathId: 2
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -562,7 +584,7 @@ MonoBehaviour:
           SpawnDelay: 1.5
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1
@@ -579,7 +601,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1
           EnemyType: 1
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -596,7 +618,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 0.5
           EnemyType: 0
-      - PathId: 2
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 2
@@ -613,7 +635,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 3
           EnemyType: 1
-      - PathId: 3
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 2
@@ -631,7 +653,7 @@ MonoBehaviour:
           SpawnDelay: 3
           EnemyType: 1
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1
@@ -648,7 +670,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1
           EnemyType: 2
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -665,7 +687,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 0.5
           EnemyType: 0
-      - PathId: 2
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 2
@@ -682,7 +704,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 3
           EnemyType: 1
-      - PathId: 3
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 2
@@ -699,45 +721,36 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 3
           EnemyType: 1
-    Paths:
-    - SignalPosition: {x: -16, y: 7, z: 0}
+    Roots:
+    - Point: {x: -20, y: 6.5, z: 0}
+      ChildID: 00000000
+      SignalPosition: {x: -16.5, y: 6.5, z: 0}
       SignalAngle: 180
-      Positions:
-      - {x: -20, y: 6.5, z: 0}
-      - {x: -12, y: 6.5, z: 0}
-      - {x: -6.6, y: 2, z: 0}
-      - {x: 4, y: 2, z: 0}
-      - {x: 13, y: 6.5, z: 0}
-      - {x: 20, y: 6.5, z: 0}
-    - SignalPosition: {x: -16, y: 7, z: 0}
+    - Point: {x: -20, y: -9, z: 0}
+      ChildID: 08000000
+      SignalPosition: {x: -16.5, y: -9, z: 0}
       SignalAngle: 180
-      Positions:
-      - {x: -20, y: 6.5, z: 0}
-      - {x: -12, y: 6.5, z: 0}
-      - {x: -6.6, y: 2, z: 0}
-      - {x: 4, y: 2, z: 0}
-      - {x: 6, y: -7, z: 0}
-      - {x: 9, y: -9, z: 0}
-      - {x: 20, y: -9, z: 0}
-    - SignalPosition: {x: -16, y: -8, z: 0}
-      SignalAngle: 180
-      Positions:
-      - {x: -20, y: -8, z: 0}
-      - {x: -9.5, y: -8, z: 0}
-      - {x: -6.6, y: 2, z: 0}
-      - {x: 4, y: 2, z: 0}
-      - {x: 6, y: -7, z: 0}
-      - {x: 9, y: -9, z: 0}
-      - {x: 20, y: -9, z: 0}
-    - SignalPosition: {x: -16, y: -8, z: 0}
-      SignalAngle: 180
-      Positions:
-      - {x: -20, y: -8, z: 0}
-      - {x: -9.5, y: -8, z: 0}
-      - {x: -6.6, y: 2, z: 0}
-      - {x: 4, y: 2, z: 0}
-      - {x: 13, y: 6.5, z: 0}
-      - {x: 20, y: 6.5, z: 0}
+    NodePaths:
+    - Point: {x: -12, y: 6.5, z: 0}
+      ChildID: 01000000
+    - Point: {x: -7, y: 2, z: 0}
+      ChildID: 02000000
+    - Point: {x: 4, y: 2, z: 0}
+      ChildID: 0300000005000000
+    - Point: {x: 13, y: 6, z: 0}
+      ChildID: 04000000
+    - Point: {x: 21, y: 6, z: 0}
+      ChildID: 
+    - Point: {x: 6, y: -7.5, z: 0}
+      ChildID: 06000000
+    - Point: {x: 12, y: -9, z: 0}
+      ChildID: 07000000
+    - Point: {x: 21, y: -9, z: 0}
+      ChildID: 
+    - Point: {x: -11, y: -9, z: 0}
+      ChildID: 09000000
+    - Point: {x: -7, y: -2.5, z: 0}
+      ChildID: 01000000
     TowerInfors:
     - Towerposition: {x: -12, y: 1.5, z: 0}
       flagPosition: {x: -10, y: 5, z: 0}
@@ -776,7 +789,7 @@ MonoBehaviour:
     MaxLimitCamera: {x: 0, y: 3.75}
     Ways:
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -811,7 +824,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -846,7 +859,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 2
+      - RootID: 2
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -881,7 +894,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 3
+      - RootID: 3
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -917,7 +930,7 @@ MonoBehaviour:
           SpawnDelay: 1.5
           EnemyType: 0
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -934,7 +947,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1.5
@@ -951,7 +964,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 7
+      - RootID: 2
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -968,162 +981,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1.5
           EnemyType: 1
-      - PathId: 6
-        EnemyInfors:
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-      - PathId: 4
-        EnemyInfors:
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-      - PathId: 5
-        EnemyInfors:
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 0
-      - PathId: 2
-        EnemyInfors:
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-      - PathId: 3
-        EnemyInfors:
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-    - MiniWays:
-      - PathId: 0
-        EnemyInfors:
-        - EnemyId: 0
-          SpawnDelay: 1
-          EnemyType: 2
-        - EnemyId: 0
-          SpawnDelay: 1
-          EnemyType: 2
-        - EnemyId: 0
-          SpawnDelay: 1
-          EnemyType: 2
-        - EnemyId: 0
-          SpawnDelay: 1
-          EnemyType: 2
-        - EnemyId: 0
-          SpawnDelay: 1
-          EnemyType: 2
-      - PathId: 1
-        EnemyInfors:
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-      - PathId: 7
-        EnemyInfors:
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 1
-          SpawnDelay: 1.5
-          EnemyType: 0
-        - EnemyId: 0
-          SpawnDelay: 1.5
-          EnemyType: 1
-      - PathId: 6
+      - RootID: 3
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -1143,7 +1001,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1.5
           EnemyType: 1
-      - PathId: 4
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -1163,7 +1021,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 5
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -1180,7 +1038,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 2
+      - RootID: 2
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1.5
@@ -1197,7 +1055,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 3
+      - RootID: 3
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -1227,7 +1085,162 @@ MonoBehaviour:
           SpawnDelay: 1.5
           EnemyType: 1
     - MiniWays:
-      - PathId: 0
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+      - RootID: 1
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 2
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+      - RootID: 3
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 1
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 2
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 3
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+    - MiniWays:
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1
@@ -1244,7 +1257,7 @@ MonoBehaviour:
         - EnemyId: 3
           SpawnDelay: 1
           EnemyType: 0
-      - PathId: 1
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1.5
@@ -1261,7 +1274,7 @@ MonoBehaviour:
         - EnemyId: 3
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 7
+      - RootID: 2
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -1278,7 +1291,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1.5
           EnemyType: 1
-      - PathId: 6
+      - RootID: 3
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -1307,7 +1320,7 @@ MonoBehaviour:
         - EnemyId: 3
           SpawnDelay: 1
           EnemyType: 0
-      - PathId: 4
+      - RootID: 0
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -1330,7 +1343,7 @@ MonoBehaviour:
         - EnemyId: 3
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 5
+      - RootID: 1
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -1347,7 +1360,7 @@ MonoBehaviour:
         - EnemyId: 0
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 2
+      - RootID: 2
         EnemyInfors:
         - EnemyId: 1
           SpawnDelay: 1.5
@@ -1364,7 +1377,7 @@ MonoBehaviour:
         - EnemyId: 1
           SpawnDelay: 1.5
           EnemyType: 0
-      - PathId: 3
+      - RootID: 3
         EnemyInfors:
         - EnemyId: 0
           SpawnDelay: 1.5
@@ -1393,63 +1406,40 @@ MonoBehaviour:
         - EnemyId: 4
           SpawnDelay: 1.5
           EnemyType: 0
-    Paths:
-    - SignalPosition: {x: -16, y: -3, z: 0}
+    Roots:
+    - Point: {x: -20, y: 3.5, z: 0}
+      ChildID: 00000000
+      SignalPosition: {x: -16, y: 3.5, z: 0}
       SignalAngle: 180
-      Positions:
-      - {x: -22, y: -3.5, z: 0}
-      - {x: -4, y: -3.5, z: 0}
-      - {x: -4, y: -21, z: 0}
-    - SignalPosition: {x: -16, y: -3, z: 0}
+    - Point: {x: -20, y: -3, z: 0}
+      ChildID: 01000000
+      SignalPosition: {x: -16, y: -3, z: 0}
       SignalAngle: 180
-      Positions:
-      - {x: -22, y: -3.5, z: 0}
-      - {x: 4, y: -3.5, z: 0}
-      - {x: 4, y: -21, z: 0}
-    - SignalPosition: {x: 15, y: -3, z: 0}
+    - Point: {x: 20, y: 3.5, z: 0}
+      ChildID: 06000000
+      SignalPosition: {x: 15, y: 3.5, z: 0}
       SignalAngle: 0
-      Positions:
-      - {x: 21, y: -3.5, z: 0}
-      - {x: 4, y: -3.5, z: 0}
-      - {x: 4, y: -21, z: 0}
-    - SignalPosition: {x: 15, y: -3, z: 0}
+    - Point: {x: 20, y: -3, z: 0}
+      ChildID: 04000000
+      SignalPosition: {x: 15, y: -3, z: 0}
       SignalAngle: 0
-      Positions:
-      - {x: 21, y: -3.5, z: 0}
-      - {x: -4, y: -3.5, z: 0}
-      - {x: -4, y: -21, z: 0}
-    - SignalPosition: {x: 15, y: 4, z: 0}
-      SignalAngle: 0
-      Positions:
-      - {x: 21, y: 4, z: 0}
-      - {x: 11, y: 4, z: 0}
-      - {x: 7.5, y: -3.5, z: 0}
-      - {x: -4, y: -3.5, z: 0}
-      - {x: -4, y: -21, z: 0}
-    - SignalPosition: {x: 15, y: 4, z: 0}
-      SignalAngle: 0
-      Positions:
-      - {x: 21, y: 4, z: 0}
-      - {x: 11, y: 4, z: 0}
-      - {x: 7.5, y: -3.5, z: 0}
-      - {x: 4, y: -3.5, z: 0}
-      - {x: 4, y: -21, z: 0}
-    - SignalPosition: {x: -16, y: 4, z: 0}
-      SignalAngle: 180
-      Positions:
-      - {x: -21, y: 4, z: 0}
-      - {x: -10, y: 4, z: 0}
-      - {x: -8, y: -3.5, z: 0}
-      - {x: -4, y: -3.5, z: 0}
-      - {x: -4, y: -21, z: 0}
-    - SignalPosition: {x: -16, y: 4, z: 0}
-      SignalAngle: 180
-      Positions:
-      - {x: -21, y: 4, z: 0}
-      - {x: -10, y: 4, z: 0}
-      - {x: -8, y: -3.5, z: 0}
-      - {x: 4, y: -3.5, z: 0}
-      - {x: 4, y: -21, z: 0}
+    NodePaths:
+    - Point: {x: -9, y: 3.5, z: 0}
+      ChildID: 01000000
+    - Point: {x: -6.5, y: -3, z: 0}
+      ChildID: 02000000
+    - Point: {x: -4, y: -3, z: 0}
+      ChildID: 0300000004000000
+    - Point: {x: -4, y: -21, z: 0}
+      ChildID: 
+    - Point: {x: 4, y: -3, z: 0}
+      ChildID: 05000000
+    - Point: {x: 4, y: -21, z: 0}
+      ChildID: 
+    - Point: {x: 10, y: 3.5, z: 0}
+      ChildID: 07000000
+    - Point: {x: 9, y: -3, z: 0}
+      ChildID: 04000000
     TowerInfors:
     - Towerposition: {x: -12, y: 7.5, z: 0}
       flagPosition: {x: -12, y: 3.5, z: 0}
@@ -1465,16 +1455,16 @@ MonoBehaviour:
       TowerId: 0
     - Towerposition: {x: 6, y: 4.5, z: 0}
       flagPosition: {x: 9, y: 1.5, z: 0}
-      TowerId: 0
+      TowerId: 13
     - Towerposition: {x: 11.5, y: 7, z: 0}
       flagPosition: {x: 11.5, y: 3.5, z: 0}
       TowerId: 0
     - Towerposition: {x: 12.5, y: 0.5, z: 0}
       flagPosition: {x: 8.5, y: 0.5, z: 0}
-      TowerId: 6
+      TowerId: 0
     - Towerposition: {x: -11.5, y: 0.5, z: 0}
       flagPosition: {x: -8, y: 0.5, z: 0}
-      TowerId: 6
+      TowerId: 0
     - Towerposition: {x: -8, y: -6.5, z: 0}
       flagPosition: {x: -4, y: -6.5, z: 0}
       TowerId: 0
@@ -1492,4 +1482,549 @@ MonoBehaviour:
       TowerId: 0
     - Towerposition: {x: -8, y: -13.5, z: 0}
       flagPosition: {x: -4.5, y: -13.5, z: 0}
+      TowerId: 0
+  - TowerHealth: 2000
+    InitialGold: 200
+    LevelPrefab: {fileID: 3883050374143928546, guid: 0c023aba8726cc84485c2c997729860f, type: 3}
+    MinLimitCamera: {x: 0, y: -6}
+    MaxLimitCamera: {x: 0, y: 6.5}
+    Ways:
+    - MiniWays:
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 1
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 2
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+    - MiniWays:
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 1
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 2
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+      - RootID: 1
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 2
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 1
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+    - MiniWays:
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+        - EnemyId: 0
+          SpawnDelay: 1
+          EnemyType: 2
+      - RootID: 1
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 2
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+      - RootID: 1
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 2
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 0
+        EnemyInfors:
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+        - EnemyId: 1
+          SpawnDelay: 1.5
+          EnemyType: 0
+      - RootID: 1
+        EnemyInfors:
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+        - EnemyId: 0
+          SpawnDelay: 1.5
+          EnemyType: 1
+    Roots:
+    - Point: {x: -20, y: -3, z: 0}
+      ChildID: 00000000
+      SignalPosition: {x: -16, y: -3, z: 0}
+      SignalAngle: 180
+    - Point: {x: 0, y: -18, z: 0}
+      ChildID: 06000000
+      SignalPosition: {x: 0, y: -14, z: 0}
+      SignalAngle: -90
+    - Point: {x: 21, y: -3, z: 0}
+      ChildID: 0b000000
+      SignalPosition: {x: 15, y: -3, z: 0}
+      SignalAngle: 0
+    NodePaths:
+    - Point: {x: -12, y: -3, z: 0}
+      ChildID: 0100000004000000
+    - Point: {x: -11, y: 0.5, z: 0}
+      ChildID: 02000000
+    - Point: {x: -2.5, y: 6, z: 0}
+      ChildID: 03000000
+    - Point: {x: -2.5, y: 18, z: 0}
+      ChildID: 
+    - Point: {x: -9, y: -7, z: 0}
+      ChildID: 05000000
+    - Point: {x: -3.5, y: -7, z: 0}
+      ChildID: 02000000
+    - Point: {x: 0, y: -13, z: 0}
+      ChildID: 0500000007000000
+    - Point: {x: 5, y: -7, z: 0}
+      ChildID: 08000000
+    - Point: {x: 4, y: -5, z: 0}
+      ChildID: 09000000
+    - Point: {x: 4, y: 2, z: 0}
+      ChildID: 0a000000
+    - Point: {x: 4, y: 18, z: 0}
+      ChildID: 
+    - Point: {x: 13, y: -3, z: 0}
+      ChildID: 0c0000000d000000
+    - Point: {x: 11, y: -7, z: 0}
+      ChildID: 07000000
+    - Point: {x: 13, y: 2, z: 0}
+      ChildID: 09000000
+    TowerInfors:
+    - Towerposition: {x: 0.5, y: 12, z: 0}
+      flagPosition: {x: -2.5, y: 12, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 0.5, y: 6.5, z: 0}
+      flagPosition: {x: -2.5, y: 6.5, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 0.5, y: 0.5, z: 0}
+      flagPosition: {x: -3, y: 0.5, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 0.5, y: -7.5, z: 0}
+      flagPosition: {x: 0.5, y: -12, z: 0}
+      TowerId: 0
+    - Towerposition: {x: -7.5, y: 0, z: 0}
+      flagPosition: {x: -11, y: 0, z: 0}
+      TowerId: 0
+    - Towerposition: {x: -5.5, y: -4, z: 0}
+      flagPosition: {x: -3, y: -7, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 8.5, y: 0, z: 0}
+      flagPosition: {x: 12, y: 0, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 7.5, y: -4, z: 0}
+      flagPosition: {x: 7.5, y: -7, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 7.5, y: 10, z: 0}
+      flagPosition: {x: 3.5, y: 10, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 11, y: 5.5, z: 0}
+      flagPosition: {x: 11, y: 2, z: 0}
+      TowerId: 0
+    - Towerposition: {x: -111, y: 5, z: 0}
+      flagPosition: {x: -7, y: 3, z: 0}
+      TowerId: 0
+    - Towerposition: {x: -13.5, y: -8, z: 0}
+      flagPosition: {x: -11, y: -6, z: 0}
+      TowerId: 0
+    - Towerposition: {x: -6, y: -10, z: 0}
+      flagPosition: {x: -6, y: -7.5, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 7, y: -10, z: 0}
+      flagPosition: {x: 4, y: -8.5, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 15, y: -7, z: 0}
+      flagPosition: {x: 12, y: -7, z: 0}
       TowerId: 0

@@ -1,4 +1,3 @@
-
 using System;
 using UnityEngine;
 
@@ -29,6 +28,7 @@ public class MeleeAttack : AttackHandler
         base.Attack(enemy);
         FaceToEnemy(enemy.Actor);
         animHandler.SetAnim(AnimHandler.State.Attack);
+       
         enemy.TakeDamage(damage, m_DamageType);
     }
 }

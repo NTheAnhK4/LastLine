@@ -12,7 +12,7 @@ public class InGameManager : Singleton<InGameManager>
     public EnemySpawner enemySpawner;
     public TowerSpawner towerSpawner;
     public LevelSpawner levelSpawner;
-    public LevelUI levelUI;
+    public UIManager uiManager;
    
     private float healthPoint = 20;
     private int gold;
@@ -22,27 +22,7 @@ public class InGameManager : Singleton<InGameManager>
 
     #endregion
 
-    #region PathManager
-
-    public List<Vector3> GetPath(int pathId)
-    {
-        LevelData levelData = DataManager.Instance.GetData<LevelData>();
-        if (levelData == null || currentLevel >= levelData.Levels.Count)
-        {
-            Debug.Log("param for level data is missing");
-            return null;
-        }
-        return levelData.Levels[currentLevel].Paths[pathId].Positions;
-    }
-
-    public int GetPathNum()
-    {
-        LevelData levelData = DataManager.Instance.GetData<LevelData>();
-        if (levelData == null) return 0;
-        return levelData.Levels[currentLevel].Paths.Count;
-    }
-
-    #endregion
+    
 
 
     #region Properties
@@ -118,7 +98,7 @@ public class InGameManager : Singleton<InGameManager>
             enemySpawner.Init(levelData.Levels[level]);
             towerSpawner.Init(levelData.Levels[level]);
             towerSpawner.SpawnTower();
-            levelUI.Init(levelData.Levels[level],-1);
+            uiManager.Init(levelData.Levels[level],-1);
         }
         
     }
@@ -138,7 +118,7 @@ public class InGameManager : Singleton<InGameManager>
     private IEnumerator HandleWin()
     {
         yield return new WaitForSeconds(2f);
-        if (!enemySpawner.IsFinishGame()) yield return null;
+        yield return new WaitUntil(() => enemySpawner.IsFinishGame());
         int star;
         if (healthPoint > 12) star = 3;
         else if (healthPoint > 6) star = 2;

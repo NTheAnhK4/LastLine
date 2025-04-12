@@ -13,10 +13,11 @@ public class MeleeEnemy : Enemy
         
     }
 
-    public override void Init(int enemyId, int pathId)
+    public override void Init(int enemyId, NodePathParam nodePathParam)
     {
+        
         m_EnemyId = enemyId;
-        m_PathId = pathId;
+        
         if (DataManager.Instance.GetData<EnemyData>()?.MeleeEnemies[enemyId].EnemySkills.Count > 0)
         {
             SkillHandler skillHandler = transform.GetComponentInChildren<SkillHandler>();
@@ -25,7 +26,7 @@ public class MeleeEnemy : Enemy
         MeleeEnemyParam enemyData = DataManager.Instance.GetData<EnemyData>()?.MeleeEnemies[enemyId];
         if (enemyData != null)
         {
-            enemyMove.Init(InGameManager.Instance.GetPath(m_PathId), enemyData.MoveSpeed, enemyData.AttackRange);
+            enemyMove.Init(nodePathParam, enemyData.MoveSpeed, enemyData.AttackRange);
             enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
             enemyAttack.Init(enemyData.AttackRange, enemyData.AttackSpeed, enemyData.Damage, enemyData.DamageType);
             enemyDead.Init(enemyData.RewardGold, enemyData.DamageToTower);

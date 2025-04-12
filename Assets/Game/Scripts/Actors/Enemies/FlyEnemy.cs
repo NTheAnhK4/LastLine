@@ -1,10 +1,10 @@
 
 public class FlyEnemy : Enemy
 {
-    public override void Init(int enemyId, int pathId)
+    public override void Init(int enemyId, NodePathParam nodePathParam)
     {
         m_EnemyId = enemyId;
-        m_PathId = pathId;
+      
         if (DataManager.Instance.GetData<EnemyData>()?.MeleeEnemies[enemyId].EnemySkills.Count > 0)
         {
             SkillHandler skillHandler = transform.GetComponentInChildren<SkillHandler>();
@@ -13,7 +13,7 @@ public class FlyEnemy : Enemy
         EnemyParam enemyData = DataManager.Instance.GetData<EnemyData>()?.FlyEnemies[enemyId];
         if (enemyData != null)
         {
-            enemyMove.Init(InGameManager.Instance.GetPath(m_PathId), enemyData.MoveSpeed, enemyData.AttackRange);
+            enemyMove.Init(nodePathParam, enemyData.MoveSpeed, enemyData.AttackRange);
             enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
             enemyDead.Init(enemyData.RewardGold, enemyData.DamageToTower);
         }

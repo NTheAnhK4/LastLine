@@ -113,7 +113,6 @@ MonoBehaviour:
   moveSpeed: 0
   enemyCtrl: {fileID: 8589373115703683017}
   targetPosition: {x: 0, y: 0, z: 0}
-  m_CurrentPathIndex: 0
   enemyTargets: []
   m_AttackRange: 0
   targetEnemy: {fileID: 0}
@@ -966,7 +965,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6161740138679840424}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

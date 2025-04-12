@@ -35,11 +35,14 @@ public class AudioManager : Singleton<AudioManager>
         get => m_MusicVolumeRate;
         set
         {
-            if (Math.Abs(m_SFXVolumeRate - value) > 0.0001f)
-            {
-                m_MusicSource.volume = value;
-                m_MusicVolumeRate = value;
-            }
+            // if (Math.Abs(m_SFXVolumeRate - value) > 0.0001f)
+            // {
+            //     Debug.Log(value);
+            //     m_MusicSource.volume = value;
+            //     m_MusicVolumeRate = value;
+            // }
+            m_MusicSource.volume = value;
+            m_MusicVolumeRate = value;
             
         }
     }
@@ -54,6 +57,8 @@ public class AudioManager : Singleton<AudioManager>
     {
         base.Awake();
         DontDestroyOnLoad(gameObject);
+        m_MusicVolumeRate = PlayerPrefs.GetFloat("MusicVolumeData", 0.5f);
+        m_SFXVolumeRate = PlayerPrefs.GetFloat("SFXVolumeData", 0.5f);
     }
 
  

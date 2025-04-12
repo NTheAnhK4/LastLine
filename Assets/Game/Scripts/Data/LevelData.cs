@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 [CreateAssetMenu(fileName = "LevelData", menuName = "Data/Level Data")]
 public class LevelData : ScriptableObject
 {
@@ -16,22 +18,33 @@ public class LevelParam
     public Vector2 MinLimitCamera;
     public Vector2 MaxLimitCamera;
     public List<WayParam> Ways;
-    public List<PathParam> Paths;
+    [Header("Path")]
+    public List<RootParam> Roots;
+    public List<NodePathParam> NodePaths;
+    [Header("Tower")]
     public List<TowerInfor> TowerInfors;
 }
 
+
+
 [Serializable]
-public class PathParam
+public class NodePathParam
 {
-    public Vector3 SignalPosition;
-    public float SignalAngle;
-    public List<Vector3> Positions;
+    
+    public Vector3 Point;
+    public List<int> ChildID;
 }
 
 [Serializable]
+public class RootParam : NodePathParam
+{
+    public Vector3 SignalPosition;
+    public float SignalAngle;
+}
+[Serializable]
 public class MiniWayParam
 {
-    public int PathId;
+    public int RootID;
    
     public List<EnemyInfor> EnemyInfors;
 }

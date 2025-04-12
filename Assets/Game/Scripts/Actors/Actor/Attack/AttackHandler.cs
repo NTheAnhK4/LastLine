@@ -1,5 +1,5 @@
-
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -14,9 +14,9 @@ public class AttackHandler : ActionHandler
     [SerializeField] private CircleCollider2D collid;
     
     [SerializeField] private float attackRange;
-    [SerializeField] private float attackSpeed;
+    [SerializeField] protected float attackSpeed;
     [SerializeField] private float coolDown;
-    
+   
     
     protected override void LoadComponent()
     {
@@ -101,6 +101,7 @@ public class AttackHandler : ActionHandler
         }
         
     }
+    
 
    
     protected virtual void Attack(HealthHandler enemy)
@@ -109,5 +110,6 @@ public class AttackHandler : ActionHandler
        
     }
 
+   
    
 }

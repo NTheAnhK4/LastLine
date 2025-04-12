@@ -12,17 +12,17 @@ public class RangedEnemy : Enemy
         if (enemyAttack == null) enemyAttack = transform.GetComponentInChildren<RangedAttack>();
     }
 
-    public override void Init(int enemyId, int pathId)
+    public override void Init(int enemyId, NodePathParam nodePathParam)
     {
         m_EnemyId = enemyId;
-        m_PathId = pathId;
+       
         if (DataManager.Instance.GetData<EnemyData>()?.RangedEnemies[enemyId].EnemySkills.Count > 0)
         {
             SkillHandler skillHandler = transform.GetComponentInChildren<SkillHandler>();
             if(skillHandler != null) skillHandler.Init(DataManager.Instance.GetData<EnemyData>()?.RangedEnemies[enemyId].EnemySkills);
         }
         RangedEnemyParam enemyData = DataManager.Instance.GetData<EnemyData>()?.RangedEnemies[enemyId];
-        enemyMove.Init(InGameManager.Instance.GetPath(m_PathId),enemyData.MoveSpeed, enemyData.AttackRange);
+        enemyMove.Init(nodePathParam,enemyData.MoveSpeed, enemyData.AttackRange);
         enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
         enemyDead.Init(enemyData.RewardGold, enemyData.DamageToTower);
         animHandler.SetAnim(AnimHandler.State.Move);
