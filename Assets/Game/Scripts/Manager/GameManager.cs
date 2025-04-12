@@ -1,5 +1,6 @@
 using System;
-
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,21 +41,27 @@ public class GameManager : Singleton<GameManager>
 
     public void SetPreSpeedGame()
     {
-        if (Math.Abs(preSpeed - (-1)) < 0.01) GameSpeed = 1;
+        if (preSpeed == 0) GameSpeed = 1;
         else GameSpeed = preSpeed;
     }
 
     public void ReplayLevel()
     {
+        GameSpeed = 1;
+        DOTween.KillAll();
         SelectLevel(InGameManager.Instance.CurrentLevel);
     }
 
     public void GoToWorldMap()
     {
+       
         GameSpeed = 1;
+       
+        DOTween.KillAll();
         SceneManager.LoadScene("WorldMap");
         AudioManager.PlayBackGroundMusic(SoundType.SelectLevel);
-        
     }
-    
+
+  
+   
 }

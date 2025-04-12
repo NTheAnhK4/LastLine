@@ -1,5 +1,6 @@
 
 using System;
+using Core.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -81,6 +82,7 @@ public class InputManager : Singleton<InputManager>
 
     private void Update()
     {
+        if(!ViewAnimationController.IsViewEmpty()) return;
         if(currentSceneName == "InGame") HandleInputInGame();
         if (Input.GetMouseButtonDown(0))
         {

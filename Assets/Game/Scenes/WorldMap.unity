@@ -8380,19 +8380,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6624671215342666878}
-        m_TargetAssemblyTypeName: CenterUI, Assembly-CSharp
-        m_MethodName: ShowUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2199537398083592428}
+      - m_Target: {fileID: 2011312242028662452}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -8498,8 +8486,8 @@ GameObject:
   m_Component:
   - component: {fileID: 398923505886168815}
   - component: {fileID: 6624671215342666877}
-  - component: {fileID: 6624671215342666878}
   - component: {fileID: 6624671215342666879}
+  - component: {fileID: 6624671215342666880}
   m_Layer: 5
   m_Name: Setting
   m_TagString: Untagged
@@ -8545,7 +8533,8 @@ GameObject:
   - component: {fileID: 6605674120905672818}
   - component: {fileID: 5980204667494466563}
   - component: {fileID: 8783813511233081802}
-  - component: {fileID: 4891989992479983134}
+  - component: {fileID: 8783813511233081804}
+  - component: {fileID: 8783813511233081803}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -8851,19 +8840,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4891989992479983134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2199537398083592428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc027f1eb627c6147b66fa38ce240f8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PanelImg: {fileID: 8783813511233081802}
 --- !u!1 &5017170287215507025
 GameObject:
   m_ObjectHideFlags: 0
@@ -9177,20 +9153,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6624671215342666878}
-        m_TargetAssemblyTypeName: CenterUI, Assembly-CSharp
-        m_MethodName: HideUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4891989992479983134}
-        m_TargetAssemblyTypeName: PanelUI, Assembly-CSharp
+      - m_Target: {fileID: 6624671215342666880}
+        m_TargetAssemblyTypeName: WorldMapSetting, Assembly-CSharp
         m_MethodName: HideUI
         m_Mode: 1
         m_Arguments:
@@ -9275,7 +9239,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4891989992479983134}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PanelUI, Assembly-CSharp
         m_MethodName: HideUI
         m_Mode: 1
@@ -9341,8 +9305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.9599915, y: -7.4400024}
-  m_SizeDelta: {x: 928.63, y: 586.78}
+  m_AnchoredPosition: {x: -4.2900085, y: -17.160004}
+  m_SizeDelta: {x: 967.26, y: 617.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6611999656926680843
 GameObject:
@@ -9370,20 +9334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011312242028662452}
   m_CullTransparentMesh: 1
---- !u!114 &6624671215342666878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011312242028662452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8c0dd532d5ecd44eae154260ba2f892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalScale: {x: 1, y: 1, z: 1}
-  quitBtn: {fileID: 6388106628180304732}
 --- !u!225 &6624671215342666879
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9396,6 +9346,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6624671215342666880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011312242028662452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5d66a912b260842878ec27068f920c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasGroup: {fileID: 0}
+  Container: {fileID: 398923505886168815}
+  IsStackable: 0
+  _PanelUI: {fileID: 8783813511233081803}
+  quitBtn: {fileID: 6388106628180304732}
 --- !u!222 &6797699211186300053
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9568,7 +9535,7 @@ MonoBehaviour:
   m_MusicBtn: {fileID: 228300249}
   m_MusicImg: {fileID: 21300000, guid: 54e54535c5eac654083d25b73d766bac, type: 3}
   m_MuteMusicImg: {fileID: 21300000, guid: e3fd01ed8d4687a4684a6cd4135609a0, type: 3}
-  m_SoundSlider: {fileID: 0}
+  m_SoundSlider: {fileID: 797734661}
   m_MusicSlider: {fileID: 5687428704779269749}
 --- !u!114 &8523936031972165847
 MonoBehaviour:
@@ -9710,7 +9677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8352941}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9727,6 +9694,31 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8783813511233081803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2199537398083592428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc027f1eb627c6147b66fa38ce240f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelImg: {fileID: 8783813511233081802}
+--- !u!225 &8783813511233081804
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2199537398083592428}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8831498431392690544
 GameObject:
   m_ObjectHideFlags: 0

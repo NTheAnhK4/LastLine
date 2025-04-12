@@ -10,14 +10,17 @@ public class AudioUI : ComponentBehavior
 
     [SerializeField] private Sprite m_SoundImg;
     [SerializeField] private Sprite m_MuteSoundImg;
-    private BindableValue<bool> m_IsSoundActive;
+    private bool _IsSoundActive;
+    private float _OldSoundValue;
+   
     [Header("Music")]
     [SerializeField] private Button m_MusicBtn;
 
     [SerializeField] private Sprite m_MusicImg;
     [SerializeField] private Sprite m_MuteMusicImg;
-    private BindableValue<bool> m_IsMusicActive;
-
+    private bool _IsMusicActive;
+    private float _OldMusicValue;
+    
     [Header("Slider")]
     [SerializeField] private Slider m_SoundSlider;
     [SerializeField] private Slider m_MusicSlider;
@@ -34,69 +37,69 @@ public class AudioUI : ComponentBehavior
     private void Start()
     {
         
-        m_SoundSlider.value = AudioManager.Instance.SfxVolumeRate;
-        m_MusicSlider.value = AudioManager.Instance.MusicVolumeRate;
+       
         m_SoundSlider.onValueChanged.AddListener(OnSoundValueChanged);
         m_MusicSlider.onValueChanged.AddListener(OnMusicValueChanged);
-        HandleMusicButonClick();
-        HandleSoundButtonClick();
+        
+        m_SoundSlider.value = AudioManager.Instance.SfxVolumeRate;
+        m_MusicSlider.value = AudioManager.Instance.MusicVolumeRate;
+        
+        _IsSoundActive = m_SoundSlider.value > 0;
+        _IsMusicActive = m_MusicSlider.value > 0;
+
+        _OldMusicValue = m_MusicSlider.value;
+        _OldSoundValue = m_SoundSlider.value;
+        
+        m_MusicBtn.onClick.AddListener(OnMusicBtnClick);
+        m_SoundBtn.onClick.AddListener(OnSoundBtnClick);
     }
 
-    private void HandleMusicButonClick()
+    private void OnMusicBtnClick()
     {
-        m_IsMusicActive = new BindableValue<bool>();
-        m_IsMusicActive.Value = true;
-        m_IsMusicActive.OnValueChanged += (oldValue, newValue) =>
+        _IsMusicActive = !_IsMusicActive;
+        if(_IsMusicActive) m_MusicSlider.value = _OldMusicValue; 
+        else
         {
-            if (newValue) m_MusicBtn.image.sprite = m_MusicImg;
-            else
-            {
-                m_MusicBtn.image.sprite = m_MuteMusicImg;
-                m_MusicSlider.value = 0;
-            }
-        };
-        m_MusicBtn.onClick.AddListener(() =>
-        {
-            m_IsMusicActive.Value = !m_IsMusicActive.Value;
-        });
+            _OldMusicValue = Mathf.Max(m_MusicSlider.value, 0.1f);
+
+            m_MusicSlider.value = 0; 
+        }
     }
 
-    private void HandleSoundButtonClick()
+    private void OnSoundBtnClick()
     {
-        m_IsSoundActive = new BindableValue<bool>();
-        m_IsSoundActive.Value = true;
-        m_IsSoundActive.OnValueChanged += (oldValue, newValue) =>
+        _IsSoundActive = !_IsSoundActive;
+        if (_IsSoundActive) m_SoundSlider.value = _OldSoundValue;
+        else
         {
-            if (newValue) m_SoundBtn.image.sprite = m_SoundImg;
-            else
-            {
-                m_SoundBtn.image.sprite = m_MuteSoundImg;
-                m_SoundSlider.value = 0;
-            }
-        };
-        m_SoundBtn.onClick.AddListener(() =>
-        {
-            m_IsSoundActive.Value = !m_IsSoundActive.Value;
-        });
+            _OldSoundValue = Mathf.Max(m_SoundSlider.value, 0.1f);
+
+            m_SoundSlider.value = 0;
+        }
     }
+ 
     private void OnSoundValueChanged(float value)
     {
+        if (value == 0) m_SoundBtn.image.sprite = m_MuteSoundImg;
+        else m_SoundBtn.image.sprite = m_SoundImg;
         AudioManager.Instance.SfxVolumeRate = value;
-        if (value == 0) m_IsSoundActive.Value = false;
-        else m_IsSoundActive.Value = true;
+        _IsSoundActive = m_SoundSlider.value > 0;
     }
 
     private void OnMusicValueChanged(float value)
     {
-       
+        if (value == 0)   m_MusicBtn.image.sprite = m_MuteMusicImg;
+        else  m_MusicBtn.image.sprite = m_MusicImg;
         AudioManager.Instance.MusicVolumeRate = value;
-        if (value == 0) m_IsMusicActive.Value = false;
-        else m_IsMusicActive.Value = true;
+        _IsMusicActive = m_MusicSlider.value > 0;
+
     }
     private void OnDestroy()
     {
         m_SoundSlider.onValueChanged.RemoveListener(OnSoundValueChanged);
         m_MusicSlider.onValueChanged.RemoveListener(OnMusicValueChanged);
+        m_MusicBtn.onClick.RemoveAllListeners();
+        m_SoundBtn.onClick.RemoveAllListeners();
     }
 
 }

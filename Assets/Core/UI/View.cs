@@ -21,7 +21,7 @@ namespace Core.UI
         
         public virtual async void Show()
         {
-            
+            GameManager.Instance.GameSpeed = 0;
             await OnShow();
             gameObject.SetActive(true);
             CanvasGroup.interactable = true;
@@ -32,6 +32,7 @@ namespace Core.UI
             CanvasGroup.interactable = false;
             await OnHide();
             gameObject.SetActive(false);
+            GameManager.Instance.SetPreSpeedGame();
         }
 
         protected virtual UniTask OnShow()
