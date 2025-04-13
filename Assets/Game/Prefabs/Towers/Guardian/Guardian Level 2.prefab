@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 3164445586120462828}
   - component: {fileID: 6147574225964924277}
   m_Layer: 9
-  m_Name: Guardian Level 1
+  m_Name: Guardian Level 2
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 6889809671005463370}
   - component: {fileID: 3309922383035240950}
   - component: {fileID: 5866816380947986878}
+  - component: {fileID: 4658165850410280669}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -215,6 +216,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4658165850410280669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651037769186227835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd2af6a299d5a042815d679c8588f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6668471118132652571
 GameObject:
   m_ObjectHideFlags: 0

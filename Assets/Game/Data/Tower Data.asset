@@ -39,7 +39,7 @@ MonoBehaviour:
     AttackRange: 4
     AttackSpeed: 10
     UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
-    TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
+    TowerPrefab: {fileID: 7430213469317024371, guid: 5aaa434a5c7a7cf42b31575d5460d2bc, type: 3}
     TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
     TowerUpgradeList:
     - TowerId: 8
@@ -92,10 +92,11 @@ MonoBehaviour:
     Cost: 40
     AttackRange: 4.5
     AttackSpeed: 9.5
-    UnitPrefab: {fileID: 2651033401249118599, guid: 3b0c3525b8295844ea00f6412c2b8df6, type: 3}
-    TowerPrefab: {fileID: 3100071290906627879, guid: 792c82e97f76ec4458b0c08cd1cb2ef8, type: 3}
+    UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
+    TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
     TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
-    TowerUpgradeList: []
+    TowerUpgradeList:
+    - TowerId: 24
   - TowerName: Archer level 3
     Cost: 45
     AttackRange: 5
@@ -228,3 +229,48 @@ MonoBehaviour:
     TowerPrefab: {fileID: 6898350404190971255, guid: 25969d19f6f13164f9744bc5796ed08e, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: []
+  - TowerName: Guardian Level 3
+    Cost: 60
+    AttackRange: 5
+    AttackSpeed: 9
+    UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
+    TowerPrefab: {fileID: 2625093332105354923, guid: 288bf7bbbaf4e3e41a3b7ab08522a5fb, type: 3}
+    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
+    TowerUpgradeList:
+    - TowerId: 25
+  - TowerName: Guardian Level 4
+    Cost: 80
+    AttackRange: 5.5
+    AttackSpeed: 8.5
+    UnitPrefab: {fileID: 2651033401249118599, guid: 3b0c3525b8295844ea00f6412c2b8df6, type: 3}
+    TowerPrefab: {fileID: 8300287378961799554, guid: 76dbe442aed114144900053e1d86dc77, type: 3}
+    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
+    TowerUpgradeList:
+    - TowerId: 26
+  - TowerName: Guardian Level 5
+    Cost: 100
+    AttackRange: 6
+    AttackSpeed: 8.4
+    UnitPrefab: {fileID: 2651033401249118599, guid: 3b0c3525b8295844ea00f6412c2b8df6, type: 3}
+    TowerPrefab: {fileID: 3100071290906627879, guid: 792c82e97f76ec4458b0c08cd1cb2ef8, type: 3}
+    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
+    TowerUpgradeList:
+    - TowerId: 27
+  - TowerName: Guardian Level 6
+    Cost: 120
+    AttackRange: 6.1
+    AttackSpeed: 8.3
+    UnitPrefab: {fileID: 5094029893360358637, guid: 465f014a1f785514e8a1a1b609b7fe6f, type: 3}
+    TowerPrefab: {fileID: 8435396683875731123, guid: b7c732ba512da9941bce28fdd014d592, type: 3}
+    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
+    TowerUpgradeList:
+    - TowerId: 28
+  - TowerName: Guardian Level 7
+    Cost: 140
+    AttackRange: 6.2
+    AttackSpeed: 8.2
+    UnitPrefab: {fileID: 5094029893360358637, guid: 465f014a1f785514e8a1a1b609b7fe6f, type: 3}
+    TowerPrefab: {fileID: 550352655196838877, guid: d197cc221126f004faa5a717c5a0eed1, type: 3}
+    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
+    TowerUpgradeList:
+    - TowerId: 28
