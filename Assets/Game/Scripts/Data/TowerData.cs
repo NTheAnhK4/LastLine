@@ -16,16 +16,12 @@ public class TowerParam
     public int Cost;
     public float AttackRange;
     public float AttackSpeed;
+    public float Damage;
     public GameObject UnitPrefab;
     public GameObject TowerPrefab;
     public GameObject TowerUIPrefab;
-    public List<TowerUpgradeParam> TowerUpgradeList;
+    public List<int> TowerUpgradeList;
 }
 
-[System.Serializable]
-public class TowerUpgradeParam
-{
-    
-    public int TowerId;
-}
+
 

@@ -26,10 +26,10 @@ public class Solider : ComponentBehavior
         
         m_Encampment = encampment;
         m_Anim.SetAnim(AnimHandler.State.Idle);
-        m_Attack.Init(0.25f + 0.5f * encampMentLevel,2 - 0.1f * encampMentLevel,2f + encampMentLevel, DamageType.Physical);
+        m_Attack.Init(0.5f + 0.05f * encampMentLevel,1.5f - 0.05f * encampMentLevel,18f + 3 * encampMentLevel, DamageType.Physical);
         
-        m_Move.Init(1 + 0.5f * encampMentLevel,flagPosition);
-        m_Health.Init(70 + encampMentLevel * 10,1 - 0.1f * encampMentLevel,1 - 0.1f * encampMentLevel);
+        m_Move.Init(1.2f + 0.05f * encampMentLevel,flagPosition);
+        m_Health.Init(600 + encampMentLevel * 50,0.1f + 0.03f * encampMentLevel,0.05f + 0.02f * encampMentLevel);
         m_Health.OnDead += () =>
         {
             m_Encampment.OnSoliderDead(flagPosition);

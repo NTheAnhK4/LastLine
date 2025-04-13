@@ -17,260 +17,260 @@ MonoBehaviour:
     Cost: 0
     AttackRange: 0
     AttackSpeed: 0
+    Damage: 0
     UnitPrefab: {fileID: 0}
     TowerPrefab: {fileID: 1848356552161296775, guid: 2ccf3502e6e4fe04c9dcf54f173859f9, type: 3}
     TowerUIPrefab: {fileID: 337339328675364455, guid: 7e7ae87b9d53fb64496e55750e4f99c2, type: 3}
-    TowerUpgradeList:
-    - TowerId: 1
-    - TowerId: 2
-    - TowerId: 3
-    - TowerId: 4
+    TowerUpgradeList: 01000000080000000f00000016000000
   - TowerName: Archer level 1
     Cost: 15
     AttackRange: 4
-    AttackSpeed: 0.6
+    AttackSpeed: 1
+    Damage: 20
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 6503917657427825518, guid: f06f53ea328d7c24892d73538e3bed5b, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 5
-  - TowerName: Guardian level 1
-    Cost: 20
-    AttackRange: 4
-    AttackSpeed: 10
-    UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
-    TowerPrefab: {fileID: 7430213469317024371, guid: 5aaa434a5c7a7cf42b31575d5460d2bc, type: 3}
-    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
-    TowerUpgradeList:
-    - TowerId: 8
-  - TowerName: Mage level 1
-    Cost: 20
-    AttackRange: 6
-    AttackSpeed: 2
-    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
-    TowerPrefab: {fileID: 4452015885347407878, guid: d1a019cb7d2e0364aaec1a3c0df64fdd, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 7
-  - TowerName: Catapult level 1
-    Cost: 25
-    AttackRange: 5
-    AttackSpeed: 1.5
-    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
-    TowerPrefab: {fileID: 6018419074668113571, guid: 4841dbd15fb6826428f15f4625084d86, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 6
+    TowerUpgradeList: 02000000
   - TowerName: Archer level 2
-    Cost: 30
-    AttackRange: 4.5
-    AttackSpeed: 0.55
+    Cost: 20
+    AttackRange: 4.2
+    AttackSpeed: 1
+    Damage: 25
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 40787125080909617, guid: 08306ed9a281f224eac8de5824e97e5c, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 9
-  - TowerName: Catapult level 2
-    Cost: 50
-    AttackRange: 5.5
-    AttackSpeed: 1.4
-    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
-    TowerPrefab: {fileID: 8549829431325523198, guid: c5db7aa89a1b4b9438e8024bd34e7c50, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 14
-  - TowerName: Mage level 2
-    Cost: 40
-    AttackRange: 6.5
-    AttackSpeed: 1.9
-    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
-    TowerPrefab: {fileID: 7095783605604707871, guid: fcbb64e9424110d498b17da84be79f04, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 19
-  - TowerName: Guardian level 2
-    Cost: 40
-    AttackRange: 4.5
-    AttackSpeed: 9.5
-    UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
-    TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
-    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
-    TowerUpgradeList:
-    - TowerId: 24
+    TowerUpgradeList: 03000000
   - TowerName: Archer level 3
-    Cost: 45
-    AttackRange: 5
-    AttackSpeed: 0.45
+    Cost: 30
+    AttackRange: 4.5
+    AttackSpeed: 0.9
+    Damage: 30
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 5893692417750805127, guid: e2ac00359fa5ced46a161a921626cfe9, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 10
+    TowerUpgradeList: 04000000
   - TowerName: Archer level 4
-    Cost: 60
-    AttackRange: 6
-    AttackSpeed: 0.35
+    Cost: 40
+    AttackRange: 4.8
+    AttackSpeed: 0.85
+    Damage: 40
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 8761633789349402526, guid: 7a205c53f2b71f043a670035db4558b0, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 11
+    TowerUpgradeList: 05000000
   - TowerName: Archer level 5
-    Cost: 75
-    AttackRange: 6.5
-    AttackSpeed: 0.3
+    Cost: 50
+    AttackRange: 5
+    AttackSpeed: 0.8
+    Damage: 50
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 429472193650386157, guid: 5faa110031f2f664998abe29611af1ef, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 12
+    TowerUpgradeList: 06000000
   - TowerName: Archer level 6
-    Cost: 90
-    AttackRange: 7
-    AttackSpeed: 0.25
+    Cost: 60
+    AttackRange: 5.2
+    AttackSpeed: 0.75
+    Damage: 60
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 8976427532779379860, guid: f02486dfbfd30e04986e11d05c06a006, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 13
+    TowerUpgradeList: 07000000
   - TowerName: Archer level 7
-    Cost: 120
-    AttackRange: 7.5
-    AttackSpeed: 0.2
+    Cost: 80
+    AttackRange: 5.5
+    AttackSpeed: 0.7
+    Damage: 80
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
     TowerPrefab: {fileID: 8629915954259703471, guid: 21da77d8d79390749aa68f56985c0ad5, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList: []
-  - TowerName: Catapult Level 3
-    Cost: 75
-    AttackRange: 6
-    AttackSpeed: 1.3
-    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
-    TowerPrefab: {fileID: 6969141493794900000, guid: f338c54d42ef31a498cf69c9b9033e64, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 15
-  - TowerName: Catapult Level 4
-    Cost: 100
-    AttackRange: 6.5
-    AttackSpeed: 1.2
-    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
-    TowerPrefab: {fileID: 6838248312649411812, guid: 01928515780465d48b1fccfd69cfd7c8, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 16
-  - TowerName: Catapult Level 5
-    Cost: 125
-    AttackRange: 7
-    AttackSpeed: 1.1
-    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
-    TowerPrefab: {fileID: 6008448965399928093, guid: 7a46cb606f7f7bc46b6f49dc3b0c7779, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 17
-  - TowerName: Catapult Level 6
-    Cost: 150
-    AttackRange: 7.5
-    AttackSpeed: 1
-    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
-    TowerPrefab: {fileID: 7513319821517671538, guid: 106264c7b8e8ffb4bbeedf9b2a7028aa, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 18
-  - TowerName: Catapult Level 7
-    Cost: 175
-    AttackRange: 8
-    AttackSpeed: 0.9
-    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
-    TowerPrefab: {fileID: 6635775488352829220, guid: 632ef2f0d353d574e92f74438cd059ca, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList: []
-  - TowerName: Mage level 3
-    Cost: 60
-    AttackRange: 7
-    AttackSpeed: 1.8
-    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
-    TowerPrefab: {fileID: 5332507477801701714, guid: ee24048670e403c44a51b0fd39899fc0, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 20
-  - TowerName: Mage level 4
-    Cost: 80
-    AttackRange: 7.5
-    AttackSpeed: 1.7
-    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
-    TowerPrefab: {fileID: 227807556912428824, guid: 0f0b4bf59bed99848899c81efec5d6a8, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 21
-  - TowerName: Mage level 5
-    Cost: 100
-    AttackRange: 8
-    AttackSpeed: 1.7
-    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
-    TowerPrefab: {fileID: 1992142533175281854, guid: c9618932d4e63ec4ab789b036f44fd67, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 22
-  - TowerName: Mage level 6
-    Cost: 120
-    AttackRange: 8.5
-    AttackSpeed: 1.6
-    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
-    TowerPrefab: {fileID: 333385220537253312, guid: 08c95581ada95a3499a8648995736d80, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList:
-    - TowerId: 23
-  - TowerName: Mage level 7
-    Cost: 140
-    AttackRange: 9
-    AttackSpeed: 1.5
-    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
-    TowerPrefab: {fileID: 6898350404190971255, guid: 25969d19f6f13164f9744bc5796ed08e, type: 3}
-    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
-    TowerUpgradeList: []
+    TowerUpgradeList: 
+  - TowerName: Guardian Level 1
+    Cost: 25
+    AttackRange: 0
+    AttackSpeed: 0
+    Damage: 0
+    UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
+    TowerPrefab: {fileID: 7430213469317024371, guid: 5aaa434a5c7a7cf42b31575d5460d2bc, type: 3}
+    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
+    TowerUpgradeList: 09000000
+  - TowerName: Guardian Level 2
+    Cost: 35
+    AttackRange: 0
+    AttackSpeed: 0
+    Damage: 0
+    UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
+    TowerPrefab: {fileID: 2407921544822147048, guid: 39cb65032234c5c4085a6247fda53f82, type: 3}
+    TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
+    TowerUpgradeList: 0a000000
   - TowerName: Guardian Level 3
-    Cost: 60
-    AttackRange: 5
-    AttackSpeed: 9
+    Cost: 45
+    AttackRange: 0
+    AttackSpeed: 0
+    Damage: 0
     UnitPrefab: {fileID: 2608094851087857973, guid: 002820e9ff34a3f4f8fac88e8abaa18e, type: 3}
     TowerPrefab: {fileID: 2625093332105354923, guid: 288bf7bbbaf4e3e41a3b7ab08522a5fb, type: 3}
     TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
-    TowerUpgradeList:
-    - TowerId: 25
+    TowerUpgradeList: 0b000000
   - TowerName: Guardian Level 4
-    Cost: 80
-    AttackRange: 5.5
-    AttackSpeed: 8.5
+    Cost: 60
+    AttackRange: 0
+    AttackSpeed: 0
+    Damage: 0
     UnitPrefab: {fileID: 2651033401249118599, guid: 3b0c3525b8295844ea00f6412c2b8df6, type: 3}
     TowerPrefab: {fileID: 8300287378961799554, guid: 76dbe442aed114144900053e1d86dc77, type: 3}
     TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
-    TowerUpgradeList:
-    - TowerId: 26
+    TowerUpgradeList: 0c000000
   - TowerName: Guardian Level 5
-    Cost: 100
-    AttackRange: 6
-    AttackSpeed: 8.4
+    Cost: 75
+    AttackRange: 0
+    AttackSpeed: 0
+    Damage: 0
     UnitPrefab: {fileID: 2651033401249118599, guid: 3b0c3525b8295844ea00f6412c2b8df6, type: 3}
     TowerPrefab: {fileID: 3100071290906627879, guid: 792c82e97f76ec4458b0c08cd1cb2ef8, type: 3}
     TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
-    TowerUpgradeList:
-    - TowerId: 27
+    TowerUpgradeList: 0d000000
   - TowerName: Guardian Level 6
-    Cost: 120
-    AttackRange: 6.1
-    AttackSpeed: 8.3
+    Cost: 95
+    AttackRange: 0
+    AttackSpeed: 0
+    Damage: 0
     UnitPrefab: {fileID: 5094029893360358637, guid: 465f014a1f785514e8a1a1b609b7fe6f, type: 3}
     TowerPrefab: {fileID: 8435396683875731123, guid: b7c732ba512da9941bce28fdd014d592, type: 3}
     TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
-    TowerUpgradeList:
-    - TowerId: 28
+    TowerUpgradeList: 0e000000
   - TowerName: Guardian Level 7
-    Cost: 140
-    AttackRange: 6.2
-    AttackSpeed: 8.2
+    Cost: 120
+    AttackRange: 0
+    AttackSpeed: 0
+    Damage: 0
     UnitPrefab: {fileID: 5094029893360358637, guid: 465f014a1f785514e8a1a1b609b7fe6f, type: 3}
     TowerPrefab: {fileID: 550352655196838877, guid: d197cc221126f004faa5a717c5a0eed1, type: 3}
     TowerUIPrefab: {fileID: 3298169911760847558, guid: 00d155bd2e6cae24590e38429592f219, type: 3}
-    TowerUpgradeList:
-    - TowerId: 28
+    TowerUpgradeList: 
+  - TowerName: Mage level 1
+    Cost: 20
+    AttackRange: 2.5
+    AttackSpeed: 1.2
+    Damage: 20
+    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
+    TowerPrefab: {fileID: 4452015885347407878, guid: d1a019cb7d2e0364aaec1a3c0df64fdd, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 10000000
+  - TowerName: Mage level 2
+    Cost: 30
+    AttackRange: 2.6
+    AttackSpeed: 1.1
+    Damage: 28
+    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
+    TowerPrefab: {fileID: 7095783605604707871, guid: fcbb64e9424110d498b17da84be79f04, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 11000000
+  - TowerName: Mage level 3
+    Cost: 40
+    AttackRange: 2.7
+    AttackSpeed: 1
+    Damage: 37
+    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
+    TowerPrefab: {fileID: 5332507477801701714, guid: ee24048670e403c44a51b0fd39899fc0, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 12000000
+  - TowerName: Mage level 4
+    Cost: 55
+    AttackRange: 2.8
+    AttackSpeed: 0.95
+    Damage: 47
+    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
+    TowerPrefab: {fileID: 227807556912428824, guid: 0f0b4bf59bed99848899c81efec5d6a8, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 13000000
+  - TowerName: Mage level 5
+    Cost: 70
+    AttackRange: 3
+    AttackSpeed: 0.9
+    Damage: 60
+    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
+    TowerPrefab: {fileID: 1992142533175281854, guid: c9618932d4e63ec4ab789b036f44fd67, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 14000000
+  - TowerName: Mage level 6
+    Cost: 90
+    AttackRange: 3.2
+    AttackSpeed: 0.8
+    Damage: 75
+    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
+    TowerPrefab: {fileID: 333385220537253312, guid: 08c95581ada95a3499a8648995736d80, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 15000000
+  - TowerName: Mage level 7
+    Cost: 115
+    AttackRange: 3.5
+    AttackSpeed: 0.7
+    Damage: 95
+    UnitPrefab: {fileID: 6999920289493200481, guid: 4ce4b8d818d385f49bc635c225b2969d, type: 3}
+    TowerPrefab: {fileID: 6898350404190971255, guid: 25969d19f6f13164f9744bc5796ed08e, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 
+  - TowerName: Catapult Level 1
+    Cost: 25
+    AttackRange: 3.5
+    AttackSpeed: 1.8
+    Damage: 40
+    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
+    TowerPrefab: {fileID: 6018419074668113571, guid: 4841dbd15fb6826428f15f4625084d86, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 17000000
+  - TowerName: Catapult Level 2
+    Cost: 35
+    AttackRange: 3.7
+    AttackSpeed: 1.6
+    Damage: 52
+    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
+    TowerPrefab: {fileID: 8549829431325523198, guid: c5db7aa89a1b4b9438e8024bd34e7c50, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 18000000
+  - TowerName: Catapult Level 3
+    Cost: 50
+    AttackRange: 4
+    AttackSpeed: 1.5
+    Damage: 66
+    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
+    TowerPrefab: {fileID: 6969141493794900000, guid: f338c54d42ef31a498cf69c9b9033e64, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 19000000
+  - TowerName: Catapult Level 4
+    Cost: 65
+    AttackRange: 4.2
+    AttackSpeed: 1.3
+    Damage: 82
+    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
+    TowerPrefab: {fileID: 6838248312649411812, guid: 01928515780465d48b1fccfd69cfd7c8, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 1a000000
+  - TowerName: Catapult Level 5
+    Cost: 85
+    AttackRange: 4.5
+    AttackSpeed: 1.1
+    Damage: 100
+    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
+    TowerPrefab: {fileID: 6008448965399928093, guid: 7a46cb606f7f7bc46b6f49dc3b0c7779, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 1b000000
+  - TowerName: Catapult Level 6
+    Cost: 110
+    AttackRange: 4.8
+    AttackSpeed: 1
+    Damage: 120
+    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
+    TowerPrefab: {fileID: 7513319821517671538, guid: 106264c7b8e8ffb4bbeedf9b2a7028aa, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 1c000000
+  - TowerName: Catapult Level 7
+    Cost: 140
+    AttackRange: 5
+    AttackSpeed: 0.9
+    Damage: 145
+    UnitPrefab: {fileID: 4244860337108714906, guid: 0135636b494317b43a8c09e37680bcf1, type: 3}
+    TowerPrefab: {fileID: 6635775488352829220, guid: 632ef2f0d353d574e92f74438cd059ca, type: 3}
+    TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
+    TowerUpgradeList: 
