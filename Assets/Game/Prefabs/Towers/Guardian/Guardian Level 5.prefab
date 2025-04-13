@@ -42,7 +42,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8682854688164992333}
   - component: {fileID: 3298205347412729886}
-  - component: {fileID: 8483806757568968716}
+  - component: {fileID: 6407171333957162177}
+  - component: {fileID: 7284675216705687469}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -81,7 +82,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   currentState: 0
   previousState: 0
---- !u!95 &8483806757568968716
+--- !u!95 &6407171333957162177
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -91,7 +92,7 @@ Animator:
   m_GameObject: {fileID: 2785754124134821330}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 92501c95001c414418eb6898e03afc8d, type: 2}
+  m_Controller: {fileID: 9100000, guid: f15d8751c349c8c47a99a4b9154298fa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -102,6 +103,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7284675216705687469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2785754124134821330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd2af6a299d5a042815d679c8588f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3100071290906627879
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +127,7 @@ GameObject:
   - component: {fileID: 3114822485349628347}
   - component: {fileID: 2680393811455978460}
   m_Layer: 9
-  m_Name: Guardian Level 2
+  m_Name: Guardian Level 5
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
