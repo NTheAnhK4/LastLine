@@ -84,7 +84,7 @@ public class Tower : ComponentBehavior
         yield return new WaitForSeconds(0.1f);
         Tower tower = PoolingManager.Spawn(m_TowerData.Towers[towerUpgradeId].TowerPrefab,transform.position)
             .GetComponent<Tower>();
-        Debug.Log(tower.gameObject.name + " " + m_TowerData.Towers[towerUpgradeId].TowerPrefab.gameObject.name);
+        
         if(towerUpgradeId >= 0) tower.Init(towerUpgradeId,m_FlagPosition, m_TowerLevel + 1);
        
         PoolingManager.Despawn(this.gameObject);

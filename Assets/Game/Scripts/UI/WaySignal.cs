@@ -1,5 +1,5 @@
 
-using System;
+
 using UnityEngine;
 
 using UnityEngine.UI;
@@ -46,23 +46,22 @@ public class WaySignal : ComponentBehavior
                 int goldNum = Mathf.RoundToInt(m_TimeFill - m_Timer);
                 InGameManager.Instance.Gold += goldNum;
             }
-            ObserverManager<GameEventID>.Notify(GameEventID.SpawnNextWay);
+            ObserverManager<GameEventID>.Notify(GameEventID.SpawnWay);
             Disapperance();
         });
-        onSpawnWayHandler = _ => Disapperance();
-        ObserverManager<GameEventID>.Attach(GameEventID.SpawnWay, onSpawnWayHandler);
+
+        ObserverManager<GameEventID>.Attach(GameEventID.SpawnWay, _ => Disapperance());
     }
 
     private void OnDisable()
     {
         signalBtn.onClick.RemoveAllListeners();
-        ObserverManager<GameEventID>.Detach(GameEventID.SpawnWay, onSpawnWayHandler);
     }
 
     private void Disapperance()
     {
-        if (this == null || gameObject == null || transform.parent == null) return;
-        transform.parent.gameObject.SetActive(false);
+        if (this == null || gameObject == null || transform.parent == null || transform.parent.parent == null) return;
+        transform.parent.parent.gameObject.SetActive(false);
     }
 
     protected override void LoadComponent()
@@ -77,8 +76,8 @@ public class WaySignal : ComponentBehavior
     {
         if (!IsRoundActive ) return;
         if(m_Timer >= m_TimeFill){
-            ObserverManager<GameEventID>.Notify(GameEventID.SpawnNextWay);
-            PoolingManager.Despawn(transform.parent.gameObject);
+            ObserverManager<GameEventID>.Notify(GameEventID.SpawnWay);
+            PoolingManager.Despawn(transform.parent.parent.gameObject);
         }
         m_Timer += Time.deltaTime;
         roundImg.fillAmount = m_Timer / m_TimeFill;

@@ -19,6 +19,8 @@ public class EnemyParam
 {
     public int EnemyID;
     public string Name;
+    public float DifficultyWeight;
+   
     public float HealthPoint;
     [Range(0,1)] public float PhysicalDamageReduction;
     [Range(0,1)] public float MagicalDamageReduction;

@@ -1,4 +1,4 @@
-using Cysharp.Threading.Tasks;
+
 using UnityEngine;
 
 public class SummonSkill : ISkill
@@ -23,7 +23,8 @@ public class SummonSkill : ISkill
             Enemy enemy = m_Actor.GetComponent<Enemy>();
             if (enemy != null && spawnedEnemy != null)
             {
-                InGameManager.Instance.HandeEnemyCloneSpawn(enemy);
+                if(EnemyHolder.Instance != null) EnemyHolder.Instance.HoldEnemy(enemy.gameObject, objectPrefab.name);
+                
                 spawnedEnemy.Init(summonSkillParam.EnemyId,enemy.GetCurrentNodePath());
             }
         }
