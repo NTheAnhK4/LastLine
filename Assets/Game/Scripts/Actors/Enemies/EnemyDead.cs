@@ -1,5 +1,8 @@
 
 
+using System.Collections;
+using UnityEngine;
+
 public class EnemyDead : DeadHandler
 {
     private int m_RewardGold;
@@ -12,8 +15,8 @@ public class EnemyDead : DeadHandler
     public override void OnDead(bool hasAnim)
     {
         if(hasAnim) DeadByDamage();
-        else ReachPlayerBase();
-        InGameManager.Instance.HandleEnemyDead(actor.GetComponent<Enemy>());
+        else StartCoroutine(ReachPlayerBase());
+      
     }
 
     private void DeadByDamage()
@@ -23,10 +26,10 @@ public class EnemyDead : DeadHandler
         
     }
 
-    private void ReachPlayerBase()
+    private IEnumerator ReachPlayerBase()
     {
-        PoolingManager.Despawn(actor.gameObject);
         InGameManager.Instance.HealthPoint -= m_Damage;
-        
+        yield return new WaitForSeconds(0.2f);
+        PoolingManager.Despawn(actor.gameObject);
     }
 }

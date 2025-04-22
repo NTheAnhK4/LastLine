@@ -13,99 +13,114 @@ MonoBehaviour:
   m_Name: Enemy Data
   m_EditorClassIdentifier: 
   MeleeEnemies:
-  - Name: Monster
-    HealthPoint: 7
-    PhysicalDamageReduction: 0.9
-    MagicalDamageReduction: 0.9
-    MoveSpeed: 0.7
+  - EnemyID: 0
+    Name: Monster
+    DifficultyWeight: 2
+    HealthPoint: 100
+    PhysicalDamageReduction: 0
+    MagicalDamageReduction: 0
+    MoveSpeed: 1.2
     DamageType: 0
-    AttackRange: 0.4
+    AttackRange: 0.5
     AttackSpeed: 1.5
-    DamageToTower: 2
-    RewardGold: 3
+    DamageToTower: 1
+    RewardGold: 2
     EnemyPrefab: {fileID: 1420592936187739759, guid: 09317a1d2c95c6049a64f5c5e8d04ec0, type: 3}
     EnemySkills: []
-    Damage: 3
-  - Name: Wolf
-    HealthPoint: 3
-    PhysicalDamageReduction: 1
-    MagicalDamageReduction: 1
-    MoveSpeed: 3
+    Damage: 10
+  - EnemyID: 1
+    Name: Wolf
+    DifficultyWeight: 0.5
+    HealthPoint: 80
+    PhysicalDamageReduction: 0.05
+    MagicalDamageReduction: 0
+    MoveSpeed: 2.5
     DamageType: 0
-    AttackRange: 0.3
-    AttackSpeed: 0.5
+    AttackRange: 0.5
+    AttackSpeed: 1
     DamageToTower: 1
-    RewardGold: 1
+    RewardGold: 3
     EnemyPrefab: {fileID: 7007174157395247517, guid: efff15ddcf656a84cb76868a56ee48b4, type: 3}
     EnemySkills: []
-    Damage: 1
-  - Name: Spider
-    HealthPoint: 3
-    PhysicalDamageReduction: 1
-    MagicalDamageReduction: 1
-    MoveSpeed: 3
+    Damage: 7
+  - EnemyID: 2
+    Name: Spider
+    DifficultyWeight: 1
+    HealthPoint: 120
+    PhysicalDamageReduction: 0.1
+    MagicalDamageReduction: 0
+    MoveSpeed: 2
     DamageType: 0
-    AttackRange: 0.3
-    AttackSpeed: 1.5
+    AttackRange: 0.4
+    AttackSpeed: 1.2
     DamageToTower: 1
-    RewardGold: 1
+    RewardGold: 4
     EnemyPrefab: {fileID: 2358647661431263450, guid: 09b0333c6f743df42ba1918a92735f2b, type: 3}
     EnemySkills: []
-    Damage: 1.5
-  - Name: Slime
-    HealthPoint: 4
-    PhysicalDamageReduction: 0.6
-    MagicalDamageReduction: 1
-    MoveSpeed: 1.5
+    Damage: 11
+  - EnemyID: 3
+    Name: Slime
+    DifficultyWeight: 1.5
+    HealthPoint: 50
+    PhysicalDamageReduction: 0.1
+    MagicalDamageReduction: 0
+    MoveSpeed: 1.2
     DamageType: 0
-    AttackRange: 0.3
-    AttackSpeed: 1.5
+    AttackRange: 0.5
+    AttackSpeed: 1
     DamageToTower: 1
-    RewardGold: 1
+    RewardGold: 2
     EnemyPrefab: {fileID: 3711839664627574386, guid: 53d200874de4a3347a314ede48a1ceee, type: 3}
     EnemySkills:
     - SkillType: 0
       SkillId: 0
-    Damage: 1
-  - Name: Spearfang
-    HealthPoint: 60
+    Damage: 5
+  - EnemyID: 4
+    Name: Spearfang
+    DifficultyWeight: 30
+    HealthPoint: 1500
     PhysicalDamageReduction: 0.4
-    MagicalDamageReduction: 1
-    MoveSpeed: 2
+    MagicalDamageReduction: 0.2
+    MoveSpeed: 1
     DamageType: 0
-    AttackRange: 0.25
+    AttackRange: 0.75
     AttackSpeed: 1
-    DamageToTower: 10
-    RewardGold: 50
+    DamageToTower: 2
+    RewardGold: 150
     EnemyPrefab: {fileID: 2910671038581073855, guid: 8b35df66f3c249347a56a08dbbb1172a, type: 3}
     EnemySkills:
     - SkillType: 1
       SkillId: 0
-    Damage: 5
+    Damage: 60
   RangedEnemies:
-  - Name: Skeleton
-    HealthPoint: 9
-    PhysicalDamageReduction: 0.7
-    MagicalDamageReduction: 1
-    MoveSpeed: 0.5
+  - EnemyID: 0
+    Name: Skeleton
+    DifficultyWeight: 2.5
+    HealthPoint: 150
+    PhysicalDamageReduction: 0.1
+    MagicalDamageReduction: 0.1
+    MoveSpeed: 0.9
     DamageType: 0
-    AttackRange: 2
-    AttackSpeed: 1
-    DamageToTower: 1
+    AttackRange: 2.5
+    AttackSpeed: 2
+    DamageToTower: 2
     RewardGold: 2
     EnemyPrefab: {fileID: 6344821919482248283, guid: e28ae64c7aac636469ad66b671d76459, type: 3}
     EnemySkills: []
+    Damage: 25
     ProjectilePrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
   FlyEnemies:
-  - Name: Bee
-    HealthPoint: 2
-    PhysicalDamageReduction: 1
-    MagicalDamageReduction: 1
-    MoveSpeed: 2.5
+  - EnemyID: 0
+    Name: Bee
+    DifficultyWeight: 1
+    HealthPoint: 20
+    PhysicalDamageReduction: 0.1
+    MagicalDamageReduction: 0.1
+    MoveSpeed: 1.75
     DamageType: 0
     AttackRange: 0
     AttackSpeed: 0
     DamageToTower: 1
-    RewardGold: 1
+    RewardGold: 3
     EnemyPrefab: {fileID: 5688390882361842724, guid: 0cb15d1c028e5aa41836f6012db27eeb, type: 3}
     EnemySkills: []

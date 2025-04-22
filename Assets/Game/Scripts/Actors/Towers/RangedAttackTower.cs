@@ -49,7 +49,7 @@ public class RangedAttackTower : Tower
         base.Init(towerId, flagPosition, towerLevel);
         if(animHandler != null) animHandler.SetAnim(AnimHandler.State.Idle);
         m_AttackRange = m_TowerData.Towers[towerId].AttackRange;
-        rangedAttack.Init(m_TowerData.Towers[towerId].AttackRange, m_TowerData.Towers[towerId].AttackSpeed, m_TowerData.Towers[towerId].UnitPrefab, towerLevel);
+        rangedAttack.Init(m_TowerData.Towers[towerId].AttackRange, m_TowerData.Towers[towerId].AttackSpeed, m_TowerData.Towers[towerId].Damage, m_TowerData.Towers[towerId].UnitPrefab, towerLevel);
     }
 
     

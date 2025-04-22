@@ -26,6 +26,6 @@ public class RangedEnemy : Enemy
         enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
         enemyDead.Init(enemyData.RewardGold, enemyData.DamageToTower);
         animHandler.SetAnim(AnimHandler.State.Move);
-        enemyAttack.Init(enemyData.AttackRange,enemyData.AttackSpeed,enemyData.ProjectilePrefab);
+        enemyAttack.Init(enemyData.AttackRange,enemyData.AttackSpeed,enemyData.Damage, enemyData.ProjectilePrefab);
     }
 }

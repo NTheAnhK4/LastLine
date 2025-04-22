@@ -6,28 +6,66 @@ public static class GameFactory
 {
     public static GameObject GetEnemyPrefab(EnemyType enemyType, int enemyId)
     {
+        EnemyData enemyData = DataManager.Instance.GetData<EnemyData>();
+        if (enemyData == null)
+        {
+            Debug.LogWarning("Enemy data is not loaded");
+            return null;
+        }
         GameObject enemyPrefab = null;
         switch (enemyType)
         {
             case EnemyType.MeleeEnemy:
-                if (enemyId < 0 || enemyId >= DataManager.Instance.GetData<EnemyData>()?.MeleeEnemies.Count)
+                if (enemyId < 0 || enemyId >= enemyData.MeleeEnemies.Count)
                     Debug.LogWarning("Enemy id is run out of index");
                 
-                else enemyPrefab = DataManager.Instance.GetData<EnemyData>()?.MeleeEnemies[enemyId].EnemyPrefab;
+                else enemyPrefab = enemyData.MeleeEnemies[enemyId].EnemyPrefab;
                 break;
             case EnemyType.RangedEnemy:
-                if (enemyId < 0 || enemyId >= DataManager.Instance.GetData<EnemyData>()?.RangedEnemies.Count)
+                if (enemyId < 0 || enemyId >= enemyData.RangedEnemies.Count)
                     Debug.LogWarning("Enemy id is run out of index");
-                else enemyPrefab = DataManager.Instance.GetData<EnemyData>()?.RangedEnemies[enemyId].EnemyPrefab;
+                else enemyPrefab = enemyData.RangedEnemies[enemyId].EnemyPrefab;
                 break;
             case EnemyType.FlyEnemy:
-                if (enemyId < 0 || enemyId >= DataManager.Instance.GetData<EnemyData>()?.FlyEnemies.Count)
+                if (enemyId < 0 || enemyId >= enemyData.FlyEnemies.Count)
                     Debug.LogWarning("Enemy id is run out of index");
-                else enemyPrefab = DataManager.Instance.GetData<EnemyData>()?.FlyEnemies[enemyId].EnemyPrefab;
+                else enemyPrefab = enemyData.FlyEnemies[enemyId].EnemyPrefab;
                 break;
         }
 
         return enemyPrefab;
+    }
+
+    public static float GetEnemyDifficultyWeight(EnemyType enemyType, int enemyID)
+    {
+        
+        EnemyData enemyData = DataManager.Instance.GetData<EnemyData>();
+        if (enemyData == null)
+        {
+            Debug.LogWarning("Enemy data is not loaded");
+            return -1;
+        }
+        float difficultyWeight = 0;
+        switch (enemyType)
+        {
+            case EnemyType.MeleeEnemy:
+                if (enemyID < 0 || enemyID >= enemyData.MeleeEnemies.Count)
+                    Debug.LogWarning("Enemy id is run out of index");
+                else difficultyWeight = enemyData.MeleeEnemies[enemyID].DifficultyWeight;
+                break;
+            case EnemyType.RangedEnemy:
+                if (enemyID < 0 || enemyID >= enemyData.RangedEnemies.Count)
+                    Debug.LogWarning("Enemy id is run out of index");
+                else difficultyWeight = enemyData.RangedEnemies[enemyID].DifficultyWeight;
+                break;
+            case EnemyType.FlyEnemy:
+                if (enemyID < 0 || enemyID >= enemyData.FlyEnemies.Count)
+                    Debug.LogWarning("Enemy id is run out of index");
+                else difficultyWeight = enemyData.FlyEnemies[enemyID].DifficultyWeight;
+                break;
+        }
+
+        return difficultyWeight;
     }
     // used for parem for ISkill
     public static SkillParam GetSkillParam(SkillType skillType, int skillId)

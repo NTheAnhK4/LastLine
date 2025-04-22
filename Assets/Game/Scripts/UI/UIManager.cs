@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using Core.UI;
 using TMPro;
@@ -17,16 +16,11 @@ public class UIManager : ComponentBehavior
     [SerializeField] private  WinView winView;
     [SerializeField] private LoseView loseView;
     [SerializeField] private InGameSetting inGameSetting;
-    [SerializeField] private PanelUI panel;
-    private Dictionary<Vector3, GameObject> m_SignalWayChecker = new Dictionary<Vector3, GameObject>();
+   
+    
     
     private LevelParam m_LevelParam;
-    private System.Action<object> onWinHandler;
-    private System.Action<object> onSpawnWayHandler;
-    private System.Action<object> onAttackCastleHandler;
-    private System.Action<object> onUpdateGoldHandler;
-    private System.Action<object> onSpawnedEnemiesHandler;
-    private System.Action<object> onLoseHandler;
+  
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -52,42 +46,26 @@ public class UIManager : ComponentBehavior
         if (winView == null) winView = transform.GetComponentInChildren<WinView>();
         if (loseView == null) loseView = transform.GetComponentInChildren<LoseView>();
         if (inGameSetting == null) inGameSetting = transform.GetComponentInChildren<InGameSetting>();
-        panel = transform.Find("Center").Find("Panel").GetComponent<PanelUI>();
+      
     }
 
     private void OnEnable()
     {
-       
-        onSpawnWayHandler = param => UpdateWayUI((int)param);
-        onAttackCastleHandler = param => UpdateHealthUI((float)param);
-        onUpdateGoldHandler = param => UpdateGoldUI((int)param);
-        onSpawnedEnemiesHandler = param => SpawnSignalWay((int)param);
-        onLoseHandler = _ => OnLose();
-        onWinHandler = param => OnWin((int)param);
-       
-        ObserverManager<GameEventID>.Attach(GameEventID.SpawnWay, onSpawnWayHandler);
-        ObserverManager<GameEventID>.Attach(GameEventID.AttackCastle, onAttackCastleHandler);
-        ObserverManager<GameEventID>.Attach(GameEventID.UpdateGold, onUpdateGoldHandler);
-        ObserverManager<GameEventID>.Attach(GameEventID.SpawnedEnemies, onSpawnedEnemiesHandler);
-        ObserverManager<GameEventID>.Attach(GameEventID.Win, onWinHandler);
-        ObserverManager<GameEventID>.Attach(GameEventID.Lose, onLoseHandler);
+        
+        ObserverManager<GameEventID>.Attach(GameEventID.SpawnWay, _ => UpdateWayUI());
+        ObserverManager<GameEventID>.Attach(GameEventID.AttackCastle, param => UpdateHealthUI((float)param));
+        ObserverManager<GameEventID>.Attach(GameEventID.UpdateGold, param => UpdateGoldUI((int)param));
+        ObserverManager<GameEventID>.Attach(GameEventID.DisplaySignal, param => SpawnSignalWay((int)param));
+        ObserverManager<GameEventID>.Attach(GameEventID.DisplayFirstGameSignal, param => SpawnSignalWay((int)param, false));
+        ObserverManager<GameEventID>.Attach(GameEventID.Win, param => OnWin((int)param));
+        ObserverManager<GameEventID>.Attach(GameEventID.Lose, _ => OnLose());
        
     }
 
-    private void OnDisable()
-    {
-        ObserverManager<GameEventID>.Detach(GameEventID.SpawnWay, onSpawnWayHandler);
-        ObserverManager<GameEventID>.Detach(GameEventID.AttackCastle, onAttackCastleHandler);
-        ObserverManager<GameEventID>.Detach(GameEventID.UpdateGold, onUpdateGoldHandler);
-        ObserverManager<GameEventID>.Detach(GameEventID.SpawnedEnemies, onSpawnedEnemiesHandler);
-        ObserverManager<GameEventID>.Detach(GameEventID.Win, onWinHandler);
-        ObserverManager<GameEventID>.Detach(GameEventID.Lose, onLoseHandler);
-        
-    }
     
-    private void UpdateWayUI(int wayId)
+    private void UpdateWayUI()
     {
-        wayNumTxt.text = wayId.ToString() + "/" + m_LevelParam.Ways.Count.ToString();
+        wayNumTxt.text = (InGameManager.Instance.GetCurrentWay() + 1).ToString() + "/" + InGameManager.Instance.TotalWay.ToString();
     }
 
     private void UpdateHealthUI(float healthPoint)
@@ -102,40 +80,33 @@ public class UIManager : ComponentBehavior
 
    
 
-    public void Init(LevelParam levelParam, int preWay)
+    public void Init(LevelParam levelParam)
     {
         m_LevelParam = levelParam;
-        if(preWay == -1) SpawnSignalWay(-1,false);
-        else SpawnSignalWay(preWay);
+       
         goldTxt.text = m_LevelParam.InitialGold.ToString();
         healthTxt.text = InGameManager.Instance.HealthPoint.ToString();
-        int wayNum = m_LevelParam.Ways.Count;
+        int wayNum = InGameManager.Instance.TotalWay;
         wayNumTxt.text = "0/" + wayNum.ToString();
 
     }
 
-    private void SpawnSignalWay(int wayId, bool isActive = true)
+    private void SpawnSignalWay(int miniWayId, bool isActive = true)
     {
         if(this == null) return;
         var paths = m_LevelParam.Roots;
-        
-        foreach (MiniWayParam miniWay in m_LevelParam.Ways[wayId + 1].MiniWays)
+      
+        Transform signalWayTrf = PoolingManager.Spawn(SignalWayPrefab, paths[miniWayId].SignalPosition).transform;
+        if (signalWayTrf != null)
         {
-            int pathId = miniWay.RootID;
-            if(m_SignalWayChecker.ContainsKey(paths[pathId].SignalPosition)) continue;
+            signalWayTrf.localScale = new Vector3(1, 1, 1) * 2;
             
-            Transform signalWayTrf = PoolingManager.Spawn(SignalWayPrefab, paths[pathId].SignalPosition).transform;
-            if (signalWayTrf != null)
-            {
-                signalWayTrf.localScale = new Vector3(1, 1, 1) * 2;
-                m_SignalWayChecker[paths[pathId].SignalPosition] = signalWayTrf.gameObject;
-                RectTransform border = signalWayTrf.Find("Signal").Find("SignalWay").Find("Boder 2").GetComponent<RectTransform>();
-                border.rotation = Quaternion.Euler(new Vector3(0, 0, paths[pathId].SignalAngle));
-                WaySignal waySignal = signalWayTrf.GetComponentInChildren<WaySignal>();
-                waySignal.Init(10, isActive);
-            }
+            RectTransform border = signalWayTrf.Find("Signal").Find("SignalWay").Find("Boder 2").GetComponent<RectTransform>();
+            border.rotation = Quaternion.Euler(new Vector3(0, 0, paths[miniWayId].SignalAngle));
+            WaySignal waySignal = signalWayTrf.GetComponentInChildren<WaySignal>();
+            waySignal.Init(10, isActive);
         }
-        m_SignalWayChecker.Clear();
+        
     }
 
    

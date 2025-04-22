@@ -21,7 +21,7 @@ public class Projectile : ComponentBehavior
         if (m_ProjectileImpact == null) m_ProjectileImpact = transform.GetComponentInChildren<SingleImpactProjectile>();
     }
 
-    public void Init(Transform enemyTrf, int projectileLevel = 1)
+    public void Init(Transform enemyTrf, float damage, int projectileLevel = 1)
     {
         ProjectileData m_ProjectileData = DataManager.Instance.GetData<ProjectileData>();
         if (m_ProjectileData != null)
@@ -31,7 +31,7 @@ public class Projectile : ComponentBehavior
             projectileMove.Init(enemyTarget, m_ProjectileData.Projectiles[m_ProjectileId].speed + m_ProjectileLevel);
        
             m_ProjectileImpact.Init(enemyTarget,
-                m_ProjectileData.Projectiles[m_ProjectileId].damage + (m_ProjectileLevel - 1) * 0.5f, 
+                damage + (m_ProjectileLevel - 1) * 0.5f, 
                 m_ProjectileData.Projectiles[m_ProjectileId].DamageType);
         }
         

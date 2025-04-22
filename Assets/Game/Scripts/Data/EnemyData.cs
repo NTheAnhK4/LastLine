@@ -17,7 +17,10 @@ public class EnemyData : ScriptableObject
 [Serializable]
 public class EnemyParam
 {
+    public int EnemyID;
     public string Name;
+    public float DifficultyWeight;
+   
     public float HealthPoint;
     [Range(0,1)] public float PhysicalDamageReduction;
     [Range(0,1)] public float MagicalDamageReduction;
@@ -40,6 +43,7 @@ public class MeleeEnemyParam : EnemyParam
 [Serializable]
 public class RangedEnemyParam : EnemyParam
 {
+    public float Damage;
     public GameObject ProjectilePrefab;
 }
 
