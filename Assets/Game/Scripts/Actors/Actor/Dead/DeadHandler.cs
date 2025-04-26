@@ -1,25 +1,19 @@
 
-
-using System.Collections;
-using UnityEngine;
-
 public class DeadHandler : ActionHandler
 {
    
 
     public virtual void OnDead(bool hasAnim)
     {
-        if (hasAnim) StartCoroutine(DoAnim());
-        else PoolingManager.Despawn(actor.gameObject);
-    }
-
-    protected IEnumerator DoAnim()
-    {
-        animHandler.SetAnim(AnimHandler.State.Dead);
-        yield return new WaitForSeconds(1.5f);
+        if (hasAnim) return;
         PoolingManager.Despawn(actor.gameObject);
     }
-    
+
+
+    public virtual void AfterAnimDead()
+    {
+        
+    }
 
     protected virtual bool CanDespawn()
     {

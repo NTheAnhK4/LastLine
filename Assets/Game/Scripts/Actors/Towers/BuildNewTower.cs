@@ -8,7 +8,7 @@ public class BuildNewTower : MonoBehaviour
     {
         
         Tower tower = transform.GetComponentInParent<Tower>();
-        if(tower != null) StartCoroutine( tower.BuildNewTower());
+        if(tower != null) tower.BuildNewTower();
     }
 
    
