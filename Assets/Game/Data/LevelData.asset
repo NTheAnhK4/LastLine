@@ -15,7 +15,7 @@ MonoBehaviour:
   Levels:
   - IsBossLevel: 0
     TowerHealth: 20
-    InitialGold: 2147483647
+    InitialGold: 250
     LevelPrefab: {fileID: 2957135878730469215, guid: 88cb9de9427d5f3428d58dafc49f7d6e, type: 3}
     MinLimitCamera: {x: 0, y: 0}
     MaxLimitCamera: {x: 0, y: 0}
@@ -64,17 +64,23 @@ MonoBehaviour:
     - Point: {x: 19.15, y: 3.98, z: 0}
       ChildID: 
     TowerInfors:
-    - Towerposition: {x: -1, y: -1.5, z: 0}
-      flagPosition: {x: -1, y: -4.5, z: 0}
+    - Towerposition: {x: -0.5, y: -1.5, z: 0}
+      flagPosition: {x: -0.5, y: -5, z: 0}
       TowerId: 0
-    - Towerposition: {x: -9, y: -5.5, z: 0}
+    - Towerposition: {x: -9, y: -5, z: 0}
       flagPosition: {x: -9, y: -2.5, z: 0}
       TowerId: 0
-    - Towerposition: {x: 0, y: -7.5, z: 0}
+    - Towerposition: {x: 0, y: -7, z: 0}
       flagPosition: {x: 0, y: -4.5, z: 0}
       TowerId: 0
-    - Towerposition: {x: 13, y: 1.5, z: 0}
-      flagPosition: {x: 9.5, y: 1.5, z: 0}
+    - Towerposition: {x: 12.5, y: 3, z: 0}
+      flagPosition: {x: 9.5, y: 3, z: 0}
+      TowerId: 0
+    - Towerposition: {x: -8.75, y: 0.6, z: 0}
+      flagPosition: {x: -8.75, y: -2.6, z: 0}
+      TowerId: 0
+    - Towerposition: {x: 6.67, y: 3, z: 0}
+      flagPosition: {x: 10, y: 3, z: 0}
       TowerId: 0
     AllowedEnemyConfigs:
     - EnemyID: 0
@@ -568,7 +574,7 @@ MonoBehaviour:
     MinTotalWay: 9
     MaxTotalWay: 9
   - IsBossLevel: 0
-    TowerHealth: 20000
+    TowerHealth: 20
     InitialGold: 200
     LevelPrefab: {fileID: 3883050374143928546, guid: 0c023aba8726cc84485c2c997729860f, type: 3}
     MinLimitCamera: {x: 0, y: -6}

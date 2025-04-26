@@ -77,19 +77,20 @@ public class Tower : ComponentBehavior
         
     }
 
-    public IEnumerator BuildNewTower()
+    public void BuildNewTower()
     {
         
         isUpgrade = true;
-        yield return new WaitForSeconds(0.1f);
+       
         Tower tower = PoolingManager.Spawn(m_TowerData.Towers[towerUpgradeId].TowerPrefab,transform.position)
             .GetComponent<Tower>();
         
         if(towerUpgradeId >= 0) tower.Init(towerUpgradeId,m_FlagPosition, m_TowerLevel + 1);
-       
+        animHandler.ResetAnim();
         PoolingManager.Despawn(this.gameObject);
     }
 
+   
    
     
 }

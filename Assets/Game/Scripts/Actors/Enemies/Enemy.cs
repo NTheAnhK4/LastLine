@@ -42,6 +42,6 @@ public class Enemy : ComponentBehavior
 
     private void OnDisable()
     {
-       
+        animHandler.ResetAnim();
     }
 }

@@ -28,7 +28,7 @@ MonoBehaviour:
     AttackSpeed: 1
     Damage: 20
     UnitPrefab: {fileID: 3935586576878643828, guid: 367bf76cf801e3546a032b42dfa63f95, type: 3}
-    TowerPrefab: {fileID: 6503917657427825518, guid: f06f53ea328d7c24892d73538e3bed5b, type: 3}
+    TowerPrefab: {fileID: 3823730155112391434, guid: f06f53ea328d7c24892d73538e3bed5b, type: 3}
     TowerUIPrefab: {fileID: 5677166159084046906, guid: b6c6dd007e87dc64e9e3709bcc196058, type: 3}
     TowerUpgradeList: 02000000
   - TowerName: Archer level 2

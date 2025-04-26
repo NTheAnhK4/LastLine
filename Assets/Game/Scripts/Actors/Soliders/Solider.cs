@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 public class Solider : ComponentBehavior
@@ -35,5 +36,9 @@ public class Solider : ComponentBehavior
             m_Encampment.OnSoliderDead(flagPosition);
         };
     }
-    
+
+    private void OnDisable()
+    {
+        m_Anim.ResetAnim();
+    }
 }

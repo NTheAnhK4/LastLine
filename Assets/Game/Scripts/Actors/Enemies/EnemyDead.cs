@@ -14,18 +14,21 @@ public class EnemyDead : DeadHandler
     }
     public override void OnDead(bool hasAnim)
     {
-        if(hasAnim) DeadByDamage();
+        if (hasAnim)
+        {
+            animHandler.SetAnim(AnimHandler.State.Dead);
+          
+        }
         else StartCoroutine(ReachPlayerBase());
       
     }
 
-    private void DeadByDamage()
+    public override void AfterAnimDead()
     {
-        StartCoroutine(DoAnim());
+        base.AfterAnimDead();
         InGameManager.Instance.Gold += m_RewardGold;
-        
     }
-
+    
     private IEnumerator ReachPlayerBase()
     {
         InGameManager.Instance.HealthPoint -= m_Damage;
