@@ -58,10 +58,10 @@ public class HealthHandler : ComponentBehavior
         switch (damageType)
         {
             case DamageType.Physical:
-                damage *= m_PhysicalDamageReduction;
+                damage *= (1 - m_PhysicalDamageReduction);
                 break;
             case DamageType.Magical:
-                damage *= m_MagicalDamageReduction;
+                damage *= (1 - m_MagicalDamageReduction);
                 break;
         }
         CurHealth = Mathf.Max(curHealth - damage, 0);

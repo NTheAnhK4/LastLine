@@ -1,8 +1,9 @@
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 
 
 public class EnemyMove : MoveHandler
@@ -46,6 +47,8 @@ public class EnemyMove : MoveHandler
 
     public void Init(NodePathParam currentNodePath, float eMoveSpeed, float aRange)
     {
+        targetEnemy = null;
+        enemyTargets.Clear();
         m_NodePaths = DataManager.Instance.GetData<LevelData>().Levels[InGameManager.Instance.CurrentLevel].NodePaths;
         m_CurrentNodePath = currentNodePath;
         m_AttackRange = aRange;
@@ -55,6 +58,11 @@ public class EnemyMove : MoveHandler
 
         SetNextPosition();
 
+       
+    }
+
+    private void OnDisable()
+    {
         targetEnemy = null;
         enemyTargets.Clear();
     }
@@ -111,7 +119,7 @@ public class EnemyMove : MoveHandler
 
     private HealthHandler GetEnemy()
     {
-        enemyTargets.RemoveAll(enemy => enemy.IsDead || enemy == null);
+        enemyTargets.RemoveAll(enemy => enemy.IsDead || enemy == null || !enemy.gameObject.activeInHierarchy);
         if (enemyTargets.Count == 0) return null;
         HealthHandler enemyClosest = null;
         float minDistance = float.MaxValue;
@@ -139,9 +147,13 @@ public class EnemyMove : MoveHandler
         Vector3 direction = (target - actor.position).normalized;
         actor.transform.Translate(direction * (moveSpeed * Time.deltaTime));
     }
-   
-   
 
+
+    private bool IsEnemyExist(HealthHandler enemyChecker)
+    {
+        enemyTargets.RemoveAll(enemy => enemy.IsDead || enemy == null || !enemy.gameObject.activeInHierarchy);
+        return enemyTargets.Contains(enemyChecker);
+    }
    
     private void Update()
     {
@@ -152,7 +164,7 @@ public class EnemyMove : MoveHandler
         if(actor.tag.Equals("FlyEnemy")) MoveByPath();
         else
         {
-            if (targetEnemy == null || targetEnemy.IsDead || !targetEnemy.gameObject.activeInHierarchy) targetEnemy = GetEnemy();
+            if (!IsEnemyExist(targetEnemy)) targetEnemy = GetEnemy();
 
             if (targetEnemy != null && targetEnemy.gameObject.activeInHierarchy) MoveToTarget(targetEnemy.Actor.position);
             else

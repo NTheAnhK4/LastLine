@@ -120,11 +120,23 @@ public class AnimHandler : ComponentBehavior
         anim.speed = animSpeed;
     }
 
+    public float GetSpeed()
+    {
+        return anim.speed;
+    }
     public float GetAnimTimeElapsed()
     {
         float animLength = GetAnimLength();
         float normalizedTime = anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1f;
         return normalizedTime * animLength;
+
+    }
+
+    public void ResetAnim()
+    {
+        if (!gameObject.activeInHierarchy) return;
+        anim.Rebind();
+        anim.Update(0f);
 
     }
    

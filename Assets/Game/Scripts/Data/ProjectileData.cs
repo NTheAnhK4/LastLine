@@ -13,7 +13,7 @@ public class ProjectileParam
 {
     public string Name;
     public float speed;
-    public float damage;
+    
     public DamageType DamageType;
 }
 

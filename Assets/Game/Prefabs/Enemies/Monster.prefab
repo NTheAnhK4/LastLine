@@ -321,7 +321,6 @@ MonoBehaviour:
   moveSpeed: 0
   enemyCtrl: {fileID: 3500820759328679145}
   targetPosition: {x: 0, y: 0, z: 0}
-  m_CurrentPathIndex: 0
   enemyTargets: []
   m_AttackRange: 0
   targetEnemy: {fileID: 0}
@@ -790,6 +789,7 @@ GameObject:
   - component: {fileID: 506201168180497991}
   - component: {fileID: 1316115593130997192}
   - component: {fileID: 2253110060500380016}
+  - component: {fileID: 8547271207739728559}
   m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
@@ -900,6 +900,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8547271207739728559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804866219656930267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666e6704555aa874ebb6da5bd0112e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8843657440636122078
 GameObject:
   m_ObjectHideFlags: 0

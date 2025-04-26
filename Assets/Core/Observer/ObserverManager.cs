@@ -12,6 +12,7 @@ public static class ObserverManager<T> where T:Enum
     {
         if (callback == null)
         {
+        
             Debug.LogWarning($"Callback for event {eventID.GetType().Name} is NULL.");
             return;
         }
@@ -45,7 +46,7 @@ public static class ObserverManager<T> where T:Enum
 
     public static void Notify(T eventID, object param = null)
     {
-        
+      
         if (!_events.ContainsKey(eventID))
         {
             Debug.LogWarning($"Event:{eventID.GetType().Name} has no Listener EventDispatcher_ "+typeof(T).Name);
@@ -59,6 +60,11 @@ public static class ObserverManager<T> where T:Enum
             return;
         }
         _events[eventID]?.Invoke(param);
+    }
+
+    public static void DetachAll()
+    {
+        _events.Clear();
     }
     public  static _T GetData<_T>(T eventID)
     {
@@ -87,11 +93,12 @@ public static class ObserverManager<T> where T:Enum
 
 public enum GameEventID
 {
-    SpawnWay,
+    DisplaySignal,
+    DisplayFirstGameSignal,
     AttackCastle,
     Lose,
-    SpawnNextWay,
-    SpawnedEnemies,
+    SpawnWay,
+  
     UpdateGold,
     Win
 }

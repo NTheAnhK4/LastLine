@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class Enemy : ComponentBehavior
     [SerializeField] protected EnemyMove enemyMove;
     [SerializeField] protected HealthHandler enemyHealth;
     [SerializeField] protected AnimHandler animHandler;
-   
+  
     public EnemyDead enemyDead { get; private set; }
 
     public EnemyMove EnemyMove => enemyMove;
@@ -31,12 +32,16 @@ public class Enemy : ComponentBehavior
 
     public virtual void Init(int enemyId, NodePathParam nodePath)
     {
-       
+        
     }
 
     public NodePathParam GetCurrentNodePath()
     {
         return enemyMove.CurrentNodePath;
     }
-   
+
+    private void OnDisable()
+    {
+        animHandler.ResetAnim();
+    }
 }

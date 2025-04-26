@@ -1,15 +1,17 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class InGameManager : Singleton<InGameManager>
 {
 
     #region Variables
 
-    public EnemySpawner enemySpawner;
+    private WaveGenerator _WaveGenerator;
     public TowerSpawner towerSpawner;
     public LevelSpawner levelSpawner;
     public UIManager uiManager;
@@ -19,7 +21,9 @@ public class InGameManager : Singleton<InGameManager>
     
     private bool isGameOver;
     private int currentLevel;
+    private int _TotalWay;
 
+    private Action<object> onSpawnWay;
     #endregion
 
     
@@ -27,10 +31,17 @@ public class InGameManager : Singleton<InGameManager>
 
     #region Properties
 
+    public int TotalWay => _TotalWay;
     public int CurrentLevel
     {
         get => currentLevel;
         set => currentLevel = value;
+    }
+
+    public int GetCurrentWay()
+    {
+        if (_WaveGenerator == null) return 0;
+        else return _WaveGenerator.CurrentWave;
     }
 
     public int Gold
@@ -72,13 +83,14 @@ public class InGameManager : Singleton<InGameManager>
 
 
     #region LevelManager
-
+    
     private void Start()
     {
         currentLevel = GameManager.Instance.SelectedLevel;
         PlayLevel(this.currentLevel);
     }
 
+  
     private void PlayLevel(int level)
     {
         
@@ -88,6 +100,7 @@ public class InGameManager : Singleton<InGameManager>
         LevelData levelData = DataManager.Instance.GetData<LevelData>();
         if (levelData != null)
         {
+            _TotalWay = Random.Range(levelData.Levels[level].MinTotalWay, levelData.Levels[level].MaxTotalWay);
             levelSpawner.Init(levelData.Levels[level].LevelPrefab);
             isGameOver = false;
 
@@ -95,10 +108,13 @@ public class InGameManager : Singleton<InGameManager>
             HealthPoint = DataManager.Instance.GetData<LevelData>().Levels[currentLevel].TowerHealth;
             Gold = levelData.Levels[level].InitialGold;
         
-            enemySpawner.Init(levelData.Levels[level]);
+           
+            
             towerSpawner.Init(levelData.Levels[level]);
             towerSpawner.SpawnTower();
-            uiManager.Init(levelData.Levels[level],-1);
+            uiManager.Init(levelData.Levels[level]);
+            _WaveGenerator = new WaveGenerator(level, _TotalWay);
+          
         }
         
     }
@@ -115,10 +131,11 @@ public class InGameManager : Singleton<InGameManager>
 
     #region Game Result Handling
 
-    private IEnumerator HandleWin()
+    public IEnumerator HandleWin()
     {
         yield return new WaitForSeconds(2f);
-        yield return new WaitUntil(() => enemySpawner.IsFinishGame());
+        if (EnemyHolder.Instance == null) yield return null;
+        yield return new WaitUntil(() => EnemyHolder.Instance.IsEnemyEmpty());
         int star;
         if (healthPoint > 12) star = 3;
         else if (healthPoint > 6) star = 2;
@@ -129,28 +146,13 @@ public class InGameManager : Singleton<InGameManager>
         
     }
 
-    public void HandleEnemyDead(Enemy enemy)
-    {
-        if (enemySpawner != null)
-        {
-            bool isFinishGame = enemySpawner.IsFinishGame(enemy);
-            if (isFinishGame) StartCoroutine(HandleWin());
-        }
-    }
-
-    public void HandeEnemyCloneSpawn(Enemy enemy)
-    {
-        if (enemySpawner != null)
-        {
-            enemySpawner.activeEnemies.Add(enemy);
-        }
-    }
-
+    
     #endregion
-   
 
-   
-
-    
-    
+    private void OnDisable()
+    {
+        ObserverManager<GameEventID>.DetachAll();
+        _WaveGenerator.Dispose();
+        _WaveGenerator = null;
+    }
 }

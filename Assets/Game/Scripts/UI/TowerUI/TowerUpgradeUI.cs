@@ -67,7 +67,7 @@ public class TowerUpgradeUI : TowerUI
         }
         else
         {
-            int towerUpgradeId = tower.m_TowerData.Towers[tower.TowerId].TowerUpgradeList[0].TowerId;
+            int towerUpgradeId = tower.m_TowerData.Towers[tower.TowerId].TowerUpgradeList[0];
             m_UpgradeTower.cost.text = tower.m_TowerData.Towers[towerUpgradeId].Cost.ToString();
            
             int upgradeCost = int.Parse(m_UpgradeTower.cost.text);

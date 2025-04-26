@@ -1,8 +1,7 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 [RequireComponent(typeof(CircleCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -26,16 +25,23 @@ public class AttackHandler : ActionHandler
 
     public void Init(float sRange, float aSpeed)
     {
-       
+        detectedEnemies.Clear();
+        priorityTargets.Clear();
         attackRange = sRange;
         collid.radius = attackRange;
         attackSpeed = aSpeed;
         coolDown = 0;
         
-        detectedEnemies.Clear();
-        priorityTargets.Clear();
+        
 
     }
+
+    private void OnDisable()
+    {
+        detectedEnemies.Clear();
+        priorityTargets.Clear();
+    }
+
     private bool IsEnemy(Transform obj)
     {
         if (actor.tag.Equals("Tower")) return obj.tag.Equals("Enemy") || obj.tag.Equals("FlyEnemy");
@@ -63,11 +69,11 @@ public class AttackHandler : ActionHandler
 
     private HealthHandler GetPriorityTarget()
     {
-        priorityTargets.RemoveWhere(enemy => enemy == null || enemy.IsDead);
-        detectedEnemies.RemoveAll(enemy => enemy == null || enemy.IsDead);
+        priorityTargets.RemoveWhere(enemy => enemy == null || enemy.IsDead || !enemy.gameObject.activeInHierarchy);
+        detectedEnemies.RemoveAll(enemy => enemy == null || enemy.IsDead || !enemy.gameObject.activeInHierarchy);
         foreach (var enemy in priorityTargets)
         {
-            if (enemy != null && detectedEnemies.Contains(enemy)) return enemy;
+            if (enemy != null && detectedEnemies.Contains(enemy) && enemy.gameObject.activeInHierarchy) return enemy;
         }
 
         HealthHandler enemyClosest = null;
