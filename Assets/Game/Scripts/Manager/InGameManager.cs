@@ -64,6 +64,7 @@ public class InGameManager : Singleton<InGameManager>
         {
             if (Math.Abs(healthPoint - value) > 0.01)
             {
+              
                 healthPoint = value;
                 if(isGameOver) return;
                 if (HealthPoint <= 0)

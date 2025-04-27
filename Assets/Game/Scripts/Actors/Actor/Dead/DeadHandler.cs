@@ -1,10 +1,16 @@
 
+using System;
+
 public class DeadHandler : ActionHandler
 {
+
    
+
+  
 
     public virtual void OnDead(bool hasAnim)
     {
+      
         if (hasAnim) return;
         PoolingManager.Despawn(actor.gameObject);
     }
