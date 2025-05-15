@@ -14,7 +14,7 @@ public class EnemyMove : MoveHandler
 
     private NodePathParam m_CurrentNodePath;
     [SerializeField] private Vector3 targetPosition;
-   
+    
    
 
     protected Vector3 direction;
@@ -36,7 +36,7 @@ public class EnemyMove : MoveHandler
         }
     }
 
-    
+    private float m_Vision;
 
    
     protected override void LoadComponent()
@@ -45,7 +45,7 @@ public class EnemyMove : MoveHandler
         if (enemyCtrl == null) enemyCtrl = transform.GetComponentInParent<Enemy>();
     }
 
-    public void Init(NodePathParam currentNodePath, float eMoveSpeed, float aRange)
+    public void Init(NodePathParam currentNodePath, float eMoveSpeed, float aRange, float vision)
     {
         targetEnemy = null;
         enemyTargets.Clear();
@@ -54,6 +54,12 @@ public class EnemyMove : MoveHandler
         m_AttackRange = aRange;
         
         moveSpeed = eMoveSpeed;
+
+        m_Vision = vision;
+        
+        CircleCollider2D circleCollider2D = GetComponent<CircleCollider2D>();
+        if (circleCollider2D != null) circleCollider2D.radius = m_Vision;
+       
         if(animHandler != null) animHandler.SetAnim(AnimHandler.State.Move);
 
         SetNextPosition();
@@ -119,7 +125,7 @@ public class EnemyMove : MoveHandler
 
     private HealthHandler GetEnemy()
     {
-        enemyTargets.RemoveAll(enemy => enemy.IsDead || enemy == null || !enemy.gameObject.activeInHierarchy);
+        RemoveEnemies();
         if (enemyTargets.Count == 0) return null;
         HealthHandler enemyClosest = null;
         float minDistance = float.MaxValue;
@@ -151,10 +157,14 @@ public class EnemyMove : MoveHandler
 
     private bool IsEnemyExist(HealthHandler enemyChecker)
     {
-        enemyTargets.RemoveAll(enemy => enemy.IsDead || enemy == null || !enemy.gameObject.activeInHierarchy);
+        RemoveEnemies();
         return enemyTargets.Contains(enemyChecker);
     }
-   
+
+    private void RemoveEnemies()
+    {
+        enemyTargets.RemoveAll(enemy => enemy.IsDead || enemy == null || !enemy.gameObject.activeInHierarchy || Vector2.Distance(actor.position, enemy.Actor.position) > m_Vision);
+    }
     private void Update()
     {
         

@@ -25,6 +25,7 @@ public class EnemyParam
     [Range(0,1)] public float PhysicalDamageReduction;
     [Range(0,1)] public float MagicalDamageReduction;
 
+    public float Vision;
     public float MoveSpeed;
     public DamageType DamageType;
     public float AttackRange;

@@ -26,7 +26,7 @@ public class MeleeEnemy : Enemy
         MeleeEnemyParam enemyData = DataManager.Instance.GetData<EnemyData>()?.MeleeEnemies[enemyId];
         if (enemyData != null)
         {
-            enemyMove.Init(nodePathParam, enemyData.MoveSpeed, enemyData.AttackRange);
+            enemyMove.Init(nodePathParam, enemyData.MoveSpeed, enemyData.AttackRange, enemyData.Vision);
             enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
             enemyAttack.Init(enemyData.AttackRange, enemyData.AttackSpeed, enemyData.Damage, enemyData.DamageType);
             enemyDead.Init(enemyData.RewardGold, enemyData.DamageToTower);
