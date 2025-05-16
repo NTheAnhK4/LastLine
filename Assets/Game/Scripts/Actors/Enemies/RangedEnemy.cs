@@ -22,7 +22,7 @@ public class RangedEnemy : Enemy
             if(skillHandler != null) skillHandler.Init(DataManager.Instance.GetData<EnemyData>()?.RangedEnemies[enemyId].EnemySkills);
         }
         RangedEnemyParam enemyData = DataManager.Instance.GetData<EnemyData>()?.RangedEnemies[enemyId];
-        enemyMove.Init(nodePathParam,enemyData.MoveSpeed, enemyData.AttackRange);
+        enemyMove.Init(nodePathParam,enemyData.MoveSpeed, enemyData.AttackRange, enemyData.Vision);
         enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
         enemyDead.Init(enemyData.RewardGold, enemyData.DamageToTower);
         animHandler.SetAnim(AnimHandler.State.Move);

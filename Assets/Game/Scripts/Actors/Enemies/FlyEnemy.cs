@@ -13,7 +13,7 @@ public class FlyEnemy : Enemy
         EnemyParam enemyData = DataManager.Instance.GetData<EnemyData>()?.FlyEnemies[enemyId];
         if (enemyData != null)
         {
-            enemyMove.Init(nodePathParam, enemyData.MoveSpeed, enemyData.AttackRange);
+            enemyMove.Init(nodePathParam, enemyData.MoveSpeed, enemyData.AttackRange, enemyData.Vision);
             enemyHealth.Init(enemyData.HealthPoint, enemyData.PhysicalDamageReduction, enemyData.MagicalDamageReduction);
             enemyDead.Init(enemyData.RewardGold, enemyData.DamageToTower);
         }

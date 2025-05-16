@@ -19,6 +19,7 @@ MonoBehaviour:
     HealthPoint: 100
     PhysicalDamageReduction: 0
     MagicalDamageReduction: 0
+    Vision: 2
     MoveSpeed: 1.2
     DamageType: 0
     AttackRange: 0.5
@@ -34,6 +35,7 @@ MonoBehaviour:
     HealthPoint: 80
     PhysicalDamageReduction: 0.05
     MagicalDamageReduction: 0
+    Vision: 2
     MoveSpeed: 2.5
     DamageType: 0
     AttackRange: 0.5
@@ -49,6 +51,7 @@ MonoBehaviour:
     HealthPoint: 120
     PhysicalDamageReduction: 0.1
     MagicalDamageReduction: 0
+    Vision: 2
     MoveSpeed: 2
     DamageType: 0
     AttackRange: 0.4
@@ -64,6 +67,7 @@ MonoBehaviour:
     HealthPoint: 50
     PhysicalDamageReduction: 0.1
     MagicalDamageReduction: 0
+    Vision: 2
     MoveSpeed: 1.2
     DamageType: 0
     AttackRange: 0.5
@@ -81,6 +85,7 @@ MonoBehaviour:
     HealthPoint: 1500
     PhysicalDamageReduction: 0.4
     MagicalDamageReduction: 0.2
+    Vision: 2
     MoveSpeed: 1
     DamageType: 0
     AttackRange: 0.75
@@ -99,6 +104,7 @@ MonoBehaviour:
     HealthPoint: 150
     PhysicalDamageReduction: 0.1
     MagicalDamageReduction: 0.1
+    Vision: 3
     MoveSpeed: 0.9
     DamageType: 0
     AttackRange: 2.5
@@ -116,6 +122,7 @@ MonoBehaviour:
     HealthPoint: 20
     PhysicalDamageReduction: 0.1
     MagicalDamageReduction: 0.1
+    Vision: 2
     MoveSpeed: 1.75
     DamageType: 0
     AttackRange: 0
